@@ -1,0 +1,13 @@
+<div class="header">
+    <a href="../../">
+    <h2 align="center">Willkommen auf meinem Apache-Webserver!</h2>
+    </a>
+    <h3 align="center">Diese Instanz läuft auf <a href="https://python.org/" style="color: darkred;" target="_blank">Python {{ python_version }}</a> und <a href="https://pypi.org/project/Flask/" style="color: darkred;" target="_blank">Flask {{ flask_version }}</a></h3>
+    {% include 'navigation.html' %}
+</div>
+
+<div class="main">
+    <div class="content">
+        <h2>{{ pageTitle }}</h2>
+        <section class="section">
+            <div class="sectionContent">

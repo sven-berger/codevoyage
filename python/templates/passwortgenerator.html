@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form method="post">
+    <label for="laenge">Gewünschte Länge (1-81):</label>
+    <input type="number" id="laenge" name="laenge" min="1" max="81" required>
+    <button type="submit">Generieren</button>
+</form>
+
+
+{% if passwort %}
+</div>
+</section>
+<section class="section">
+    <div class="sectionContent">
+        <p>Generiertes Passwort:</p>
+        <p><strong>{{ passwort }}</strong></p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="sectionContent">
+        <a href="https://python.codevoyage.de/passwortgenerator/">Neues Passwort generieren</a>
+{% endif %}
+
+{% endblock %}

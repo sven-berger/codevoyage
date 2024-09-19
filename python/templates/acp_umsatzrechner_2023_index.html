@@ -1,0 +1,28 @@
+{% extends "acp_layout.html" %}
+{% block content %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Monat</th>
+            <th>Umsatz (€)</th>
+            <th>Aktion</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for id, monat, umsatz in umsatz_2023_acp %}
+        <tr>
+            <td>{{ monat }}</td>
+            <td>{{ umsatz }}</td>
+            <td>
+                <button><a href="https://python.codevoyage.de/acp/umsatzrechner/2023/edit/{{ id }}/">Bearbeiten</a></button> |
+                <form action="https://python.codevoyage.de/python/acp/umsatzrechner/2023/delete/{{ id }}/" method="post" style="display:inline;">
+                    <button type="submit">Löschen</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

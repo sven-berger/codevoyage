@@ -1,0 +1,12 @@
+{% extends "acp_layout.html" %}
+{% block content %}
+
+<form action="/acp/umsatzrechner/2023/edit/{{ id }}/" method="post">
+    <label for="umsatz">Umsatz:</label>
+    <input type="text" id="umsatz" name="umsatz" value="{{ umsatz }}">
+    <button type="submit">Speichern</button>
+</form>
+<p><br/></p>
+<a href="https://python.codevoyage.de/acp/umsatzrechner/2023/">Abbrechen</a>
+
+{% endblock %}

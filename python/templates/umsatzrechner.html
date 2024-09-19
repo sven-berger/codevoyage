@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Monat</th>
+            <th>Umsatz (€)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for monat, umsatz in umsatz_2023 %}
+        <tr>
+            <td>{{ monat }}</td>
+            <td>{{ umsatz }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
