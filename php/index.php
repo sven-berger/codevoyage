@@ -5,9 +5,9 @@
 ?>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/test.inc.php");
+echo 'echo "Hello World!;';
 ?>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
-    ?>
+?>
