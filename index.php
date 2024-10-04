@@ -5,7 +5,7 @@
 ?>
 
 <?php
-    echo "Willkommen auf CodeVoyage.de!"
+    echo "Hallo und herzlich willkommen auf CodeVoyage.de"
 ?>
 
 <?php

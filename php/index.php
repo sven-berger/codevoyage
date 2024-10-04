@@ -5,7 +5,7 @@
 ?>
 
 <?php
-echo '<? echo "Hello World!"; ?>';
+echo 'Hallo und herzlich willkommen im PHP-Bereich! ';
 ?>
 
 <?php
