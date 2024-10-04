@@ -5,7 +5,7 @@
 ?>
 
 <?php
-echo '<?php echo "Hello World!; ?>';
+echo '<? echo "Hello World!"; ?>';
 ?>
 
 <?php
