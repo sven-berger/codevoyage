@@ -6,6 +6,6 @@
     <a href="https://python.codevoyage.de">Python-Bereich</a>
     <a href="https://javascript.codevoyage.de/" <?php if ($bereich === 'JavaScript-Bereich'): ?> class="active"<?php endif; ?>>JavaScript-Bereich</a>
     <a href="https://wissensportal.codevoyage.de/" <?php if ($bereich === 'Wissensportal'): ?> class="active"<?php endif; ?>>Wissensportal</a>
-    <a href="https://the-supernatural.de/blog/blog-entry-list/2-am-mut-h%C3%A4ngt-der-erfolg-codevoyage-de/" target="_blank">Mein Blog 🫡🧠</a>
+    <a href="https://gentlemantis.de/blog/blog-entry-list/2/" target="_blank">Mein Blog 🫡🧠</a>
     <a href="https://codevoyage.de/acp/" <?php if ($bereich === 'Administrationsbereich'): ?> class="active"<?php endif; ?>>Administrationsbereich</a>
 </div>
