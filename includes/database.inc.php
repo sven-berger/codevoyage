@@ -2,7 +2,7 @@
 
 $dsn = "mysql:host=localhost;dbname=codevoyage_system;";
 $username = "codevoyage_system";
-$password = "hHitenaxUv";
+$password = "jD=0m7!I";
 
 try {
     $connection = new PDO($dsn, $username, $password);
