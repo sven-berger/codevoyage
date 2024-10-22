@@ -31,23 +31,23 @@ if (isset($_GET['erste_zahl']) && isset($_GET['zweite_zahl']) && isset($_GET['re
     try {
         switch ($operation) {
             case 'Addition':
-                echo "<span style='margin-top: 20px;'>Das Ergebnis ist:</span>" . $erste_zahl + $zweite_zahl;
+                echo "<span style='margin-top: 20px;'>Das Ergebnis ist: </span>" . $erste_zahl + $zweite_zahl;
                 break;
             case 'Subtraktion':
-                echo "<span style='margin-top: 20px;'>Das Ergebnis ist:</span>" . $erste_zahl - $zweite_zahl;
+                echo "<span style='margin-top: 20px;'>Das Ergebnis ist: </span>" . $erste_zahl - $zweite_zahl;
                 break;
             case 'Multiplikation':
-                echo "<span style='margin-top: 20px;'>Das Ergebnis ist:</span>" . $erste_zahl * $zweite_zahl;
+                echo "<span style='margin-top: 20px;'>Das Ergebnis ist: </span>" . $erste_zahl * $zweite_zahl;
                 break;
             case 'Division':
                 if ($zweite_zahl != 0) {
-                    echo "<span style='margin-top: 20px;'>Das Ergebnis ist:</span>" . $erste_zahl / $zweite_zahl;
+                    echo "<span style='margin-top: 20px;'>Das Ergebnis ist: </span>" . $erste_zahl / $zweite_zahl;
                 } else {
-                    echo "<span style='margin-top: 20px;'>Das Ergebnis ist:</span>" . "Division durch 0 ist nicht möglich.";
+                    echo "<span style='margin-top: 20px;'>Division durch 0 ist nicht möglich.";
                 }
                 break;
             default:
-                echo "<span style='margin-top: 20px;'>Das Ergebnis ist:</span>" . "Ungültige Rechenoperation.";
+                echo "<span style='margin-top: 20px;'>Das Ergebnis ist: </span>" . "Ungültige Rechenoperation.";
         }
     } catch (Exception $e) {
         echo "Fehler: " . $e->getMessage();
