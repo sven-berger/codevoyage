@@ -21,9 +21,9 @@ if (isset($_GET['zahl1']) && isset($_GET['vergleich_zahl1'])) {
     
     try {
         if ($erste_zahl < $vergleich_zahl1) {
-            echo "Deine Zahl ist <strong>kleiner</strong> als deine Vergleichzahl.";
+            echo "$erste_zahl <strong>kleiner</strong> als $vergleich_zahl1.";
         } elseif ($erste_zahl > $vergleich_zahl1) {
-            echo "Deine Zahl ist <strong>größer</strong> als deine Vergleichzahl.";
+            echo "$erste_zahl <strong>größer</strong> als $vergleich_zahl1.";
         } else {
             echo "Du hast die gleiche Zahl eingegeben.";
         }
