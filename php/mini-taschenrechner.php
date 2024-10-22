@@ -52,8 +52,6 @@ if (isset($_GET['erste_zahl']) && isset($_GET['zweite_zahl']) && isset($_GET['re
     } catch (Exception $e) {
         echo "Fehler: " . $e->getMessage();
     }
-} else {
-    echo "<span style='margin-top: 20px;'>Bitte fülle alle Felder aus.</span>";
 }
 ?>
 
