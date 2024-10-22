@@ -16,7 +16,7 @@
 
 <?php if (isset($_GET['eingabe'])): ?>
 <?php while ($eingabe !== 7): ?>
-    <?php $eingabe = (int)$_GET['eingabe']; ?>
+    <?php $eingabe = (float)$_GET['eingabe']; ?>
         <?php if ($eingabe === 7): ?>
             <p style="margin-top: 20px;">Herzlichen Glückwunsch, du hast gewonnen!</p>
             <?php break; ?>

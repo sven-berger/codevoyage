@@ -1,6 +1,6 @@
 eingabe = 0
 while eingabe != 7:
-    eingabe = int(input("Bitte gib eine Zahl ein! "))
+    eingabe = float(input("Bitte gib eine Zahl ein! "))
     if eingabe == 7:
         print("Herzlichen Glückwunsch, du hast gewonnen!")
     else:

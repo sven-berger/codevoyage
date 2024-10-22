@@ -1,4 +1,4 @@
-age = int(input("Bitte gib dein Alter an: "))
+age = float(input("Bitte gib dein Alter an: "))
 
 if age <= 6 or age >= 60:
     print(f"Der Eintritt ist für dich kostenlos.")
