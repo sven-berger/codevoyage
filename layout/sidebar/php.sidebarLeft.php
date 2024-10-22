@@ -6,8 +6,9 @@
         <div class="boxContent">
             <ul>
                 <li><a href="https://php.codevoyage.de/umsatzrechner_2023.php">Umsatzrechner</a></li>
-                <li><a href="https://php.codevoyage.de/eintrittspreise.php">Eintrittspreise</a></li>
+                <li><a href="https://php.codevoyage.de/eintrittspreise.php">Eintrittspreis-Rechner</a></li>
                 <li><a href="https://php.codevoyage.de/passwortgenerator.php">Passwortgenerator</a></li>
+                <li><a href="https://php.codevoyage.de/mini-gewinnspiel.php">Mini-Gewinnspiel</a></li>
             </ul>
         </div>
     </section>
