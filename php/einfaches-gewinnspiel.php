@@ -5,8 +5,8 @@
 ?>
 
 <form action="einfaches-gewinnspiel.php" method="get">
-    <label for="eingabe">Bitte gib eine Eingabe zwischen 1 und 10 ein:</label>
-    <input type="number" id="eingabe" name="eingabe" min="1" max="10" required>
+    <label for="eingabe">Bitte gib eine Zahl einn:</label>
+    <input type="number" id="eingabe" name="eingabe" required>
     <button type="submit">Absenden</button>
 </form>
 
