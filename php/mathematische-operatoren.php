@@ -1,24 +1,16 @@
 <?php
     $bereich = 'PHP-Bereich';
-    $pageTitle = 'Startseite der PHP-Instanz';
+    $pageTitle = 'Mathematische Operatoren: Teil 1';
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/php.header.inc.php");
 ?>
 
-<form action="mathematischen-operatoren.php" method="get">
-    <h3>Vergleich der ersten Zahl</h3>
+<form action="mathematischen-operatoren-teil1.php" method="get">
     <label for="zahl1">Bitte gib eine Zahl ein :</label>
     <input type="number" id="zahl1" name="zahl1" required>
     
     <label for="vergleich_zahl1">Bitte gib eine Zahl ein, mit der du deine Zahl vergleichen möchtest</label>
     <input type="number" id="vergleich_zahl1" name="vergleich_zahl1" required>
    
-    <h3>Vergleich der zweiten Zahl</h3>
-    <label for="zahl2">Bitte gib eine zweite Zahl ein</label>
-    <input type="number" id="zahl2" name="zahl2" required>
-    
-    <label for="vergleich_zahl2">Bitte gib eine zweite Zahl ein, mit der du deine (zweite) Zahl vergleichen möchtest</label>
-    <input type="number" id="vergleich_zahl2" name="vergleich_zahl2" required>
-
     <button type="submit">Eingabe abschicken</button>
 </form>
 
@@ -29,26 +21,11 @@ if (isset($_GET['zahl1']) && isset($_GET['vergleich_zahl1'])) {
     
     try {
         if ($erste_zahl < $vergleich_zahl1) {
-            echo "Erste Zahl: Deine Zahl ist kleiner.";
+            echo "Deine Zahl ist kleiner.";
         } elseif ($erste_zahl > $vergleich_zahl1) {
-            echo "Erste Zahl: Deine Zahl ist größer.";
+            echo "Deine Zahl ist größer.";
         } else {
-            echo "Erste Zahl: Du hast die gleiche Zahl eingegeben.";
-        }
-    } catch (Exception $e) {
-        echo "Fehler: " . $e->getMessage();
-    }
-}
-
-if (isset($_GET['zahl2']) && isset($_GET['vergleich_zahl2'])) {
-    $zweite_zahl = (float)$_GET['zahl2'];
-    $vergleich_zahl2 = (float)$_GET['vergleich_zahl2'];
-    
-    try {
-        if ($zweite_zahl <= $vergleich_zahl2) {
-            echo "Zweite Zahl: Deine Zahl ist kleiner oder gleich.";
-        } elseif ($zweite_zahl >= $vergleich_zahl2) {
-            echo "Zweite Zahl: Deine Zahl ist größer oder gleich.";
+            echo "Du hast die gleiche Zahl eingegeben.";
         }
     } catch (Exception $e) {
         echo "Fehler: " . $e->getMessage();
@@ -57,7 +34,6 @@ if (isset($_GET['zahl2']) && isset($_GET['vergleich_zahl2'])) {
     echo "Bitte fülle alle Felder aus.";
 }
 ?>
-
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
