@@ -1,10 +1,10 @@
 <?php
     $bereich = 'PHP-Bereich';
-    $pageTitle = "Mini-Gewinnspiel";
+    $pageTitle = "Einfaches Gewinnspiel";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/php.header.inc.php");
 ?>
 
-<form action="mini-gewinnspiel.php" method="get">
+<form action="einfaches-gewinnspiel.php" method="get">
     <label for="eingabe">Bitte gib eine Eingabe zwischen 1 und 10 ein:</label>
     <input type="number" id="eingabe" name="eingabe" min="1" max="10" required>
     <button type="submit">Absenden</button>
