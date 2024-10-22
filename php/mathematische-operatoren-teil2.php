@@ -4,7 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/php.header.inc.php");
 ?>
 
-<form action="mathematischen-operatoren-teil2.php" method="get">
+<form action="mathematische-operatoren-teil2.php" method="get">
     <label for="zahl2">Bitte gib eine zweite Zahl ein</label>
     <input type="number" id="zahl2" name="zahl2" required>
     
