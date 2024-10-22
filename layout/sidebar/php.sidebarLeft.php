@@ -10,8 +10,8 @@
                 <li><a href="https://php.codevoyage.de/passwortgenerator.php">Passwortgenerator</a></li>
                 <li><a href="https://php.codevoyage.de/einfaches-gewinnspiel.php">Einfaches Gewinnspiel</a></li>
                 <li><a href="https://php.codevoyage.de/mini-taschenrechner.php">Mini-Taschenrechner</a></li>
-                <li><a href="https://php.codevoyage.de/mathematischen-operatoren-teil1.php">Mathematische Operatoren: Teil 1</a></li>
-                <li><a href="https://php.codevoyage.de/mathematischen-operatoren-teil2.php">Mathematische Operatoren: Teil 2</a></li>
+                <li><a href="https://php.codevoyage.de/mathematische-operatoren-teil1.php">Mathematische Operatoren: Teil 1</a></li>
+                <li><a href="https://php.codevoyage.de/mathematische-operatoren-teil2.php">Mathematische Operatoren: Teil 2</a></li>
             </ul>
         </div>
     </section>
