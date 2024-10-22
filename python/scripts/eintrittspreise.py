@@ -1,10 +1,10 @@
-age = 18
+age = int(input("Bitte gib dein Alter ein! "))
 
 if age <= 6 or age >= 60:
-    print(f"Eintritt: Kostenlos")
+    print(f"Der Eintritt ist für dich kostenlos")
 elif age >= 7  and age <= 17:
-    print (f"Eintritt: 2,50€")
+    print (f"Der Eintritt kostet für dich: 2,50€")
 elif age > 17 and age <= 30:
-    print (f"Eintritt: 3€")
+    print (f"Der Eintritt kostet für dich: 3€")
 else:
-    print(f"Eintritt: 3,50€")
+    print(f"Der Eintritt kostet für dich: 3,50€")

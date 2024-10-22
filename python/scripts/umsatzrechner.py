@@ -1,10 +1,25 @@
-def berechne_umsatz():
-    monatlicher_umsatz = [1000, 2000, 3000, 5035, 2341, 900, 1224, 5342, 2345, 6445, 1243, 4673]
-    gesamtumsatz = sum(monatlicher_umsatz)
-    guter_monat = 0
-    anzahl_gute_monate = 0
-    for umsatz in monatlicher_umsatz:
-        if umsatz >= 1723:
-            guter_monat += umsatz
-            anzahl_gute_monate += 1
-    return gesamtumsatz, anzahl_gute_monate, guter_monat
+januar = int(input("Bitte gib den Umsatz für Januar an! "))
+februar = int(input("Bitte gib den Umsatz für Februar an! "))
+maerz = int(input("Bitte gib den Umsatz für März an! "))
+april = int(input("Bitte gib den Umsatz für April an! "))
+mai = int(input("Bitte gib den Umsatz für Mai an! "))
+juni = int(input("Bitte gib den Umsatz für Juni an! "))
+juli = int(input("Bitte gib den Umsatz für Juli an! "))
+august = int(input("Bitte gib den Umsatz für August an! "))
+september = int(input("Bitte gib den Umsatz für September an! "))
+oktober = int(input("Bitte gib den Umsatz für Oktober an! "))
+november = int(input("Bitte gib den Umsatz für November an! "))
+dezember = int(input("Bitte gib den Umsatz für Dezember an! "))
+guter_monat = int(input("Bitte gib zum Schluss noch an, was für dich ein guter Monat ist: "))
+
+monatlicher_umsatz = [januar, februar, maerz, april, mai, juni, juli, august, september, oktober, november, dezember]
+gesamtumsatz = sum(monatlicher_umsatz)
+
+anzahl_gute_monate = 0
+
+for umsatz in monatlicher_umsatz:
+    if umsatz >= guter_monat:
+        anzahl_gute_monate += 1
+
+print("Der Gesamtumsatz beträgt:", gesamtumsatz)
+print("Anzahl der guten Monate:", anzahl_gute_monate)
