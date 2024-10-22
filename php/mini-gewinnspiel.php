@@ -10,12 +10,10 @@
     <button type="submit">Absenden</button>
 </form>
 
-<?php
-    $zahl = (int)$_GET['zahl'];
-?>
 
 <?php if (isset($_GET['zahl'])): ?>
-     if ($zahl != 7): ?>
+    <?php $zahl = (int)$_GET['zahl']; ?>
+    <?php if ($zahl != 7): ?>
         <p>Leider falsch, nächster Versuch!</p>
         <form action="mini-gewinnspiel.php" method="get">
             <label for="zahl">Bitte gib eine Zahl zwischen 1 und 10 ein:</label>
