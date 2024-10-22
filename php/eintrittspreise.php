@@ -53,7 +53,7 @@ try {
             $zu_alt = false;
             foreach ($ausgabe as $preise) {
                 if ($alter >= $preise["alter_von"] && $alter <= $preise["alter_bis"]) {
-                    echo "Der Eintritt kostet für dich <strong>" . htmlspecialchars($preise["preis"]) . "€</strong>.";
+                    echo "Der Eintritt kostet für dich: <strong>" . htmlspecialchars($preise["preis"]) . "€</strong>.";
                     $zu_alt = true;
                     break;
                 }
