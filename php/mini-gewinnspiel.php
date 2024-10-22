@@ -18,10 +18,10 @@
 <?php while ($eingabe !== 7): ?>
     <?php $eingabe = (int)$_GET['eingabe']; ?>
         <?php if ($eingabe === 7): ?>
-            <p>Herzlichen Glückwunsch, du hast richtig geraten!</p>
+            <p style="margin-top: 20px;">Herzlichen Glückwunsch, du hast richtig geraten!</p>
             <?php break; ?>
         <?php else: ?>
-            <p>Leider falsch, versuche es erneut.</p>
+            <p style="margin-top: 20px;">Leider falsch, versuche es erneut.</p>
             <?php break; ?>
         <?php endif; ?>
 <?php endwhile; ?>
