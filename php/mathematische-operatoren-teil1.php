@@ -5,10 +5,10 @@
 ?>
 
 <form action="mathematische-operatoren-teil1.php" method="get">
-    <label for="zahl1">Bitte gib eine Zahl ein</label>
+    <label for="zahl1">Bitte gib eine Zahl ein:</label>
     <input type="number" id="zahl1" name="zahl1" required>
     
-    <label for="vergleich_zahl1">Bitte gib eine Zahl ein, mit der du deine Zahl vergleichen möchtest</label>
+    <label for="vergleich_zahl1">Bitte gib eine Zahl ein, mit der du deine Zahl vergleichen möchtest:</label>
     <input type="number" id="vergleich_zahl1" name="vergleich_zahl1" required>
    
     <button type="submit">Eingabe abschicken</button>
@@ -21,9 +21,9 @@ if (isset($_GET['zahl1']) && isset($_GET['vergleich_zahl1'])) {
     
     try {
         if ($erste_zahl < $vergleich_zahl1) {
-            echo "Deine Zahl ist kleiner.";
+            echo "Deine Zahl ist <strong>kleiner</strong> als deine Vergleichzahl.";
         } elseif ($erste_zahl > $vergleich_zahl1) {
-            echo "Deine Zahl ist größer.";
+            echo "Deine Zahl ist <strong>größer</strong> als deine Vergleichzahl.";
         } else {
             echo "Du hast die gleiche Zahl eingegeben.";
         }
