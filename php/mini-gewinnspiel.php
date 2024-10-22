@@ -22,8 +22,8 @@
             <?php break; ?>
         <?php else: ?>
             <p>Leider falsch, versuche es erneut.</p>
+            <?php break; ?>
         <?php endif; ?>
-    ?>
 <?php endwhile; ?>
 <?php endif; ?>
 
