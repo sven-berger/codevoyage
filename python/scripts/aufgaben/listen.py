@@ -9,10 +9,10 @@ list_a = []
 list_b = []
 
 for zahl in zahlen:
-    if zahl % 5 == 0:
+    if zahl % 2 == 0:
        list_a.append(zahl)
     else:
         list_b.append(zahl)
     
-print(f"Zahlen die durch 5 teilbar sind: {list_a}")
-print(f"Zahlen die NICHT durch 5 teilbar sind: {list_b}")
+print(f"Zahlen die durch 2 teilbar sind: {list_a}")
+print(f"Zahlen die NICHT durch 2 teilbar sind: {list_b}")

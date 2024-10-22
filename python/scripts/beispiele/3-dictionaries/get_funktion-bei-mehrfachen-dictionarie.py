@@ -19,7 +19,7 @@ personen = [
 ]
 
 # Wenn das Gewünschte vorhanden ist, wird es ausgegeben
-print (f"Die Suche lieferte ein Ergebnis: {personen[0].get('Name', True)}")
+print(f"Die Suche lieferte ein Ergebnis: {personen[0].get('Name', True)}")
 
 # Wenn KEIN Eintrag vorhanden ist, wird eine Fehlermeldung ausgespuckt
 print(personen[0].get("Hautfarbe", "Deine Suche ergab keinen Treffer."))
