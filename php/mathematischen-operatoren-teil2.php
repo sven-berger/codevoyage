@@ -30,8 +30,6 @@ if (isset($_GET['zahl2']) && isset($_GET['vergleich_zahl2'])) {
     } catch (Exception $e) {
         echo "Fehler: " . $e->getMessage();
     }
-} else {
-    echo "Bitte fülle alle Felder aus.";
 }
 ?>
 

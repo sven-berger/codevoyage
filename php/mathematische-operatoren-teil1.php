@@ -5,7 +5,7 @@
 ?>
 
 <form action="mathematischen-operatoren-teil1.php" method="get">
-    <label for="zahl1">Bitte gib eine Zahl ein :</label>
+    <label for="zahl1">Bitte gib eine Zahl ein</label>
     <input type="number" id="zahl1" name="zahl1" required>
     
     <label for="vergleich_zahl1">Bitte gib eine Zahl ein, mit der du deine Zahl vergleichen möchtest</label>
@@ -30,8 +30,6 @@ if (isset($_GET['zahl1']) && isset($_GET['vergleich_zahl1'])) {
     } catch (Exception $e) {
         echo "Fehler: " . $e->getMessage();
     }
-} else {
-    echo "Bitte fülle alle Felder aus.";
 }
 ?>
 
