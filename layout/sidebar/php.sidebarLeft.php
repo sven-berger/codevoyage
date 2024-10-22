@@ -8,7 +8,9 @@
                 <li><a href="https://php.codevoyage.de/umsatzrechner_2023.php">Umsatzrechner</a></li>
                 <li><a href="https://php.codevoyage.de/eintrittspreise.php">Eintrittspreis-Rechner</a></li>
                 <li><a href="https://php.codevoyage.de/passwortgenerator.php">Passwortgenerator</a></li>
-                <li><a href="https://php.codevoyage.de/mini-gewinnspiel.php">Mini-Gewinnspiel</a></li>
+                <li><a href="https://php.codevoyage.de/einfaches-gewinnspiel.php">Einfaches Gewinnspiel</a></li>
+                <li><a href="https://php.codevoyage.de/mini-taschenrechner.php">Mini-Taschenrechner</a></li>
+                <li><a href="https://php.codevoyage.de/mathematischen-operatoren.php">Mathematische Operatoren</a></li>
             </ul>
         </div>
     </section>

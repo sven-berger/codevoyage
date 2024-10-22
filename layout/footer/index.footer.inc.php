@@ -4,7 +4,7 @@
 </div>
 
 <?php
-    echo $sidebarLeft;
+    echo $php_sidebarLeft;
 ?>
 
 </div>
