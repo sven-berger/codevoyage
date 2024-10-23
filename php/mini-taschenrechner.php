@@ -22,18 +22,20 @@
     <button type="submit">Eingabe abschicken</button>
 </form>
 
+<?php
+if (isset($_GET['erste_zahl']) && isset($_GET['zweite_zahl']) && isset($_GET['rechenoperation'])): ?>
 </div>
 </section> 
 
 <section class="section">
 <div class="sectionContent">
+    <?php 
+        $erste_zahl = (float)$_GET['erste_zahl'];
+        $zweite_zahl = (float)$_GET['zweite_zahl'];
+        $operation = $_GET['rechenoperation'];
+    ?>
 
-<?php
-if (isset($_GET['erste_zahl']) && isset($_GET['zweite_zahl']) && isset($_GET['rechenoperation'])) {
-    $erste_zahl = (float)$_GET['erste_zahl'];
-    $zweite_zahl = (float)$_GET['zweite_zahl'];
-    $operation = $_GET['rechenoperation'];
-    
+    <?php
     try {
         switch ($operation) {
             case 'Addition':
@@ -58,8 +60,8 @@ if (isset($_GET['erste_zahl']) && isset($_GET['zweite_zahl']) && isset($_GET['re
     } catch (Exception $e) {
         echo "Fehler: " . $e->getMessage();
     }
-}
-?>
+    ?>
+<?php endif; ?>
 
 
 <?php
