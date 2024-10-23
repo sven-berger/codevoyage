@@ -232,6 +232,11 @@ a.seitentitel {
     background: silver;
 }
 
+.sectionHeader {
+    margin: 10px 0 !important;
+    font-weight: bold;
+}
+
 .ContentDescription, .ContentFooter {
     font-size: 12px;
     margin: 20px 0;
