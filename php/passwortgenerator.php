@@ -27,12 +27,16 @@ if (isset($_GET['laenge'])) {
         $zusammengesetzt = $kleine_buchstaben . $grosse_buchstaben . $zahlen . $symbole;
 
         $passwort = substr(str_shuffle($zusammengesetzt), 0, $laenge);
-        echo "<br/>" . "<strong>Generiertes Passwort:</strong>" . "<br/><br/>" . htmlspecialchars($passwort);
     }
 }
 
 ?>
 
+</section>
+
+<section class="section">
+    <div class="sectionContent">
+        <?php echo "<strong>Generiertes Passwort:</strong>" . "<br/><br/>" . htmlspecialchars($passwort); ?>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
