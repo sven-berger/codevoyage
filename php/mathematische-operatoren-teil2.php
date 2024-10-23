@@ -14,24 +14,26 @@
     <button type="submit">Eingabe abschicken</button>
 </form>
 
-<?php
-if (isset($_GET['zahl2']) && isset($_GET['vergleich_zahl2'])) {
-    $zweite_zahl = (float)$_GET['zahl2'];
-    $vergleich_zahl2 = (float)$_GET['vergleich_zahl2'];
+<?php if (isset($_GET['zahl2']) && isset($_GET['vergleich_zahl2'])): ?>
+    </div>
+    </section>
+    <?php
+        $zweite_zahl = (float)$_GET['zahl2'];
+        $vergleich_zahl2 = (float)$_GET['vergleich_zahl2'];
+    ?>
     
-    try {
-        if ($zweite_zahl <= $vergleich_zahl2) {
-            echo "$zweite_zahl ist <strong>kleiner oder gleich</strong> als $vergleich_zahl2.";
-        } elseif ($zweite_zahl >= $vergleich_zahl2) {
-            echo "$zweite_zahl ist <strong>größer oder gleich</strong> als $vergleich_zahl2.";
-        } else {
-            echo "Du hast die gleiche Zahl eingegeben.";
-        }
-    } catch (Exception $e) {
-        echo "Fehler: " . $e->getMessage();
-    }
-}
-?>
+    <?php if ($zweite_zahl <= $vergleich_zahl2): ?>
+        <section class="section">
+            <div class="sectionContent">
+            <?php echo $zweite_zahl; ?> ist <strong>kleiner oder gleich</strong> als <?php echo $vergleich_zahl2; ?>.
+        <?php elseif ($zweite_zahl >= $vergleich_zahl2): ?>
+            <section class="section">
+            <div class="sectionContent">
+            <?php echo $zweite_zahl; ?> ist <strong>größer oder gleich</strong> als <?php echo $vergleich_zahl2; ?>.
+        <?php else: ?>
+            <p>Du hast die gleiche Zahl eingegeben.</p>
+    <?php endif; ?>
+<?php endif; ?>
 
 
 <?php
