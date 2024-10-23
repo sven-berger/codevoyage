@@ -32,7 +32,7 @@ $monate_zuweisung = [
     12 => 'Dezember'
 ];
 
-$benutzereingabe = 5000;
+$benutzereingabe = null;
 
 // Array für die bereits vorhandenen Monate in der Datenbank
 $monat_vorhanden = [];
