@@ -16,10 +16,11 @@
 
 <?php if (isset($_GET['eingabe'])): ?>
 <?php while ($eingabe !== 7): ?>
-    <?php $eingabe = (float)$_GET['eingabe']; ?>
-        <?php if ($eingabe === 7): ?>
         </div>
-        </section>        
+        </section> 
+    <?php $eingabe = (int)$_GET['eingabe']; ?>
+        <?php if ($eingabe === 7): ?>
+       
         <section class="section">
             <div class="sectionContent">
             <p>Herzlichen Glückwunsch, du hast gewonnen!</p>
