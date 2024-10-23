@@ -22,6 +22,12 @@
     <button type="submit">Eingabe abschicken</button>
 </form>
 
+</div>
+</section> 
+
+<section class="section">
+<div class="sectionContent">
+
 <?php
 if (isset($_GET['erste_zahl']) && isset($_GET['zweite_zahl']) && isset($_GET['rechenoperation'])) {
     $erste_zahl = (float)$_GET['erste_zahl'];
@@ -31,23 +37,23 @@ if (isset($_GET['erste_zahl']) && isset($_GET['zweite_zahl']) && isset($_GET['re
     try {
         switch ($operation) {
             case 'Addition':
-                echo "<span style='margin-top: 20px;'>Das Ergebnis ist: </span>" . $erste_zahl + $zweite_zahl;
+                echo "<span>Das Ergebnis ist: </span>" . $erste_zahl + $zweite_zahl;
                 break;
             case 'Subtraktion':
-                echo "<span style='margin-top: 20px;'>Das Ergebnis ist: </span>" . $erste_zahl - $zweite_zahl;
+                echo "<span>Das Ergebnis ist: </span>" . $erste_zahl - $zweite_zahl;
                 break;
             case 'Multiplikation':
-                echo "<span style='margin-top: 20px;'>Das Ergebnis ist: </span>" . $erste_zahl * $zweite_zahl;
+                echo "<span>Das Ergebnis ist: </span>" . $erste_zahl * $zweite_zahl;
                 break;
             case 'Division':
                 if ($zweite_zahl != 0) {
-                    echo "<span style='margin-top: 20px;'>Das Ergebnis ist: </span>" . $erste_zahl / $zweite_zahl;
+                    echo "<span>Das Ergebnis ist: </span>" . $erste_zahl / $zweite_zahl;
                 } else {
-                    echo "<span style='margin-top: 20px;'>Division durch 0 ist nicht möglich.";
+                    echo "<span>Division durch 0 ist nicht möglich.";
                 }
                 break;
             default:
-                echo "<span style='margin-top: 20px;'>Das Ergebnis ist: </span>" . "Ungültige Rechenoperation.";
+                echo "<span>Das Ergebnis ist: </span>" . "Ungültige Rechenoperation.";
         }
     } catch (Exception $e) {
         echo "Fehler: " . $e->getMessage();
