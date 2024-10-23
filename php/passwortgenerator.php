@@ -29,8 +29,8 @@
         </div>
         </section>
         
+        <h3>Generiertes Passwort</h3>
         <section class="section">
-            <h3>Generiertes Passwort</h3>
             <div class="sectionContent">
                 <?php echo htmlspecialchars($passwort); ?>
     <?php endif; ?>
