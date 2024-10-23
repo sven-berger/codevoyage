@@ -30,8 +30,8 @@
         </section>
         
         <section class="section">
+            <h3>Generiertes Passwort</h3>
             <div class="sectionContent">
-                <h3>Generiertes Passwort</h3>
                 <?php echo htmlspecialchars($passwort); ?>
     <?php endif; ?>
 <?php endif; ?>
