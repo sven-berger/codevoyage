@@ -11,32 +11,29 @@
     <button type="submit">Passwort generieren</button>
 </form>
 
-<?php
-    
-if (isset($_GET['laenge'])) {
-    $laenge = intval($_GET['laenge']);
+<?php if (isset($_GET['laenge'])): ?>
+    <?php $laenge = intval($_GET['laenge']); ?>
 
-    if ($laenge < 1 || $laenge > 81) {
+    <?php if ($laenge < 1 || $laenge > 81): ?>
         die("Ungültige Länge. Bitte gib eine Zahl zwischen 1 und 81 ein.");
-    } else {
-        $kleine_buchstaben = "abcdefghijklmnopqrstuvwxyz";
-        $grosse_buchstaben = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        $zahlen = "0123456789";
-        $symbole = "!@#$%^&*()_-+=?><[]";
+    <?php else: ?>
+        <?php
+            $kleine_buchstaben = "abcdefghijklmnopqrstuvwxyz";
+            $grosse_buchstaben = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            $zahlen = "0123456789";
+            $symbole = "!@#$%^&*()_-+=?><[]";
+            $zusammengesetzt = $kleine_buchstaben . $grosse_buchstaben . $zahlen . $symbole;
+            $passwort = substr(str_shuffle($zusammengesetzt), 0, $laenge);
+        ?>
 
-        $zusammengesetzt = $kleine_buchstaben . $grosse_buchstaben . $zahlen . $symbole;
-
-        $passwort = substr(str_shuffle($zusammengesetzt), 0, $laenge);
-    }
-}
-
-?>
-
-</section>
-
-<section class="section">
-    <div class="sectionContent">
-        <?php echo "<strong>Generiertes Passwort:</strong>" . "<br/><br/>" . htmlspecialchars($passwort); ?>
+        </div>
+        </section>
+        
+        <section class="section">
+            <div class="sectionContent">
+                <?php echo "<strong>Generiertes Passwort:</strong>" . "<br/><br/>" . htmlspecialchars($passwort); ?>
+    <?php endif; ?>
+<?php endif; ?>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
