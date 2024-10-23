@@ -10,10 +10,12 @@
     <button type="submit">Eingabe abschicken</button>
 </form>
 
-<?php session_start(); ?>
-<?php if (!isset($_SESSION['zufallszahl'])): ?>
-    $_SESSION['zufallszahl'] = rand(0, 101);
-<?php endif; ?>
+<?php
+    session_start();
+    if (!isset($_SESSION['zufallszahl'])) {
+        $_SESSION['zufallszahl'] = rand(0, 101);
+    } 
+?>
 
 <?php if (isset($_GET['zahl'])): ?>
     </div>
