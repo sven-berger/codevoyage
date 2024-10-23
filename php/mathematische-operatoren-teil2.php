@@ -1,6 +1,6 @@
 <?php
     $bereich = 'PHP-Bereich';
-    $pageTitle = 'Mathematische Operatoren: Teil 2';
+    $pageTitle = 'Mathematische Operatoren: Teil 2 (Größer-Gleich, Kleiner-Gleich)';
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/php.header.inc.php");
 ?>
 
