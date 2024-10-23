@@ -233,7 +233,7 @@ a.seitentitel {
 }
 
 .sectionHeader {
-    margin: 10px 0 !important;
+    margin-bottom: 10px !important;
     font-weight: bold;
 }
 
