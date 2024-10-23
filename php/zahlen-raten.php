@@ -6,7 +6,7 @@
 
 <form action="zahlen-raten.php" method="get">
     <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
-    <input type="number" id="erste_zahl" name="erste_zahl" min="1" max="100" required>   
+    <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
     <button type="submit">Eingabe abschicken</button>
 </form>
 
