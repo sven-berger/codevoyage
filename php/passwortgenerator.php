@@ -29,10 +29,11 @@
         </div>
         </section>
         
-        <h3>Generiertes Passwort</h3>
+        
         <section class="section">
             <div class="sectionContent">
-                <?php echo htmlspecialchars($passwort); ?>
+            <h4>Generiertes Passwort</h4>
+            <?php echo htmlspecialchars($passwort); ?>
     <?php endif; ?>
 <?php endif; ?>
 
