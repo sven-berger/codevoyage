@@ -18,10 +18,14 @@
 <?php while ($eingabe !== 7): ?>
     <?php $eingabe = (float)$_GET['eingabe']; ?>
         <?php if ($eingabe === 7): ?>
-            <p style="margin-top: 20px;">Herzlichen Glückwunsch, du hast gewonnen!</p>
+        </div>
+        </section>        
+        <section class="section">
+            <div class="sectionContent">
+            <p>Herzlichen Glückwunsch, du hast gewonnen!</p>
             <?php break; ?>
         <?php else: ?>
-            <p style="margin-top: 20px;">Leider nichts gewonnen, versuche es erneut.</p>
+            <p>Leider nichts gewonnen, versuche es erneut.</p>
             <?php break; ?>
         <?php endif; ?>
 <?php endwhile; ?>
