@@ -37,17 +37,17 @@ if (isset($_GET['erste_zahl']) && isset($_GET['zweite_zahl']) && isset($_GET['re
     try {
         switch ($operation) {
             case 'Addition':
-                echo "<div class="sectionHeader">Das Ergebnis ist:</div>" . $erste_zahl + $zweite_zahl;
+                echo "<div class='sectionHeader'>Das Ergebnis ist:</div>" . $erste_zahl + $zweite_zahl;
                 break;
             case 'Subtraktion':
-                echo "<div class="sectionHeader">Das Ergebnis ist:</div>" . $erste_zahl - $zweite_zahl;
+                echo "<div class='sectionHeader'>Das Ergebnis ist:</div>" . $erste_zahl - $zweite_zahl;
                 break;
             case 'Multiplikation':
-                echo "<div class="sectionHeader">Das Ergebnis ist:</div>" . $erste_zahl * $zweite_zahl;
+                echo "<div class='sectionHeader'>Das Ergebnis ist:</div>" . $erste_zahl * $zweite_zahl;
                 break;
             case 'Division':
                 if ($zweite_zahl != 0) {
-                    echo "<div class="sectionHeader">Das Ergebnis ist:</div>" . $erste_zahl / $zweite_zahl;
+                    echo "<div class='sectionHeader'>Das Ergebnis ist:</div>" . $erste_zahl / $zweite_zahl;
                 } else {
                     echo "<span>Division durch 0 ist nicht möglich.";
                 }
