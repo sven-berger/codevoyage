@@ -24,9 +24,15 @@
             <div class="sectionContent">
             <p>Herzlichen Glückwunsch, du hast gewonnen!</p>
             <?php break; ?>
+            </div>
+        </section>
         <?php else: ?>
-            <p>Leider nichts gewonnen, versuche es erneut.</p>
+            <section class="section">
+            <div class="sectionContent">
+                <p>Leider nichts gewonnen, versuche es erneut.</p>
             <?php break; ?>
+            </div>
+        </section>
         <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
