@@ -5,7 +5,7 @@
 ?>
 
 <form action="einfaches-gewinnspiel.php" method="get">
-    <label for="eingabe">Bitte gib eine Zahl einn:</label>
+    <label for="eingabe">Bitte gib eine Zahl ein:</label>
     <input type="number" id="eingabe" name="eingabe" required>
     <button type="submit">Absenden</button>
 </form>
