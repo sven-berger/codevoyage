@@ -12,6 +12,7 @@
                 <li><a href="https://php.codevoyage.de/mini-taschenrechner.php">Mini-Taschenrechner</a></li>
                 <li><a href="https://php.codevoyage.de/mathematische-operatoren-teil1.php">Mathematische Operatoren: Teil 1</a></li>
                 <li><a href="https://php.codevoyage.de/mathematische-operatoren-teil2.php">Mathematische Operatoren: Teil 2</a></li>
+                <li><a href="https://php.codevoyage.de/mathematische-operatoren-teil3.php">Mathematische Operatoren: Teil 3</a></li>
             </ul>
         </div>
     </section>
