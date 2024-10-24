@@ -62,7 +62,7 @@
     <section class="section">
         <div class="sectionContent">
             <div class="sectionHeader">Das Ergebnis der Umrechnung ist:</div>
-                <?php echo $vorhandene_einheit . $vorhandener_praefix . "entsprechen: " . $ergebnis . $gesuchter_praefix; ?>
+                <?php echo $vorhandene_einheit . $vorhandener_praefix . " entsprechen: " . $ergebnis . $gesuchter_praefix; ?>
 <?php endif; ?>
 
 <?php
