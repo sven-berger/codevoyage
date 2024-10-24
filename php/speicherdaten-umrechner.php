@@ -68,11 +68,3 @@
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
 ?>
-
-
-<style>
-.form-speicher button submit {
-    margin-top: 5px;
-    display: block !important;
-}
-</style>
