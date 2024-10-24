@@ -19,10 +19,7 @@
         <option value="B">Byte</option>
         <option value="Bit">Bit</option>
     </select>
-
-    <label for="gesuchte_einheit">Bitte gib deine gesuchte Einheit an:</label>
-    <input type="number" id="gesuchte_einheit" name="gesuchte_einheit" required>
-    
+ 
     <label for="gesuchter_praefix">Bitte gib deinen gesuchten Präfix an:</label>
     <select name="gesuchter_praefix" id="gesuchter_praefix">
         <option value="GiB">Gigabyte (GiB)</option>
@@ -53,13 +50,12 @@ $umrechnung = [
 
 $vorhandene_einheit = (int)$_GET['vorhandene_einheit'];
 $vorhandener_praefix = $_GET['vorhandener_praefix'];
-$gesuchte_einheit = (int)$_GET['gesuchte_einheit'];
 $gesuchter_praefix = $_GET['gesuchter_praefix'];
 
 $zahl_in_bytes = $vorhandene_einheit * $umrechnung[$vorhandener_praefix];
 $ergebnis = $zahl_in_bytes / $umrechnung[$gesuchter_praefix];
 
-echo "Das Ergebnis der Umrechnung: " . $ergebnis;
+echo "Das Ergebnis der Umrechnung: " . $ergebnis . $gesuchter_praefix;
 ?>
 
 <?php
