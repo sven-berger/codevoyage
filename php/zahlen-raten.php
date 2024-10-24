@@ -26,13 +26,21 @@
     ?>
     <?php if ($zahl < $zufallszahl): ?>
         <div class="sectionHeader">Höher!</div>
-        <form action="zahlen-raten.php" method="get">
-            <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
-            <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
-        <button type="submit">Eingabe abschicken</button>
-        </form>
+        </div>
+        </section>
+        <section class="section">
+        <div class="sectionContent">
+            <form action="zahlen-raten.php" method="get">
+                <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
+                <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
+            <button type="submit">Eingabe abschicken</button>
+            </form>
     <?php elseif ($zahl > $zufallszahl): ?>
         <div class="sectionHeader">Niedriger!</div>
+        </div>
+        </section>
+        <section class="section">
+        <div class="sectionContent">
         <form action="zahlen-raten.php" method="get">
             <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
             <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
