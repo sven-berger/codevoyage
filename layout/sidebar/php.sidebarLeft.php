@@ -11,6 +11,7 @@
                 <li><a href="https://php.codevoyage.de/einfaches-gewinnspiel.php">Einfaches Gewinnspiel</a></li>
                 <li><a href="https://php.codevoyage.de/mini-taschenrechner.php">Mini-Taschenrechner</a></li>
                 <li><a href="https://php.codevoyage.de/zahlen-raten.php">Zahlen raten</a></li>
+                <li><a href="https://php.codevoyage.de/speicherdaten-umrechner.php">Speicherdaten-Umrechner</a></li>
             </ul>
         </div>
     </section>
