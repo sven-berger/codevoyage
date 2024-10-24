@@ -62,9 +62,18 @@
     <section class="section">
         <div class="sectionContent">
             <div class="sectionHeader">Das Ergebnis der Umrechnung ist:</div>
-                <strong><?php echo $vorhandene_einheit . $vorhandener_praefix ?></strong> entsprechen: <strong><?php echo $ergebnis . $gesuchter_praefix; ?></strong>
+                <strong><?php echo $vorhandene_einheit . " " . $vorhandener_praefix ?></strong> entsprechen: <strong><?php echo $ergebnis . " " . $gesuchter_praefix; ?></strong>
 <?php endif; ?>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
 ?>
+
+
+<style>
+
+.form-speicher label {
+    margin-top: 10px;
+}
+
+</style>
