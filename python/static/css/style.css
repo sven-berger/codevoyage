@@ -543,3 +543,11 @@ dt {
     margin-top: 20px;
     display: block !important;
 }
+
+.mitteilungSnippet {
+    border: 1px solid #D8DAE1;
+    border-radius: 12px;
+    background: #f3f3f3;
+    color: #444;
+    padding: 1em;
+}
