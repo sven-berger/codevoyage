@@ -522,3 +522,11 @@ dt {
         display: none;
     }
 }
+
+.fail {
+    color: darkred !important;
+}
+
+.sucess {
+    color: #090 !important;
+}

@@ -25,7 +25,7 @@
         $zufallszahl = $_SESSION['zufallszahl'];
     ?>
     <?php if ($zahl < $zufallszahl): ?>
-        <div class="sectionHeader">Höher!</div>
+        <div class="sectionHeader fail">Höher!</div>
         </div>
         </section>
         <section class="section">
@@ -36,7 +36,7 @@
             <button type="submit">Eingabe abschicken</button>
             </form>
     <?php elseif ($zahl > $zufallszahl): ?>
-        <div class="sectionHeader">Niedriger!</div>
+        <div class="sectionHeader fail">Niedriger!</div>
         </div>
         </section>
         <section class="section">
@@ -46,7 +46,7 @@
             <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
         <button type="submit">Eingabe abschicken</button>
     <?php else: ?>
-        <p>Glückwunsch, du hast die richtige Zahl geraten!</p>
+        <div class="sectionHeader fail"><p>Glückwunsch, du hast die richtige Zahl geraten!</p>!</div>
         <?php unset($_SESSION['zufallszahl']); ?>
     <?php endif; ?>
 <?php endif; ?>
