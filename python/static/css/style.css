@@ -554,3 +554,9 @@ dt {
 .mitteilungSnippet h2 {
     color: #2980b9;
 }
+
+.mitteilung-wichtig {
+    font-weight: bold;
+    font-style: italic;
+    color: #2980b9;
+}
