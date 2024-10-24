@@ -4,11 +4,13 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/php.header.inc.php");
 ?>
 
+<?php if (!isset($_GET['zahl'])): ?>
 <form action="zahlen-raten.php" method="get">
     <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
     <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
     <button type="submit">Eingabe abschicken</button>
 </form>
+<?php endif; ?>
 
 <?php
     session_start();
@@ -27,14 +29,14 @@
 <section class="section">
 <div class="sectionContent">
     <?php if ($zahl < $zufallszahl): ?>
-        <p>Höher!</p>
+        <div class="sectionHeader">Höher!</div>
         <form action="zahlen-raten.php" method="get">
         <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
         <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
         <button type="submit">Eingabe abschicken</button>
 </form>
     <?php elseif ($zahl > $zufallszahl): ?>
-        <p>Niedriger!</p>
+        <div class="sectionHeader">Niedriger!</div>
         <form action="zahlen-raten.php" method="get">
         <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
         <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
