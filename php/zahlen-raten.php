@@ -20,14 +20,10 @@
 ?>
 
 <?php if (isset($_GET['zahl'])): ?>
-    </div>
-</section> 
     <?php 
         $zahl = (int)$_GET['zahl'];
         $zufallszahl = $_SESSION['zufallszahl'];
     ?>
-<section class="section">
-<div class="sectionContent">
     <?php if ($zahl < $zufallszahl): ?>
         <div class="sectionHeader">Höher!</div>
         <form action="zahlen-raten.php" method="get">
