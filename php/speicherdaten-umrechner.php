@@ -4,7 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/php.header.inc.php");
 ?>
 
-<form action="speicherdaten-umrechner.php" method="get">
+<form action="speicherdaten-umrechner.php" method="get" class="form-speicher">
     <label for="vorhandene_einheit">Bitte gib deine vorhandene Einheit an:</label>
     <input type="number" id="vorhandene_einheit" name="vorhandene_einheit" required>
     
@@ -62,7 +62,7 @@
     <section class="section">
         <div class="sectionContent">
             <div class="sectionHeader">Das Ergebnis der Umrechnung ist:</div>
-                <?php $ergebnis . " " . $gesuchter_praefix; ?>
+                <?php echo $ergebnis . " " . $gesuchter_praefix; ?>
 <?php endif; ?>
 
 <?php
