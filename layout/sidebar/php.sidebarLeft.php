@@ -10,6 +10,7 @@
                 <li><a href="https://php.codevoyage.de/passwortgenerator.php">Passwortgenerator</a></li>
                 <li><a href="https://php.codevoyage.de/einfaches-gewinnspiel.php">Einfaches Gewinnspiel</a></li>
                 <li><a href="https://php.codevoyage.de/mini-taschenrechner.php">Mini-Taschenrechner</a></li>
+                <li><a href="https://php.codevoyage.de/mini-taschenrechner.php">Zahlen raten</a></li>
             </ul>
         </div>
     </section>
