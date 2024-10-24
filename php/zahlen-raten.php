@@ -5,11 +5,11 @@
 ?>
 
 <?php if (!isset($_GET['zahl'])): ?>
-<form action="zahlen-raten.php" method="get">
-    <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
-    <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
+    <form action="zahlen-raten.php" method="get">
+        <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
+        <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
     <button type="submit">Eingabe abschicken</button>
-</form>
+    </form>
 <?php endif; ?>
 
 <?php
@@ -27,15 +27,15 @@
     <?php if ($zahl < $zufallszahl): ?>
         <div class="sectionHeader">Höher!</div>
         <form action="zahlen-raten.php" method="get">
-        <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
-        <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
+            <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
+            <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
         <button type="submit">Eingabe abschicken</button>
-</form>
+        </form>
     <?php elseif ($zahl > $zufallszahl): ?>
         <div class="sectionHeader">Niedriger!</div>
         <form action="zahlen-raten.php" method="get">
-        <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
-        <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
+            <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
+            <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
         <button type="submit">Eingabe abschicken</button>
     <?php else: ?>
         <p>Glückwunsch, du hast die richtige Zahl geraten!</p>
