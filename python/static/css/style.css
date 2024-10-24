@@ -534,3 +534,12 @@ dt {
 .success {
     color: #090 !important;
 }
+
+.form-speicher select {
+    margin: 5px 0 10px 0;
+}
+
+submit {
+    margin-top: 5px;
+    display: block !important;
+}

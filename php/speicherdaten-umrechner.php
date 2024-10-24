@@ -68,12 +68,3 @@
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
 ?>
-
-
-<style>
-
-.form-speicher label {
-    margin-top: 10px;
-}
-
-</style>
