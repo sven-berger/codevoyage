@@ -23,14 +23,14 @@
        
         <section class="section">
             <div class="sectionContent">
-            <p>Herzlichen Glückwunsch, du hast gewonnen!</p>
+            <p class="success">Herzlichen Glückwunsch, du hast gewonnen!</p>
             <?php break; ?>
             </div>
         </section>
         <?php else: ?>
             <section class="section">
             <div class="sectionContent">
-                <p>Leider nichts gewonnen, versuche es erneut.</p>
+                <p class="fail">Leider nichts gewonnen, versuche es erneut.</p>
             <?php break; ?>
             </div>
         </section>
