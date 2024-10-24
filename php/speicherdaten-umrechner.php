@@ -30,9 +30,7 @@
         <option value="KiB">Kilobyte (KiB)</option>
         <option value="MiB">Megabyte (MiB)</option>
         <option value="GiB">Gigabyte (GiB)</option>
-
     </select>
-    
     <button type="submit">Eingabe abschicken</button>
 </form>
 

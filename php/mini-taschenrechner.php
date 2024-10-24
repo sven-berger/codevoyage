@@ -4,7 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/php.header.inc.php");
 ?>
 
-<form action="mini-taschenrechner.php" method="get">
+<form action="mini-taschenrechner.php" method="get" class="form-taschenrechner">
     <label for="erste_zahl">Bitte gib die erste Zahl ein:</label>
     <input type="number" id="erste_zahl" name="erste_zahl" required>
     
@@ -18,7 +18,6 @@
         <option value="Multiplikation">Multiplikation</option>
         <option value="Division">Division</option>
     </select>
-    
     <button type="submit">Eingabe abschicken</button>
 </form>
 
