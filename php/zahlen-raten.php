@@ -48,7 +48,7 @@
     <?php else: ?>
         <div class="sectionHeader success">Glückwunsch, du hast die richtige Zahl geraten!</div>
         <?php unset($_SESSION['zufallszahl']); ?>
-        <a href="">Neues Spiel starten</a>
+        <a href="zahlen-raten.php">Neues Spiel starten</a>
     <?php endif; ?>
 <?php endif; ?>
 
