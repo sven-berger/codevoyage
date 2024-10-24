@@ -19,7 +19,7 @@
         </div>
         </section> 
     <?php $eingabe = (int)$_GET['eingabe']; ?>
-        <?php if ($eingabe === 7): ?>
+        <?php if ($eingabe === 3545245): ?>
        
         <section class="section">
             <div class="sectionContent">
