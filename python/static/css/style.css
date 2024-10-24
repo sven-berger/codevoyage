@@ -539,7 +539,7 @@ dt {
     margin: 5px 0 10px 0;
 }
 
-.form-speicher button {
+.form-taschenrechner button, .form-speicher button {
     margin-top: 20px;
     display: block !important;
 }
