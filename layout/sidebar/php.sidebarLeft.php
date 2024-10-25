@@ -2,9 +2,8 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
 
     $eigene_werke = "SELECT * FROM `php_sidebar_left_eigene_werke`";
-    $eigene_werke_liste = $result -> fetchAll(PDO::FETCH_ASSOC);
     $result = $connection->query($eigene_werke);
-
+    $eigene_werke_liste = $result -> fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <nav>
