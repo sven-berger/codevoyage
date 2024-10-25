@@ -1,5 +1,6 @@
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/php.header.inc.php");
+    
     $result = $connection->query($eigene_werke);
 ?>
 
