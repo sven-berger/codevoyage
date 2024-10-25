@@ -1,5 +1,5 @@
 <?php
-    $sql = "SELECT * FROM `php_sidebar`";
+    $sql = "SELECT * FROM `php_sidebar_left`";
     $result = $connection->query($sql);
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>
