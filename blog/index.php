@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Blog';
-    $pageTitle = "Blog";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/header.inc.php");
+    $pageTitle = 'Blog von CodeVoyage.de';
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/index.header.inc.php");
 ?>
 
 <?php 
@@ -27,7 +27,6 @@ try {
 
 ?>
 
-
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
