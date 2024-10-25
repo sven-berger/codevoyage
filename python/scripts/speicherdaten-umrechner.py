@@ -1,24 +1,21 @@
 umrechnung = {
-    "Byte": 1,
-    
-    "GiB": 1024**3,
-    "MiB": 1024**2,
-    "KiB": 1024,
-    
-    "GB": 1000**3,
-    "MB": 1000**2,
+    "B": 1,
     "KB": 1000,
-    
-    "Bit": 1 / 8
+    "MB": 1000 ** 2,
+    "GB": 1000 ** 3,
+    "Bit": 1 / 8,
+    "KiB": 1024,
+    "MiB": 1024 ** 2,
+    "GiB": 1024 ** 3
 }
 
-zahl = float(input("Bitte gib die Zahl ein, die du umrechnen möchtest: "))
-ausgang = input("Von welcher Einheit möchtest du umrechnen? (GiB, MiB, KiB, GB, MB, KB, Byte, Bit): ")
-ziel = input("In welche Einheit möchtest du umrechnen? (GiB, MiB, KiB, GB, MB, KB, Byte, Bit): ")
+vorhandene_einheit = float(input("Bitte gib die Zahl ein, die du umrechnen möchtest: "))
+vorhandener_praefix = input("Von welcher Einheit möchtest du umrechnen? (GiB, MiB, KiB, GB, MB, KB, Byte, Bit): ")
+gesuchter_praefix = input("In welche Einheit möchtest du umrechnen? (GiB, MiB, KiB, GB, MB, KB, Byte, Bit): ")
     
-if ausgang in umrechnung and ziel in umrechnung:
-    zahl_in_bytes = zahl * umrechnung[ausgang]
-    ergebnis = zahl_in_bytes / umrechnung[ziel]
-    print(f"{zahl} {ausgang} entsprechen {ergebnis} {ziel}.")
+if vorhandener_praefix in umrechnung and gesuchter_praefix in umrechnung:
+    zahl_in_bytes = vorhandene_einheit * umrechnung[vorhandener_praefix]
+    ergebnis = zahl_in_bytes / umrechnung[gesuchter_praefix]
+    print(f"{vorhandene_einheit} {vorhandener_praefix} entsprechen {ergebnis} {gesuchter_praefix}.")
 else:
     print("Ungültige Einheit! Bitte gib GiB, MiB, KiB, GB, MB, KB, B, Bit ein.")
