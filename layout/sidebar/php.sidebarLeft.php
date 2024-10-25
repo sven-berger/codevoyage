@@ -7,7 +7,7 @@
 
 <nav>
 <div class="boxCapital" style="margin-top: 20px;">
-    <p>Test Werke</p>
+    <p>Eigene Werke</p>
 </div>
 <section class="sidebarBox">
     <div class="boxContent">
