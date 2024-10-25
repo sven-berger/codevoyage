@@ -4,13 +4,13 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
 
 $sql = "
-CREATE TABLE `php_sidebar_left` (
-`ID` INT NOT NULL AUTO_INCREMENT ,
-`url` TEXT NOT NULL ,
+CREATE TABLE IF NOT EXISTS `php_sidebar_left`
+(
+`ID` INT NOT NULL AUTO_INCREMENT,
+`url` TEXT NOT NULL,
 `ziel` VARCHAR(255) NOT NULL,
 PRIMARY KEY (`ID`)
-)
-";
+)";
 
 try {
     $connection->exec($sql);
