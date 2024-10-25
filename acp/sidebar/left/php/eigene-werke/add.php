@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = "PHP-Sidebar";
+    $pageTitle = "Eigenes Werk hinzufügen (PHP-Sidebar)";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
 
 $sql = "
