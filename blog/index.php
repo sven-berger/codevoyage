@@ -4,13 +4,6 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/index.header.inc.php");
 ?>
 
-<p>dfgdfg</p>
-</div>
-</section>
-
-<section class="section">
-<div class="sectionContent">
-
 <?php 
 try {
     $sql = "SELECT * FROM `blog`";
@@ -20,11 +13,18 @@ try {
     <?php if ($result->rowCount() > 0): ?>
                
         <?php foreach ($rows as $row): ?>
-            <div class="selfContent">
+            </div>
+</section>
+<section class="section">
+<div class="sectionContent">
                 <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
                 <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
                 <p><?php echo $row['inhalt']; ?></p>
-            </div>
+                </div>
+</section>
+<section class="section">
+<div class="sectionContent">
+    <p>jdsfsdf
             
         <?php endforeach; ?>
     <?php else: ?>
