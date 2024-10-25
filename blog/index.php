@@ -11,17 +11,10 @@ try {
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>
     <?php if ($result->rowCount() > 0): ?>
-               
         <?php foreach ($rows as $row): ?>
-            </div>
-</section>
-<section class="section">
-<div class="sectionContent">
-                <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
-                <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
-                <p><?php echo $row['inhalt']; ?></p>
-                </div>
-                </section>
+            <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
+            <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
+            <p><?php echo $row['inhalt']; ?></p>
         <?php endforeach; ?>
     <?php else: ?>
         <p style="text-align: center;">Keine Blog-Artikel gefunden.</p>  
@@ -32,11 +25,7 @@ try {
 }
 
 ?>
-
-<section class="section">
-<div class="sectionContent">
-    <p>jdsfsdf
-            
+           
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
