@@ -14,7 +14,7 @@ try {
     <?php if ($result->rowCount() > 0): ?>
                
         <?php foreach ($rows as $row): ?>
-            <div class="selfContent">
+            <div class="boxContent">
                 <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
                 <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
                 <p><?php echo $row['inhalt']; ?></p>
@@ -40,7 +40,8 @@ try {
 
 <style>
     .selfContent {
-        padding: 1em;
-        background: #fff;
+        border: 1px solid #D8DAE1;
+        background: #fafafa;
+        border-radius: 12px;
     }
 </style>
