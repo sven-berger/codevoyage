@@ -1,7 +1,9 @@
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/php.header.inc.php");
-    
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/var.inc.php");
+
     $result = $connection->query($eigene_werke);
+
 ?>
 
 <nav>
