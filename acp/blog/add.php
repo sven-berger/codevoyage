@@ -10,8 +10,8 @@ $sql = "
 CREATE TABLE IF NOT EXISTS `blog` 
 (
 `ID` INT NOT NULL AUTO_INCREMENT,
-`ueberschrift` VARCHAR(255) NOT NULL,
-`kurzbeschreibung` VARCHAR(255) NOT NULL,
+`ueberschrift` INT(255) NOT NULL,
+`kurzbeschreibung` INT(255) NOT NULL,
 `inhalt` TEXT NOT NULL,
 `blog` INT NOT NULL,
 PRIMARY KEY (`ID`)
@@ -28,13 +28,13 @@ try {
 
 <form action="save.php" method="post">
     <label for="ueberschrift">Überschrift:</label>
-    <input type="text" name="ueberschrift" required><br>
+    <input type="ueberschrift" name="ueberschrift" required><br>
 
     <label for="kurzbeschreibung">Kurzbeschreibung:</label>
-    <input type="text" name="kurzbeschreibung" required><br>
+    <input type="kurzbeschreibung" name="kurzbeschreibung" required><br>
 
     <label for="inhalt">Inhalt:</label>
-    <textarea name="inhalt" required></textarea><br>
+    <input type="inhalt" name="inhalt" required><br>
 
     <input type="submit" value="Speichern">
 </form>

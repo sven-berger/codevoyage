@@ -1,9 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+    $bereich = 'Administrationsbereich';
+    $pageTitle = "Blog-Artikel veröffentlichen";
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
 ?>
-
 
 <?php
 
@@ -31,4 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+?>
+
+<?php
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
