@@ -12,7 +12,7 @@
     <div class="boxContent">
         <ul>
             <?php foreach ($rows as $row): ?>
-            <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['link']); ?></a></li>
+            <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
             <?php endforeach; ?>
          </ul>
     </div>
