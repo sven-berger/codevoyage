@@ -37,7 +37,7 @@
 
     <!--Spielereien & Snippets -->
     <div class="boxCapital" style="margin-top: 20px;">
-        <p>Eigene Werke</p>
+        <p>Spielerein & Snippets</p>
     </div>
     <section class="sidebarBox">
         <div class="boxContent">
