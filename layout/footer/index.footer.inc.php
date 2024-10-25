@@ -1,7 +1,5 @@
-<?php if ($result->rowCount() > 0): ?>
 </div>
 </section>
-<?php endif; ?>
 
 </div>
 <?php
