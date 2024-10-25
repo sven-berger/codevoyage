@@ -4,6 +4,9 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/index.header.inc.php");
 ?>
 
+</div>
+<section>
+
 <?php 
 try {
     $sql = "SELECT * FROM `blog`";
@@ -11,15 +14,12 @@ try {
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>
     <?php if ($result->rowCount() > 0): ?>
-        <div
+        <section class="section">
+        <div class="sectionContent">
         <?php foreach ($rows as $row): ?>
             <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
             <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
             <p><?php echo $row['inhalt']; ?></p>
-        </div>
-        <section>
-        <section class="section">
-        <div class="sectionContent">
         <?php endforeach; ?>
     <?php else: ?>
         <p style="text-align: center;">Keine Blog-Artikel gefunden.</p>  
