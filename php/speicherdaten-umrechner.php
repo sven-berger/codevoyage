@@ -10,26 +10,26 @@
     
     <label for="vorhandener_praefix">Bitte gib deinen vorhandenen Präfix an:</label>
     <select name="vorhandener_praefix" id="vorhandener_praefix">
-        <option value="GiB">Gigabyte (GiB)</option>
-        <option value="MiB">Megabyte (MiB)</option>
-        <option value="KiB">Kilobyte (KiB)</option>
-        <option value="GB">Gigabyte (GB)</option>
-        <option value="MB">Megabyte (MB)</option>
-        <option value="KB">Kilobyte (KB)</option>
-        <option value="B">Byte</option>
         <option value="Bit">Bit</option>
+        <option value="KiB">Kibibyte (KiB)</option>
+        <option value="MiB">Mebibyte (MiB)</option>
+        <option value="GiB">Gibibyte (GiB)</option>
+        <option value="B">Byte</option>
+        <option value="KB">Kilobyte (Kilobyte)</option>
+        <option value="MB">Megabyte (Megabyte)</option>
+        <option value="GB">Gigabyte (Gigabyte)</option>
     </select>
 
     <label for="gesuchter_praefix">Bitte gib deinen gesuchten Präfix an:</label>
     <select name="gesuchter_praefix" id="gesuchter_praefix">
+        <option value="GiB">Gibibyte (GiB)</option>
+        <option value="MiB">Mebibyte (MiB)</option>
+        <option value="KiB">Kibibyte (KiB)</option>
         <option value="Bit">Bit</option>
+        <option value="GB">Gigabyte (Gigabyte)</option>
+        <option value="MB">Megabyte (Megabyte)</option>
+        <option value="KB">Kilobyte (Kilobyte)</option>
         <option value="B">Byte</option>
-        <option value="KB">Kilobyte (KB)</option>
-        <option value="MB">Megabyte (MB)</option>
-        <option value="GB">Gigabyte (GB)</option>
-        <option value="KiB">Kilobyte (KiB)</option>
-        <option value="MiB">Megabyte (MiB)</option>
-        <option value="GiB">Gigabyte (GiB)</option>
     </select>
     <button type="submit">Eingabe abschicken</button>
 </form>
@@ -39,14 +39,14 @@
 </section>
     <?php
         $umrechnung = [
-            "B" => 1,
-            "GiB" => 1024**3,
-            "MiB" => 1024**2,
-            "KiB" => 1024,
-            "GB" => 1000**3,
-            "MB" => 1000**2,
-            "KB" => 1000,
-            "Bit" => 1 / 8
+            "B (Byte)" => 1,
+            "Bit" => 1 / 8,
+            "KiB (Kibibyte)" => 1024,
+            "MiB (Mebibyte)" => 1024 ** 2,
+            "GiB (Gibibyte)" => 1024 ** 3,
+            "KB (Kilobyte)" => 1000,
+            "MB (Megabyte)" => 1000 ** 2,
+            "GB (Gigabyte)" => 1000 ** 3
         ];
 
         $vorhandene_einheit = (int)$_GET['vorhandene_einheit'];
