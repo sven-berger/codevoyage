@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $link = filter_input(INPUT_POST, 'link', FILTER_SANITIZE_SPECIAL_CHARS);
             $ziel = filter_input(INPUT_POST, 'ziel', FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $prepare = $connection->prepare('INSERT INTO `php_sidebar` (`link`, `ziel`) VALUES (:link, :ziel)');
+            $prepare = $connection->prepare('INSERT INTO `php_sidebar_left` (`link`, `ziel`) VALUES (:link, :ziel)');
             $prepare->bindParam(':link', $link, PDO::PARAM_STR);
             $prepare->bindParam(':ziel', $ziel, PDO::PARAM_STR);
             $prepare->execute();
