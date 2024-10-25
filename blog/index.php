@@ -4,6 +4,9 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/index.header.inc.php");
 ?>
 
+</div>
+        </section>
+
 <?php 
 
 try {
@@ -14,8 +17,6 @@ try {
     <?php if ($result->rowCount() > 0): ?>
 
         <?php foreach ($rows as $row): ?>
-            </div>
-        </section>
             <section class="section">
             <div class="sectionContent">
             <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
