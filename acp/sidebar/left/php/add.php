@@ -7,7 +7,7 @@ $sql = "
 CREATE TABLE `php_sidebar_left` (
 `ID` INT NOT NULL AUTO_INCREMENT ,
 `url` TEXT NOT NULL ,
-`ziel` VARCHAR(255) NOT NULL ,
+`ziel` VARCHAR(255) NOT NULL,
 PRIMARY KEY (`ID`)
 )
 ";
