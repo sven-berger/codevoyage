@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->execute();
 
             echo 'Menüpunkt erfolgreich eingetragen.';
-            header("Location: https://codevoyage.de/acp/sidebarbar/index.php");
+            header("Location: https://php.codevoyage.de/index.php");
             exit();
         } else {
             echo 'Bitte füllen Sie alle Felder aus.';
