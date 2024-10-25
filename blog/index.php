@@ -41,7 +41,8 @@ try {
 <style>
     .selfContent {
         border: 1px solid #D8DAE1;
-        background: #fafafa;
+        background: #fff;
         border-radius: 12px;
+        padding: 1em;
     }
 </style>
