@@ -10,8 +10,8 @@ $sql = "
 CREATE TABLE IF NOT EXISTS `blog` 
 (
 `ID` INT NOT NULL AUTO_INCREMENT,
-`ueberschrift` INT(255) NOT NULL,
-`kurzbeschreibung` INT(255) NOT NULL,
+`ueberschrift` VARCHAR(255) NOT NULL,
+`kurzbeschreibung` VARCHAR(255) NOT NULL,
 `inhalt` TEXT NOT NULL,
 PRIMARY KEY (`ID`)
 )
