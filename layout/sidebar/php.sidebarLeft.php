@@ -3,8 +3,14 @@
 
     try {
         $eigene_werke = "SELECT * FROM `php_sidebar_left_eigene_werke`";
-        $result = $connection->query($eigene_werke);
-        $eigene_werke_liste = $result->fetchAll(PDO::FETCH_ASSOC);
+        $spielereien_und_snippets = "SELECT * FROM `php_sidebar_left_spielereien_und_snippets`";
+
+        $ausgabe_eigene_werke = $connection->query($eigene_werke);
+        $ausgabe_spielereien_und_snippets = $connection->query($spielereien_und_snippets);
+
+        $eigene_werke_liste = $ausgabe_eigene_werke -> fetchAll(PDO::FETCH_ASSOC);
+        $spielereien_und_snippets = $ausgabe_spielereien_und_snippets -> fetchAll(PDO::FETCH_ASSOC);
+
     } catch (PDOException $e) {
         echo "<p style='color:red;'>Fehler bei der Abfrage: " . htmlspecialchars($e->getMessage()) . "</p>";
     }
@@ -20,6 +26,24 @@
             <ul>
                 <?php if (!empty($eigene_werke_liste)): ?>
                     <?php foreach ($eigene_werke_liste as $row): ?>
+                    <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <li>Keine eigenen Werke gefunden.</li>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </section>
+
+    <!--Spielereien & Snippets -->
+    <div class="boxCapital" style="margin-top: 20px;">
+        <p>Eigene Werke</p>
+    </div>
+    <section class="sidebarBox">
+        <div class="boxContent">
+            <ul>
+                <?php if (!empty($spielereien_und_snippets)): ?>
+                    <?php foreach ($spielereien_und_snippets as $row): ?>
                     <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -47,7 +71,7 @@
         </div>
     </section>
 
-    <!-- Spielereien & Snippets -->
+    <!-- Statische Spielereien & Snippets -->
     <div class="boxCapital">
         <p>Spielereien & Snippets</p>
     </div>
