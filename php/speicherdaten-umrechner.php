@@ -10,26 +10,26 @@
     
     <label for="vorhandener_praefix">Bitte gib deinen vorhandenen Präfix an:</label>
     <select name="vorhandener_praefix" id="vorhandener_praefix">
+        <option value="KiB (Kibibyte)">Kibibyte (KiB)</option>
         <option value="Bit">Bit</option>
-        <option value="KiB">Kibibyte (KiB)</option>
-        <option value="MiB">Mebibyte (MiB)</option>
-        <option value="GiB">Gibibyte (GiB)</option>
-        <option value="B">Byte</option>
-        <option value="KB">Kilobyte (Kilobyte)</option>
-        <option value="MB">Megabyte (Megabyte)</option>
+        <option value="MiB (Mebibyte)">Mebibyte (MiB)</option>
+        <option value="GiB (Gibibyte)">Gibibyte (GiB)</option>
+        <option value="B (Byte)">Byte</option>
+        <option value="KB (Kilobyte)">Kilobyte (Kilobyte)</option>
+        <option value="MB (Megabyte)">Megabyte (Megabyte)</option>
         <option value="GB">Gigabyte (Gigabyte)</option>
     </select>
 
     <label for="gesuchter_praefix">Bitte gib deinen gesuchten Präfix an:</label>
     <select name="gesuchter_praefix" id="gesuchter_praefix">
-        <option value="GiB">Gibibyte (GiB)</option>
-        <option value="MiB">Mebibyte (MiB)</option>
-        <option value="KiB">Kibibyte (KiB)</option>
+        <option value="GiB (Gibibyte)">Gibibyte (GiB)</option>
+        <option value="MiB (Mebibyte)">Mebibyte (MiB)</option>
+        <option value="KiB (Kibibyte)">Kibibyte (KiB)</option>
         <option value="Bit">Bit</option>
         <option value="GB">Gigabyte (Gigabyte)</option>
-        <option value="MB">Megabyte (Megabyte)</option>
-        <option value="KB">Kilobyte (Kilobyte)</option>
-        <option value="B">Byte</option>
+        <option value="MB (Megabyte)">Megabyte (Megabyte)</option>
+        <option value="KB (Kilobyte)">Kilobyte (Kilobyte)</option>
+        <option value="B (Byte)">Byte</option>
     </select>
     <button type="submit">Eingabe abschicken</button>
 </form>
