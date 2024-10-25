@@ -21,15 +21,10 @@ try {
                 <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
                 <p><?php echo $row['inhalt']; ?></p>
                 </div>
-</section>
-<section class="section">
-<div class="sectionContent">
-    <p>jdsfsdf
-            
+                </section>
         <?php endforeach; ?>
     <?php else: ?>
-        <p style="text-align: center;">Keine Blog-Artikel gefunden.</p>
-    
+        <p style="text-align: center;">Keine Blog-Artikel gefunden.</p>  
     <?php endif; ?>
 <?php 
 } catch (PDOException $e) {
@@ -37,6 +32,10 @@ try {
 }
 
 ?>
+
+<section class="section">
+<div class="sectionContent">
+    <p>jdsfsdf
             
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
