@@ -41,12 +41,12 @@
         $umrechnung = [
             "B (Byte)" => 1,
             "Bit" => 1 / 8,
-            "KiB (Kibibyte)" => 1024,
-            "MiB (Mebibyte)" => 1024 ** 2,
-            "GiB (Gibibyte)" => 1024 ** 3,
             "KB (Kilobyte)" => 1000,
             "MB (Megabyte)" => 1000 ** 2,
-            "GB (Gigabyte)" => 1000 ** 3
+            "GB (Gigabyte)" => 1000 ** 3,
+            "KiB (Kibibyte)" => 1024,
+            "MiB (Mebibyte)" => 1024 ** 2,
+            "GiB (Gibibyte)" => 1024 ** 3
         ];
 
         $vorhandene_einheit = (int)$_GET['vorhandene_einheit'];
