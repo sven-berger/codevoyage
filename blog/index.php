@@ -4,6 +4,13 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/index.header.inc.php");
 ?>
 
+<p>dfgdfg</p>
+</div>
+</section>
+
+<section class="section">
+<div class="sectionContent">
+
 <?php 
 try {
     $sql = "SELECT * FROM `blog`";
