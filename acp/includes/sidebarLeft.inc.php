@@ -5,7 +5,6 @@
             <ul>
                 <li><a href="https://codevoyage.de/acp/sidebar/left/php/index.php">Übersicht</a></li>
                 <li><a href="https://codevoyage.de/acp/sidebar/left/php/add.php">Menüpunkt hinzufügen</a></li>
-
             </ul>
         </div>
 </section>
