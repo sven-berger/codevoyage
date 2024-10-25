@@ -12,14 +12,15 @@
 
 <?php
     $eingabe = null;
+    $jackpot = 3545245;
 ?>
 
 <?php if (isset($_GET['eingabe'])): ?>
-<?php while ($eingabe !== 7): ?>
+<?php while ($eingabe !== $jackpot): ?>
         </div>
         </section> 
     <?php $eingabe = (int)$_GET['eingabe']; ?>
-        <?php if ($eingabe === 3545245): ?>
+        <?php if ($eingabe === $jackpot): ?>
        
         <section class="section">
             <div class="sectionContent">
