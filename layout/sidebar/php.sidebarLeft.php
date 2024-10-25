@@ -1,4 +1,5 @@
 <?php
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
     $sql = "SELECT * FROM `php_sidebar_left`";
     $result = $connection->query($sql);
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
