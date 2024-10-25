@@ -5,7 +5,6 @@
 ?>
 
 <?php
-
 try {
     $sql = "SELECT * FROM `eintrittspreise`";
     $result = $connection->query($sql);

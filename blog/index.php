@@ -5,8 +5,15 @@
 ?>
 
 <?php
-    echo "Hallo und herzlich willkommen im Blog von CodeVoyage.de"
+try {
+    $sql = "SELECT * FROM `blog`";
+    $result = $connection->query($sql);
+    $ausgabe = $result->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
+}
 ?>
+
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
