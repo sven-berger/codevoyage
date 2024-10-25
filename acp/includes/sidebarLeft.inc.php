@@ -1,5 +1,15 @@
 <nav>
 <section class="sidebarBox">
+        <h3 class="boxTitle">Seitenleisten</h3>
+        <div class="boxContent">
+            <ul>
+                <li><a href="https://codevoyage.de/acp/sidebar/left/php/index.php">Übersicht</a></li>
+                <li><a href="https://codevoyage.de/acp/sidebar/left/php/add.php">Menüpunkt hinzufügen</a></li>
+
+            </ul>
+        </div>
+</section>
+<section class="sidebarBox">
         <h3 class="boxTitle">Umsatzrechner</h3>
         <div class="boxContent">
             <ul>
