@@ -14,6 +14,8 @@ try {
     <?php if ($result->rowCount() > 0): ?>
 
         <?php foreach ($rows as $row): ?>
+            </div>
+        </section>
             <section class="section">
             <div class="sectionContent">
             <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
@@ -22,8 +24,7 @@ try {
         <?php endforeach; ?>
     <?php else: ?>
         <p style="text-align: center;">Keine Blog-Artikel gefunden.</p>
-        </div>
-        </section>
+        
     <?php endif; ?>
 <?php 
 } catch (PDOException $e) {
