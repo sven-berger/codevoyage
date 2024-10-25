@@ -42,6 +42,6 @@ try {
         background: #fff;
         border-radius: 12px;
         padding: 1em;
-        margin: 20px 0;
+        margin: 20px 0 !important;
     }
 </style>
