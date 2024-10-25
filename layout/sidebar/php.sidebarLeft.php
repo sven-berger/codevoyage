@@ -1,6 +1,7 @@
 <?php
     $sql = "SELECT * FROM `php_sidebar`";
     $result = $connection->query($sql);
+    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <nav>
