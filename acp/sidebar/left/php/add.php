@@ -21,8 +21,8 @@ try {
 ?>
 
 <form action="save.php" method="post">
-    <label for="link">Link:</label>
-    <input type="link" name="link" required><br>
+    <label for="url">Url:</label>
+    <input type="url" name="url" required><br>
 
     <label for="ziel">Ziel:</label>
     <input type="ziel" name="ziel" required><br>
