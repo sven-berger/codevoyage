@@ -11,7 +11,7 @@
     <div class="boxContent">
         <ul>
             <?php foreach ($rows as $row): ?>
-            <li><?php echo htmlspecialchars($row['url']) . htmlspecialchars($row['link']); ?></li>
+            <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['link']); ?></a></li>
             <?php endforeach; ?>
          </ul>
     </div>
