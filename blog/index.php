@@ -6,7 +6,7 @@
 
 <?php 
 try {
-    $sql = "SELECT * FROM `blog`";
+    $sql = "SELECT * FROM `blog` ORDER BY `ID` DESC";
     $result = $connection->query($sql);
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>
