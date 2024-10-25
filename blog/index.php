@@ -36,3 +36,11 @@ try {
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
+
+
+<style>
+    .selfContent {
+        padding: 1em;
+        background: #fff;
+    }
+</style>
