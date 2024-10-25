@@ -47,7 +47,7 @@
                     <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <li>Keine eigenen Werke gefunden.</li>
+                    <li>Keine Spielerei und Snippet gefunden.</li>
                 <?php endif; ?>
             </ul>
         </div>
