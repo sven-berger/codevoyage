@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS `blog`
 `ueberschrift` INT(255) NOT NULL,
 `kurzbeschreibung` INT(255) NOT NULL,
 `inhalt` TEXT NOT NULL,
-`blog` INT NOT NULL,
 PRIMARY KEY (`ID`)
 )
 ";
