@@ -3,7 +3,8 @@
     $pageTitle = 'Blog von CodeVoyage.de';
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/index.header.inc.php");
 ?>
-
+</div>
+</section>
 <section class="section">
 <div class="sectionContent">
 <?php 
