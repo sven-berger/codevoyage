@@ -15,7 +15,7 @@ try {
         <?php foreach ($rows as $row): ?>
             <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
             <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
-            <p><?php echo htmlspecialchars($row['inhalt']); ?></p>
+            <p><?php echo $row['inhalt']; ?></p>
         <?php endforeach; ?>
     <?php else: ?>
         <p style="text-align: center;">Keine Blog-Artikel gefunden.</p>
