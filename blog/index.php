@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Blog';
     $pageTitle = 'Blog von CodeVoyage.de';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/index.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
 <?php 
@@ -12,9 +12,13 @@ try {
 ?>
     <?php if ($result->rowCount() > 0): ?>
         <?php foreach ($rows as $row): ?>
-            <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
-            <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
-            <p><?php echo $row['inhalt']; ?></p>
+            <section class="section">
+                <div class="sectionContent">
+                    <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
+                    <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
+                    <p><?php echo $row['inhalt']; ?></p>
+                </div>
+            </section>
         <?php endforeach; ?>
     <?php else: ?>
         <p style="text-align: center;">Keine Blog-Artikel gefunden.</p>  
@@ -27,16 +31,5 @@ try {
 ?>
            
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/app.footer.inc.php");
 ?>
-
-
-<style>
-    .selfContent {
-        border: 1px solid #D8DAE1;
-        background: #fff;
-        border-radius: 12px;
-        padding: 1em;
-        margin: 20px 0 !important;
-    }
-</style>
