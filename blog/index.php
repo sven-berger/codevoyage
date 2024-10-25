@@ -4,9 +4,6 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/index.header.inc.php");
 ?>
 
-<p>dsafs</p>
-</div>
-</section>
 
 <?php 
 try {
@@ -35,9 +32,6 @@ try {
 
 ?>
             
-            <section class="section">
-            <div class="sectionContent">
-            <p>dsafs</p>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
