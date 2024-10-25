@@ -4,7 +4,6 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/index.header.inc.php");
 ?>
 
-
 <?php 
 try {
     $sql = "SELECT * FROM `blog`";
@@ -32,7 +31,6 @@ try {
 
 ?>
             
-
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
