@@ -1,6 +1,8 @@
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
-    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+    $eigene_werke = "SELECT * FROM `php_sidebar_left_eigene_werke`";
+    $result = $connection->query($eigene_werke);
+    $eigene_werke_liste = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <nav>
@@ -10,8 +12,7 @@
 <section class="sidebarBox">
     <div class="boxContent">
         <ul>
-            <?php $sql = "SELECT * FROM `php_sidebar_left_eigene_werke`"; $result = $connection->query($sql); ?>
-            <?php foreach ($rows as $row): ?>
+            <?php foreach ($eigene_werke_liste as $row): ?>
             <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
             <?php endforeach; ?>
         </ul>
