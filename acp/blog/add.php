@@ -36,14 +36,6 @@ try {
     <label for="inhalt">Inhalt:</label>
     <input type="inhalt" name="inhalt" required><br>
 
-    <label for="blog">Blog:</label>
-    <select name="blog" id="blog">
-        <option value="Addition">Addition</option>
-        <option value="Subtraktion">Subtraktion</option>
-        <option value="Multiplikation">Multiplikation</option>
-        <option value="Division">Division</option>
-    </select>
-
     <input type="submit" value="Speichern">
 </form>
 
