@@ -7,7 +7,7 @@
 
 <?php
 $sql = "
-CREATE TABLE `blog`
+CREATE TABLE IF NOT EXISTS `blog` 
 (
 `ID` INT NOT NULL AUTO_INCREMENT,
 `ueberschrift` INT(255) NOT NULL,
