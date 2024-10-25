@@ -13,7 +13,7 @@ try {
 ?>
     <?php if ($result->rowCount() > 0): ?>
         <?php foreach ($rows as $row): ?>
-            <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
+            <h2><span><?php echo htmlspecialchars($row['id']); ?> | </span><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
             <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
             <p><?php echo $row['inhalt']; ?></p>
         <?php endforeach; ?>
