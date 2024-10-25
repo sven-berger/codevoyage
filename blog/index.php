@@ -14,7 +14,7 @@ try {
     <?php if ($result->rowCount() > 0): ?>
                
         <?php foreach ($rows as $row): ?>
-            <div class="boxContent">
+            <div class="selfContent">
                 <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
                 <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
                 <p><?php echo $row['inhalt']; ?></p>
