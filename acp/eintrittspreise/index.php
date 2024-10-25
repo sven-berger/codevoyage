@@ -6,11 +6,11 @@
 
 <form action="index.php" method="post">
     <div>
-        <label for="alter_von">Von Alter:</label>
+        <label for="alter_von">Von:</label>
         <input type="number" id="alter_von" name="alter_von" required>
     </div>
     <div>
-        <label for="alter_bis">Bis Alter:</label>
+        <label for="alter_bis">Bis:</label>
         <input type="number" id="alter_bis" name="alter_bis" required>
     </div>
     <div>
@@ -85,7 +85,7 @@ try {
 
     if ($result->rowCount() > 0) {
         echo "<table>";
-        echo "<tr><th>Von (Jahre)</th><th>Bis (Jahre)</th><th>Preis</th><th>Aktion</th></tr>";
+        echo "<tr><th>Von</th><th>Bis</th><th>Preis</th><th>Aktion</th></tr>";
 
         $rows = $result->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $row) {
