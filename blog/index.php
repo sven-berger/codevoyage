@@ -21,6 +21,7 @@ try {
             </section>
             <section class="section">
             <div class="sectionContent">
+                <p>fsdföl</p>
         <?php endforeach; ?>
     <?php else: ?>
         <p style="text-align: center;">Keine Blog-Artikel gefunden.</p>
