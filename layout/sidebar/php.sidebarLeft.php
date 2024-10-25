@@ -14,10 +14,9 @@
             <?php foreach ($rows as $row): ?>
             <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
             <?php endforeach; ?>
-         </ul>
+        </ul>
     </div>
 </section>
-
 <div class="boxCapital" style="margin-top: 20px;">
     <p>Eigene Werke</p>
 </div>
