@@ -29,5 +29,7 @@
     <div class="main">
         <div class="content">
             <h2><?php echo $pageTitle; ?></h2>
+            <?php if ($result->rowCount() > 0): ?>
             <section class="section">
                 <div class="sectionContent">
+            <?php endif; ?>
