@@ -19,6 +19,8 @@ try {
             <p><?php echo $row['inhalt']; ?></p>
             </div>
             </section>
+            <section class="section">
+            <div class="sectionContent">
         <?php endforeach; ?>
     <?php else: ?>
         <p style="text-align: center;">Keine Blog-Artikel gefunden.</p>
