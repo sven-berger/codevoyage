@@ -12,7 +12,12 @@ try {
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>
     <?php if ($result->rowCount() > 0): ?>
+        <p>dsafs</p>
+        </div>
+        </section>
         <?php foreach ($rows as $row): ?>
+            <section class="section">
+            <div class="sectionContent">
             <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
             <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
             <p><?php echo $row['inhalt']; ?></p>
