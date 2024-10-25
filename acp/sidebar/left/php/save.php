@@ -67,5 +67,5 @@ try {
 ?>
 
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/footer.inc.php");
 ?>
