@@ -15,9 +15,9 @@ try {
         <p>dsafs</p>
         </div>
         </section>
-        <?php foreach ($rows as $row): ?>
-            <section class="section">
+        <section class="section">
             <div class="sectionContent">
+        <?php foreach ($rows as $row): ?>
             <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
             <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
             <p><?php echo $row['inhalt']; ?></p>
