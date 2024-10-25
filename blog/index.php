@@ -5,8 +5,7 @@
 ?>
 </div>
 </section>
-<section class="section">
-<div class="sectionContent">
+
 <?php 
 try {
     $sql = "SELECT * FROM `blog`";
@@ -16,10 +15,13 @@ try {
     <?php if ($result->rowCount() > 0): ?>
                
         <?php foreach ($rows as $row): ?>
+            <section class="section">
+<div class="sectionContent">
             <h2><?php echo htmlspecialchars($row['ueberschrift']); ?></h2>
             <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
             <p><?php echo $row['inhalt']; ?></p>
-
+            </div>
+            </section>
             
         <?php endforeach; ?>
     <?php else: ?>
@@ -32,8 +34,7 @@ try {
 }
 
 ?>
-            </div>
-            </section>
+            
             <section class="section">
             <div class="sectionContent">
             <p>dsafs</p>
