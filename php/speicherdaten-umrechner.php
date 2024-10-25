@@ -10,8 +10,8 @@
     
     <label for="vorhandener_praefix">Bitte gib deinen vorhandenen Präfix an:</label>
     <select name="vorhandener_praefix" id="vorhandener_praefix">
-        <option value="KiB (Kibibyte)">Kibibyte (KiB)</option>
         <option value="Bit">Bit</option>
+        <option value="KiB (Kibibyte)">Kibibyte (KiB)</option>
         <option value="MiB (Mebibyte)">Mebibyte (MiB)</option>
         <option value="GiB (Gibibyte)">Gibibyte (GiB)</option>
         <option value="B (Byte)">Byte</option>
