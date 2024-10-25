@@ -10,7 +10,3 @@ $footer = file_get_contents("https://codevoyage.de/python/templates/footer.html"
 
 
 $test = "Hello World aus var.inc.php";
-
-
-$eigene_werke = "SELECT * FROM `php_sidebar_left_eigene_werke`";
-$eigene_werke_liste = $result -> fetchAll(PDO::FETCH_ASSOC);
