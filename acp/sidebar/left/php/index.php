@@ -26,9 +26,9 @@
                         </tr>
                     <?php endforeach; ?>
                 </table>
+                <button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></button>
             <?php else : ?>
                 <p style="text-align: center;">Keine Einträge gefunden.</p>
-                <button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></button>
             <?php endif; ?>
         <?php } catch (PDOException $e) { ?>
             <p style="text-align: center;">Es liegt ein Problem vor: <?php echo htmlspecialchars($e->getMessage()); ?></p>
@@ -58,6 +58,7 @@
                         </tr>
                     <?php endforeach; ?>
                 </table>
+                <button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/spielereien/add.php">Spielereien hinzufügen</a></button>
             <?php else : ?>
                 <p style="text-align: center;">Keine Einträge gefunden.</p>
             <?php endif; ?>
