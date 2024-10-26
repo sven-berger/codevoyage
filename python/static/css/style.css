@@ -239,9 +239,9 @@ a.seitentitel {
 .short-header {
     text-align: center;
     font-weight: 600;
-    padding: 12px;
-    background: #fafafa;
+    background: silver;
     border: 1px solid #D8DAE1;
+    border-radius: 12px;
 }
 
 .ContentDescription, .ContentFooter {
