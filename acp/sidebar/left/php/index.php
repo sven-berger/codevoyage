@@ -7,6 +7,8 @@
 <?php 
 try {
     if (!empty($eigene_werke_liste)): ?>
+    <section class="section">
+        <div class="sectionContent">
         <table>
             <tr>
                 <th>URL</th>
@@ -26,6 +28,8 @@ try {
         </table>
     <?php else: ?>
         <p style="text-align: center;">Keine Einträge gefunden.</p>
+        </div>
+    </section>
     <?php endif;
 } catch (PDOException $e) {
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . htmlspecialchars($e->getMessage()) . '</p>';
@@ -35,6 +39,8 @@ try {
 <?php 
 try {
     if (!empty($spielereien_liste)): ?>
+    <section class="section">
+        <div class="sectionContent">
         <table>
             <tr>
                 <th>URL</th>
@@ -54,6 +60,8 @@ try {
         </table>
     <?php else: ?>
         <p style="text-align: center;">Keine Einträge gefunden.</p>
+        </div>
+    </section>
     <?php endif;
 } catch (PDOException $e) {
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . htmlspecialchars($e->getMessage()) . '</p>';

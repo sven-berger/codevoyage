@@ -30,5 +30,3 @@
 <div class="main">
     <div class="content">
         <h2><?php echo $pageTitle; ?></h2>
-        <section class="section">
-            <div class="sectionContent">
