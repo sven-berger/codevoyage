@@ -1,9 +1,14 @@
 </div>
-    <?php require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/sidebarLeft.inc.php"); ?>
-    <?php require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/sidebarRight.inc.php"); ?>
+<?php
+    echo $acp_sidebarLeft;
+    echo $acp_sidebarRight;
+?>
+
 </div>
 
-<?php echo $footer; ?>
+<?php
+    echo $footer;
+?>
 
 </body>
 </html>
