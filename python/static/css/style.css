@@ -222,7 +222,7 @@ a.seitentitel {
     background: #fafafa;
     border: 1px solid #D8DAE1;
     border-radius: 12px;
-    padding: 20px;
+    padding: 12px;
 }
 
 .sectionTitle {
@@ -233,7 +233,6 @@ a.seitentitel {
 }
 
 .sectionHeader {
-    margin-bottom: 10px !important;
     font-weight: bold;
 }
 
