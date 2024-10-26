@@ -4,6 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
+<h3 class="section-title">Seitenleisten</h3>
 <section class="section">
     <div class="sectionContent">
         <?php try { ?>
