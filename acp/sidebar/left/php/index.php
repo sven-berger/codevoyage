@@ -14,6 +14,7 @@
     <div class="sectionContent">
         <?php try { ?>
             <?php if (!empty($eigene_werke_liste)) : ?>
+                <p><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></p>
                 <table>
                     <tr>
                         <th>URL</th>
