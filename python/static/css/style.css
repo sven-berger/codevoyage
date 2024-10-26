@@ -570,5 +570,13 @@ dt {
 
 .button-action {
     justify-content: end;
-    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #2980b9;
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid #D8DAE1;
+}
+
+.button-action a {
+    color: #fff !important;
 }
