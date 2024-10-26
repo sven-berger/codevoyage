@@ -19,7 +19,7 @@
                         <th>Ziel</th>
                         <th>Aktion</th>
                     </tr>
-                    <?php foreach ($eigene_werke_liste as $row) : ?>
+                    <?php foreach ($acp_sidebar_left_seitenleiste_liste as $row) : ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
