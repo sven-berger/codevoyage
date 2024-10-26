@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Linke Seitenleiste (PHP-Bereich)";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.footer.inc.php");
 ?>
 
 <h3 class="section-title">Eigene Werke</h3>
@@ -77,5 +77,5 @@
 </section>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
