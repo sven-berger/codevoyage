@@ -34,14 +34,14 @@ try {
 
 <?php 
 try {
-    if (!empty($spielerein_liste)): ?>
+    if (!empty($spielereien_liste)): ?>
         <table>
             <tr>
                 <th>URL</th>
                 <th>Ziel</th>
                 <th>Aktion</th>
             </tr>
-            <?php foreach ($spielerein_liste as $row): ?>
+            <?php foreach ($spielereien_liste as $row): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($row['url']); ?></td>
                     <td><?php echo htmlspecialchars($row['ziel']); ?></td>
