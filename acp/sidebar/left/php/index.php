@@ -7,14 +7,9 @@
 <h3 class="section-title">Eigene Werke</h3>
 <section class="section">
     <div class="sectionContent">
-        <p><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></p>
-    </div>
-</section>
-<section class="section">
-    <div class="sectionContent">
         <?php try { ?>
             <?php if (!empty($eigene_werke_liste)) : ?>
-                <p><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></p>
+                <p style="margin: 20px 0; text-align: center;"><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></p>
                 <table>
                     <tr>
                         <th>URL</th>
