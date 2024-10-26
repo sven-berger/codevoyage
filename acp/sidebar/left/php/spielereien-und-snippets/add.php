@@ -4,7 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
 
 $sql = "
-CREATE TABLE IF NOT EXISTS `php_sidebar_left_spielereien_snippets`
+CREATE TABLE IF NOT EXISTS `php_sidebar_left_spielereien`
 (
 `ID` INT NOT NULL AUTO_INCREMENT,
 `url` TEXT NOT NULL,

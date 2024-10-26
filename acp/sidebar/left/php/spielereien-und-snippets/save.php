@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_SPECIAL_CHARS);
             $ziel = filter_input(INPUT_POST, 'ziel', FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $prepare = $connection->prepare('INSERT INTO `php_sidebar_left_spielereien_snippets` (`url`, `ziel`) VALUES (:url, :ziel)');
+            $prepare = $connection->prepare('INSERT INTO `php_sidebar_left_spielereien` (`url`, `ziel`) VALUES (:url, :ziel)');
             $prepare->bindParam(':url', $url, PDO::PARAM_STR);
             $prepare->bindParam(':ziel', $ziel, PDO::PARAM_STR);
             $prepare->execute();

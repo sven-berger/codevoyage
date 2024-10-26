@@ -28,8 +28,8 @@
     <section class="sidebarBox">
         <div class="boxContent">
             <ul>
-                <?php if (!empty($spielereien_snippets)): ?>
-                    <?php foreach ($spielereien_snippets as $row): ?>
+                <?php if (!empty($spielereien_liste)): ?>
+                    <?php foreach ($spielereien_liste as $row): ?>
                     <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
                     <?php endforeach; ?>
                 <?php else: ?>
