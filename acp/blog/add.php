@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Mein Blog';
     $pageTitle = 'Blog von CodeVoyage.de';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/index.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
 
@@ -39,7 +39,7 @@ try {
 </form>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
 
 

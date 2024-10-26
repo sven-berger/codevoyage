@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Eintrittspreise";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
 <form action="index.php" method="post">
@@ -108,5 +108,5 @@ try {
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
 }
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/footer.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>

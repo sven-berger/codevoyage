@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Umsatzrechner für das Jahr 2024";
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
 $monate_zuweisung = [
     1 => 'Januar', 
@@ -155,5 +155,5 @@ try {
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
 }
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/footer.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>

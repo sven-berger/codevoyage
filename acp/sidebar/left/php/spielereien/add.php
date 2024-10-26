@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Spielerei & Snippet hinzufügen (PHP-Sidebar)";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.footer.inc.php");
 
 $sql = "
 CREATE TABLE IF NOT EXISTS `php_sidebar_left_spielereien`
@@ -31,5 +31,5 @@ try {
 </form>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
