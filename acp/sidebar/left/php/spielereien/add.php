@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Spielerei & Snippet hinzufügen (PHP-Sidebar)";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
 $sql = "
 CREATE TABLE IF NOT EXISTS `php_sidebar_left_spielereien`

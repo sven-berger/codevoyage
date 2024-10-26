@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Eigenes Werk hinzufügen (PHP-Bereich)";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
 $sql = "
 CREATE TABLE IF NOT EXISTS `php_sidebar_left_eigene_werke`
