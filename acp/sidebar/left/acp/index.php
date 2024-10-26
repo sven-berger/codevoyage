@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = "Linke Seitenleiste (PHP-Bereich)";
+    $pageTitle = "Menüpunkte (Administrationsbereich)";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
@@ -10,7 +10,7 @@
             <?php if (!empty($acp_sidebar_left_seitenleiste_liste)) : ?>
                 <div class="ActionArea">
                     <ul>
-                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></button></li>
+                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/add.php">Menüpunkt hinzufügen</a></button></li>
                     </ul>
                 </div>     
                 <table>
