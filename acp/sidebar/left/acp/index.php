@@ -8,10 +8,10 @@
 <section class="section">
     <div class="sectionContent">
         <?php try { ?>
-            <?php if (!empty($acp_sidebar_left_eigene_werke_liste)) : ?>
+            <?php if (!empty($acp_sidebar_left_seitenleiste_liste)) : ?>
                 <div class="ActionArea">
                     <ul>
-                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/add.php">Menüpunkt hinzufügen</a></button></li>
+                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/seitenleiste/add.php">Menüpunkt hinzufügen</a></button></li>
                     </ul>
                 </div>     
                 <table>
@@ -20,7 +20,7 @@
                         <th>Ziel</th>
                         <th>Aktion</th>
                     </tr>
-                    <?php foreach ($acp_sidebar_left_eigene_werke_liste as $row) : ?>
+                    <?php foreach ($acp_sidebar_left_seitenleiste_liste as $row) : ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
@@ -47,7 +47,7 @@
             <?php if (!empty($acp_sidebar_left_eigene_werke_liste)) : ?>
                 <div class="ActionArea">
                     <ul>
-                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/add.php">Menüpunkt hinzufügen</a></button></li>
+                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/eigene-werke/add.php">Menüpunkt hinzufügen</a></button></li>
                     </ul>
                 </div>     
                 <table>
