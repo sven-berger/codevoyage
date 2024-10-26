@@ -5,8 +5,9 @@
 ?>
 
 <section class="section">
+<h3 class="section-title">Eigene Werke</h3>
+
     <div class="sectionContent">
-        <h3 class="section-title">Eigene Werke</h3>
         <?php try { ?>
             <?php if (!empty($eigene_werke_liste)) : ?>
                 <table>
