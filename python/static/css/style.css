@@ -560,3 +560,8 @@ dt {
     font-style: italic;
     color: #2980b9;
 }
+
+.button-action {
+    justify-content: end;
+    margin-top: 20px;
+}
