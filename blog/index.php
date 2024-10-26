@@ -13,7 +13,7 @@ try {
     <?php if ($result->rowCount() > 0): ?>
         <?php foreach ($rows as $row): ?>
             <h3 class="section-title"><?php echo htmlspecialchars($row['ueberschrift']); ?></h3>
-            <div class="sectionContent">
+            <div class="short-header">
                 <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
             </div>
             </section>
