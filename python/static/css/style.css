@@ -237,10 +237,9 @@ a.seitentitel {
 }
 
 .short-header {
-    text-align: center;
-    font-weight: 600;
-    background: silver;
+    background: seashell;
     border: 1px solid #D8DAE1;
+    padding-left: 12px;
     border-radius: 12px;
 }
 
