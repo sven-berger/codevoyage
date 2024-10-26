@@ -58,7 +58,9 @@
                         </tr>
                     <?php endforeach; ?>
                 </table>
-                <button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/spielereien/add.php">Spielereien hinzufügen</a></button>
+                <div class="ContentFooter">
+                    <button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/spielereien/add.php">Spielereien hinzufügen</a></button>
+                </div>
             <?php else : ?>
                 <p style="text-align: center;">Keine Einträge gefunden.</p>
             <?php endif; ?>
