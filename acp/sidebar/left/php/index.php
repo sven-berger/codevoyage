@@ -4,9 +4,8 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
 ?>
 
-<section class="section">
 <h3 class="section-title">Eigene Werke</h3>
-
+<section class="section">
     <div class="sectionContent">
         <?php try { ?>
             <?php if (!empty($eigene_werke_liste)) : ?>
@@ -36,9 +35,9 @@
     </div>
 </section>
 
+<h3 class="section-title">Spielereien & Snippets</h3>
 <section class="section">
     <div class="sectionContent">
-        <h3 class="section-title">Spielereien & Snippets</h3>
         <?php try { ?>
             <?php if (!empty($spielereien_liste)) : ?>
                 <table>
