@@ -3,7 +3,7 @@
         <h3 class="boxTitle">Seitenleisten</h3>
         <div class="boxContent">
             <ul>
-                <li><a href="https://codevoyage.de/acp/sidebar/left/php/index.php">Übersicht</a></li>
+                <li><a href="https://codevoyage.de/acp/sidebar/left/php/index.php">PHP-Bereich</a></li>
                 <li><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></li>
                 <li><a href="https://codevoyage.de/acp/sidebar/left/php/spielereien-und-snippets/add.php">Spielerei und Snippet hinzufügen</a></li>
             </ul>

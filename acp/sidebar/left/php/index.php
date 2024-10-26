@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = "Eintrittspreise";
+    $pageTitle = "Linke Seitenleiste (PHP-Bereich)";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
 ?>
 
