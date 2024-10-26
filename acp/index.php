@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = "Startseite - Administrationsbereich";
+    $pageTitle = "Administrationsbereich";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
 ?>
 
