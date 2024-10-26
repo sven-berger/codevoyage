@@ -9,7 +9,7 @@
     <div class="sectionContent">
         <?php try { ?>
             <?php if (!empty($eigene_werke_liste)) : ?>
-                <p style="margin: 20px 0; text-align: center;"><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></p>
+                <button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></button>
                 <table>
                     <tr>
                         <th>URL</th>
