@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = "Eigenes Werk hinzufügen (PHP-Bereich)";
+    $pageTitle = "Seitenleisten-Punkt hinzufügen (Administrationsbereich)";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
 $sql = "
