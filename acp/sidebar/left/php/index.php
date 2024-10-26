@@ -35,7 +35,7 @@
     </div>
 </section>
 
-<h3 class="section-title">Spielereien & Snippets</h3>
+<h3 class="section-title">Spielereien</h3>
 <section class="section">
     <div class="sectionContent">
         <?php try { ?>
