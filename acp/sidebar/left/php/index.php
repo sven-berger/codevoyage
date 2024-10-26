@@ -6,6 +6,7 @@
 
 <section class="section">
     <div class="sectionContent">
+        <h3 class="section-title">Eigene Werke</h3>
         <?php try { ?>
             <?php if (!empty($eigene_werke_liste)) : ?>
                 <table>
@@ -19,8 +20,8 @@
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
-                                <a href="edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
-                                <a href="delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
+                                <a href="https://codevoyage.de/acp/sidebarbar/left/php/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
+                                <a href="https://codevoyage.de/acp/sidebarbar/left/php/delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -36,6 +37,7 @@
 
 <section class="section">
     <div class="sectionContent">
+        <h3 class="section-title">Spielereien & Snippets</h3>
         <?php try { ?>
             <?php if (!empty($spielereien_liste)) : ?>
                 <table>

@@ -21,9 +21,9 @@
         </div>
     </section>
 
-    <!-- Spielereien & Snippets -->
+    <!-- Spielereien -->
     <div class="boxCapital" style="margin-top: 20px;">
-        <p>Spielereien & Snippets</p>
+        <p>Spielereien</p>
     </div>
     <section class="sidebarBox">
         <div class="boxContent">
