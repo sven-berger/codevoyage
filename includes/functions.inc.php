@@ -3,7 +3,7 @@
 
     try {
         $eigene_werke = "SELECT * FROM `php_sidebar_left_eigene_werke`";
-        $spielereien_snippets = "SELECT * FROM `php_sidebar_left_spielerein_snippets`";
+        $spielereien_snippets = "SELECT * FROM `php_sidebar_left_spielereien_snippets`";
 
         $ausgabe_eigene_werke = $connection->query($eigene_werke);
         $ausgabe_spielereien_snippets = $connection->query($spielereien_snippets);
