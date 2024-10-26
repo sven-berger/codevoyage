@@ -13,9 +13,12 @@ try {
     <?php if ($result->rowCount() > 0): ?>
         <?php foreach ($rows as $row): ?>
             <h3 class="section-title"><?php echo htmlspecialchars($row['ueberschrift']); ?></h3>
+            <div class="sectionContent">
+                <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
+            </div>
+            </section>
             <section class="section">
                 <div class="sectionContent">
-                    <h4><?php echo htmlspecialchars($row['kurzbeschreibung']); ?></h4>
                     <p><?php echo $row['inhalt']; ?></p>
                 </div>
             </section>
