@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = "Spielerei hinzufügen (PHP-Sidebar)";
+    $pageTitle = "Spielerei hinzufügen (PHP-Bereich)";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
 $sql = "
