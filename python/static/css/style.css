@@ -255,6 +255,8 @@ a.seitentitel {
 .ActionArea ul {
     display: flex;
     justify-content: end;
+    list-style: none;
+    padding: 0;
 }
 
 .ContentFooter ul {
