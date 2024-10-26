@@ -252,6 +252,11 @@ a.seitentitel {
     }
 }
 
+.ActionArea ul {
+    display: flex;
+    justify-content: end;
+}
+
 .ContentFooter ul {
     display: block;
     text-align: end;
