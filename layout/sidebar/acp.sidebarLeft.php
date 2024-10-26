@@ -37,32 +37,6 @@
         </ul>
     </div>
 </section>
-
-<section class="sidebarBox">
-        <h3 class="boxTitle">Seitenleisten</h3>
-        <div class="boxContent">
-            <ul>
-                <li><a href="https://codevoyage.de/acp/sidebar/left/acp/add.php">Administrationsbereich</a></li>
-                <li><a href="https://codevoyage.de/acp/sidebar/left/php/index.php">PHP-Bereich</a></li>
-            </ul>
-        </div>
-</section>
-<section class="sidebarBox">
-        <h3 class="boxTitle">Umsatzrechner</h3>
-        <div class="boxContent">
-            <ul>
-                <li><a href="https://codevoyage.de/acp/umsatzrechner/2023/">Übersicht</a></li>
-            </ul>
-        </div>
-</section>
-<section class="sidebarBox">
-        <h3 class="boxTitle">Eintrittspreise</h3>
-        <div class="boxContent">
-            <ul>
-                <li><a href="https://codevoyage.de/acp/eintrittspreise/">Übersicht</a></li>
-            </ul>
-        </div>
-</section>
 <section class="sidebarBox">
         <h3 class="boxTitle">Wissensportal</h3>
         <div class="boxContent">
