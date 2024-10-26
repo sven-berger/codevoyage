@@ -26,8 +26,11 @@
                         </tr>
                     <?php endforeach; ?>
                 </table>
-                <button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></button>
-            <?php else : ?>
+                <div class="ContentFooter">
+                    <ul>
+                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/add.php">Eigenes Werk hinzufügen</a></button></li>
+                    </ul>
+                </div>            <?php else : ?>
                 <p style="text-align: center;">Keine Einträge gefunden.</p>
             <?php endif; ?>
         <?php } catch (PDOException $e) { ?>
@@ -59,7 +62,9 @@
                     <?php endforeach; ?>
                 </table>
                 <div class="ContentFooter">
-                    <button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/spielereien/add.php">Spielereien hinzufügen</a></button>
+                    <ul>
+                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/spielereien/add.php">Spielereien hinzufügen</a></button></li>
+                    </ul>
                 </div>
             <?php else : ?>
                 <p style="text-align: center;">Keine Einträge gefunden.</p>
