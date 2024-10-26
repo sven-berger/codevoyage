@@ -26,6 +26,7 @@
         <h3 class="boxTitle">Seitenleisten</h3>
         <div class="boxContent">
             <ul>
+                <li><a href="https://codevoyage.de/acp/sidebar/left/acp/add.php">Administrationsbereich</a></li>
                 <li><a href="https://codevoyage.de/acp/sidebar/left/php/index.php">PHP-Bereich</a></li>
             </ul>
         </div>
