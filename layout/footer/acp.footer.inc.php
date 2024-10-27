@@ -1,7 +1,11 @@
 </div>
+</section>
+
+</div>
+
 <?php
     echo $acp_sidebarLeft;
-    echo $acp_sidebarRight;
+    echo $acp_sidebar_Right;
 ?>
 
 </div>
