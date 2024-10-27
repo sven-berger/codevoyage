@@ -32,3 +32,12 @@ try {
 } catch (PDOException $e) {
     echo "<p style='color:red;'>Fehler bei der Abfrage: " . htmlspecialchars($e->getMessage()) . "</p>";
 }
+
+function getCategories($connection) {
+    $sql = "SELECT id, name FROM wissensportal_kategorien";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+$categories = getCategories($connection);

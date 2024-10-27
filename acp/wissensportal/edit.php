@@ -17,6 +17,7 @@ try {
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $kategorie = $_POST['title'];
         $title = $_POST['title'];
         $url = $_POST['url'];
         $description = $_POST['description'];
@@ -52,6 +53,14 @@ try {
 ?>
 
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
+    <label for="kategorie">Kategorie:</label>
+    <select name="kategorie" id="kategorie">
+        <?php foreach ($categories as $category): ?>
+            <option value="<?php echo htmlspecialchars($category['id']); ?>">
+                <?php echo htmlspecialchars($category['name']); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
     <label for="title">Titel:</label>
     <input type="text" name="title" value="<?php echo htmlspecialchars($snippet['title']); ?>" required><br>
 
