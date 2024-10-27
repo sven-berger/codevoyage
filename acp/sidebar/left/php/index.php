@@ -83,7 +83,7 @@
             <?php if (!empty($sonstiges_liste)) : ?>
                 <div class="ActionArea">
                     <ul>
-                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/sonstiges/add.php">Spielereien hinzufügen</a></button></li>
+                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/sonstiges/add.php">Sonstiges hinzufügen</a></button></li>
                     </ul>
                 </div>
                 <table>
