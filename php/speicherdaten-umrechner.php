@@ -1,7 +1,7 @@
 <?php
     $bereich = 'PHP-Bereich';
     $pageTitle = "Speicherdaten-Umrechner";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/core.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/php.header.inc.php");
 ?>
 
 <form action="speicherdaten-umrechner.php" method="get" class="form-speicher">

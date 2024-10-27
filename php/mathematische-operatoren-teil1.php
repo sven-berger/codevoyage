@@ -1,7 +1,7 @@
 <?php
     $bereich = 'PHP-Bereich';
     $pageTitle = 'Mathematische Operatoren: Teil 1 (Größer, kleiner)';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/core.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/php.header.inc.php");
 ?>
 
 <form action="mathematische-operatoren-teil1.php" method="get">
