@@ -78,7 +78,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="sectionContent">
 
 <?php
-
 try {
     $sql = "SELECT * FROM `eintrittspreise`";
     $result = $connection->query($sql);
@@ -108,5 +107,10 @@ try {
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
 }
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
+?>
+</div>
+</section>
+
+<?php
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
