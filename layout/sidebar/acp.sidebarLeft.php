@@ -45,7 +45,7 @@
     <div class="boxContent">
         <ul>
             <?php if (!empty($acp_sidebar_left_wissensportal_liste)): ?>
-                <?php foreach ($acp_sidebar_left_wissensportal as $row): ?>
+                <?php foreach ($acp_sidebar_left_wissensportal_liste as $row): ?>
                 <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
                 <?php endforeach; ?>
             <?php else: ?>
