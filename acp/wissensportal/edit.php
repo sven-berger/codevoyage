@@ -6,6 +6,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 try {
     $id = $_GET['id'];
     
+    // Snippet laden
     $sql = "SELECT * FROM wissensportal WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
@@ -17,7 +18,7 @@ try {
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $kategorie = $_POST['title'];
+        $kategorie_id = $_POST['kategorie_id'];
         $url = $_POST['url'];
         $title = $_POST['title'];
         $description = $_POST['description'];
@@ -27,10 +28,11 @@ try {
         $javascript_snippet = $_POST['javascript_snippet'];
         $mitteilung_snippet = $_POST['mitteilung_snippet'];
 
-        $sql = "UPDATE wissensportal SET url = :url, title = :title, description = :description, php_snippet = :php_snippet, php_snippet_alternativ = :php_snippet_alternativ, python_snippet = :python_snippet, javascript_snippet = :javascript_snippet, mitteilung_snippet = :mitteilung_snippet WHERE id = :id";
+        $sql = "UPDATE wissensportal SET kategorie_id = :kategorie_id, url = :url, title = :title, description = :description, php_snippet = :php_snippet, php_snippet_alternativ = :php_snippet_alternativ, python_snippet = :python_snippet, javascript_snippet = :javascript_snippet, mitteilung_snippet = :mitteilung_snippet WHERE id = :id";
+        
         $stmt = $connection->prepare($sql);
         $stmt->execute([
-            ':kategorie' => $kategorie,
+            ':kategorie_id' => $kategorie_id,
             ':url' => $url,
             ':title' => $title,
             ':description' => $description,
@@ -54,15 +56,18 @@ try {
 ?>
 
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
-    s<label for="kategorie">Kategorie:</label>
+    <label for="kategorie">Kategorie:</label>
     <select name="kategorie_id" id="kategorie">
     <?php
     $kategorien = $connection->query("SELECT id, name FROM wissensportal_kategorien")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($kategorien as $kategorie) {
-        echo "<option value='{$kategorie['id']}'>" . htmlspecialchars($kategorie['name']) . "</option>";
+        // Die ausgewählte Kategorie markieren
+        $selected = ($kategorie['id'] == $snippet['kategorie_id']) ? "selected" : "";
+        echo "<option value='{$kategorie['id']}' $selected>" . htmlspecialchars($kategorie['name']) . "</option>";
     }
     ?>
     </select>
+
     <label for="title">Titel:</label>
     <input type="text" name="title" value="<?php echo htmlspecialchars($snippet['title']); ?>" required><br>
 
@@ -78,7 +83,6 @@ try {
     <label for="php_snippet_alternativ">PHP Snippet (Alternative Syntax):</label>
     <textarea name="php_snippet_alternativ"><?php echo htmlspecialchars($snippet['php_snippet_alternativ']); ?></textarea><br>
 
-
     <label for="python_snippet">Python Snippet:</label>
     <textarea name="python_snippet"><?php echo htmlspecialchars($snippet['python_snippet']); ?></textarea><br>
 
@@ -88,7 +92,6 @@ try {
     <label for="mitteilung_snippet">Mitteilung:</label>
     <textarea name="mitteilung_snippet"><?php echo htmlspecialchars($snippet['mitteilung_snippet']); ?></textarea>
     
-
     <input type="submit" value="Speichern">
 </form>
 
