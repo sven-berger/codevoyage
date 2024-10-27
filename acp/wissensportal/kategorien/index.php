@@ -3,7 +3,7 @@
     $pageTitle = 'Kategorien (Wissensportal)';
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
     try {
-        $sql = "SELECT * FROM wissensportal_kategorien ORDER BY id DESC";
+        $sql = "SELECT * FROM wissensportal_kategorien";
         $stmt = $connection->query($sql);
         $wissensportal_kategorien = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
