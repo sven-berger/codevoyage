@@ -4,11 +4,11 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
     try {
-        $variablen_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 1 ";
+        $variablen_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 1";
         $stmt = $connection->query($variablen_sql);
         $variablen_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $arrays_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 2 ORDER BY id DESC";
+        $arrays_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 2";
         $stmt = $connection->query($arrays_sql);
         $arrays_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
