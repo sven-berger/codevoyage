@@ -1,7 +1,4 @@
 </div>
-</section>
-
-</div>
 
 <?php
     echo $wissensportal_sidebarLeft;
