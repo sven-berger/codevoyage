@@ -8,6 +8,7 @@ try {
 
     $acp_sidebar_left_seitenleiste = "SELECT * FROM `acp_sidebar_left_seitenleiste`";
     $acp_sidebar_left_eigene_werke = "SELECT * FROM `acp_sidebar_left_eigene_werke`";
+    $acp_sidebar_left_eigene_werke = "SELECT * FROM `acp_sidebar_left_wissensportal`";
 
     $ausgabe_eigene_werke = $connection->query($eigene_werke);
     $ausgabe_spielereien = $connection->query($spielereien);
@@ -15,6 +16,7 @@ try {
 
     $ausgabe_acp_sidebar_left_seitenleiste = $connection->query($acp_sidebar_left_seitenleiste);
     $ausgabe_acp_sidebar_left_eigene_werke = $connection->query($acp_sidebar_left_eigene_werke);
+    $ausgabe_acp_sidebar_left_wissensportal = $connection->query($acp_sidebar_left_wissensportal);
 
     $eigene_werke_liste = $ausgabe_eigene_werke->fetchAll(PDO::FETCH_ASSOC);
     $spielereien_liste = $ausgabe_spielereien->fetchAll(PDO::FETCH_ASSOC);
@@ -22,7 +24,7 @@ try {
 
     $acp_sidebar_left_seitenleiste_liste = $ausgabe_acp_sidebar_left_seitenleiste->fetchAll(PDO::FETCH_ASSOC);
     $acp_sidebar_left_eigene_werke_liste = $ausgabe_acp_sidebar_left_eigene_werke->fetchAll(PDO::FETCH_ASSOC);
-
+    $acp_sidebar_left_wissensportal_liste = $ausgabe_acp_sidebar_left_wissensportal->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
     echo "<p style='color:red;'>Fehler bei der Abfrage: " . htmlspecialchars($e->getMessage()) . "</p>";
