@@ -5,27 +5,20 @@
 ?>
     
 <?php if (isset($_GET['snippet'])): ?>
-
-    <?php
+    <?php 
+        $tableName = 'wissensportal';  // Beispiel: gewünschte Tabelle
         $snippetName = $_GET['snippet'];
-        $sql = "SELECT * FROM wissensportal WHERE url = :url";
-        $stmt = $connection->prepare($sql);    
-        $stmt->execute([':url' => $snippetName]);
-        $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-        if ($snippet) {
-            $url = htmlspecialchars($snippet['url']);
-            $title = htmlspecialchars($snippet['title']);
-            $description = htmlspecialchars($snippet['description']);
-            $phpSnippet = htmlspecialchars($snippet['php_snippet']);
-            $php_snippet_alternativ = htmlspecialchars($snippet['php_snippet_alternativ']);
-            $pythonSnippet = htmlspecialchars($snippet['python_snippet']);
-            $javascriptSnippet = htmlspecialchars($snippet['javascript_snippet']);
-            $mitteilungSnippet = $snippet['mitteilung_snippet'];
-        } else {
-            echo "<section class='section'><div class='sectionContent'>Snippet nicht gefunden oder keine Übereinstimmung.</div></section>";
-            require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/footer.inc.php");
-            exit;
+        $snippetData = getSnippetData($connection, $tableName, $snippetName);
+
+        if ($snippetData) {
+            $url = $snippetData['url'];
+            $title = $snippetData['title'];
+            $description = $snippetData['description'];
+            $phpSnippet = $snippetData['php_snippet'];
+            $php_snippet_alternativ = $snippetData['php_snippet_alternativ'];
+            $pythonSnippet = $snippetData['python_snippet'];
+            $javascriptSnippet = $snippetData['javascript_snippet'];
+            $mitteilungSnippet = $snippetData['mitteilung_snippet'];
         }
     ?>
 
@@ -64,7 +57,6 @@
 
 <?php else: ?>
     <? require_once ($_SERVER['DOCUMENT_ROOT'] . "/../lib/wissensportal.index.lib.php"); ?>
-
 <?php endif; ?>
 
 <?php    

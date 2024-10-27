@@ -42,4 +42,29 @@ function getSnippetTitle(PDO $connection, $snippetName) {
     if ($snippet) {
         return htmlspecialchars($snippet['title']);
     }
+    return null;
+}
+
+function getSnippetData($connection, $tableName, $snippetName) {
+    $sql = "SELECT * FROM $tableName WHERE url = :url";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute([':url' => $snippetName]);
+    $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+    if ($snippet) {
+        return [
+            'url' => htmlspecialchars($snippet['url']),
+            'title' => htmlspecialchars($snippet['title']),
+            'description' => htmlspecialchars($snippet['description']),
+            'php_snippet' => htmlspecialchars($snippet['php_snippet']),
+            'php_snippet_alternativ' => htmlspecialchars($snippet['php_snippet_alternativ']),
+            'python_snippet' => htmlspecialchars($snippet['python_snippet']),
+            'javascript_snippet' => htmlspecialchars($snippet['javascript_snippet']),
+            'mitteilung_snippet' => $snippet['mitteilung_snippet']
+        ];
+    } else {
+        echo "<section class='section'><div class='sectionContent'>Snippet nicht gefunden oder keine Übereinstimmung.</div></section>";
+        require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/footer.inc.php");
+        exit;
+    }
 }
