@@ -8,5 +8,5 @@
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
-    "jira-plugin.workingProject": "CV"
+    "jira-plugin.workingProject": ""
 }
