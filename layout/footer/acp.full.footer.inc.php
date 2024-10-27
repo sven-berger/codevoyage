@@ -1,4 +1,7 @@
 </div>
+</section>
+
+</div>
 
 <?php
     echo $acp_sidebarLeft;
