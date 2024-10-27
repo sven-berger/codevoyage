@@ -20,25 +20,27 @@
     }
 ?>
 
-<section class="section">
-    <div class="sectionContent">
-        <h2>Kategorie: Variablen (ID: 1)</h2>
-        <ul>
-            <?php if (!empty($variablen_snippets)): ?>
-                <?php foreach ($variablen_snippets as $snippet): ?>
-                    <li>
-                        <strong><?php echo htmlspecialchars($snippet['title']); ?></strong><br>
-                        <?php echo htmlspecialchars($snippet['description']); ?><br>
-                        <a href="edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
-                        <a href="delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
-                    </li>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <li>Keine Snippets in dieser Kategorie vorhanden.</li>
-            <?php endif; ?>
-        </ul>
-    </div>
-</section>
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Beschreibung</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+            <?php foreach ($variablen_snippets as $snippet): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><?php echo htmlspecialchars($snippet['description']); ?></td>
+                <td>
+                    <a href="edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                    <a href="delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>
 
 <table>
     <thead>
