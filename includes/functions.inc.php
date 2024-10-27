@@ -12,8 +12,7 @@ try {
     $ausgabe_spielereien = $connection->query($spielereien);
     $ausgabe_acp_sidebar_left_seitenleiste = $connection->query($acp_sidebar_left_seitenleiste);
     $ausgabe_acp_sidebar_left_eigene_werke = $connection->query($acp_sidebar_left_eigene_werke);
-    $ausgabe_acp_sidebar_left_sonstiges = $connection->query($acp_sidebar_left_eigene_werke);
-
+    $ausgabe_acp_sidebar_left_sonstiges = $connection->query($acp_sidebar_left_sonstiges);
 
     $eigene_werke_liste = $ausgabe_eigene_werke->fetchAll(PDO::FETCH_ASSOC);
     $spielereien_liste = $ausgabe_spielereien->fetchAll(PDO::FETCH_ASSOC);
