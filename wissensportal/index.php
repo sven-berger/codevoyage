@@ -21,6 +21,7 @@
             $mitteilungSnippet = $snippetData['mitteilung_snippet'];
         }
     ?>
+<?php endif; ?>
 
 <?php renderSnippetSections($snippetData); ?>
 
