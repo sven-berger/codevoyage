@@ -80,7 +80,7 @@
 <section class="section">
     <div class="sectionContent">
         <?php try { ?>
-            <?php if (!empty($acp_sidebar_left_sonstiges_liste)) : ?>
+            <?php if (!empty($sonstiges_liste)) : ?>
                 <div class="ActionArea">
                     <ul>
                         <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/sonstiges/add.php">Spielereien hinzufügen</a></button></li>
