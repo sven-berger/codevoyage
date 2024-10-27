@@ -41,7 +41,7 @@
 
     <!-- Sonstiges -->
     <div class="boxCapital" style="margin-top: 20px;">
-        <p>Spielereien</p>
+        <p>Sonstiges</p>
     </div>
     <section class="sidebarBox">
         <div class="boxContent">
@@ -51,7 +51,7 @@
                     <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <li>Keine Spielerei und Snippet gefunden.</li>
+                    <li>Kein Snippet gefunden.</li>
                 <?php endif; ?>
             </ul>
         </div>
