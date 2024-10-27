@@ -316,6 +316,10 @@ input, textarea {
     font-size: 14px;
 }
 
+select#kategorie {
+    margin: 20px 0;
+}
+
 table {
     width: 100% !important;
     
