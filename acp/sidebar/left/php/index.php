@@ -56,7 +56,7 @@
                         <th>Ziel</th>
                         <th>Aktion</th>
                     </tr>
-                    <?php foreach ($spielereien_liste as $row) : ?>
+                    <?php foreach ($acp_sidebar_left_sonstiges_liste as $row) : ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
@@ -80,7 +80,7 @@
 <section class="section">
     <div class="sectionContent">
         <?php try { ?>
-            <?php if (!empty($sonstiges_liste)) : ?>
+            <?php if (!empty($acp_sidebar_left_sonstiges_liste)) : ?>
                 <div class="ActionArea">
                     <ul>
                         <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/php/sonstiges/add.php">Spielereien hinzufügen</a></button></li>
