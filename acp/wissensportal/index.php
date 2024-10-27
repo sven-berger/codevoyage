@@ -2,15 +2,43 @@
     $bereich = 'Administrationsbereich';
     $pageTitle = 'Wissensportal';
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
+
     try {
+        // Snippets aus der Kategorie "Variablen" (ID: 1) abrufen
+        $sql = "SELECT * FROM wissensportal WHERE kategorie_id = 1 ORDER BY id DESC";
+        $stmt = $connection->query($sql);
+        $variablen_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Alle Snippets abrufen
         $sql = "SELECT * FROM wissensportal ORDER BY id DESC";
         $stmt = $connection->query($sql);
         $snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     } catch (PDOException $e) {
         echo "Fehler beim Laden der Snippets: " . htmlspecialchars($e->getMessage());
         exit;
     }
 ?>
+
+<section class="section">
+    <div class="sectionContent">
+        <h2>Kategorie: Variablen (ID: 1)</h2>
+        <ul>
+            <?php if (!empty($variablen_snippets)): ?>
+                <?php foreach ($variablen_snippets as $snippet): ?>
+                    <li>
+                        <strong><?php echo htmlspecialchars($snippet['title']); ?></strong><br>
+                        <?php echo htmlspecialchars($snippet['description']); ?><br>
+                        <a href="edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                        <a href="delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                    </li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <li>Keine Snippets in dieser Kategorie vorhanden.</li>
+            <?php endif; ?>
+        </ul>
+    </div>
+</section>
 
 <table>
     <thead>
@@ -33,7 +61,6 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
