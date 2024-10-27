@@ -4,10 +4,13 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
     try {
-        // Snippets aus der Kategorie "Variablen" (ID: 1) abrufen
-        $sql = "SELECT * FROM wissensportal WHERE kategorie_id = 1 ORDER BY id DESC";
-        $stmt = $connection->query($sql);
+        $variablen_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 1 ORDER BY id DESC";
+        $stmt = $connection->query($variablen_sql);
         $variablen_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $arrays_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 2 ORDER BY id DESC";
+        $stmt = $connection->query($arrays_sql);
+        $arrays_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         // Alle Snippets abrufen
         $sql = "SELECT * FROM wissensportal ORDER BY id DESC";
@@ -30,6 +33,28 @@
     </thead>
     <tbody>
             <?php foreach ($variablen_snippets as $snippet): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><?php echo htmlspecialchars($snippet['description']); ?></td>
+                <td>
+                    <a href="edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                    <a href="delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Beschreibung</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+            <?php foreach ($arrays_snippets as $snippet): ?>
             <tr>
                 <td><?php echo htmlspecialchars($snippet['title']); ?></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
