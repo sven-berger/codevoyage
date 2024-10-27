@@ -71,14 +71,4 @@
         </ul>
     </div>
 </section>
-
-<section class="sidebarBox">
-        <h3 class="boxTitle">Blog</h3>
-        <div class="boxContent">
-            <ul>
-                <li><a href="https://codevoyage.de/acp/blog/index.php">Übersicht</a></li>
-                <li><a href="https://codevoyage.de/acp/blog/add.php">Blog-Artikel hinzufügen</a></li>
-            </ul>
-        </div>
-</section>
 </nav>
