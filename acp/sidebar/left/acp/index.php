@@ -119,7 +119,7 @@
             <?php if (!empty($acp_sidebar_left_blog_liste)) : ?>
                 <div class="ActionArea">
                     <ul>
-                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/add.php">Menüpunkt hinzufügen</a></button></li>
+                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/blog/add.php">Menüpunkt hinzufügen</a></button></li>
                     </ul>
                 </div>     
                 <table>
