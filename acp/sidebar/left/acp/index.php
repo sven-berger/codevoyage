@@ -76,14 +76,14 @@
     </div>
 </section>
 
-<h3 class="section-title">Eigene Werke</h3>
+<h3 class="section-title">Wissensportal</h3>
 <section class="section">
     <div class="sectionContent">
         <?php try { ?>
-            <?php if (!empty($acp_sidebar_left_wissennsportal_liste)) : ?>
+            <?php if (!empty($acp_sidebar_left_wissensportal_liste)) : ?>
                 <div class="ActionArea">
                     <ul>
-                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/eigene-werke/add.php">Menüpunkt hinzufügen</a></button></li>
+                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/add.php">Menüpunkt hinzufügen</a></button></li>
                     </ul>
                 </div>     
                 <table>
@@ -92,13 +92,13 @@
                         <th>Ziel</th>
                         <th>Aktion</th>
                     </tr>
-                    <?php foreach ($acp_sidebar_left_wissennsportal_liste as $row) : ?>
+                    <?php foreach ($acp_sidebar_left_wissensportal_liste as $row) : ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
-                                <a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
-                                <a href="https://codevoyage.de/acp/sidebar/left/php/eigene-werke/delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
+                                <a href="https://codevoyage.de/acp/sidebar/left/wissensportal/eigene-werke/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
+                                <a href="https://codevoyage.de/acp/sidebar/left/wissensportal/eigene-werke/delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
