@@ -58,7 +58,7 @@
 
 <section class="section">
     <div class="sectionContent">
-        <a href="https://wissensportal.codevoyage.de/acp/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> | <a href="https://wissensportal.codevoyage.de/acp/delete.php?id=<?php echo $snippet['id']; ?>">Löschen</a>
+        <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> | <a href="https://codevoyage.de/acp/wissensportal/delete.php?id=<?php echo $snippet['id']; ?>">Löschen</a>
     </div>
 </section>
 
