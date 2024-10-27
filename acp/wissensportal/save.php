@@ -4,8 +4,8 @@ $bereich = 'Administrationsbereich';
 $pageTitle = 'Snippet abschicken';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
-$url = $_POST['url'];
 $kategorie = $_POST['title'];
+$url = $_POST['url'];
 $title = $_POST['title'];
 $description = $_POST['description'];
 $php_snippet = $_POST['php_snippet'];

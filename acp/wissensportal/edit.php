@@ -18,8 +18,8 @@ try {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $kategorie = $_POST['title'];
-        $title = $_POST['title'];
         $url = $_POST['url'];
+        $title = $_POST['title'];
         $description = $_POST['description'];
         $php_snippet = $_POST['php_snippet'];
         $php_snippet_alternativ = $_POST['php_snippet_alternativ'];
@@ -27,11 +27,12 @@ try {
         $javascript_snippet = $_POST['javascript_snippet'];
         $mitteilung_snippet = $_POST['mitteilung_snippet'];
 
-        $sql = "UPDATE wissensportal SET title = :title, url = :url, description = :description, php_snippet = :php_snippet, php_snippet_alternativ = :php_snippet_alternativ, python_snippet = :python_snippet, javascript_snippet = :javascript_snippet, mitteilung_snippet = :mitteilung_snippet WHERE id = :id";
+        $sql = "UPDATE wissensportal SET url = :url, title = :title, description = :description, php_snippet = :php_snippet, php_snippet_alternativ = :php_snippet_alternativ, python_snippet = :python_snippet, javascript_snippet = :javascript_snippet, mitteilung_snippet = :mitteilung_snippet WHERE id = :id";
         $stmt = $connection->prepare($sql);
         $stmt->execute([
-            ':title' => $title,
+            ':kategorie' => $kategorie,
             ':url' => $url,
+            ':title' => $title,
             ':description' => $description,
             ':php_snippet' => $php_snippet,
             ':php_snippet_alternativ' => $php_snippet_alternativ,
@@ -53,13 +54,14 @@ try {
 ?>
 
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
-    <label for="kategorie">Kategorie:</label>
-    <select name="kategorie" id="kategorie">
-        <?php foreach ($categories as $category): ?>
-            <option value="<?php echo htmlspecialchars($category['id']); ?>">
-                <?php echo htmlspecialchars($category['name']); ?>
-            </option>
-        <?php endforeach; ?>
+    s<label for="kategorie">Kategorie:</label>
+    <select name="kategorie_id" id="kategorie">
+    <?php
+    $kategorien = $connection->query("SELECT id, name FROM wissensportal_kategorien")->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($kategorien as $kategorie) {
+        echo "<option value='{$kategorie['id']}'>" . htmlspecialchars($kategorie['name']) . "</option>";
+    }
+    ?>
     </select>
     <label for="title">Titel:</label>
     <input type="text" name="title" value="<?php echo htmlspecialchars($snippet['title']); ?>" required><br>
