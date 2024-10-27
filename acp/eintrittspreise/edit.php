@@ -40,6 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
 
 ?>
 
+<section class="section">
+    <div class="sectionContent">
 <?php if (isset($id) && $eintrittspreis): ?>
     <form action="edit.php" method="post">
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
@@ -63,6 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
 <?php else: ?>
     <p>Eintrittspreis nicht gefunden.</p>
 <?php endif; ?>
+</div>
+</section>
 
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
