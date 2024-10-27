@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = 'Wissensportal';
+    $pageTitle = 'Kategorien (Wissensportal)';
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
     try {
         $sql = "SELECT * FROM wissensportal_kategorien ORDER BY id DESC";
