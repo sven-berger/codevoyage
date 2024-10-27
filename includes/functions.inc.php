@@ -6,7 +6,7 @@ try {
     $spielereien = "SELECT * FROM `php_sidebar_left_spielereien`";
     $acp_sidebar_left_seitenleiste = "SELECT * FROM `acp_sidebar_left_seitenleiste`";
     $acp_sidebar_left_eigene_werke = "SELECT * FROM `acp_sidebar_left_eigene_werke`";
-    $acp_sidebar_left_sonstiges = "SELECT * FROM `acp_sidebar_left_eigene_werke`";
+    $acp_sidebar_left_sonstiges = "SELECT * FROM `acp_sidebar_left_sonstiges`";
 
     $ausgabe_eigene_werke = $connection->query($eigene_werke);
     $ausgabe_spielereien = $connection->query($spielereien);
