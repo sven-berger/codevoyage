@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Wissensportal';
-    $pageTitle = 'Wissensportal2';
+    $pageTitle = 'Wissensportal';
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.core.header.inc.php");
 ?>
     
