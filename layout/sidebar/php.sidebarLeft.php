@@ -46,8 +46,8 @@
     <section class="sidebarBox">
         <div class="boxContent">
             <ul>
-                <?php if (!empty($acp_sidebar_left_sonstiges_liste)): ?>
-                    <?php foreach ($acp_sidebar_left_sonstiges_liste as $row): ?>
+                <?php if (!empty($sonstiges_liste)): ?>
+                    <?php foreach ($sonstiges_liste as $row): ?>
                     <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
                     <?php endforeach; ?>
                 <?php else: ?>
