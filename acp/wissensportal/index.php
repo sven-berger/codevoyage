@@ -62,7 +62,7 @@
         </tr>
     </thead>
     <tbody>
-            <?php foreach ($variablen_snippets as $snippet): ?>
+            <?php foreach ($arrays_snippets as $snippet): ?>
             <tr>
                 <td><?php echo htmlspecialchars($snippet['title']); ?></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
