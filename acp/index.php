@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Administrationsbereich";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 ?>
 
 <p>Hallo</p>

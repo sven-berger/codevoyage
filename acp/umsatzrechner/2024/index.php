@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Umsatzrechner für das Jahr 2024";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/acp.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 $monate_zuweisung = [
     1 => 'Januar', 

@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Blog-Artikel veröffentlichen";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/acp.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
 <?php
