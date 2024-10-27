@@ -8,7 +8,7 @@ try {
 
     $acp_sidebar_left_seitenleiste = "SELECT * FROM `acp_sidebar_left_seitenleiste`";
     $acp_sidebar_left_eigene_werke = "SELECT * FROM `acp_sidebar_left_eigene_werke`";
-    $acp_sidebar_left_eigene_werke = "SELECT * FROM `acp_sidebar_left_wissensportal`";
+    $acp_sidebar_left_wissensportal = "SELECT * FROM `acp_sidebar_left_wissensportal`";
 
     $ausgabe_eigene_werke = $connection->query($eigene_werke);
     $ausgabe_spielereien = $connection->query($spielereien);
