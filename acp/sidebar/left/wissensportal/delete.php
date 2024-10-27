@@ -1,7 +1,7 @@
 <?php
 $bereich = 'Administrationsbereich';
 $pageTitle = 'Snippet löschen';
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 try {
     if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -32,5 +32,5 @@ try {
     exit;
 }
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/footer.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
 ?>

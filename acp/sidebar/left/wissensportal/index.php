@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = 'Wissensportal';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
     try {
         $sql = "SELECT * FROM wissensportal ORDER BY id DESC";
         $stmt = $connection->query($sql);
@@ -36,5 +36,5 @@
 
 
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
 ?>

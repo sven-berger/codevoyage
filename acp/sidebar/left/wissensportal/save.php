@@ -2,7 +2,7 @@
 
 $bereich = 'Administrationsbereich';
 $pageTitle = 'Snippet abschicken';
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 $url = $_POST['url'];
 $title = $_POST['title'];
@@ -32,5 +32,5 @@ $stmt->execute([
 
 header("Location: https://wissensportal.codevoyage.de/index.php");
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/footer.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
 ?>

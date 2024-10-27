@@ -1,7 +1,7 @@
 <?php
 $bereich = 'Administrationsbereich';
 $pageTitle = 'Snippet bearbeiten';
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 try {
     $id = $_GET['id'];
@@ -82,5 +82,5 @@ try {
 </form>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/includes/footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
 ?>
