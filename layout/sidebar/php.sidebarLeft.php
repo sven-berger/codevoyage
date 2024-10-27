@@ -40,22 +40,19 @@
     </section>
 
     <!-- Sonstiges -->
-    <div class="boxCapital">
-        <p>Sonstiges</p>
+    <div class="boxCapital" style="margin-top: 20px;">
+        <p>Spielereien</p>
     </div>
     <section class="sidebarBox">
         <div class="boxContent">
             <ul>
-                <li><a href="https://php.codevoyage.de/mathematische-operatoren-teil1.php">Mathematische Operatoren: Teil 1</a></li>
-                <li><a href="https://php.codevoyage.de/mathematische-operatoren-teil2.php">Mathematische Operatoren: Teil 2</a></li>
-                <li><a href="https://php.codevoyage.de/mathematische-operatoren-teil3.php">Mathematische Operatoren: Teil 3</a></li>
-            </ul>
-            <ul>
-                <li><a href="https://php.codevoyage.de/anleitung-github.php">Eine Kurzanleitung für GitHub</a></li>
-                <li><a href="https://php.codevoyage.de/anleitung-flask.php">Eine Kurzanleitung für Flask</a></li>
-            </ul>
-            <ul>
-                <li><a href="https://php.codevoyage.de/database-test.php">Datenbanktest</a></li>
+                <?php if (!empty($acp_sidebar_left_sonstiges_liste)): ?>
+                    <?php foreach ($acp_sidebar_left_sonstiges_liste as $row): ?>
+                    <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <li>Keine Spielerei und Snippet gefunden.</li>
+                <?php endif; ?>
             </ul>
         </div>
     </section>
