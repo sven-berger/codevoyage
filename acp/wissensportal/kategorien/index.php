@@ -14,7 +14,7 @@
 
 <div class="ActionArea">
     <ul>
-        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/seitenleiste/add.php">Menüpunkt hinzufügen</a></button></li>
+        <li><button class="button-action"><a href="https://codevoyage.de/acp/wissensportal/kategorien/add.php">Kategorie hinzufügen</a></button></li>
     </ul>
 </div>     
 <table>
