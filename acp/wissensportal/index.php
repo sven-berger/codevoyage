@@ -13,7 +13,7 @@
         $arrays_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         // Alle Snippets abrufen
-        $sql = "SELECT * FROM wissensportal ORDER BY id DESC";
+        $sql = "SELECT * FROM wissensportal";
         $stmt = $connection->query($sql);
         $snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
