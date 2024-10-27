@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Wissensportal';
     $pageTitle = 'Wissensportal';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.core.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.app.header.inc.php");
 ?>
     
 <?php if (isset($_GET['snippet'])): ?>
