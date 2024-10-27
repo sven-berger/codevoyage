@@ -1,7 +1,7 @@
 <?php
     $bereich = 'PHP-Bereich';
     $pageTitle = "Umsatzrechner für das Jahr 2024";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/php.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/core.header.inc.php");
 ?>
 
 <p><a href="https://php.codevoyage.de/umsatzrechner_2023.php">2023</a> | <a href="https://php.codevoyage.de/umsatzrechner_2024.php">2024</a></p>
