@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = "Eigenes Werk hinzufügen (Administrationsbereich)";
+    $pageTitle = "Menüpunkt hinzufügen (Eigene Werke)";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 $sql = "
