@@ -8,7 +8,7 @@ $sql = "
 CREATE TABLE IF NOT EXISTS `wissensportal_kategorien`
 (
 `ID` INT NOT NULL AUTO_INCREMENT,
-`name` VARCHAR(255) NOT NULL
+`name` VARCHAR(255) NOT NULL,
 PRIMARY KEY (`ID`)
 )";
 
