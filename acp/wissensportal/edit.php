@@ -57,13 +57,11 @@ try {
 
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
     <label for="kategorie">Kategorie:</label>
-    <select name="kategorie_id" id="kategorie">
+    <select name="kategorie_id" id="kategorie" class="wissensportal-kategorien">
     <?php
     $kategorien = $connection->query("SELECT id, name FROM wissensportal_kategorien")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($kategorien as $kategorie) {
-        // Die ausgewählte Kategorie markieren
-        $selected = ($kategorie['id'] == $snippet['kategorie_id']) ? "selected" : "";
-        echo "<option value='{$kategorie['id']}' $selected>" . htmlspecialchars($kategorie['name']) . "</option>";
+        echo "<option value='{$kategorie['id']}'>" . htmlspecialchars($kategorie['name']) . "</option>";
     }
     ?>
     </select>

@@ -46,7 +46,7 @@
 ?>
 
 <style>
-    .wissensportal-kategorien select {
+    .wissensportal-kategorien select#kategorie {
         margin-bottom: 20px;
     }
 </style>
