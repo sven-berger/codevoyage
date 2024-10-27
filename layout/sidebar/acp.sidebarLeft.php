@@ -55,14 +55,21 @@
     </div>
 </section>
 
+<div class="boxCapital" style="margin-top: 20px;">
+    <p>Blog</p>
+</div>
 <section class="sidebarBox">
-        <h3 class="boxTitle">Wissensportal</h3>
-        <div class="boxContent">
-            <ul>
-                <li><a href="https://wissensportal.codevoyage.de/acp/index.php">Übersicht</a></li>
-                <li><a href="https://wissensportal.codevoyage.de/acp/add.php">Snippet hinzufügen</a></li>
-            </ul>
-        </div>
+    <div class="boxContent">
+        <ul>
+            <?php if (!empty($acp_sidebar_left_blog_liste)): ?>
+                <?php foreach ($acp_sidebar_left_blog_liste as $row): ?>
+                <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <li>Keine Snippets gefunden.</li>
+            <?php endif; ?>
+        </ul>
+    </div>
 </section>
 
 <section class="sidebarBox">
