@@ -39,37 +39,6 @@
         </div>
     </section>
 
-    <!-- Statische Eigene Werke-Liste -->
-    <div class="boxCapital" style="margin-top: 20px;">
-        <p>Eigene Werke</p>
-    </div>
-    <section class="sidebarBox">
-        <div class="boxContent">
-            <ul>
-                <li><a href="https://php.codevoyage.de/umsatzrechner_2023.php">Umsatzrechner</a></li>
-                <li><a href="https://php.codevoyage.de/eintrittspreise.php">Eintrittspreis-Rechner</a></li>
-                <li><a href="https://php.codevoyage.de/passwortgenerator.php">Passwortgenerator</a></li>
-                <li><a href="https://php.codevoyage.de/einfaches-gewinnspiel.php">Einfaches Gewinnspiel</a></li>
-                <li><a href="https://php.codevoyage.de/mini-taschenrechner.php">Mini-Taschenrechner</a></li>
-                <li><a href="https://php.codevoyage.de/zahlen-raten.php">Zahlen raten</a></li>
-                <li><a href="https://php.codevoyage.de/speicherdaten-umrechner.php">Speicherdaten-Umrechner</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Statische Spielereien & Snippets -->
-    <div class="boxCapital">
-        <p>Spielereien & Snippets</p>
-    </div>
-    <section class="sidebarBox">
-        <div class="boxContent">
-            <ul>
-                <li><a href="https://php.codevoyage.de/screensaver.php">Screensaver</a></li>
-                <li><a href="https://php.codevoyage.de/schwarzes_loch.php">Ein schwarzes Loch</a></li>
-            </ul>
-        </div>
-    </section>
-
     <!-- Sonstiges -->
     <div class="boxCapital">
         <p>Sonstiges</p>
