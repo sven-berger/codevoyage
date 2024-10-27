@@ -68,3 +68,41 @@ function getSnippetData($connection, $tableName, $snippetName) {
         exit;
     }
 }
+
+function renderSnippetSections($snippetData) {
+    if (!empty($snippetData['mitteilung_snippet'])) {
+        echo '<div class="mitteilungSnippet">';
+        echo '<h2>Ein Hinweis in eigener Sache:</h2>';
+        echo '<p>' . htmlspecialchars($snippetData['mitteilung_snippet']) . '</p>';
+        echo '</div>';
+    }
+
+    if (!empty($snippetData['php_snippet'])) {
+        echo '<h3 class="section-title">PHP</h3>';
+        echo '<pre><code class="language-php">' . htmlspecialchars($snippetData['php_snippet']) . '</code></pre>';
+    }
+
+    if (!empty($snippetData['php_snippet_alternativ'])) {
+        echo '<h3 class="section-title">PHP (Alternative Syntax)</h3>';
+        echo '<pre><code class="language-php">' . htmlspecialchars($snippetData['php_snippet_alternativ']) . '</code></pre>';
+    }
+
+    if (!empty($snippetData['python_snippet'])) {
+        echo '<h3 class="section-title">Python</h3>';
+        echo '<pre><code class="language-python">' . htmlspecialchars($snippetData['python_snippet']) . '</code></pre>';
+    }
+
+    if (!empty($snippetData['javascript_snippet'])) {
+        echo '<h3 class="section-title">JavaScript</h3>';
+        echo '<pre><code class="language-javascript">' . htmlspecialchars($snippetData['javascript_snippet']) . '</code></pre>';
+    }
+
+    // Link-Bereich für "Bearbeiten" und "Löschen"
+    echo '<section class="section">';
+    echo '<div class="sectionContent">';
+    echo '<a href="https://wissensportal.codevoyage.de/acp/edit.php?id=' . htmlspecialchars($snippetData['id']) . '">Bearbeiten</a> | ';
+    echo '<a href="https://wissensportal.codevoyage.de/acp/delete.php?id=' . htmlspecialchars($snippetData['id']) . '">Löschen</a>';
+    echo '</div>';
+    echo '</section>';
+}
+?>
