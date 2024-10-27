@@ -1,7 +1,7 @@
 <?php
 
 $bereich = 'Administrationsbereich';
-$pageTitle = 'Kategorie abschicken';
+$pageTitle = 'Kategorie abschicken (Wissensportal)';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 $sql = "
