@@ -5,6 +5,7 @@ $pageTitle = 'Snippet abschicken';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 $url = $_POST['url'];
+$kategorie = $_POST['title'];
 $title = $_POST['title'];
 $description = $_POST['description'];
 $php_snippet = $_POST['php_snippet'];
@@ -13,12 +14,11 @@ $python_snippet = $_POST['python_snippet'];
 $javascript_snippet = $_POST['javascript_snippet'];
 $mitteilung_snippet = $_POST['mitteilung_snippet'];
 
-
-
-$sql = "INSERT INTO wissensportal (url, title, description, php_snippet, php_snippet_alternativ, python_snippet, javascript_snippet, mitteilung_snippet) 
-        VALUES (:url, :title, :description, :php_snippet, :php_snippet_alternativ, :python_snippet, :javascript_snippet, :mitteilung_snippet)";
+$sql = "INSERT INTO wissensportal (kategorie, url, title, description, php_snippet, php_snippet_alternativ, python_snippet, javascript_snippet, mitteilung_snippet) 
+        VALUES (:kategorie, :url, :title, :description, :php_snippet, :php_snippet_alternativ, :python_snippet, :javascript_snippet, :mitteilung_snippet)";
 $stmt = $connection->prepare($sql);
 $stmt->execute([
+    ':kategorie' => $kategorie,
     ':url' => $url,
     ':title' => $title,
     ':description' => $description,

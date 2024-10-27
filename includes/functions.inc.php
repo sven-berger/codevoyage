@@ -32,15 +32,3 @@ try {
 } catch (PDOException $e) {
     echo "<p style='color:red;'>Fehler bei der Abfrage: " . htmlspecialchars($e->getMessage()) . "</p>";
 }
-
-
-function getSnippetTitle(PDO $connection, $snippetName) {
-    $sql = "SELECT * FROM wissensportal WHERE url = :url";
-    $stmt = $connection->prepare($sql);
-    $stmt->execute([':url' => $snippetName]);
-    $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($snippet) {
-        return htmlspecialchars($snippet['title']);
-    }
-    return null;
-}
