@@ -12,17 +12,6 @@
     }
 ?>
 
-
-
-<section class="section">
-<div class="sectionContent">
-    <h2>Kategorien-Name (Variabeln - ID: 1)</h2>
-    <ul>
-        <li>Snippets aus der jeweiligen Kategorie</li>
-    </ul>
-</div>
-</section> 
-
 <div class="ActionArea">
     <ul>
         <li><button class="button-action"><a href="https://codevoyage.de/acp/wissensportal/kategorien/add.php">Kategorie hinzufügen</a></button></li>
