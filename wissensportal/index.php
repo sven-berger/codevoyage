@@ -38,7 +38,7 @@
 
 <?php if (!empty($phpSnippet)): ?>
     <h3 class="section-title">PHP</h3>
-    <pre><code class="language-php"><?php echo $phpSnippet; ?></code></pre>
+    <pre><code class="language-php"><?php echo '<?php' . '<br>' . $phpSnippet . '<br>' . '?>'; ?></code></pre>
 <?php endif; ?>
 
 <?php if (!empty($php_snippet_alternativ)): ?>
