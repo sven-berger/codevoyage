@@ -29,4 +29,14 @@
     </div>
     <div class="main">
         <div class="content">
-            <h2><?php echo $pageTitle; ?></h2>
+        <?php if (isset($_GET['snippet'])): ?>
+            <?php
+                $snippetName = $_GET['snippet'];
+                $title = getSnippetTitle($connection, $snippetName);
+                echo $title;
+            ?>
+        <?php else: ?>
+        <?php 
+            echo $pageTitle;
+        ?>
+        <?php endif; ?>
