@@ -1,3 +1,26 @@
+<?php
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
+
+    try {
+        $variablen_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 1";
+        $stmt = $connection->query($variablen_sql);
+        $variablen_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $arrays_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 2";
+        $stmt = $connection->query($arrays_sql);
+        $arrays_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Alle Snippets abrufen
+        $sql = "SELECT * FROM wissensportal";
+        $stmt = $connection->query($sql);
+        $snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    } catch (PDOException $e) {
+        echo "Fehler beim Laden der Snippets: " . htmlspecialchars($e->getMessage());
+        exit;
+    }
+?>
+
 <nav>
 <div class="boxCapital" style="margin-top: 20px;">
     <p>Variablen</p>
@@ -5,12 +28,9 @@
 <section class="sidebarBox">
     <div class="boxContent">
         <ul>
-            <li><a href="https://wissensportal.codevoyage.de/index.php?snippet=hallo-welt">Hello World!</a></li>
-            <li><a href="https://wissensportal.codevoyage.de/index.php?snippet=mathematische-operatoren">Mathematische Operatoren</a></li>
-            <li><a href="https://wissensportal.codevoyage.de/index.php?snippet=strings-wieder-verschoenern">Strings wieder verschönern</a></li>
-            <li><a href="https://wissensportal.codevoyage.de/index.php?snippet=werte-in-strings-grossschreiben">Werte in Strings großschreiben</a></li>
-            <li><a href="https://wissensportal.codevoyage.de/index.php?snippet=werte-in-strings-kleinschreiben">Werte in Strings kleinschreiben</a></li>
-            <li><a href="https://wissensportal.codevoyage.de/index.php?snippet=variablen-zusammenfassen_verkuerzen"><span class="label">Python</span> Variablen zusammenfassen/verkürzen</a></li>
+            <?php foreach ($variablen_snippets as $snippet): ?>
+            <li><a href="<?php echo htmlspecialchars($snippet['url']); ?>"<?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <?php endforeach; ?>
         </ul>
     </div>
 </section>
