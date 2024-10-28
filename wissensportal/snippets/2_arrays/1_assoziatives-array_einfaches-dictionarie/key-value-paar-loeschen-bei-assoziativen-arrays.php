@@ -8,4 +8,11 @@ $meine_person = [
 ];
 
 unset($meine_person["Beruf"]);
-?>
+
+$meine_person["Katze"] = [
+    "Name" => "Anton",
+    "Spitzname" => "Fettsack",
+    "Beruf" => "Arbeitslos"
+];
+
+unset ($meine_person['Katze']['Spitzname']);
