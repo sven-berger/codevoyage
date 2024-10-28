@@ -10,9 +10,13 @@
 <section class="sidebarBox">
     <div class="boxContent">
         <ul>
+        <?php if (empty($variablen_snippets)): ?>
+            <li>Kein Snippet vorhanden</li>
+        <?php else: ?>
             <?php foreach ($variablen_snippets as $snippet): ?>
             <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
             <?php endforeach; ?>
+        <?php endif; ?>
         </ul>
     </div>
 </section>
@@ -23,9 +27,13 @@
 <section class="sidebarBox">
     <div class="boxContent">
         <ul>
+        <?php if (empty($arrays_snippets)): ?>
+            <li>Kein Snippet vorhanden</li>
+        <?php else: ?>
             <?php foreach ($arrays_snippets as $snippet): ?>
-                <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
             <?php endforeach; ?>
+        <?php endif; ?>
         </ul>
     </div>
 </section>
@@ -36,19 +44,30 @@
 <section class="sidebarBox">
     <div class="boxContent">
         <ul>
+        <?php if (empty($assoziatives_array_snippets)): ?>
+            <li>Kein Snippet vorhanden</li>
+        <?php else: ?>
             <?php foreach ($assoziatives_array_snippets as $snippet): ?>
-                <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
             <?php endforeach; ?>
+        <?php endif; ?>
         </ul>
     </div>
 </section>
 
 <div class="boxCapital">
-    <p>Mehrdimensionale Arrays / Dictionaries</p>
+    <p>Mehrdimensionales Array / Dictionaries</p>
 </div>
 <section class="sidebarBox">
     <div class="boxContent">
         <ul>
+        <?php if (empty($mehrdimensionales_array_snippets)): ?>
+            <li>Kein Snippet vorhanden</li>
+        <?php else: ?>
+            <?php foreach ($mehrdimensionales_array_snippets as $snippet): ?>
+            <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
         </ul>
     </div>
 </section>
@@ -59,9 +78,115 @@
 <section class="sidebarBox">
     <div class="boxContent">
         <ul>
-            <li><a href="https://wissensportal.codevoyage.de/index.php?snippet=for-schleife">Die for-Schleife</a></li>
-            <li><a href="https://wissensportal.codevoyage.de/index.php?snippet=array_listen-zusammensetzen">Array / Liste zusammensetzen</a></li>
-            <li><a href="https://wissensportal.codevoyage.de/index.php?snippet=zahlen-von-1bis100-mit-for-in-array_liste">Zahlen von 1 - 100 mit for im Array / in der Liste</a></li>
+        <?php if (empty($for_snippets)): ?>
+            <li>Kein Snippet vorhanden</li>
+        <?php else: ?>
+            <?php foreach ($for_snippets as $snippet): ?>
+            <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        </ul>
+    </div>
+</section>
+
+<div class="boxCapital">
+    <p>if, else, elseif/elif</p>
+</div>
+<section class="sidebarBox">
+    <div class="boxContent">
+        <ul>
+        <?php if (empty($if_snippets)): ?>
+            <li>Kein Snippet vorhanden</li>
+        <?php else: ?>
+            <?php foreach ($if_snippets as $snippet): ?>
+            <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        </ul>
+    </div>
+</section>
+
+<div class="boxCapital">
+    <p>Funktionen</p>
+</div>
+<section class="sidebarBox">
+    <div class="boxContent">
+        <ul>
+        <?php if (empty($funktionen_snippets)): ?>
+            <li>Kein Snippet vorhanden</li>
+        <?php else: ?>
+            <?php foreach ($funktionen_snippets as $snippet): ?>
+            <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        </ul>
+    </div>
+</section>
+
+<div class="boxCapital">
+    <p>Objektorientiertes Programmieren</p>
+</div>
+<section class="sidebarBox">
+    <div class="boxContent">
+        <ul>
+        <?php if (empty($oop_snippets)): ?>
+            <li>Kein Snippet vorhanden</li>
+        <?php else: ?>
+            <?php foreach ($oop_snippets as $snippet): ?>
+            <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        </ul>
+    </div>
+</section>
+
+<div class="boxCapital">
+    <p>Datenbanken</p>
+</div>
+<section class="sidebarBox">
+    <div class="boxContent">
+        <ul>
+        <?php if (empty($datenbanken_snippets)): ?>
+            <li>Kein Snippet vorhanden</li>
+        <?php else: ?>
+            <?php foreach ($datenbanken_snippets as $snippet): ?>
+            <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        </ul>
+    </div>
+</section>
+
+<div class="boxCapital">
+    <p>Vorlagen</p>
+</div>
+<section class="sidebarBox">
+    <div class="boxContent">
+        <ul>
+        <?php if (empty($vorlagen_snippets)): ?>
+            <li>Kein Snippet vorhanden</li>
+        <?php else: ?>
+            <?php foreach ($vorlagen_snippets as $snippet): ?>
+            <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        </ul>
+    </div>
+</section>
+
+<div class="boxCapital">
+    <p>Sonstiges</p>
+</div>
+<section class="sidebarBox">
+    <div class="boxContent">
+        <ul>
+        <?php if (empty($sonstiges_snippets)): ?>
+            <li>Kein Snippet vorhanden</li>
+        <?php else: ?>
+            <?php foreach ($sonstiges_snippets as $snippet): ?>
+            <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
         </ul>
     </div>
 </section>
