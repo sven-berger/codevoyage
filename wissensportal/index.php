@@ -18,7 +18,7 @@
             $title = htmlspecialchars($snippet['title']);
             $description = htmlspecialchars($snippet['description']);
             $phpSnippet = htmlspecialchars($snippet['php_snippet']);
-            $php_snippet_alternativ = htmlspecialchars($snippet['php_snippet_alternativ']);
+            $phpSnippet_alternativ = htmlspecialchars($snippet['php_snippet_alternativ']);
             $pythonSnippet = htmlspecialchars($snippet['python_snippet']);
             $javascriptSnippet = htmlspecialchars($snippet['javascript_snippet']);
             $mitteilungSnippet = $snippet['mitteilung_snippet'];
