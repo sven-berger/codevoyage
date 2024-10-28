@@ -118,6 +118,195 @@
 </div>
 </section>
 
+<h3 class="section-title">Die for-Schleife</h3>
+<section class="section">
+    <div class="sectionContent">
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Beschreibung</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+            <?php foreach ($for_snippets as $snippet): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><?php echo htmlspecialchars($snippet['description']); ?></td>
+                <td>
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+</section>
+
+<h3 class="section-title">if, elsif/elif, else</h3>
+<section class="section">
+    <div class="sectionContent">
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Beschreibung</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+            <?php foreach ($if_snippets as $snippet): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><?php echo htmlspecialchars($snippet['description']); ?></td>
+                <td>
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+</section>
+
+<h3 class="section-title">Funktionen</h3>
+<section class="section">
+    <div class="sectionContent">
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Beschreibung</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+            <?php foreach ($funktionen_snippets as $snippet): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><?php echo htmlspecialchars($snippet['description']); ?></td>
+                <td>
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+</section>
+
+<h3 class="section-title">Objektorientiertes Programmieren</h3>
+<section class="section">
+    <div class="sectionContent">
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Beschreibung</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+            <?php foreach ($oop_snippets as $snippet): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><?php echo htmlspecialchars($snippet['description']); ?></td>
+                <td>
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+</section>
+
+<h3 class="section-title">Datenbanken</h3>
+<section class="section">
+    <div class="sectionContent">
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Beschreibung</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+            <?php foreach ($datenbanken_snippets as $snippet): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><?php echo htmlspecialchars($snippet['description']); ?></td>
+                <td>
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+</section>
+
+<h3 class="section-title">Vorlagen</h3>
+<section class="section">
+    <div class="sectionContent">
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Beschreibung</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+            <?php foreach ($vorlagen_snippets as $snippet): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><?php echo htmlspecialchars($snippet['description']); ?></td>
+                <td>
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+</section>
+
+<h3 class="section-title">Sonstiges</h3>
+<section class="section">
+    <div class="sectionContent">
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Beschreibung</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+            <?php foreach ($sonstiges_snippets as $snippet): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><?php echo htmlspecialchars($snippet['description']); ?></td>
+                <td>
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+</section>
+
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
