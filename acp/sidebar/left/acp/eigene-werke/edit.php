@@ -1,12 +1,12 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = "Menüpunkt ändern (Seitenleiste)";
+$pageTitle = "Menüpunkt ändern (Eigene Werke)";
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 try {
     $id = $_GET['id'] ?? null;
     if ($id) {
-        $sql = "SELECT * FROM acp_sidebar_left_seitenleiste WHERE ID = :id";
+        $sql = "SELECT * FROM acp_sidebar_left_eigene_werke WHERE ID = :id";
         $stmt = $connection->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
