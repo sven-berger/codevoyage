@@ -1,5 +1,6 @@
 <?php
 $age = 18;
+
 if ($age == 1) {
     echo "Du zahlst 1€";
 } elseif ($age == 2) {
