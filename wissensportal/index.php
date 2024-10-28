@@ -38,11 +38,11 @@
 
 <?php if (!empty($phpSnippet)): ?>
     <h3 class="section-title">PHP</h3>
-    <code class="language-php">
-    <pre><?php echo htmlspecialchars('<?php'); ?>
+    <pre><code class="language-php">
+    <?php echo htmlspecialchars('<?php'); ?>
         <?php echo $phpSnippet; ?>
-        <?php echo htmlspecialchars('?>'); ?></pre>
-    </code>
+        <?php echo htmlspecialchars('?>'); ?>
+    </code></pre>
 <?php endif; ?>
 
 <?php if (!empty($php_snippet_alternativ)): ?>
