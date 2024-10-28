@@ -19,6 +19,15 @@
         echo "Fehler beim Laden der Snippets: " . htmlspecialchars($e->getMessage());
         exit;
     }
+
+    try {
+        $sql = "SELECT * FROM wissensportal_kategorien";
+        $stmt = $connection->query($sql);
+        $wissensportal_kategorien = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Fehler beim Laden der Kategorien: " . htmlspecialchars($e->getMessage());
+        exit;
+    }
 ?>
 
 <nav>
@@ -35,8 +44,20 @@
     </div>
 </section>
 
-<div class="boxCapital">
+<div class="boxCapital" style="margin-top: 20px;">
     <p>Arrays / Listen</p>
+</div>
+<section class="sidebarBox">
+    <div class="boxContent">
+        <ul>
+            <?php foreach ($arrays_snippets as $snippet): ?>
+            <li><a href="<?php echo htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</section>
+
+<div class="boxCapital">
 </div>
 <section class="sidebarBox">
     <div class="boxContent">
