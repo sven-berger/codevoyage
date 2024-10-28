@@ -11,7 +11,7 @@ try {
 
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM acp_sidebar_left_seitenleiste WHERE id = :id";
+    $sql = "SELECT * FROM acp_sidebar_left_eigene_werke WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
     $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -21,7 +21,7 @@ try {
         exit;
     }
 
-    $sql = "DELETE FROM acp_sidebar_left_seitenleiste WHERE id = :id";
+    $sql = "DELETE FROM acp_sidebar_left_eigene_werke WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
     header("Location: https://wissensportal.codevoyage.de/acp/index.php");
