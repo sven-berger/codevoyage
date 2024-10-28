@@ -51,7 +51,7 @@
     <tbody>
             <?php foreach ($arrays_snippets as $snippet): ?>
             <tr>
-                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><a href="<?php echo 'https://wissensportal.codevoyage.de/index.php?snippet=' . htmlspecialchars($snippet['url']); ?>" target="_blank"><?php echo htmlspecialchars($snippet['title']); ?></a></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
                     <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
@@ -78,7 +78,7 @@
     <tbody>
             <?php foreach ($assoziatives_array_snippets as $snippet): ?>
             <tr>
-                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><a href="<?php echo 'https://wissensportal.codevoyage.de/index.php?snippet=' . htmlspecialchars($snippet['url']); ?>" target="_blank"><?php echo htmlspecialchars($snippet['title']); ?></a></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
                     <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
@@ -105,7 +105,7 @@
     <tbody>
             <?php foreach ($mehrdimensionales_array_snippets as $snippet): ?>
             <tr>
-                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><a href="<?php echo 'https://wissensportal.codevoyage.de/index.php?snippet=' . htmlspecialchars($snippet['url']); ?>" target="_blank"><?php echo htmlspecialchars($snippet['title']); ?></a></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
                     <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
@@ -132,7 +132,7 @@
     <tbody>
             <?php foreach ($for_snippets as $snippet): ?>
             <tr>
-                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><a href="<?php echo 'https://wissensportal.codevoyage.de/index.php?snippet=' . htmlspecialchars($snippet['url']); ?>" target="_blank"><?php echo htmlspecialchars($snippet['title']); ?></a></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
                     <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
@@ -159,7 +159,7 @@
     <tbody>
             <?php foreach ($if_snippets as $snippet): ?>
             <tr>
-                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><a href="<?php echo 'https://wissensportal.codevoyage.de/index.php?snippet=' . htmlspecialchars($snippet['url']); ?>" target="_blank"><?php echo htmlspecialchars($snippet['title']); ?></a></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
                     <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
@@ -186,7 +186,7 @@
     <tbody>
             <?php foreach ($funktionen_snippets as $snippet): ?>
             <tr>
-                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><a href="<?php echo 'https://wissensportal.codevoyage.de/index.php?snippet=' . htmlspecialchars($snippet['url']); ?>" target="_blank"><?php echo htmlspecialchars($snippet['title']); ?></a></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
                     <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
@@ -213,7 +213,7 @@
     <tbody>
             <?php foreach ($oop_snippets as $snippet): ?>
             <tr>
-                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><a href="<?php echo 'https://wissensportal.codevoyage.de/index.php?snippet=' . htmlspecialchars($snippet['url']); ?>" target="_blank"><?php echo htmlspecialchars($snippet['title']); ?></a></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
                     <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
@@ -240,7 +240,7 @@
     <tbody>
             <?php foreach ($datenbanken_snippets as $snippet): ?>
             <tr>
-                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><a href="<?php echo 'https://wissensportal.codevoyage.de/index.php?snippet=' . htmlspecialchars($snippet['url']); ?>" target="_blank"><?php echo htmlspecialchars($snippet['title']); ?></a></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
                     <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
@@ -267,7 +267,7 @@
     <tbody>
             <?php foreach ($vorlagen_snippets as $snippet): ?>
             <tr>
-                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><a href="<?php echo 'https://wissensportal.codevoyage.de/index.php?snippet=' . htmlspecialchars($snippet['url']); ?>" target="_blank"><?php echo htmlspecialchars($snippet['title']); ?></a></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
                     <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
@@ -294,7 +294,7 @@
     <tbody>
             <?php foreach ($sonstiges_snippets as $snippet): ?>
             <tr>
-                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><a href="<?php echo 'https://wissensportal.codevoyage.de/index.php?snippet=' . htmlspecialchars($snippet['url']); ?>" target="_blank"><?php echo htmlspecialchars($snippet['title']); ?></a></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
                     <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
