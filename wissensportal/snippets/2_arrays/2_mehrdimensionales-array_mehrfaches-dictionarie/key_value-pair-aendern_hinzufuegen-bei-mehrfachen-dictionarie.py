@@ -19,8 +19,8 @@ personen = [
 ]
 
 
-personen[0]["Alter"] = "1"
-personen[1]["Name"] = "Uschi"
+personen[0]["Alter"] = "100000"
+personen[1]["Name"] = "Lorem Ipsum dolor sit amet"
 
 for person in personen:
-    print(f"Der Name ist {person['Name']}, die Person ist {person['Geschlecht'].lower()} und {person['Alter']} Jahre alt.")
+    print(personen)
