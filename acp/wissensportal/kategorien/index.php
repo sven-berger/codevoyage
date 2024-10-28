@@ -25,16 +25,16 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($wissensportal_kategorien as $kategorie): ?>
-            <tr>
-                <td><?php echo htmlspecialchars($kategorie['name']); ?></td>
-                <td>
-                    <a href="edit.php?id=<?php echo $kategorie['id']; ?>">Bearbeiten</a> |
-                    <a href="delete.php?id=<?php echo $kategorie['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
+    <?php foreach ($wissensportal_kategorien as $kategorie): ?>
+        <tr>
+            <td><?php echo htmlspecialchars($kategorie['name']); ?></td>
+            <td>
+                <a href="https://codevoyage.de/acp/wissensportal/kategorien/edit.php?id=<?php echo htmlspecialchars($kategorie['id']); ?>">Bearbeiten</a> |
+                <a href="https://codevoyage.de/acp/wissensportal/kategorien/delete.php?id=<?php echo htmlspecialchars($kategorie['id']); ?>" onclick="return confirm('Sicher, dass du diese Kategorie löschen willst?');">Löschen</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</tbody>
 </table>
 
 

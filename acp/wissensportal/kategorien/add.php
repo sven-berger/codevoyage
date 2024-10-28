@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = 'Snippet hinzufügen';
+    $pageTitle = 'Kategorie hinzufügen (Wissensportal)';
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 ?>
 
