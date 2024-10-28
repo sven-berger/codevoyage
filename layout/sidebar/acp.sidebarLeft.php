@@ -5,7 +5,7 @@
 <nav>
 
 <div class="boxCapital" style="margin-top: 20px;">
-    <p>Seitenleisten</p>
+    <p>Linke Seitenleiste</p>
 </div>
 <section class="sidebarBox">
     <div class="boxContent">
