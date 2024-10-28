@@ -23,4 +23,4 @@ personen[0]["Alter"] = "100000"
 personen[1]["Name"] = "Lorem Ipsum dolor sit amet"
 
 for person in personen:
-    print(personen)
+    print(person)
