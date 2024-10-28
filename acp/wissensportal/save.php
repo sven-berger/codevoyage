@@ -4,6 +4,18 @@ $bereich = 'Administrationsbereich';
 $pageTitle = 'Snippet abschicken';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
+$sql = "CREATE TABLE IF NOT EXISTS wissensportal (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    kategorie VARCHAR(255) NOT NULL,
+    url VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    php_snippet TEXT,
+    php_snippet_alternativ TEXT,
+    python_snippet TEXT,
+    javascript_snippet TEXT,
+    mitteilung_snippet TEXT
+)";
 
 try {
     $connection->exec($sql);
@@ -11,6 +23,7 @@ try {
     echo 'Fehler beim Erstellen der Tabelle: ' . $e->getMessage();
     exit();
 }
+
 
 $kategorie = $_POST['title'];
 $url = $_POST['url'];
