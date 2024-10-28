@@ -5,8 +5,6 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 try {
     $id = $_GET['id'];
-    
-    // Snippet laden
     $sql = "SELECT * FROM wissensportal WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
