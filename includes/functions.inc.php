@@ -43,17 +43,26 @@ function getCategories($connection) {
 $categories = getCategories($connection);
 
 try {
-    $variablen_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 1";
-    $stmt = $connection->query($variablen_sql);
-    $variablen_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $kategorien = [
+        1 => 'variablen_snippets',
+        2 => 'arrays_snippets',
+        3 => 'assoziatives_array_snippets',
+        4 => 'mehrdimensionales_array_snippets',
+        5 => 'for_snippets',
+        6 => 'if_snippets',
+        7 => 'funktionen_snippets',
+        8 => 'oop_snippets',
+        9 => 'datenbanken_snippets',
+        10 => 'vorlagen_snippets',
+        11 => 'sonstiges_snippets',
+    ];
 
-    $arrays_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 2";
-    $stmt = $connection->query($arrays_sql);
-    $arrays_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $assoziatives_array_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 3";
-    $stmt = $connection->query($assoziatives_array_sql);
-    $assoziatives_array_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($kategorien as $kategorie_id => $variable_name) {
+        $sql = "SELECT * FROM wissensportal WHERE kategorie_id = :kategorie_id";
+        $stmt = $connection->prepare($sql);
+        $stmt->execute([':kategorie_id' => $kategorie_id]);
+        $$variable_name = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     $sql = "SELECT * FROM wissensportal";
     $stmt = $connection->query($sql);
