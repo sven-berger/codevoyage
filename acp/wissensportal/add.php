@@ -4,7 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
-<form action="add.php" method="post">
+<form action="save.php" method="post">
 <label for="kategorie">Kategorie:</label>
     <select name="kategorie_id" id="kategorie" class="wissensportal-kategorien" required>
     <?php
