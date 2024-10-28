@@ -1,5 +1,4 @@
 <?php
-
 $personen = [
 
 [
@@ -23,5 +22,4 @@ $personen = [
 ];
 
 print_r($personen);
-
 ?>

@@ -56,7 +56,7 @@
 </section>
 
 <div class="boxCapital">
-    <p>Mehrdimensionales Array / Dictionaries</p>
+    <p>Mehrdimensionales Array / Mehrfaches Dictionarie</p>
 </div>
 <section class="sidebarBox">
     <div class="boxContent">
