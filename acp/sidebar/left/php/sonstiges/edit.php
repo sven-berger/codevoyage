@@ -1,12 +1,12 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = "Menüpunkt ändern (Spielereien)";
+$pageTitle = "Menüpunkt ändern (Sonstiges)";
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 try {
     $id = $_GET['id'] ?? null;
     if ($id) {
-        $sql = "SELECT * FROM php_sidebar_left_spielereien WHERE ID = :id";
+        $sql = "SELECT * FROM php_sidebar_left_sonstiges WHERE ID = :id";
         $stmt = $connection->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_SPECIAL_CHARS);
             $ziel = filter_input(INPUT_POST, 'ziel', FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $prepare = $connection->prepare('UPDATE php_sidebar_left_eigene_werke SET url = :url, ziel = :ziel WHERE ID = :id');
+            $prepare = $connection->prepare('UPDATE php_sidebar_left_sonstiges SET url = :url, ziel = :ziel WHERE ID = :id');
             $prepare->bindParam(':url', $url, PDO::PARAM_STR);
             $prepare->bindParam(':ziel', $ziel, PDO::PARAM_STR);
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
