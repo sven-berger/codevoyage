@@ -22,6 +22,11 @@
         exit;
     }
 ?>
+<div class="ActionArea">
+    <ul>
+        <li><button class="button-action"><a href="https://codevoyage.de/acp/wissensportal/add.php">Snippet hinzufügen</a></button></li>
+    </ul>
+</div>
 
 <h3 class="section-title">Variablen</h3>
 <section class="section">
