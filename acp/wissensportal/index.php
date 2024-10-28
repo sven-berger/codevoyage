@@ -91,6 +91,33 @@
 </div>
 </section>
 
+<h3 class="section-title">Mehrdimensionales Array / Mehrfaches Dictionarie</h3>
+<section class="section">
+    <div class="sectionContent">
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Beschreibung</th>
+            <th>Aktionen</th>
+        </tr>
+    </thead>
+    <tbody>
+            <?php foreach ($mehrdimensionales_array_snippets as $snippet): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><?php echo htmlspecialchars($snippet['description']); ?></td>
+                <td>
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>
+</div>
+</section>
+
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
