@@ -15,7 +15,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/database.inc.php");
     $mariadbVersion = getMariaDBVersion($connection);
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/functions.inc.php");
-    
+
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/var.inc.php");
 ?>
 
@@ -33,13 +33,22 @@
         <h2>
             <?php if (isset($_GET['snippet'])): ?>
                 <?php
+                    function getSnippetTitle(PDO $connection, $snippetName) {
+                        $sql = "SELECT * FROM wissensportal WHERE url = :url";
+                        $stmt = $connection->prepare($sql);
+                        $stmt->execute([':url' => $snippetName]);
+                        $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
+                        if ($snippet) {
+                            return htmlspecialchars($snippet['title']);
+                        }
+                    }
                     $snippetName = $_GET['snippet'];
                     $title = getSnippetTitle($connection, $snippetName);
                     echo $title;
                 ?>
             <?php else: ?>
             <?php 
-                echo $pageTitle; // Seitenüberschrift, wenn kein Snippet angegeben ist
+                echo $pageTitle;
             ?>
             <?php endif; ?>
         </h2>
