@@ -24,7 +24,7 @@ try {
     $sql = "DELETE FROM snippets WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
-    header("Location: https://wissensportal.codevoyage.de/acp/index.php");
+    header("Location: https://codevoyage.de/acp/wissensportal/index.php");
     exit;
 
 } catch (PDOException $e) {

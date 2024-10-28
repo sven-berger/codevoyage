@@ -30,7 +30,7 @@ $stmt->execute([
 ]);
 
 
-header("Location: https://wissensportal.codevoyage.de/index.php");
+header("Location: https://codevoyage.de/acp/wissensportal/index.php");
 
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
 ?>
