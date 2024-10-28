@@ -41,3 +41,31 @@ function getCategories($connection) {
 }
 
 $categories = getCategories($connection);
+
+try {
+    $variablen_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 1";
+    $stmt = $connection->query($variablen_sql);
+    $variablen_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $arrays_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 2";
+    $stmt = $connection->query($arrays_sql);
+    $arrays_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Alle Snippets abrufen
+    $sql = "SELECT * FROM wissensportal";
+    $stmt = $connection->query($sql);
+    $snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+    echo "Fehler beim Laden der Snippets: " . htmlspecialchars($e->getMessage());
+    exit;
+}
+
+try {
+    $sql = "SELECT * FROM wissensportal_kategorien";
+    $stmt = $connection->query($sql);
+    $wissensportal_kategorien = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Fehler beim Laden der Kategorien: " . htmlspecialchars($e->getMessage());
+    exit;
+}
