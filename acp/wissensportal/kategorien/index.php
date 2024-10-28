@@ -26,6 +26,7 @@
     </thead>
     <tbody>
     <?php foreach ($wissensportal_kategorien as $kategorie): ?>
+        <?php var_dump($kategorie['id']); ?>
         <tr>
             <td><?php echo htmlspecialchars($kategorie['name']); ?></td>
             <td>
