@@ -1,5 +1,4 @@
 <?php
-
 $meine_person = [
     "Vorname" => "Sven",
     "Zweitname" => "Oliver",
@@ -26,5 +25,4 @@ print_r($meine_person["Katze"]["Spitzname"]);
 
 # Bestimmte Informationen im ganzen Satz ausgeben
 print_r("Der Name meiner Katze ist {$meine_person['Katze']['Name']} und er ist ein {$meine_person['Katze']['Beruf']}er Schmarotzer!");
-
 ?>
