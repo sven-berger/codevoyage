@@ -21,7 +21,7 @@ try {
         exit;
     }
 
-    $sql = "DELETE FROM snippets WHERE id = :id";
+    $sql = "DELETE FROM wissensportal WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
     header("Location: https://codevoyage.de/acp/wissensportal/index.php");
