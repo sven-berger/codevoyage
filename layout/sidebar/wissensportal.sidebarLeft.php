@@ -29,7 +29,7 @@
     <div class="boxContent">
         <ul>
             <?php foreach ($variablen_snippets as $snippet): ?>
-            <li><a href="<?php echo htmlspecialchars($snippet['url']); ?>"<?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <li><a href="<?php echo htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
             <?php endforeach; ?>
         </ul>
     </div>
