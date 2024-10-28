@@ -4,7 +4,7 @@ $pageTitle = 'Snippet hinzufügen';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 ?>
 
-<form action="save.php" method="post">
+<form action="" method="post">
     <label for="kategorie">Kategorie:</label>
     <select name="kategorie_id" id="kategorie" class="wissensportal-kategorien" required>
     <?php
@@ -42,6 +42,41 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
     <input type="submit" value="Speichern">
 </form>
 
-<?php
+<?php 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $url = $_POST['url'];
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $php_snippet = $_POST['php_snippet'];
+    $php_snippet_alternativ = $_POST['php_snippet_alternativ'];
+    $python_snippet = $_POST['python_snippet'];
+    $javascript_snippet = $_POST['javascript_snippet'];
+    $mitteilung_snippet = $_POST['mitteilung_snippet'];
+    $kategorie_id = $_POST['kategorie_id'];
+
+    $sql = "INSERT INTO wissensportal (url, title, description, php_snippet, php_snippet_alternativ, python_snippet, javascript_snippet, mitteilung_snippet, kategorie_id) 
+            VALUES (:url, :title, :description, :php_snippet, :php_snippet_alternativ, :python_snippet, :javascript_snippet, :mitteilung_snippet, :kategorie_id)";
+    $stmt = $connection->prepare($sql);
+
+    try {
+        $stmt->execute([
+            ':url' => $url,
+            ':title' => $title,
+            ':description' => $description,
+            ':php_snippet' => $php_snippet,
+            ':php_snippet_alternativ' => $php_snippet_alternativ,
+            ':python_snippet' => $python_snippet,
+            ':javascript_snippet' => $javascript_snippet,
+            ':mitteilung_snippet' => $mitteilung_snippet,
+            ':kategorie_id' => $kategorie_id // Hier den richtigen Parameter verwenden
+        ]);
+
+        header("Location: https://codevoyage.de/acp/wissensportal/index.php");
+        exit();
+    } catch (PDOException $e) {
+        echo "Fehler beim Einfügen der Daten: " . htmlspecialchars($e->getMessage());
+    }
+}
+
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
 ?>
