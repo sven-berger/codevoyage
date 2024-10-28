@@ -11,6 +11,9 @@ $meine_person = [
 #Key-Value Pair verändern
 $meine_person["Beruf"] = "Hans-Franz Chance";
 
+#Key-Value Pair hinzfügen
+$meine_person["Haarfarbe"] = "Dunkelblond";
+
 print_r($meine_person);
 
 ?>

@@ -10,7 +10,6 @@ meine_person = {
 meine_person["Beruf"] = "Hans-Franz Chance"
 
 #Key-Value Pair hinzufügen
-
 meine_person["Haarfarbe"] = "Dunkelblond"
 meine_person["Katze"] = {"Name": "Anton", "Spitzname": "Fettsack", "Beruf": "Arbeitslos"}
 
