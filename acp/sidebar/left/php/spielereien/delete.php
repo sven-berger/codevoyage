@@ -1,6 +1,6 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = 'Menüpunkt löschen (Sonstiges)';
+$pageTitle = 'Menüpunkt löschen (Spielereien)';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 try {
