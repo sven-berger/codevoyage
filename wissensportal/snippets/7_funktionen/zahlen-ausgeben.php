@@ -8,5 +8,6 @@ function zahlen_ausgeben($start, $ende, $schrittweite) {
         echo $zahl . " ";
     }
 }
+
 zahlen_ausgeben($start, $ende, $schrittweite);
 ?>
