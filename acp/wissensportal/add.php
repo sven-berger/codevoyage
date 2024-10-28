@@ -1,7 +1,7 @@
 <?php
 $bereich = 'Administrationsbereich';
 $pageTitle = 'Snippet hinzufügen';
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
 <form action="" method="post">
@@ -78,5 +78,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/wissensportal.footer.inc.php");
 ?>
