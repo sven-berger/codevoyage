@@ -8,28 +8,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>
-        <?php if (isset($_GET['snippet'])): ?>
-            <?php
-                    function getSnippetTitle(PDO $connection, $snippetName) {
-                        $sql = "SELECT * FROM wissensportal WHERE url = :url";
-                        $stmt = $connection->prepare($sql);
-                        $stmt->execute([':url' => $snippetName]);
-                        $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
-                        if ($snippet) {
-                            return htmlspecialchars($snippet['title']);
-                        }
-                    }
-                    $snippetName = $_GET['snippet'];
-                    $title = getSnippetTitle($connection, $snippetName);
-                    echo $title;
-                ?>
-            <?php else: ?>
-            <?php 
-                echo $pageTitle;
-            ?>
-            <?php endif; ?>
-    </title>
+    <title><?php echo $pageTitle; ?></title>
 </head>
 
 <?php
@@ -53,12 +32,23 @@
         <div class="content">
         <h2>
             <?php if (isset($_GET['snippet'])): ?>
-        <?php
-            $snippetName = $_GET['snippet'];
-            $title = getSnippetTitle($connection, $snippetName);
-            echo $title . " | " . $bereich;
-        ?>
-    <?php else: ?>
-        <?php echo $pageTitle; ?>
-    <?php endif; ?>
+                <?php
+                    function getSnippetTitle(PDO $connection, $snippetName) {
+                        $sql = "SELECT * FROM wissensportal WHERE url = :url";
+                        $stmt = $connection->prepare($sql);
+                        $stmt->execute([':url' => $snippetName]);
+                        $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
+                        if ($snippet) {
+                            return htmlspecialchars($snippet['title']);
+                        }
+                    }
+                    $snippetName = $_GET['snippet'];
+                    $title = getSnippetTitle($connection, $snippetName);
+                    echo $title;
+                ?>
+            <?php else: ?>
+            <?php 
+                echo $pageTitle;
+            ?>
+            <?php endif; ?>
         </h2>
