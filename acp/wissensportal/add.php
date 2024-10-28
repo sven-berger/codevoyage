@@ -8,7 +8,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
     <label for="kategorie">Kategorie:</label>
     <select name="kategorie_id" id="kategorie" class="wissensportal-kategorien" required>
     <?php
-    $kategorien = $connection->query("SELECT id, name FROM wissensportal_kategorien")->fetchAll(PDO::FETCH_ASSOC);
+    $kategorien = $connection->query("SELECT id, name FROM wissensportal_kategorien ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($kategorien as $kategorie) {
         echo "<option value='{$kategorie['id']}'>" . htmlspecialchars($kategorie['name']) . "</option>";
     }
