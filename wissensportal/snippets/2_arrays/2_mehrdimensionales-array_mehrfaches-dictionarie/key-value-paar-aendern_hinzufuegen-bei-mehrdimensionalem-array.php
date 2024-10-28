@@ -26,7 +26,7 @@ $personen[0]["Alter"] = "100000";
 $personen[1]["Name"] = "Lorem Ipsum dolor sit amet";
 
 foreach ($personen AS $person) {
-    echo $person;
+    print_r $person;
 }
 
 ?>
