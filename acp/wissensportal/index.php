@@ -81,8 +81,8 @@
                 <td><?php echo htmlspecialchars($snippet['title']); ?></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
-                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
-                    <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
+                    <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
+                    <a href="https://codevoyage.de/acp/wissensportal/delete.php?id=<?php echo $snippet['id']; ?>" onclick="return confirm('Sicher, dass du dieses Snippet löschen willst?');">Löschen</a>
                 </td>
             </tr>
             <?php endforeach; ?>
