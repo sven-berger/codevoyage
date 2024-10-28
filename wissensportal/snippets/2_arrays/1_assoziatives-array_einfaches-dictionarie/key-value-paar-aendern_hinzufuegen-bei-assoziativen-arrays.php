@@ -24,5 +24,6 @@ print_r($meine_person);
 print_r($meine_person["Katze"]["Spitzname"]);
 
 # Bestimmte Informationen im ganzen Satz ausgeben
-print_r("Der Name meiner Katze ist {$meine_person['Katze']['Name']} und er ist ein strtolower({$meine_person['Katze']['Beruf']})er Schmarotzer!");
+$katzenberuf = strtolower($meine_person['Katze']['Beruf']);
+print_r("Der Name meiner Katze ist {$meine_person['Katze']['Name']} und er ist ein strtolower($katzenberuf)er Schmarotzer!");
 ?>
