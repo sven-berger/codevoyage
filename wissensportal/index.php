@@ -38,11 +38,7 @@
 
 <?php if (!empty($phpSnippet)): ?>
     <h3 class="section-title">PHP</h3>
-    <pre><code class="language-php">
-    <?php echo htmlspecialchars("<?php") . "<br/>"; ?>
-        <?php echo $phpSnippet; ?>
-        <?php echo htmlspecialchars("?>") . "<br/>"; ?>
-    </code></pre>
+    <pre><code class="language-php"><?php echo htmlspecialchars("<?php\n" . $phpSnippet . "\n?>"); ?></code></pre>
 <?php endif; ?>
 
 <?php if (!empty($php_snippet_alternativ)): ?>
