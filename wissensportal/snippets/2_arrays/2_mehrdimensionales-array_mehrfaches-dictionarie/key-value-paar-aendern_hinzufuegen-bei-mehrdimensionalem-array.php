@@ -25,6 +25,8 @@ $personen = [
 $personen[0]["Alter"] = "100000";
 $personen[1]["Name"] = "Lorem Ipsum dolor sit amet";
 
-print_r($personen);
+foreach ($personen AS $person) {
+    echo $person;
+}
 
 ?>
