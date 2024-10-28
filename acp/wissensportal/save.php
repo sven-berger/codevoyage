@@ -4,6 +4,14 @@ $bereich = 'Administrationsbereich';
 $pageTitle = 'Snippet abschicken';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
+
+try {
+    $connection->exec($sql);
+} catch (PDOException $e) {
+    echo 'Fehler beim Erstellen der Tabelle: ' . $e->getMessage();
+    exit();
+}
+
 $kategorie = $_POST['title'];
 $url = $_POST['url'];
 $title = $_POST['title'];
