@@ -2,7 +2,7 @@
 
 <?php
     echo $acp_sidebarLeft;
-    echo $acp_sidebar_Right;
+    echo $acp_sidebarRight;
 ?>
 
 </div>
