@@ -24,7 +24,7 @@
             $mitteilungSnippet = $snippet['mitteilung_snippet'];
         } else {
             echo "<section class='section'><div class='sectionContent'>Snippet nicht gefunden oder keine Übereinstimmung.</div></section>";
-            require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/footer.inc.php");
+            require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/wissensportal.footer.inc.php");
             exit;
         }
     ?>
