@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = "Menüpunkt hinzufügen";
+    $pageTitle = "Menüpunkt speichern (Sonstiges)";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 ?>
 
