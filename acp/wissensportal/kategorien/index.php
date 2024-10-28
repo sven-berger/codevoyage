@@ -7,7 +7,7 @@
         $stmt = $connection->query($sql);
         $wissensportal_kategorien = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        echo "Fehler beim Laden der Snippets: " . htmlspecialchars($e->getMessage());
+        echo "Fehler beim Laden der Kategorien: " . htmlspecialchars($e->getMessage());
         exit;
     }
 ?>
