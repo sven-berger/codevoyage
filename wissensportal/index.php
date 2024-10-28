@@ -38,12 +38,12 @@
 
 <?php if (!empty($phpSnippet)): ?>
     <h3 class="section-title">PHP</h3>
-    <pre><code class="language-php"><?php echo '<?php' . '<br>' . $phpSnippet . '<br>' . '?>'; ?></code></pre>
+    <pre><code class="language-php"><?php echo htmlspecialchars("<?php\n" . $phpSnippet . "\n?>"); ?></code></pre>
 <?php endif; ?>
 
 <?php if (!empty($php_snippet_alternativ)): ?>
     <h3 class="section-title">PHP (Alternative Syntax)</h3>
-    <pre><code class="language-php"><?php echo $php_snippet_alternativ; ?></code></pre>
+    <pre><code class="language-php"><?php echo htmlspecialchars("<?php\n" . $php_snippet_alternativ . "\n?>"); ?></code></pre>
 <?php endif; ?>
 
 <?php if (!empty($pythonSnippet)): ?>
