@@ -39,9 +39,9 @@
 <?php if (!empty($phpSnippet)): ?>
     <h3 class="section-title">PHP</h3>
     <pre><code class="language-php">
-    <?php echo htmlspecialchars('<?php'); ?>
+    <?php echo htmlspecialchars('<?php\n'); ?>
         <?php echo $phpSnippet; ?>
-        <?php echo htmlspecialchars('?>'); ?>
+        <?php echo htmlspecialchars('?>\n'); ?>
     </code></pre>
 <?php endif; ?>
 
