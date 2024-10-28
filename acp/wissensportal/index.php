@@ -24,7 +24,7 @@
     <tbody>
             <?php foreach ($variablen_snippets as $snippet): ?>
             <tr>
-                <td><?php echo htmlspecialchars($snippet['title']); ?></td>
+                <td><a href="<?php echo 'https://wissensportal.codevoyage.de/index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></td>
                 <td><?php echo htmlspecialchars($snippet['description']); ?></td>
                 <td>
                     <a href="https://codevoyage.de/acp/wissensportal/edit.php?id=<?php echo $snippet['id']; ?>">Bearbeiten</a> |
