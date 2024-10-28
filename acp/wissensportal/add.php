@@ -1,7 +1,7 @@
 <?php
-    $bereich = 'Administrationsbereich';
-    $pageTitle = 'Snippet hinzufügen';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
+$bereich = 'Administrationsbereich';
+$pageTitle = 'Snippet hinzufügen';
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 ?>
 
 <form action="save.php" method="post">
@@ -42,6 +42,6 @@
     <input type="submit" value="Speichern">
 </form>
 
-<?php 
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
+<?php
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
 ?>
