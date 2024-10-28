@@ -30,12 +30,15 @@
     </div>
 </section>
 
-<div class="boxCapital">
-    <p>Assoziative Arrays / Einfaches Dictionarie</p>
+<div class="boxCapital" style="margin-top: 20px;">
+    <p>Assoziatives Array / Einfaches Dictionarie</p>
 </div>
 <section class="sidebarBox">
     <div class="boxContent">
         <ul>
+            <?php foreach ($assoziatives_array_snippets as $snippet): ?>
+                <li><a href="<?php echo 'index.php?snippet=' . htmlspecialchars($snippet['url']); ?>"><?php echo htmlspecialchars($snippet['title']); ?></a></li>
+            <?php endforeach; ?>
         </ul>
     </div>
 </section>

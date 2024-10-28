@@ -51,6 +51,10 @@ try {
     $stmt = $connection->query($arrays_sql);
     $arrays_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    $assoziatives_array_sql = "SELECT * FROM wissensportal WHERE kategorie_id = 3";
+    $stmt = $connection->query($arrays_sql);
+    $assoziatives_array_snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     $sql = "SELECT * FROM wissensportal";
     $stmt = $connection->query($sql);
     $snippets = $stmt->fetchAll(PDO::FETCH_ASSOC);
