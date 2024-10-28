@@ -1,14 +1,13 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = 'Snippet hinzufügen';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
 <form action="add.php" method="post">
 <label for="kategorie">Kategorie:</label>
     <select name="kategorie_id" id="kategorie" class="wissensportal-kategorien" required>
     <?php
-    // Abfrage der Kategorien aus der Datenbank
     $kategorien = $connection->query("SELECT id, name FROM wissensportal_kategorien")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($kategorien as $kategorie) {
         echo "<option value='{$kategorie['id']}'>" . htmlspecialchars($kategorie['name']) . "</option>";
@@ -44,5 +43,5 @@
 </form>
 
 <?php 
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
 ?>
