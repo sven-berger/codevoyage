@@ -67,8 +67,8 @@ $farben_mapping = [
     <?php list($gewaehlte_karte, $gewaehlte_farbe) = explode(',', $_GET['spielzug']); ?>
 
     <!-- Überprüfen, ob die Karte gelegt werden kann -->
-    <?php if ($spielkarten[0]['farbe'] === $gewaehlte_farbe || $gewaehlte_karte === 'Farbwahl'): ?>
-       <!-- Karte aus der Hand entfernen -->
+    <?php if ($spielkarten[0]['farbe'] === $gewaehlte_farbe || $spielkarten[0]['name'] === $gewaehlte_karte || $gewaehlte_karte === 'Farbwahl'): ?>
+        <!-- Karte aus der Hand entfernen -->
         <?php foreach ($meine_karten as $key => $karte): ?>
             <?php 
             if ($karte['name'] === $gewaehlte_karte && $karte['farbe'] === $gewaehlte_farbe) {
