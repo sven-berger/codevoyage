@@ -79,10 +79,10 @@ $spielkarten = $_SESSION['spielkarten'];
 <section class="section">
     <div class="sectionContent">
         <form action="" method="GET">
-            <label for="spielzug">Welchen Karte möchtest du legen?</label>
+            <label for="spielzug">Welche Karte möchtest du legen?</label>
             <select id="spielzug" name="spielzug" required>
                 <?php foreach ($meine_karten as $meine_hand): ?>
-                    <option value="<?php echo $meine_hand['name']; ?>">
+                    <option value="<?php echo $meine_hand['name'] . ',' . $meine_hand['farbe']; ?>">
                         <?php echo $meine_hand['name'] . " (" . $meine_hand['farbe'] . ")"; ?>
                     </option>
                 <?php endforeach; ?>
@@ -91,6 +91,29 @@ $spielkarten = $_SESSION['spielkarten'];
         </form>
     </div>
 </section>
+
+<?php if (isset($_GET['spielzug'])): ?>
+    <?php 
+    // Die gewählte Karte und Farbe aufteilen
+    list($gewaehlte_karte, $gewaehlte_farbe) = explode(',', $_GET['spielzug']);
+
+    // Überprüfen, ob die Karte gelegt werden kann
+    if ($spielkarten[0]['farbe'] === $gewaehlte_farbe || $gewaehlte_karte === 'Farbwahl'): // Falls die Karte die gleiche Farbe hat oder es eine Farbwahl-Karte ist
+        // Karte aus der Hand entfernen
+        foreach ($meine_karten as $key => $karte) {
+            if ($karte['name'] === $gewaehlte_karte && $karte['farbe'] === $gewaehlte_farbe) {
+                unset($meine_karten[$key]);
+                break;
+            }
+        }
+        // Die gelegte Karte wird auf den Ablagestapel gelegt (hier nur ein Beispiel)
+        echo "<p>Du hast folgende Karte gelegt: $gewaehlte_karte ($gewaehlte_farbe)</p>";
+    else: 
+        echo "<p>Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>";
+    endif; 
+endif; 
+?>
+
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
