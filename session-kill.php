@@ -16,7 +16,7 @@ if (ini_get("session.use_cookies")) {
 // Session zerstören
 session_destroy();
 
-// Bestätigungsausgabe
-echo "Session wurde erfolgreich beendet.";
-header("uno-spiel.php");
+// Weiterleitung zur UNO-Spiel-Seite
+header("Location: uno-spiel.php");
+exit;
 ?>
