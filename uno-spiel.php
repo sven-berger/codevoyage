@@ -49,31 +49,6 @@ $kartendeck = [
     <?php echo $section_ende; ?>
 <?php endforeach; ?>
 
-<style>
-.uno-typ {
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-.auflistung {
-    list-style: none; /* Entfernt die Standardaufzählungszeichen */
-    padding-left: 20px; /* Abstand zur Einrückung */
-}
-
-.auflistung li::before {
-    content: '\f292 '; /* Setzt das Icon als Aufzählungszeichen */
-    font-family: "Font Awesome 5 Free"; /* Font Awesome Familie angeben */
-    font-weight: 900; /* Für die richtige Gewichtung von Icons */
-    color: #3579BD;
-    margin-right: 5px;
-}
-
-.auflistung li {
-    margin: 5px 0;
-}
-
-</style>
-
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
