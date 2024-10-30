@@ -27,7 +27,7 @@ $kartendeck = [
 
 // Schritt 1: Kartendeck in ein flaches Array umwandeln
 $spielkarten = [];
-foreach ($spielkarten as $farbe => $kartenarten) {
+foreach ($kartendeck as $farbe => $kartenarten) {
     foreach ($kartenarten as $typ => $karten) {
         foreach ($karten as $karte) {
             $spielkarten[] = $farbe . ' ' . $karte;
@@ -36,68 +36,38 @@ foreach ($spielkarten as $farbe => $kartenarten) {
 }
 
 // Schritt 2: Kartendeck mischen
-shuffle($kartendeck);
+shuffle($spielkarten);
 
 // Schritt 3: Karten verteilen
 $meine_karten = array_splice($spielkarten, 0, 7);  // Die ersten 7 Karten für den Spieler
 $gegnerische_karten = array_splice($spielkarten, 0, 7);  // Die nächsten 7 Karten für den Gegner
 
-
+// Ausgabe zum Testen
 echo "\nGegnerische Karten:\n";
 print_r($gegnerische_karten);
 ?>
 
-
-
 <section class="section">
     <div class="sectionContent">
         <div class="sectionHeader">Anzahl der Karten beim Gegner: </div>
-        <p></p>
+        <p><?php echo count($gegnerische_karten); ?></p>
     </div>
 </section>
 
 <section class="section">
     <div class="sectionContent">
         <div class="sectionHeader">Stapel in der Mitte</div>
-        <p>Aktuell liegt folgende Karte oben: </p>
-        <p>
+        <p>Aktuell liegt folgende Karte oben: <?php echo $spielkarten[0]; ?></p>
     </div>
 </section>
 
 <section class="section">
     <div class="sectionContent">
-        <div class="sectionHeader">Meine Karten (Anzahl der Karten: )</div>
+        <div class="sectionHeader">Meine Karten (Anzahl der Karten: <?php echo count($meine_karten); ?>)</div>
         <ul>
-            <?php foreach ($meine_karten AS $meine_hand): ?>
+            <?php foreach ($meine_karten as $meine_hand): ?>
             <li><?php echo $meine_hand; ?></li>
             <?php endforeach; ?>
         </ul>
     </div>
 </section>
-
-<section class="section">
-    <div class="sectionContent">
-<form method="" method="POST">
-<form action="" method="get">
-    <label for="spielzug">Welchen Spielzug möchtest du ausführen?</label>
-    <option type="number" id="zahl1" name="zahl1" required>
-        <select></select>
-    </option>
-    <input type="submit" value="Spielzug durchführen">
-</form>
-</div>
-</section>
-
-<section class="section">
-    <div class="sectionContent">
-        <div class="sectionHeader">Spielverlauf</div>
-        <ul>
-            <li></li>
-        </ul>
-    </div>
-</section>
-
-
-<?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
-?>
