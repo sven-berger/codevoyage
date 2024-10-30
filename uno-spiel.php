@@ -27,9 +27,23 @@ $kartendeck = [
 
 ?>
 
-<?php foreach ($kartendeck as $farbe => $karten): ?>
+<?php foreach ($kartendeck as $farbe => $wert): ?>
     <?php echo $section_beginn; ?>
     <div class="sectionHeader"><?php echo $farbe; ?></div>
+    <?php if (is_array($wert)): ?>
+        <?php foreach ($wert AS $typ => $werte): ?>
+        <p><?php echo $typ; ?></p>
+        <ul class="auflistung">
+            <?php foreach ($werte as $wert): ?>
+                <li><?php echo $wert; ?>
+            <?php endforeach; ?>
+        </ul>
+        <?php endforeach; ?>
+    <?php endif; ?>
+    <?php echo $section_ende; ?>
+<?php endforeach; ?>
+
+<?php foreach ($kartendeck as $farbe => $karten): ?>
     <ul class="auflistung-uno">
     <?php 
         // Unterscheiden zwischen normalen Kartenfarben und Spezialkarten
