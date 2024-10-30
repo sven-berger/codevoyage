@@ -38,18 +38,23 @@ $gegnerische_karten = [];
 <section class="section">
     <div class="sectionContent">
         <div class="sectionHeader">Anzahl der Karten beim Gegner</div>
+        <p></p>
     </div>
 </section>
 
 <section class="section">
     <div class="sectionContent">
         <div class="sectionHeader">Stapel in der Mitte</div>
+        <p>
     </div>
 </section>
 
 <section class="section">
     <div class="sectionContent">
         <div class="sectionHeader">Meine Karten (Anzahl der Karten: )</div>
+        <ul>
+            <li></li>
+        </ul>
     </div>
 </section>
 
@@ -63,6 +68,9 @@ $gegnerische_karten = [];
 <section class="section">
     <div class="sectionContent">
         <div class="sectionHeader">Spielverlauf</div>
+        <ul>
+            <li></li>
+        </ul>
     </div>
 </section>
 
