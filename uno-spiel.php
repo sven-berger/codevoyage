@@ -62,12 +62,13 @@ if (isset($_GET['spielzug'])) {
         foreach ($meine_karten as $key => $karte) {
             if ($karte['name'] === $gewaehlte_karte && $karte['farbe'] === $gewaehlte_farbe) {
                 unset($meine_karten[$key]);
+                $meine_karten = array_values($meine_karten); // Den Index neu ordnen
                 break;
             }
         }
 
         // Aktualisiere die Handkarten in der Session
-        $_SESSION['meine_karten'] = array_values($meine_karten); // array_values verwendet, um den Index des Arrays neu zu ordnen
+        $_SESSION['meine_karten'] = $meine_karten;
 
         // Erfolgreiche Nachricht anzeigen
         echo '<div class="sectionContent">';
