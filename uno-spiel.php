@@ -30,7 +30,7 @@ $spielkarten = [];
 foreach ($kartendeck as $farbe => $kartenarten) {
     foreach ($kartenarten as $typ => $karten) {
         foreach ($karten as $karte) {
-            $spielkarten[] = $farbe . ' ' . $karte;
+            $spielkarten[] = $karte . "(" . $farbe . ")";
         }
     }
 }
@@ -56,7 +56,7 @@ print_r($gegnerische_karten);
 
 <section class="section">
     <div class="sectionContent">
-        <div class="sectionHeader">Stapel in der Mitte: <?php echo $spielkarten[0]; ?></div>
+        <div class="sectionHeader"><?php echo $spielkarten[0]; ?></div>
     </div>
 </section>
 
