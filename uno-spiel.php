@@ -35,23 +35,24 @@ $gegnerische_karten = [];
 ?>
 
 
-<secion class="section">
-    <div class="content">
-        <h2>Gegnerische Karten</h2>
+<section class="section">
+    <div class="sectionContent">
+        <div class="sectionHeader">Anzahl der Karten beim Gegner</div>
     </div>
 </secion>
 
-<secion class="section">
-    <div class="content">
-        <h2>Stapel in der Mitte</h2>
+<section class="section">
+    <div class="sectionContent">
+        <div class="sectionHeader">Stapel in der Mitte</div>
     </div>
 </secion>
 
-<secion class="section">
-    <div class="content">
-        <h2>Meine Karten</h2>
+<section class="section">
+    <div class="sectionContent">
+        <div class="sectionHeader">Meine Karten (Anzahl der Karten: )</div>
     </div>
 </secion>
+
 
 
 <form method="" method="POST">
