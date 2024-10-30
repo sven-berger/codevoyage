@@ -49,15 +49,14 @@ print_r($gegnerische_karten);
 
 <section class="section">
     <div class="sectionContent">
-        <div class="sectionHeader">Anzahl der Karten beim Gegner: </div>
+        <div class="sectionHeader">Anzahl der Karten beim Gegner:<br></div>
         <p><?php echo count($gegnerische_karten); ?></p>
     </div>
 </section>
 
 <section class="section">
     <div class="sectionContent">
-        <div class="sectionHeader">Stapel in der Mitte</div>
-        <p>Aktuell liegt folgende Karte oben: <?php echo $spielkarten[0]; ?></p>
+        <div class="sectionHeader">Stapel in der Mitte: <?php echo $spielkarten[0]; ?></div>
     </div>
 </section>
 
