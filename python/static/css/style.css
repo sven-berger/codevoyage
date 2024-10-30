@@ -85,9 +85,9 @@ a, a:hover {
     border-radius: 12px;
 }
 
-.auflstiung ul {
+.auflistung ul {
     list-style: none;
-    padding: 0 !important;
+    margin: 0 !important;
 }
 
 
