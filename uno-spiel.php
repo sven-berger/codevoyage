@@ -58,12 +58,18 @@ $gegnerische_karten = [];
     </div>
 </section>
 
-
+<section class="section">
+    <div class="sectionContent">
 <form method="" method="POST">
-    <label for="spielzug" id="spielzug">Spielzug</label>
-    <option>Welche Karte möchtest du spielen?</option>
-    <select></select>
+<form action="" method="get">
+    <label for="spielzug">Welchen Spielzug möchtest du ausführen?</label>
+    <option type="number" id="zahl1" name="zahl1" required>
+        <select></select>
+    </option>
+    <input type="submit" value="Spielzug durchführen">
 </form>
+</div>
+</section>
 
 <section class="section">
     <div class="sectionContent">
