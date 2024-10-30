@@ -5,7 +5,7 @@ try {
     $eigene_werke = "SELECT * FROM `php_sidebar_left_eigene_werke`";
     $spielereien = "SELECT * FROM `php_sidebar_left_spielereien`";
     $sonstiges = "SELECT * FROM `php_sidebar_left_sonstiges`";
-    $community_spiele = "SELECT * FROM ´sidebar_left_community_spiele`";
+    $community_spiele = "SELECT * FROM `sidebar_left_community_spiele`";
 
     $acp_sidebar_left_seitenleiste = "SELECT * FROM `acp_sidebar_left_seitenleiste`";
     $acp_sidebar_left_eigene_werke = "SELECT * FROM `acp_sidebar_left_eigene_werke`";
