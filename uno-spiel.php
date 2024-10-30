@@ -99,7 +99,9 @@ $farben_mapping = [
     <?php list($gewaehlte_karte, $gewaehlte_farbe) = explode(',', $_GET['spielzug']); ?>
 
     <!-- Überprüfen, ob die Karte gelegt werden kann -->
-    <?php if ($ablage_stapel[0]['farbe'] === $gewaehlte_farbe || $ablage_stapel[0]['name'] === $gewaehlte_karte || $gewaehlte_karte === 'Farbwahl'): ?>
+    <?php 
+    $oberste_karte = $ablage_stapel[0]; // Die oberste Karte des Ablagestapels
+    if ($oberste_karte['farbe'] === $gewaehlte_farbe || $oberste_karte['name'] === $gewaehlte_karte || $gewaehlte_karte === 'Farbwahl'): ?>
         <!-- Karte aus der Hand entfernen -->
         <?php foreach ($meine_karten as $key => $karte): ?>
             <?php 
