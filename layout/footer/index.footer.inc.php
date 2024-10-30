@@ -1,9 +1,6 @@
 </div>
-</section>
-
-</div>
 <?php
-    echo $php_sidebarLeft;
+    echo $sidebarLeft;
 ?>
 
 </div>
