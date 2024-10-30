@@ -109,7 +109,12 @@ $spielkarten = $_SESSION['spielkarten'];
         <?php endforeach; ?>
         
         <!-- Erfolgreiche Nachricht -->
-        <p>Du hast folgende Karte gelegt: <?php echo $gewaehlte_karte . " (" . $gewaehlte_farbe . ")"; ?></p>
+        <?php echo $section_beginn; ?>
+            <p class="success" style="font-weight: bold; text-align: center">
+                Du hast folgende Karte gelegt: <?php echo $gewaehlte_karte . " (" . $gewaehlte_farbe . ")"; ?>
+            </p>
+        <?php echo $section_ende; ?>
+        <p></p>
     <?php else: ?>
         <?php echo $section_beginn; ?>
             <p class="fail" style="font-weight: bold; text-align: center">Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>
