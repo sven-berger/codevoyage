@@ -33,7 +33,7 @@
 
     function zahlen_ausgeben($start, $ende, $schrittweise) {
         foreach (range($start, $ende, $schrittweise) AS $zahl) {
-            echo $zahl . " ";
+            echo $zahl . "<br>";
         }
     }
 
