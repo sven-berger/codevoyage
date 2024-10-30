@@ -55,7 +55,7 @@ $spielkarten = $_SESSION['spielkarten'];
 <!-- Anzeige der Karten und anderen Spielinformationen -->
 <section class="section">
     <div class="sectionContent">
-        <div class="sectionHeader">Der Gegner hat aktuell <span class="fail"><?php echo count($gegnerische_karten); ?></span> Karten auf der Hand.</div>
+        <div class="sectionHeader">Der Gegner hat aktuell <?php echo count($gegnerische_karten); ?> Karten auf der Hand.</div>
     </div>
 </section>
 
@@ -75,6 +75,14 @@ $spielkarten = $_SESSION['spielkarten'];
         </ul>
     </div>
 </section>
+
+<style>
+.Rot { color: red; }
+.Gelb { color: gold; }
+.Grün { color: green; }
+.Blau { color: blue; }
+.Spezial { color: black; }
+</style>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
