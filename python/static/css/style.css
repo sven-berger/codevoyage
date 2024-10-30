@@ -85,6 +85,11 @@ a, a:hover {
     border-radius: 12px;
 }
 
+.auflstiung ul {
+    list-style: none;
+    padding: 0 !important;
+}
+
 
 .sidebarBox-last {
     margin-bottom: 20px;
