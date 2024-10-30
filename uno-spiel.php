@@ -111,9 +111,13 @@ $spielkarten = $_SESSION['spielkarten'];
         <!-- Erfolgreiche Nachricht -->
         <p>Du hast folgende Karte gelegt: <?php echo $gewaehlte_karte . " (" . $gewaehlte_farbe . ")"; ?></p>
     <?php else: ?>
+        </div>
+        </section>
+        <section class="section">
         <div class="sectionContent">
             <p class="fail" style="text-align: center">Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>
         </div>
+        </section>
     <?php endif; ?> 
 <?php endif; ?>
 
