@@ -55,21 +55,23 @@ $kartendeck = [
     font-weight: bold;
 }
 
-.auflistung ul {
-    list-style: none !important; 
-    padding: 0 0 0 20px !important;
+.auflistung {
+    list-style: none; /* Entfernt die Standardaufzählungszeichen */
+    padding-left: 20px; /* Abstand zur Einrückung */
 }
 
-
-.auflistung ul ::marker {
-    content: '\f292' ' ' !important;
-    font-family: FontAwesome;
+.auflistung li::before {
+    content: '\f292 '; /* Setzt das Icon als Aufzählungszeichen */
+    font-family: "Font Awesome 5 Free"; /* Font Awesome Familie angeben */
+    font-weight: 900; /* Für die richtige Gewichtung von Icons */
     color: #3579BD;
+    margin-right: 5px;
 }
 
 .auflistung li {
     margin: 5px 0;
 }
+
 </style>
 
 <?php
