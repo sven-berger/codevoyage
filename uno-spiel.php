@@ -118,6 +118,8 @@ $spielkarten = $_SESSION['spielkarten'];
             <p class="fail" style="text-align: center">Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>
         </div>
         </section>
+        <section class="section">
+        <div class="sectionContent">
     <?php endif; ?> 
 <?php endif; ?>
 
