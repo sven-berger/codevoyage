@@ -50,6 +50,7 @@ function initialisiereSpiel() {
 
     // Die erste Karte aufdecken
     $_SESSION['ablage_stapel'] = [array_shift($spielkarten)];
+    $_SESSION['aktueller_spieler'] = 'spieler';
 }
 
 // Überprüfen, ob das Spiel initialisiert werden muss
@@ -62,6 +63,7 @@ $meine_karten = $_SESSION['meine_karten'];
 $gegnerische_karten = $_SESSION['gegnerische_karten'];
 $spielkarten = $_SESSION['spielkarten'];
 $ablage_stapel = $_SESSION['ablage_stapel'];
+$aktueller_spieler = $_SESSION['aktueller_spieler'];
 
 // Farbzuordnung für CSS
 $farben_mapping = [
@@ -71,6 +73,31 @@ $farben_mapping = [
     'Blau' => 'blue',
     'Spezial' => 'black'
 ];
+
+function gegnerZug() {
+    global $gegnerische_karten, $ablage_stapel;
+
+    // Der Gegner versucht, eine passende Karte zu legen
+    $oberste_karte = $ablage_stapel[0];
+    foreach ($gegnerische_karten as $key => $karte) {
+        if ($karte['farbe'] === $oberste_karte['farbe'] || $karte['name'] === $oberste_karte['name'] || $karte['name'] === 'Farbwahl' || $karte['name'] === 'Farbwahl +4') {
+            // Karte legen
+            array_unshift($ablage_stapel, $karte);
+            unset($gegnerische_karten[$key]);
+            $gegnerische_karten = array_values($gegnerische_karten); // Den Index neu ordnen
+            $_SESSION['gegnerische_karten'] = $gegnerische_karten;
+            $_SESSION['ablage_stapel'] = $ablage_stapel;
+            return;
+        }
+    }
+
+    // Wenn keine Karte gelegt werden kann, muss der Gegner eine ziehen
+    if (!empty($_SESSION['spielkarten'])) {
+        $gegnerische_karten[] = array_shift($_SESSION['spielkarten']);
+        $_SESSION['gegnerische_karten'] = $gegnerische_karten;
+    }
+}
+
 ?>
 
 <!-- Willkommensformular -->
@@ -97,14 +124,14 @@ $farben_mapping = [
 <?php else: ?>
 
 <!-- Spielzug prüfen -->
-<?php if (isset($_GET['spielzug'])): ?>
+<?php if (isset($_GET['spielzug']) && $aktueller_spieler === 'spieler'): ?>
     <!-- Die gewählte Karte und Farbe aufteilen -->
     <?php list($gewaehlte_karte, $gewaehlte_farbe) = explode(',', $_GET['spielzug']); ?>
 
     <!-- Überprüfen, ob die Karte gelegt werden kann -->
     <?php 
     $oberste_karte = $ablage_stapel[0]; // Die oberste Karte des Ablagestapels
-    if ($oberste_karte['farbe'] === $gewaehlte_farbe || $oberste_karte['name'] === $gewaehlte_karte || $gewaehlte_karte === 'Farbwahl'): ?>
+    if ($oberste_karte['farbe'] === $gewaehlte_farbe || $oberste_karte['name'] === $gewaehlte_karte || $gewaehlte_karte === 'Farbwahl' || $gewaehlte_karte === 'Farbwahl +4'): ?>
         <!-- Karte aus der Hand entfernen -->
         <?php foreach ($meine_karten as $key => $karte): ?>
             <?php 
@@ -123,6 +150,7 @@ $farben_mapping = [
         <?php 
         $_SESSION['meine_karten'] = $meine_karten;
         $_SESSION['ablage_stapel'] = $ablage_stapel;
+        $_SESSION['aktueller_spieler'] = 'gegner';
         ?>
 
         <!-- Erfolgreiche Nachricht anzeigen -->
@@ -137,6 +165,12 @@ $farben_mapping = [
             <p class="fail" style="font-weight: bold; text-align: center">Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>
         <?php echo $section_ende; ?>
     <?php endif; ?>
+<?php endif; ?>
+
+<!-- Gegnerzug ausführen -->
+<?php if ($aktueller_spieler === 'gegner'): ?>
+    <?php gegnerZug(); ?>
+    <?php $_SESSION['aktueller_spieler'] = 'spieler'; ?>
 <?php endif; ?>
 
 <!-- Anzeige der Karten und anderen Spielinformationen -->
