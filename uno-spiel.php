@@ -47,12 +47,14 @@ if (!isset($_SESSION['meine_karten']) || !isset($_SESSION['gegnerische_karten'])
     $_SESSION['meine_karten'] = array_splice($spielkarten, 0, 7);  // Die ersten 7 Karten für den Spieler
     $_SESSION['gegnerische_karten'] = array_splice($spielkarten, 0, 7);  // Die nächsten 7 Karten für den Gegner
     $_SESSION['spielkarten'] = $spielkarten;  // Das restliche Deck
+    $_SESSION['ablage_stapel'] = []; // Ablagestapel für gelegte Karten
 }
 
 // Spielkarten aus der Session laden
 $meine_karten = $_SESSION['meine_karten'];
 $gegnerische_karten = $_SESSION['gegnerische_karten'];
 $spielkarten = $_SESSION['spielkarten'];
+$ablage_stapel = $_SESSION['ablage_stapel'];
 
 // Farbzuordnung für CSS
 $farben_mapping = [
@@ -77,13 +79,19 @@ $farben_mapping = [
             if ($karte['name'] === $gewaehlte_karte && $karte['farbe'] === $gewaehlte_farbe) {
                 unset($meine_karten[$key]);
                 $meine_karten = array_values($meine_karten); // Den Index neu ordnen
+
+                // Die gelegte Karte auf den Ablagestapel legen
+                $ablage_stapel[] = ['name' => $gewaehlte_karte, 'farbe' => $gewaehlte_farbe];
                 break;
             }
             ?>
         <?php endforeach; ?>
 
         <!-- Aktualisiere die Handkarten in der Session -->
-        <?php $_SESSION['meine_karten'] = $meine_karten; ?>
+        <?php 
+        $_SESSION['meine_karten'] = $meine_karten;
+        $_SESSION['ablage_stapel'] = $ablage_stapel;
+        ?>
 
         <!-- Erfolgreiche Nachricht anzeigen -->
         <?php echo $section_beginn; ?> 
@@ -108,7 +116,7 @@ $farben_mapping = [
 
 <section class="section">
     <div class="sectionContent">
-        <div class="sectionHeader"><?php echo htmlspecialchars($spielkarten[0]['name']) . " (" . htmlspecialchars($spielkarten[0]['farbe']) . ")"; ?></div>
+        <div class="sectionHeader">Oberste Karte auf dem Ablagestapel: <?php echo empty($ablage_stapel) ? 'Noch keine Karte' : htmlspecialchars(end($ablage_stapel)['name']) . " (" . htmlspecialchars(end($ablage_stapel)['farbe']) . ")"; ?></div>
     </div>
 </section>
 
