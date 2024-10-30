@@ -10,6 +10,7 @@ session_start(); // Startet die Session
 
 // Wenn die Session noch nicht existiert oder das Spiel neu gestartet werden soll
 if (!isset($_SESSION['spielkarten'])) {
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
     // Initialisierung des Kartendecks
     $kartendeck = [
         'Rot' => [
