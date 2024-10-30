@@ -27,9 +27,9 @@
 <section class="section">
 <div class="sectionContent">
     <?php
-    $start = intval($_GET['start']);
-    $ende = intval($_GET['ende']);
-    $schrittweise = intval($_GET['schrittweise']);
+    $start = floatval($_GET['start']);
+    $ende = floatval($_GET['ende']);
+    $schrittweise = floatval($_GET['schrittweise']);
 
     function zahlen_ausgeben($start, $ende, $schrittweise) {
         foreach (range($start, $ende, $schrittweise) AS $zahl) {
