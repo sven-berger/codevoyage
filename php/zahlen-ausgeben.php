@@ -1,9 +1,11 @@
 <?php
     $bereich = 'PHP-Bereich';
     $pageTitle = "Zahlen raten";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.core.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.app.header.inc.php");
 ?>
 
+<section class="section">
+<div class="sectionContent">
 <form action="" method="get">
     <label for="start">Start:</label>
     <input type="start" name="start" required><br>
@@ -16,8 +18,14 @@
 
     <input type="submit" value="Speichern">
 </form>
+</div>
+</section>
+
+
 
 <?php if (isset($_GET['start']) && isset($_GET['ende']) && isset($_GET['schrittweise'])): ?>
+<section class="section">
+<div class="sectionContent">
     <?php
     $start = intval($_GET['start']);
     $ende = intval($_GET['ende']);
@@ -31,6 +39,8 @@
 
     zahlen_ausgeben($start, $ende, $schrittweise);
     ?>
+</div>
+</section>
 <?php endif; ?>
 
 <?php
