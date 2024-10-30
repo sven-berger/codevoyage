@@ -4,7 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.core.header.inc.php");
 ?>
 
-<form action="" method="post">
+<form action="" method="get">
     <label for="start">Start:</label>
     <input type="start" name="start" required><br>
 
@@ -28,7 +28,8 @@
             echo $zahl . " ";
         }
     }
-    $zahlen_ausgeben($start, $ende, $schrittweise);
+
+    zahlen_ausgeben($start, $ende, $schrittweise);
     ?>
 <?php endif; ?>
 
