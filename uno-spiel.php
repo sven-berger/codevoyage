@@ -28,11 +28,11 @@ $kartendeck = [
 ?>
 
 <?php foreach ($kartendeck as $farbe => $wert): ?>
+    <h3 class="section-title"><?php echo $farbe; ?></h3>
     <?php echo $section_beginn; ?>
-    <div class="sectionHeader"><?php echo $farbe; ?></div>
     <?php if (is_array($wert)): ?>
         <?php foreach ($wert as $typ => $werte): ?>
-            <p><?php echo $typ; ?></p>
+            <div class="uno-typ"><?php echo $typ; ?></div>
             <ul class="auflistung">
                 <?php foreach ($werte as $einzelwert): ?>
                     <li><?php echo $einzelwert; ?></li>
@@ -42,6 +42,12 @@ $kartendeck = [
     <?php endif; ?>
     <?php echo $section_ende; ?>
 <?php endforeach; ?>
+
+<style>
+.uno-typ {
+    margin: 20px 0;
+}
+</style>
 
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
