@@ -16,4 +16,7 @@ $js_sidebarLeft = file_get_contents("https://codevoyage.de/layout/sidebar/js.sid
 
 
 
+$section_beginn = "<section class='section'><div class='sectionContent'>";
+$section_ende = "</div></section>";
+
 $test = "Hello World aus var.inc.php";
