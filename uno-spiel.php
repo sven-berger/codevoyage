@@ -61,7 +61,7 @@ $spielkarten = $_SESSION['spielkarten'];
 
 <section class="section">
     <div class="sectionContent">
-        <div class="sectionHeader">Oberste Karte des Stapels: <?php echo $spielkarten[0]['name'] . " (" . $spielkarten[0]['farbe'] . ")"; ?></div>
+        <div class="sectionHeader"><?php echo $spielkarten[0]['name'] . " (" . $spielkarten[0]['farbe'] . ")"; ?></div>
     </div>
 </section>
 
