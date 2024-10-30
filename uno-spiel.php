@@ -5,10 +5,7 @@ $bereich = 'Startseite';
 $pageTitle = 'UNO-Spiel';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
-?>
-
 // Prüft, ob die Karten bereits in der Session gespeichert sind
-<?php 
 if (!isset($_SESSION['meine_karten']) || !isset($_SESSION['gegnerische_karten']) || !isset($_SESSION['spielkarten'])) {
     $kartendeck = [
         'Rot' => [
@@ -54,6 +51,14 @@ $meine_karten = $_SESSION['meine_karten'];
 $gegnerische_karten = $_SESSION['gegnerische_karten'];
 $spielkarten = $_SESSION['spielkarten'];
 
+// Farbzuordnung für CSS
+$farben_mapping = [
+    'Rot' => 'red',
+    'Gelb' => '#ffc048',
+    'Grün' => 'green',
+    'Blau' => 'blue',
+    'Spezial' => 'black'
+];
 ?>
 
 <!-- Spielzug prüfen -->
@@ -78,16 +83,16 @@ $spielkarten = $_SESSION['spielkarten'];
         <?php $_SESSION['meine_karten'] = $meine_karten; ?>
 
         <!-- Erfolgreiche Nachricht anzeigen -->
-        <?php echo $section_beginn; ?>
-        <p class="success" style="font-weight: bold; text-align: center">
-            Du hast folgende Karte gelegt: <?php echo htmlspecialchars($gewaehlte_karte); ?> (<?php echo htmlspecialchars($gewaehlte_farbe); ?>)
-        </p>
-        <?php echo $section_ende; ?>
+        <div class="sectionContent">
+            <p class="success" style="font-weight: bold; text-align: center">
+                Du hast folgende Karte gelegt: <?php echo htmlspecialchars($gewaehlte_karte); ?> (<?php echo htmlspecialchars($gewaehlte_farbe); ?>)
+            </p>
+        </div>
    <?php else: ?>
         <!-- Fehlermeldung anzeigen -->
-        <?php echo $section_beginn; ?>
-       <p class="fail" style="font-weight: bold; text-align: center">Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>;
-        <?php echo $section_ende; ?>
+        <div class="sectionContent">
+            <p class="fail" style="font-weight: bold; text-align: center">Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>
+        </div>
     <?php endif; ?>
 <?php endif; ?>
 
@@ -110,7 +115,7 @@ $spielkarten = $_SESSION['spielkarten'];
         <h3>Meine Karten (Anzahl der Karten: <?php echo count($meine_karten); ?>)</h3>
         <ul>
             <?php foreach ($meine_karten as $karte): ?>
-                <li style="color:<?php echo strtolower($karte['farbe']); ?>;">
+                <li style="color:<?php echo $farben_mapping[$karte['farbe']]; ?>;">
                     <?php echo htmlspecialchars($karte['name']) . " (" . htmlspecialchars($karte['farbe']) . ")"; ?>
                 </li>
             <?php endforeach; ?>
