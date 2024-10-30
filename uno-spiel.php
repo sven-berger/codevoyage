@@ -96,24 +96,26 @@ $spielkarten = $_SESSION['spielkarten'];
     <?php 
     // Die gewählte Karte und Farbe aufteilen
     list($gewaehlte_karte, $gewaehlte_farbe) = explode(',', $_GET['spielzug']);
+    ?>
 
-    // Überprüfen, ob die Karte gelegt werden kann
-    if ($spielkarten[0]['farbe'] === $gewaehlte_farbe || $gewaehlte_karte === 'Farbwahl'): // Falls die Karte die gleiche Farbe hat oder es eine Farbwahl-Karte ist
-        // Karte aus der Hand entfernen
-        foreach ($meine_karten as $key => $karte) {
-            if ($karte['name'] === $gewaehlte_karte && $karte['farbe'] === $gewaehlte_farbe) {
-                unset($meine_karten[$key]);
-                break;
-            }
-        }
-        // Die gelegte Karte wird auf den Ablagestapel gelegt (hier nur ein Beispiel)
-        echo "<p>Du hast folgende Karte gelegt: $gewaehlte_karte ($gewaehlte_farbe)</p>";
-    else: 
-        echo "<p>Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>";
-    endif; 
-endif; 
-?>
-
+    <!-- Überprüfen, ob die Karte gelegt werden kann -->
+    <?php if ($spielkarten[0]['farbe'] === $gewaehlte_farbe || $gewaehlte_karte === 'Farbwahl'): // Falls die Karte die gleiche Farbe hat oder es eine Farbwahl-Karte ist ?>
+        <!-- Karte aus der Hand entfernen -->
+        <?php foreach ($meine_karten as $key => $karte): ?>
+            <?php if ($karte['name'] === $gewaehlte_karte && $karte['farbe'] === $gewaehlte_farbe): ?>
+                <?php unset($meine_karten[$key]); ?>
+                <?php break; ?>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        
+        <!-- Erfolgreiche Nachricht -->
+        <p>Du hast folgende Karte gelegt: <?php echo $gewaehlte_karte . " (" . $gewaehlte_farbe . ")"; ?></p>
+    <?php else: ?>
+        <div class="sectionContent">
+            <p class="fail" style="text-align: center">Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>
+        </div>
+    <?php endif; ?> 
+<?php endif; ?>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
