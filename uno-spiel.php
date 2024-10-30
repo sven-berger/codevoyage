@@ -27,13 +27,26 @@ $kartendeck = [
 
 ?>
 
-<?php foreach ($kartendeck AS $farbe => $typ): ?>
+<?php foreach ($kartendeck as $farbe => $karten): ?>
     <?php echo $section_beginn; ?>
     <div class="sectionHeader"><?php echo $farbe; ?></div>
-    <ul class="auflistung">
-    <?php foreach ($wert AS $typ): ?>
-        <li><?php echo $wert; ?></li>
-    <?php endforeach; ?>
+    <ul class="auflistung-uno">
+    <?php 
+        // Unterscheiden zwischen normalen Kartenfarben und Spezialkarten
+        if (is_array($karten)) {
+            foreach ($karten as $typ => $werte) {
+                echo "<li><strong>$typ:</strong></li>";
+                foreach ($werte as $wert) {
+                    echo "<li>$wert</li>";
+                }
+            }
+        } else {
+            // Spezialkarten
+            foreach ($karten as $wert) {
+                echo "<li>$wert</li>";
+            }
+        }
+    ?>
     </ul>
     <?php echo $section_ende; ?>
 <?php endforeach; ?>
