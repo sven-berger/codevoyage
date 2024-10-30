@@ -50,7 +50,7 @@ print_r($gegnerische_karten);
 <section class="section">
     <div class="sectionContent">
         <div class="sectionHeader">
-            Anzahl der Karten beim Gegner: <span class="fail"><?php echo count($gegnerische_karten); ?></span>
+            Der Gegner hat aktuell <span class="fail"><?php echo count($gegnerische_karten); ?></span> Karten auf der Hand.
         </div>
 </section>
 
