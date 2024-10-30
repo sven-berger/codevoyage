@@ -107,6 +107,8 @@ $farben_mapping = [
     <?php endif; ?>
 <?php endif; ?>
 
+<a href="session-kill.php">Session killen</a>
+
 <!-- Anzeige der Karten und anderen Spielinformationen -->
 <section class="section">
     <div class="sectionContent">
