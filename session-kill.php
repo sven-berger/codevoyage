@@ -18,4 +18,5 @@ session_destroy();
 
 // Bestätigungsausgabe
 echo "Session wurde erfolgreich beendet.";
+header("uno-spiel.php");
 ?>
