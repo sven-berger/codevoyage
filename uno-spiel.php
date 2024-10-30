@@ -49,7 +49,7 @@ print_r($gegnerische_karten);
 
 <section class="section">
     <div class="sectionContent">
-        <div class="sectionHeader">Anzahl der Karten beim Gegner:<br></div>
+        <div class="sectionHeader" style="margin-bottom: 20px;">Anzahl der Karten beim Gegner:</div>
         <p><?php echo count($gegnerische_karten); ?></p>
     </div>
 </section>
