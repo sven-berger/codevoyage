@@ -30,7 +30,7 @@ $spielkarten = [];
 foreach ($kartendeck as $farbe => $kartenarten) {
     foreach ($kartenarten as $typ => $karten) {
         foreach ($karten as $karte) {
-            $spielkarten[] = $karte . "(" . $farbe . ")";
+            $spielkarten[] = $karte . " " . "(" . $farbe . ")";
         }
     }
 }
