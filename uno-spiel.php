@@ -64,41 +64,6 @@ $farben_mapping = [
 ];
 ?>
 
-<!-- Spielzug prüfen -->
-<?php if (isset($_GET['spielzug'])): ?>
-    <!-- Die gewählte Karte und Farbe aufteilen -->
-    <?php list($gewaehlte_karte, $gewaehlte_farbe) = explode(',', $_GET['spielzug']); ?>
-
-    <!-- Überprüfen, ob die Karte gelegt werden kann -->
-    <?php if ($spielkarten[0]['farbe'] === $gewaehlte_farbe || $spielkarten[0]['name'] === $gewaehlte_karte || $gewaehlte_karte === 'Farbwahl'): ?>
-        <!-- Karte aus der Hand entfernen -->
-        <?php foreach ($meine_karten as $key => $karte): ?>
-            <?php 
-            if ($karte['name'] === $gewaehlte_karte && $karte['farbe'] === $gewaehlte_farbe) {
-                unset($meine_karten[$key]);
-                $meine_karten = array_values($meine_karten); // Den Index neu ordnen
-                break;
-            }
-            ?>
-        <?php endforeach; ?>
-
-        <!-- Aktualisiere die Handkarten in der Session -->
-        <?php $_SESSION['meine_karten'] = $meine_karten; ?>
-
-        <!-- Erfolgreiche Nachricht anzeigen -->
-        <?php echo $section_beginn; ?> 
-            <p class="success" style="font-weight: bold; text-align: center">
-                Du hast folgende Karte gelegt: <?php echo htmlspecialchars($gewaehlte_karte); ?> (<?php echo htmlspecialchars($gewaehlte_farbe); ?>)
-            </p>
-        <?php echo $section_ende; ?>
-   <?php else: ?>
-        <!-- Fehlermeldung anzeigen -->
-        <?php echo $section_beginn; ?> 
-            <p class="fail" style="font-weight: bold; text-align: center">Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>
-        <?php echo $section_ende; ?>
-    <?php endif; ?>
-<?php endif; ?>
-
 <!-- Anzeige der Karten und anderen Spielinformationen -->
 <section class="section">
     <div class="sectionContent">
@@ -142,6 +107,42 @@ $farben_mapping = [
         </form>
     </div>
 </section>
+
+
+<!-- Spielzug prüfen -->
+<?php if (isset($_GET['spielzug'])): ?>
+    <!-- Die gewählte Karte und Farbe aufteilen -->
+    <?php list($gewaehlte_karte, $gewaehlte_farbe) = explode(',', $_GET['spielzug']); ?>
+
+    <!-- Überprüfen, ob die Karte gelegt werden kann -->
+    <?php if ($spielkarten[0]['farbe'] === $gewaehlte_farbe || $spielkarten[0]['name'] === $gewaehlte_karte || $gewaehlte_karte === 'Farbwahl'): ?>
+        <!-- Karte aus der Hand entfernen -->
+        <?php foreach ($meine_karten as $key => $karte): ?>
+            <?php 
+            if ($karte['name'] === $gewaehlte_karte && $karte['farbe'] === $gewaehlte_farbe) {
+                unset($meine_karten[$key]);
+                $meine_karten = array_values($meine_karten); // Den Index neu ordnen
+                break;
+            }
+            ?>
+        <?php endforeach; ?>
+
+        <!-- Aktualisiere die Handkarten in der Session -->
+        <?php $_SESSION['meine_karten'] = $meine_karten; ?>
+
+        <!-- Erfolgreiche Nachricht anzeigen -->
+        <?php echo $section_beginn; ?> 
+            <p class="success" style="font-weight: bold; text-align: center">
+                Du hast folgende Karte gelegt: <?php echo htmlspecialchars($gewaehlte_karte); ?> (<?php echo htmlspecialchars($gewaehlte_farbe); ?>)
+            </p>
+        <?php echo $section_ende; ?>
+   <?php else: ?>
+        <!-- Fehlermeldung anzeigen -->
+        <?php echo $section_beginn; ?> 
+            <p class="fail" style="font-weight: bold; text-align: center">Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>
+        <?php echo $section_ende; ?>
+    <?php endif; ?>
+<?php endif; ?>
 
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
