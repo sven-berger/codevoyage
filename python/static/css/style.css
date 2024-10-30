@@ -86,19 +86,20 @@ a, a:hover {
 }
 
 
-.auflsting ul {
+.auflistung ul {
     list-style: none !important; 
     padding: 0 0 0 12px !important;
+}
 
-    ::marker {
-        content: '\f292' ' ' !important;
-        font-family: FontAwesome;
-        color: #3579BD;
-    }
 
-    li {
-        margin: 5px 0;
-    }
+.auflistung ul::marker {
+    content: '\f292' ' ' !important;
+    font-family: FontAwesome;
+    color: #3579BD;
+}
+
+.auflistung li {
+    margin: 5px 0;
 }
 
 
