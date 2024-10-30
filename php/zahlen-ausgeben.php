@@ -1,6 +1,6 @@
 <?php
     $bereich = 'PHP-Bereich';
-    $pageTitle = "Zahlen raten";
+    $pageTitle = "Zahlen ausgeben";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.app.header.inc.php");
 ?>
 
