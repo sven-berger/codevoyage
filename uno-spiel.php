@@ -51,6 +51,7 @@ function initialisiereSpiel() {
     // Die erste Karte aufdecken
     $_SESSION['ablage_stapel'] = [array_shift($spielkarten)];
     $_SESSION['aktueller_spieler'] = 'spieler';
+    $_SESSION['spiel_start'] = true;
 }
 
 // Überprüfen, ob das Spiel initialisiert werden muss
@@ -99,29 +100,6 @@ function gegnerZug() {
 }
 
 ?>
-
-<!-- Willkommensformular -->
-<?php if (!isset($_SESSION['spiel_start'])): ?>
-    <form action="" method="POST">
-        <label for="bereit">Bist du bereit für eine Runde UNO?</label>
-        <select id="bereit" name="bereit" required>
-            <option value="Ja">Ja</option>
-            <option value="Nein">Nein</option>
-        </select>
-        <input type="submit" value="Spiel starten">
-    </form>
-
-    <?php
-    if (isset($_POST['bereit'])) {
-        if ($_POST['bereit'] == "Ja") {
-            $_SESSION['spiel_start'] = true; // Markiere, dass das Spiel gestartet wurde
-            echo "<p>Die erste Karte ist: " . htmlspecialchars($ablage_stapel[0]['name']) . " (" . htmlspecialchars($ablage_stapel[0]['farbe']) . ")</p>";
-        } else {
-            echo "Schade, besuche uns doch bald wieder.";
-        }
-    }
-    ?>
-<?php else: ?>
 
 <!-- Spielzug prüfen -->
 <?php if (isset($_GET['spielzug']) && $aktueller_spieler === 'spieler'): ?>
@@ -231,4 +209,3 @@ if (isset($_POST['neustart']) && $_POST['neustart'] === 'true') {
 
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
-<?php endif; ?>
