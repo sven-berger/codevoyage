@@ -72,7 +72,7 @@ $farben_mapping = [
 
 <!-- Willkommensformular -->
 <?php if (!isset($_SESSION['spiel_start'])): ?>
-    <p>Hallo und Herzlich willkommen!<br></p>
+    <?php require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php"); ?>
     <form action="" method="POST">
         <label for="bereit">Bist du bereit für eine Runde UNO?</label>
         <select id="bereit" name="bereit" required>
