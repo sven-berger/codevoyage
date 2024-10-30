@@ -20,7 +20,7 @@ try {
 }
 ?>
 
-<form action="" method="get">
+<form action="" method="post">
     <label for="url">URL:</label>
     <input type="url" name="url" required><br>
 
@@ -32,11 +32,11 @@ try {
 
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        if (!empty($_GET['url']) && !empty($_GET['ziel'])) {
-            $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_SPECIAL_CHARS);
-            $ziel = filter_input(INPUT_GET, 'ziel', FILTER_SANITIZE_SPECIAL_CHARS);
+        if (!empty($_POST['url']) && !empty($_POST['ziel'])) {
+            $url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_SPECIAL_CHARS);
+            $ziel = filter_input(INPUT_POST, 'ziel', FILTER_SANITIZE_SPECIAL_CHARS);
 
             $prepare = $connection->prepare('INSERT INTO `sidebar_left_community_spiele` (`url`, `ziel`) VALUES (:url, :ziel)');
             $prepare->bindParam(':url', $url, PDO::PARAM_STR);
