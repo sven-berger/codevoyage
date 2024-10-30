@@ -41,9 +41,9 @@ $kartendeck = [
         <?php endforeach; ?>
     <?php else: ?>
         <ul class="auflistung">
-        <?php foreach ($wert as $spezialkarten): ?>
-            <li><?php echo $spezialkarten; ?>
-        <?php endforeach; ?>
+            <?php foreach ($wert as $spezialkarten): ?>
+                <li><?php echo $spezialkarten; ?></li>
+            <?php endforeach; ?>
         </ul>
     <?php endif; ?>
     <?php echo $section_ende; ?>
