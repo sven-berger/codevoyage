@@ -4,7 +4,7 @@
 
 <nav>
     <div class="boxCapital" style="margin-top: 20px;">
-        <p>Community-Spiele Werke</p>
+        <p>Community-Spiele</p>
     </div>
     <section class="sidebarBox">
         <div class="boxContent">
