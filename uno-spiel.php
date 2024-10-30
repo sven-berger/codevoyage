@@ -39,13 +39,20 @@ $kartendeck = [
                 <?php endforeach; ?>
             </ul>
         <?php endforeach; ?>
+    <?php else: ?>
+        <ul class="auflistung">
+        <?php foreach ($wert as $spezialkarten): ?>
+            <li><?php echo $spezialkarten; ?>
+        <?php endforeach; ?>
+        </ul>
     <?php endif; ?>
     <?php echo $section_ende; ?>
 <?php endforeach; ?>
 
 <style>
 .uno-typ {
-    margin: 20px 0;
+    margin: 10px 0;
+    font-weight: bold;
 }
 </style>
 
