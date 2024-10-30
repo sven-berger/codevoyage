@@ -32,9 +32,11 @@
     $schrittweise = floatval($_GET['schrittweise']);
 
     function zahlen_ausgeben($start, $ende, $schrittweise) {
+        echo "<div class='auflistung'><ul>";
         foreach (range($start, $ende, $schrittweise) AS $zahl) {
-            echo "<div class='auflistung'><ul><li>" . $zahl . "</li></ul></div>";
+            echo "<li>" . $zahl . "</li>";
         }
+        echo "</div>";
     }
 
     zahlen_ausgeben($start, $ende, $schrittweise);
