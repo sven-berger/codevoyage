@@ -70,19 +70,11 @@ $spielkarten = $_SESSION['spielkarten'];
         <div class="sectionHeader">Meine Karten (Anzahl der Karten: <?php echo count($meine_karten); ?>)</div>
         <ul>
             <?php foreach ($meine_karten as $meine_hand): ?>
-            <li style="color:<?php echo strtolower($meine_hand['farbe']); ?>;"><?php echo $meine_hand['name'] . " (" . $meine_hand['farbe'] . ")"; ?></li>
+            <li class="<?php echo $meine_hand['farbe']; ?>"><?php echo $meine_hand['name'] . " (" . $meine_hand['farbe'] . ")"; ?></li>
             <?php endforeach; ?>
         </ul>
     </div>
 </section>
-
-<style>
-.Rot { color: red; }
-.Gelb { color: gold; }
-.Grün { color: green; }
-.Blau { color: blue; }
-.Spezial { color: black; }
-</style>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
