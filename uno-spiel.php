@@ -54,6 +54,22 @@ $kartendeck = [
     margin: 10px 0;
     font-weight: bold;
 }
+
+.auflistung ul {
+    list-style: none !important; 
+    padding: 0 0 0 20px !important;
+}
+
+
+.auflistung ul ::marker {
+    content: '\f292' ' ' !important;
+    font-family: FontAwesome;
+    color: #3579BD;
+}
+
+.auflistung li {
+    margin: 5px 0;
+}
 </style>
 
 <?php
