@@ -1,6 +1,4 @@
 <?php
-session_start(); // Startet die Session
-
 $bereich = 'Startseite';
 $pageTitle = 'UNO-Spiel';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
@@ -8,8 +6,11 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 $section_beginn = "<section class='section'><div class='sectionContent'>";
 $section_ende = "</div></section>";
 
-// Prüft, ob die Karten bereits in der Session gespeichert sind
-if (!isset($_SESSION['meine_karten']) || !isset($_SESSION['gegnerische_karten']) || !isset($_SESSION['spielkarten'])) {
+session_start(); // Startet die Session
+
+// Wenn die Session noch nicht existiert oder das Spiel neu gestartet werden soll
+if (!isset($_SESSION['spielkarten'])) {
+    // Initialisierung des Kartendecks
     $kartendeck = [
         'Rot' => [
             'Zahlen' => [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9],
@@ -47,7 +48,9 @@ if (!isset($_SESSION['meine_karten']) || !isset($_SESSION['gegnerische_karten'])
     $_SESSION['meine_karten'] = array_splice($spielkarten, 0, 7);  // Die ersten 7 Karten für den Spieler
     $_SESSION['gegnerische_karten'] = array_splice($spielkarten, 0, 7);  // Die nächsten 7 Karten für den Gegner
     $_SESSION['spielkarten'] = $spielkarten;  // Das restliche Deck
-    $_SESSION['ablage_stapel'] = []; // Ablagestapel für gelegte Karten
+
+    // Die erste Karte aufdecken
+    $_SESSION['ablage_stapel'] = [array_shift($spielkarten)];
 }
 
 // Spielkarten aus der Session laden
@@ -66,13 +69,37 @@ $farben_mapping = [
 ];
 ?>
 
+<!-- Willkommensformular -->
+<?php if (!isset($_SESSION['spiel_start'])): ?>
+    <p>Hallo und Herzlich willkommen!<br></p>
+    <form action="" method="POST">
+        <label for="bereit">Bist du bereit für eine Runde UNO?</label>
+        <select id="bereit" name="bereit" required>
+            <option value="Ja">Ja</option>
+            <option value="Nein">Nein</option>
+        </select>
+        <input type="submit" value="Spiel starten">
+    </form>
+
+    <?php
+    if (isset($_POST['bereit'])) {
+        if ($_POST['bereit'] == "Ja") {
+            $_SESSION['spiel_start'] = true; // Markiere, dass das Spiel gestartet wurde
+            echo "<p>Die erste Karte ist: " . htmlspecialchars($ablage_stapel[0]['name']) . " (" . htmlspecialchars($ablage_stapel[0]['farbe']) . ")</p>";
+        } else {
+            echo "Schade, besuche uns doch bald wieder.";
+        }
+    }
+    ?>
+<?php else: ?>
+
 <!-- Spielzug prüfen -->
 <?php if (isset($_GET['spielzug'])): ?>
     <!-- Die gewählte Karte und Farbe aufteilen -->
     <?php list($gewaehlte_karte, $gewaehlte_farbe) = explode(',', $_GET['spielzug']); ?>
 
     <!-- Überprüfen, ob die Karte gelegt werden kann -->
-    <?php if ($spielkarten[0]['farbe'] === $gewaehlte_farbe || $spielkarten[0]['name'] === $gewaehlte_karte || $gewaehlte_karte === 'Farbwahl'): ?>
+    <?php if ($ablage_stapel[0]['farbe'] === $gewaehlte_farbe || $ablage_stapel[0]['name'] === $gewaehlte_karte || $gewaehlte_karte === 'Farbwahl'): ?>
         <!-- Karte aus der Hand entfernen -->
         <?php foreach ($meine_karten as $key => $karte): ?>
             <?php 
@@ -81,7 +108,7 @@ $farben_mapping = [
                 $meine_karten = array_values($meine_karten); // Den Index neu ordnen
 
                 // Die gelegte Karte auf den Ablagestapel legen
-                $ablage_stapel[] = ['name' => $gewaehlte_karte, 'farbe' => $gewaehlte_farbe];
+                array_unshift($ablage_stapel, ['name' => $gewaehlte_karte, 'farbe' => $gewaehlte_farbe]);
                 break;
             }
             ?>
@@ -107,8 +134,6 @@ $farben_mapping = [
     <?php endif; ?>
 <?php endif; ?>
 
-<a href="session-kill.php">Session killen</a>
-
 <!-- Anzeige der Karten und anderen Spielinformationen -->
 <section class="section">
     <div class="sectionContent">
@@ -118,7 +143,7 @@ $farben_mapping = [
 
 <section class="section">
     <div class="sectionContent">
-        <div class="sectionHeader">Oberste Karte auf dem Ablagestapel: <?php echo empty($ablage_stapel) ? 'Noch keine Karte' : htmlspecialchars(end($ablage_stapel)['name']) . " (" . htmlspecialchars(end($ablage_stapel)['farbe']) . ")"; ?></div>
+        <div class="sectionHeader">Oberste Karte auf dem Ablagestapel: <?php echo htmlspecialchars($ablage_stapel[0]['name']) . " (" . htmlspecialchars($ablage_stapel[0]['farbe']) . ")"; ?></div>
     </div>
 </section>
 
@@ -153,6 +178,9 @@ $farben_mapping = [
     </div>
 </section>
 
+<a href="session-kill.php">Session killen</a>
+
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
+<?php endif; ?>
