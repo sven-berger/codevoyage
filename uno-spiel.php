@@ -1,100 +1,3 @@
-<?php
-session_start(); // Startet die Session
-
-$bereich = 'Startseite';
-$pageTitle = 'UNO-Spiel';
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
-
-// Prüft, ob die Karten bereits in der Session gespeichert sind
-if (!isset($_SESSION['meine_karten']) || !isset($_SESSION['gegnerische_karten']) || !isset($_SESSION['spielkarten'])) {
-    $kartendeck = [
-        'Rot' => [
-            'Zahlen' => [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9],
-            'Aktionen' => ['Zieh 2', 'Zieh 2', 'Richtungswechsel', 'Richtungswechsel', 'Aussetzen', 'Aussetzen']
-        ],
-        'Gelb' => [
-            'Zahlen' => [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9],
-            'Aktionen' => ['Zieh 2', 'Zieh 2', 'Richtungswechsel', 'Richtungswechsel', 'Aussetzen', 'Aussetzen']
-        ],
-        'Grün' => [
-            'Zahlen' => [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9],
-            'Aktionen' => ['Zieh 2', 'Zieh 2', 'Richtungswechsel', 'Richtungswechsel', 'Aussetzen', 'Aussetzen']
-        ],
-        'Blau' => [
-            'Zahlen' => [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9],
-            'Aktionen' => ['Zieh 2', 'Zieh 2', 'Richtungswechsel', 'Richtungswechsel', 'Aussetzen', 'Aussetzen']
-        ],
-        'Spezial' => ['Farbwahl', 'Farbwahl', 'Farbwahl', 'Farbwahl', 'Farbwahl +4', 'Farbwahl +4', 'Farbwahl +4', 'Farbwahl +4']
-    ];
-
-    // Kartendeck in ein flaches Array umwandeln
-    $spielkarten = [];
-    foreach ($kartendeck as $farbe => $kartenarten) {
-        foreach ($kartenarten as $typ => $karten) {
-            foreach ($karten as $karte) {
-                $spielkarten[] = ['name' => $karte, 'farbe' => $farbe];
-            }
-        }
-    }
-
-    // Kartendeck mischen
-    shuffle($spielkarten);
-
-    // Karten verteilen und in der Session speichern
-    $_SESSION['meine_karten'] = array_splice($spielkarten, 0, 7);  // Die ersten 7 Karten für den Spieler
-    $_SESSION['gegnerische_karten'] = array_splice($spielkarten, 0, 7);  // Die nächsten 7 Karten für den Gegner
-    $_SESSION['spielkarten'] = $spielkarten;  // Das restliche Deck
-}
-
-// Spielkarten aus der Session laden
-$meine_karten = $_SESSION['meine_karten'];
-$gegnerische_karten = $_SESSION['gegnerische_karten'];
-$spielkarten = $_SESSION['spielkarten'];
-?>
-
-<!-- Anzeige der Karten und anderen Spielinformationen -->
-<section class="section">
-    <div class="sectionContent">
-        <div class="sectionHeader">Der Gegner hat aktuell <?php echo count($gegnerische_karten); ?> Karten auf der Hand.</div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="sectionContent">
-        <div class="sectionHeader"><?php echo $spielkarten[0]['name'] . " (" . $spielkarten[0]['farbe'] . ")"; ?></div>
-    </div>
-</section>
-
-<!-- Anzeige meiner Karten -->
-<section class="section">
-    <div class="sectionContent">
-        <h3>Meine Karten (Anzahl der Karten: <?php echo count($_SESSION['meine_karten']); ?>)</h3>
-        <ul>
-            <?php foreach ($_SESSION['meine_karten'] as $karte): ?>
-                <li style="color:<?php echo strtolower($karte['farbe']); ?>;">
-                    <?php echo $karte['name'] . " (" . $karte['farbe'] . ")"; ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
-</section>
-
-<section class="section">
-    <div class="sectionContent">
-        <form action="" method="GET">
-            <label for="spielzug">Welche Karte möchtest du legen?</label>
-            <select id="spielzug" name="spielzug" required>
-                <?php foreach ($meine_karten as $meine_hand): ?>
-                    <option value="<?php echo $meine_hand['name'] . ',' . $meine_hand['farbe']; ?>">
-                        <?php echo $meine_hand['name'] . " (" . $meine_hand['farbe'] . ")"; ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-            <input type="submit" value="Spielzug durchführen">
-        </form>
-    </div>
-</section>
-
 <?php if (isset($_GET['spielzug'])): ?>
     <?php 
     // Die gewählte Karte und Farbe aufteilen
@@ -112,7 +15,7 @@ $spielkarten = $_SESSION['spielkarten'];
         <?php endforeach; ?>
 
         <!-- Aktualisiere die Handkarten in der Session -->
-        <?php $_SESSION['meine_karten'] = array_values($meine_karten); // array_values verwendet, um den Index des Arrays neu zu ordnen ?>
+        <?php $_SESSION['meine_karten'] = $meine_karten; ?>
 
         <!-- Erfolgreiche Nachricht -->
         <?php echo $section_beginn; ?>
@@ -121,16 +24,16 @@ $spielkarten = $_SESSION['spielkarten'];
             </p>
         <?php echo $section_ende; ?>
 
+        <!-- Anzeige der verbleibenden Karten in der Hand -->
+        <h3>Verbleibende Karten:</h3>
+        <ul>
+            <?php foreach ($meine_karten as $karte): ?>
+                <li><?php echo $karte['name'] . " (" . $karte['farbe'] . ")"; ?></li>
+            <?php endforeach; ?>
+        </ul>
     <?php else: ?>
-        <!-- Fehlermeldung -->
         <?php echo $section_beginn; ?>
             <p class="fail" style="font-weight: bold; text-align: center">Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>
         <?php echo $section_ende; ?>
     <?php endif; ?> 
 <?php endif; ?>
-
-
-
-<?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
-?>
