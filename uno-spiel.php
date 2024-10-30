@@ -27,12 +27,16 @@ $kartendeck = [
 
 ?>
 
-<?php echo $section_beginn; ?>
-<?php foreach ($kartendeck AS $farbe => $wert): ?>
+<?php foreach ($kartendeck AS $farbe => $typ): ?>
+    <?php echo $section_beginn; ?>
     <div class="sectionHeader"><?php echo $farbe; ?></div>
-    <p><?php echo $wert; ?></p>
+    <ul class="auflistung">
+    <?php foreach ($wert AS $typ): ?>
+        <li><?php echo $wert; ?></li>
+    <?php endforeach; ?>
+    </ul>
+    <?php echo $section_ende; ?>
 <?php endforeach; ?>
-<?php echo $section_ende; ?>
 
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
