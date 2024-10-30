@@ -42,9 +42,6 @@ shuffle($flaches_deck);
 $meine_karten = array_splice($flaches_deck, 0, 7);  // Die ersten 7 Karten für den Spieler
 $gegnerische_karten = array_splice($flaches_deck, 0, 7);  // Die nächsten 7 Karten für den Gegner
 
-// Ausgabe zum Testen
-echo "Meine Karten:\n";
-print_r($meine_karten);
 
 echo "\nGegnerische Karten:\n";
 print_r($gegnerische_karten);
@@ -71,7 +68,9 @@ print_r($gegnerische_karten);
     <div class="sectionContent">
         <div class="sectionHeader">Meine Karten (Anzahl der Karten: )</div>
         <ul>
-            <li></li>
+            <?php foreach ($meine_karten AS $meine_hand ): ?>
+            <li><?php echo $meine_hand; ?></li>
+            <?php endforeach; ?>
         </ul>
     </div>
 </section>
