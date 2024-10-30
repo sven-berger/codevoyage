@@ -8,7 +8,7 @@ html, body {
 }
 
 .Rot { color: red; }
-.Gelb { color: gold; }
+.Gelb { color: #ffc048; }
 .Grün { color: green; }
 .Blau { color: blue; }
 .Spezial { color: black; }
