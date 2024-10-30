@@ -23,5 +23,5 @@ cd <span style="font-weight: bold; color:darkred;">/verzeichnis-in-das-das-githu
 git pull</code></pre>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
-    ?>
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.full.footer.inc.php");
+?>

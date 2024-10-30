@@ -64,5 +64,5 @@
 <?php endif; ?>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.full.footer.inc.php");
 ?>

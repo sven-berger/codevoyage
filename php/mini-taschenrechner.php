@@ -64,5 +64,5 @@ if (isset($_GET['erste_zahl']) && isset($_GET['zweite_zahl']) && isset($_GET['re
 
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.full.footer.inc.php");
 ?>

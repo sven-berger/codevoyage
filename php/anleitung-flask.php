@@ -40,5 +40,5 @@ WSGIProcessGroup flaskapp
 WSGIScriptAlias / /verzeichnis-in-dem-flask-ausgeführt werden soll/flaskapp.wsgi</code></pre>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
-    ?>
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.full.footer.inc.php");
+?>
