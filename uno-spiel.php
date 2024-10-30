@@ -3,7 +3,9 @@ $bereich = 'Startseite';
 $pageTitle = 'UNO-Spiel';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
+?>
 
+<?php
 $kartendeck = [
     'Rot' => [
         'Zahlen' => [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9],
@@ -24,7 +26,14 @@ $kartendeck = [
     'Spezial' => ['Farbwahl', 'Farbwahl', 'Farbwahl', 'Farbwahl', 'Farbwahl +4', 'Farbwahl +4', 'Farbwahl +4', 'Farbwahl +4']
 ];
 
+?>
 
+<?php foreach ($kartendeck AS $farbe => $wert): ?>
+    <?php echo $section_beginn; ?>
+        <?php echo $farbe; ?>
+    <?php echo $section_ende; ?>
+<?php endforeach; ?>
 
+<?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
