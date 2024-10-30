@@ -5,6 +5,9 @@ $bereich = 'Startseite';
 $pageTitle = 'UNO-Spiel';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
+$section_beginn = "<section class='section'><div class='sectionContent'>";
+$section_ende = "</div></section>";
+
 // Prüft, ob die Karten bereits in der Session gespeichert sind
 if (!isset($_SESSION['meine_karten']) || !isset($_SESSION['gegnerische_karten']) || !isset($_SESSION['spielkarten'])) {
     $kartendeck = [
@@ -83,16 +86,16 @@ $farben_mapping = [
         <?php $_SESSION['meine_karten'] = $meine_karten; ?>
 
         <!-- Erfolgreiche Nachricht anzeigen -->
-        <div class="sectionContent">
+        <?php echo $section_beginn; ?> 
             <p class="success" style="font-weight: bold; text-align: center">
                 Du hast folgende Karte gelegt: <?php echo htmlspecialchars($gewaehlte_karte); ?> (<?php echo htmlspecialchars($gewaehlte_farbe); ?>)
             </p>
-        </div>
+        <?php echo $section_ende; ?>
    <?php else: ?>
         <!-- Fehlermeldung anzeigen -->
-        <div class="sectionContent">
+        <?php echo $section_beginn; ?> 
             <p class="fail" style="font-weight: bold; text-align: center">Du kannst diese Karte nicht spielen, bitte wähle eine andere.</p>
-        </div>
+        <?php echo $section_ende; ?>
     <?php endif; ?>
 <?php endif; ?>
 
