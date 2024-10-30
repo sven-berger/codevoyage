@@ -43,13 +43,18 @@
     $gegnerische_karten = array_splice($spielkarten, 0, 7);
 ?>
 
-<style>
-    .Rot { color: red; }
-    .Gelb { color: gold; }
-    .Grün { color: green; }
-    .Blau { color: blue; }
-    .Spezial { color: black; }
-</style>
+<section class="section">
+    <div class="sectionContent">
+        <div class="sectionHeader">
+            Der Gegner hat aktuell <?php echo count($gegnerische_karten); ?> Karten auf der Hand.
+        </div>
+</section>
+
+<section class="section">
+    <div class="sectionContent">
+        <div class="sectionHeader"><?php echo $spielkarten[0]; ?></div>
+    </div>
+</section>
 
 <section class="section">
     <div class="sectionContent">
@@ -61,7 +66,6 @@
         </ul>
     </div>
 </section>
-
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
