@@ -39,20 +39,19 @@ $gegnerische_karten = [];
     <div class="sectionContent">
         <div class="sectionHeader">Anzahl der Karten beim Gegner</div>
     </div>
-</secion>
+</section>
 
 <section class="section">
     <div class="sectionContent">
         <div class="sectionHeader">Stapel in der Mitte</div>
     </div>
-</secion>
+</section>
 
 <section class="section">
     <div class="sectionContent">
         <div class="sectionHeader">Meine Karten (Anzahl der Karten: )</div>
     </div>
-</secion>
-
+</section>
 
 
 <form method="" method="POST">
@@ -61,11 +60,11 @@ $gegnerische_karten = [];
     <select></select>
 </form>
 
-<secion class="section">
+<section class="section">
     <div class="content">
         <h2>Aktueller Spielverlauf</h2>
     </div>
-</secion>
+</section>
 
 
 <?php
