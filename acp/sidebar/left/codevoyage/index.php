@@ -7,13 +7,13 @@
 <h3 class="section-title">Community-Spiele</h3>
 <section class="section">
     <div class="sectionContent">
+    <div class="ActionArea">
+        <ul>
+            <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/codevoyage/community-spiele/add.php">Community-Spiel hinzufügen</a></button></li>
+        </ul>
+    </div>     
         <?php try { ?>
             <?php if (!empty($community_spiele_liste)) : ?>
-                <div class="ActionArea">
-                    <ul>
-                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/codevoyage/community-spiele/add.php">Community-Spiel hinzufügen</a></button></li>
-                    </ul>
-                </div>     
                 <table>
                     <tr>
                         <th>URL</th>
