@@ -78,14 +78,18 @@ $spielkarten = $_SESSION['spielkarten'];
 
 <section class="section">
     <div class="sectionContent">
-<form action="" method="GET">
-    <label for="spielzug">Welchen Spielzug möchtest du ausführen?</label>
-    <option type="number" id="spielzug" name="spielzug" required>
-        <select><?php echo $meine_hand['farbe']; ?>"><?php echo $meine_hand['name'] . " (" . $meine_hand['farbe'] . ")"; ?></select>
-    </option>
-    <input type="submit" value="Spielzug durchführen">
-</form>
-</div>
+        <form action="" method="GET">
+            <label for="spielzug">Welchen Karte möchtest du legen?</label>
+            <select id="spielzug" name="spielzug" required>
+                <?php foreach ($meine_karten as $meine_hand): ?>
+                    <option value="<?php echo $meine_hand['name']; ?>">
+                        <?php echo $meine_hand['name'] . " (" . $meine_hand['farbe'] . ")"; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <input type="submit" value="Spielzug durchführen">
+        </form>
+    </div>
 </section>
 
 <?php
