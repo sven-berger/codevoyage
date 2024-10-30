@@ -79,7 +79,7 @@ $spielkarten = $_SESSION['spielkarten'];
 
         <!-- Erfolgreiche Nachricht anzeigen -->
         <?php echo $section_beginn; ?>
-        <p class="success" style="font-weight: bold; text-align: center">';
+        <p class="success" style="font-weight: bold; text-align: center">
             Du hast folgende Karte gelegt: <?php echo htmlspecialchars($gewaehlte_karte); ?> (<?php echo htmlspecialchars($gewaehlte_farbe); ?>)
         </p>
         <?php echo $section_ende; ?>
