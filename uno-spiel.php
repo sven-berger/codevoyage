@@ -76,6 +76,18 @@ $spielkarten = $_SESSION['spielkarten'];
     </div>
 </section>
 
+<section class="section">
+    <div class="sectionContent">
+<form action="" method="GET">
+    <label for="spielzug">Welchen Spielzug möchtest du ausführen?</label>
+    <option type="number" id="spielzug" name="spielzug" required>
+        <select><?php echo $meine_hand['farbe']; ?>"><?php echo $meine_hand['name'] . " (" . $meine_hand['farbe'] . ")"; ?></select>
+    </option>
+    <input type="submit" value="Spielzug durchführen">
+</form>
+</div>
+</section>
+
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
