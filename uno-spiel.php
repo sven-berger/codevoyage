@@ -71,3 +71,7 @@ print_r($gegnerische_karten);
         </ul>
     </div>
 </section>
+
+<?php
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
+?>
