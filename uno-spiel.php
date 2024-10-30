@@ -8,9 +8,7 @@ $section_ende = "</div></section>";
 
 session_start(); // Startet die Session
 
-// Wenn die Session noch nicht existiert oder das Spiel neu gestartet werden soll
-if (!isset($_SESSION['spielkarten'])) {
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
+function initialisiereSpiel() {
     // Initialisierung des Kartendecks
     $kartendeck = [
         'Rot' => [
@@ -52,6 +50,11 @@ if (!isset($_SESSION['spielkarten'])) {
 
     // Die erste Karte aufdecken
     $_SESSION['ablage_stapel'] = [array_shift($spielkarten)];
+}
+
+// Überprüfen, ob das Spiel initialisiert werden muss
+if (!isset($_SESSION['meine_karten'], $_SESSION['gegnerische_karten'], $_SESSION['spielkarten'], $_SESSION['ablage_stapel'])) {
+    initialisiereSpiel();
 }
 
 // Spielkarten aus der Session laden
@@ -180,9 +183,18 @@ $farben_mapping = [
     </div>
 </section>
 
-<a href="session-kill.php">Session killen</a>
+<form action="" method="POST">
+    <input type="hidden" name="neustart" value="true">
+    <input type="submit" value="Spiel neu starten">
+</form>
 
 <?php
+if (isset($_POST['neustart']) && $_POST['neustart'] === 'true') {
+    session_destroy();
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
 <?php endif; ?>
