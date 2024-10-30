@@ -8,13 +8,13 @@
 <div class="sectionContent">
 <form action="" method="get">
     <label for="start">Start:</label>
-    <input type="start" name="start" required><br>
+    <input type="number" id="start" name="start" required>
 
     <label for="ende">Ende:</label>
-    <input type="ende" name="ende" required><br>
+    <input type="number" id="ende" name="ende" required>
 
     <label for="schrittweise">Schrittweise:</label>
-    <input type="schrittweise" name="schrittweise" required><br>
+    <input type="number" id="schrittweise" name="schrittweise" required>
 
     <input type="submit" value="Speichern">
 </form>
