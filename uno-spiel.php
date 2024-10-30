@@ -2,7 +2,7 @@
 session_start(); // Startet die Session
 
 $bereich = 'Startseite';
-$paPOSTitle = 'UNO-Spiel';
+$pageTitle = 'UNO-Spiel';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
 // Prüft, ob die Karten bereits in der Session gespeichert sind
@@ -50,6 +50,7 @@ if (!isset($_SESSION['meine_karten']) || !isset($_SESSION['gegnerische_karten'])
 $meine_karten = $_SESSION['meine_karten'];
 $gegnerische_karten = $_SESSION['gegnerische_karten'];
 $spielkarten = $_SESSION['spielkarten'];
+
 ?>
 
 <!-- Anzeige der Karten und anderen Spielinformationen -->
