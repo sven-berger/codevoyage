@@ -61,8 +61,8 @@ $gegnerische_karten = [];
 </form>
 
 <section class="section">
-    <div class="content">
-        <h2>Aktueller Spielverlauf</h2>
+    <div class="sectionContent">
+        <div class="sectionHeader">Spielverlauf</div>
     </div>
 </section>
 
