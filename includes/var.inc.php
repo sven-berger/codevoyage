@@ -3,7 +3,7 @@
 $header = file_get_contents("https://codevoyage.de/layout/header.inc.php");
 $footer = file_get_contents("https://codevoyage.de/python/templates/footer.html");
 
-$sidebarLeft = file_get_contents("https://codevoyage.de/layout/sidebar/sidebarLeft.php");
+$sidebarLeft = file_get_contents("https://codevoyage.de/layout/sidebar/index.sidebarLeft.php");
 
 $wissensportal_sidebarLeft = file_get_contents("https://codevoyage.de/layout/sidebar/wissensportal.sidebarLeft.php");
 $wissensportal_sidebarRight = file_get_contents("https://codevoyage.de/layout/sidebar/wissensportal.sidebarRight.php");
