@@ -85,9 +85,20 @@ a, a:hover {
     border-radius: 12px;
 }
 
-.auflistung ul {
-    list-style: none;
-    padding: 0 !important;
+
+.auflsting ul {
+    list-style: none !important; 
+    padding: 0 0 0 12px !important;
+
+    ::marker {
+        content: '\f292' ' ' !important;
+        font-family: FontAwesome;
+        color: #3579BD;
+    }
+
+    li {
+        margin: 5px 0;
+    }
 }
 
 
