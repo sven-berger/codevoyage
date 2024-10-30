@@ -92,7 +92,7 @@ a, a:hover {
 }
 
 
-.auflistung ul::marker {
+.auflistung ul ::marker {
     content: '\f292' ' ' !important;
     font-family: FontAwesome;
     color: #3579BD;
