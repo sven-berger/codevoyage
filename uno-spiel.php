@@ -5,7 +5,7 @@
 ?>
 
 <?php
-$deck = [
+$kartendeck = [
     'Rot' => [
         'Zahlen' => [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9],
         'Aktionen' => ['Zieh 2', 'Zieh 2', 'Richtungswechsel', 'Richtungswechsel', 'Aussetzen', 'Aussetzen']
@@ -25,22 +25,22 @@ $deck = [
     'Spezial' => ['Farbwahl', 'Farbwahl', 'Farbwahl', 'Farbwahl', 'Farbwahl +4', 'Farbwahl +4', 'Farbwahl +4', 'Farbwahl +4']
 ];
 
-// Schritt 1: Deck in ein flaches Array umwandeln
-$flaches_deck = [];
-foreach ($deck as $farbe => $kartenarten) {
+// Schritt 1: Kartendeck in ein flaches Array umwandeln
+$spielkarten = [];
+foreach ($spielkarten as $farbe => $kartenarten) {
     foreach ($kartenarten as $typ => $karten) {
         foreach ($karten as $karte) {
-            $flaches_deck[] = $farbe . ' ' . $karte;
+            $spielkarten[] = $farbe . ' ' . $karte;
         }
     }
 }
 
-// Schritt 2: Deck mischen
-shuffle($flaches_deck);
+// Schritt 2: Kartendeck mischen
+shuffle($kartendeck);
 
 // Schritt 3: Karten verteilen
-$meine_karten = array_splice($flaches_deck, 0, 7);  // Die ersten 7 Karten für den Spieler
-$gegnerische_karten = array_splice($flaches_deck, 0, 7);  // Die nächsten 7 Karten für den Gegner
+$meine_karten = array_splice($spielkarten, 0, 7);  // Die ersten 7 Karten für den Spieler
+$gegnerische_karten = array_splice($spielkarten, 0, 7);  // Die nächsten 7 Karten für den Gegner
 
 
 echo "\nGegnerische Karten:\n";
@@ -68,7 +68,7 @@ print_r($gegnerische_karten);
     <div class="sectionContent">
         <div class="sectionHeader">Meine Karten (Anzahl der Karten: )</div>
         <ul>
-            <?php foreach ($meine_karten AS $meine_hand ): ?>
+            <?php foreach ($meine_karten AS $meine_hand): ?>
             <li><?php echo $meine_hand; ?></li>
             <?php endforeach; ?>
         </ul>
