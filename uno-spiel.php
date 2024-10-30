@@ -37,7 +37,7 @@ $gegnerische_karten = [];
 
 <section class="section">
     <div class="sectionContent">
-        <div class="sectionHeader">Anzahl der Karten beim Gegner</div>
+        <div class="sectionHeader">Anzahl der Karten beim Gegner: </div>
         <p></p>
     </div>
 </section>
@@ -45,6 +45,7 @@ $gegnerische_karten = [];
 <section class="section">
     <div class="sectionContent">
         <div class="sectionHeader">Stapel in der Mitte</div>
+        <p>Aktuell liegt folgende Karte oben: </p>
         <p>
     </div>
 </section>
