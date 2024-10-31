@@ -25,6 +25,24 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
         <li><?php echo $karte; ?></li>
     <?php endforeach; ?>
     </ul>
+    <strong>Grüne Karten</strong>
+    <ul class="auflistung-uno">
+    <?php foreach ($gruene_karten AS $karte): ?>
+        <li><?php echo $karte; ?></li>
+    <?php endforeach; ?>
+    </ul>
+    <strong>Blaue Karten</strong>
+    <ul class="auflistung-uno">
+    <?php foreach ($blaue_karten AS $karte): ?>
+        <li><?php echo $karte; ?></li>
+    <?php endforeach; ?>
+    </ul>
+    <strong>Spezialalkarten</strong>
+    <ul class="auflistung-uno">
+    <?php foreach ($spezialkarten AS $karte): ?>
+        <li><?php echo $karte; ?></li>
+    <?php endforeach; ?>
+    </ul>
 <?php echo $section_ende; ?>
 
 <h3 class="section-title">Spezialkarten</h3>
