@@ -20,10 +20,18 @@ $spielkarten = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_k
 shuffle($spielkarten);
 $meine_hand = verteile_karten(7, $spielkarten);
 $gegnerische_karten = verteile_karten(7, $spielkarten);
+$ablagestapel = verteile_karten(1, $spielkarten);
 ?>
 
 <?php echo $section_beginn; ?>
-    <div class="section-title">Anzahl der Karten vom Gegner: <?php echo count($gegnerische_karten); ?></div>
+    <p>Anzahl der Karten vom Gegner: <strong><?php echo count($gegnerische_karten); ?></strong></p>
+<?php echo $section_ende; ?>
+
+<?php echo $section_beginn; ?>
+    <div class="section-title">Ablagestapel (<?php echo count($gegnerische_karten); ?> Karten)</div>
+    <?php foreach ($ablagestapel as $gespielte_karten): ?>
+        <p><?php echo $gegnerische_karten; ?></p>
+    <?php endforeach; ?>
 <?php echo $section_ende; ?>
 
 <div class="section-title">Meine Karten auf der Hand (Anzahl: <?php echo count($meine_hand); ?>)</div>
