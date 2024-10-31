@@ -33,7 +33,7 @@ $kartendeck = [
         <?php echo $section_beginn; ?>
         <?php foreach ($wert as $typ => $werte): ?>
             <div class="uno-typ"><?php echo $typ; ?></div>
-            <div class="auflistung">
+            <ul class="auflistung">
                 <?php foreach ($werte as $einzelwert): ?>
                     <p><?php echo $einzelwert; ?></p>
                 <?php endforeach; ?>
@@ -42,7 +42,7 @@ $kartendeck = [
         <?php echo $section_ende; ?>
     <?php else: ?>
         <?php echo $section_beginn; ?>
-        <div class="auflistung">
+        <ul class="auflistung">
             <?php foreach ($wert as $spezialkarte): ?>
                 <p><?php echo $spezialkarte; ?></p>
             <?php endforeach; ?>
