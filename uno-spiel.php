@@ -29,16 +29,15 @@ $kartendeck = [
 
 <?php foreach ($kartendeck as $farbe => $wert): ?>
     <h3 class="section-title"><?php echo $farbe; ?></h3>
+    <?php echo $section_beginn; ?>
     <?php if (is_array($wert) && $farbe != 'Spezial'): ?>
         <?php foreach ($wert as $typ => $werte): ?>
-            <?php echo $section_beginn; ?>
             <div class="uno-typ"><?php echo $typ; ?></div>
             <ul class="auflistung-uno">
                 <?php foreach ($werte as $einzelwert): ?>
                     <li><?php echo $einzelwert; ?></li>
                 <?php endforeach; ?>
             </ul>
-            <?php echo $section_ende; ?>
         <?php endforeach; ?>
     <?php else: ?>
         <ul class="auflistung-uno">
@@ -47,6 +46,7 @@ $kartendeck = [
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
+<?php echo $section_ende; ?>
 <?php endforeach; ?>
 
 <style>
@@ -54,7 +54,9 @@ $kartendeck = [
         list-style: none;
         padding-left: 20px;
         display: flex !important;
-        flex-direction: column; /* Verhindert horizontale Anordnung der Elemente */
+    }
+    .auflistung-uno li::before {
+        margin: 0 5px !important;
     }
     .auflistung-uno li::before {
         content: '\f0da '; /* Setzt das Icon als Aufzählungszeichen */
@@ -62,10 +64,6 @@ $kartendeck = [
         font-weight: 900; /* Für die richtige Gewichtung von Icons */
         color: #3579BD;
         margin-right: 5px;
-    }
-    .uno-typ {
-        font-weight: bold;
-        margin: 10px 0;
     }
 </style>
 
