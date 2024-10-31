@@ -34,54 +34,15 @@ $meine_hand = [];
 
 // 7 Karten an "meine Hand" verteilen
 $meine_hand = verteileKarten(7, $spielkarten);
-
-// Ergebnis anzeigen
-echo "<pre>";
-echo "\nRestliche Karten im Deck:\n";
-print_r ($spielkarten);
-echo "</pre>";
 ?>
 
+<div class="section-title">Ziehkarten</div>
 <?php echo $section_beginn; ?>
-    <strong>Rote Karten</strong>
-    <ul class="auflistung-uno">
-    <?php foreach ($rote_karten AS $karte): ?>
-        <li><?php echo $karte; ?></li>
+<ul class="auflistung-uno">
+    <?php foreach ($spielkarten as $ziehkarten): ?>
+    <li><?php echo $ziehkarten; ?></li>
     <?php endforeach; ?>
-    </ul>
-    <strong>Gelbe Karten</strong>
-    <ul class="auflistung-uno">
-    <?php foreach ($gelbe_karten AS $karte): ?>
-        <li><?php echo $karte; ?></li>
-    <?php endforeach; ?>
-    </ul>
-    <strong>Grüne Karten</strong>
-    <ul class="auflistung-uno">
-    <?php foreach ($gruene_karten AS $karte): ?>
-        <li><?php echo $karte; ?></li>
-    <?php endforeach; ?>
-    </ul>
-    <strong>Blaue Karten</strong>
-    <ul class="auflistung-uno">
-    <?php foreach ($blaue_karten AS $karte): ?>
-        <li><?php echo $karte; ?></li>
-    <?php endforeach; ?>
-    </ul>
-    <strong>Spezialkarten</strong>
-    <ul class="auflistung-uno">
-    <?php foreach ($spezialkarten AS $karte): ?>
-        <li><?php echo $karte; ?></li>
-    <?php endforeach; ?>
-    </ul>
-<?php echo $section_ende; ?>
-
-<div class="section-title">Meine Karten auf der Hand</div>
-<?php echo $section_beginn; ?>
-        <ul class="auflistung-uno">
-            <?php foreach ($meine_hand as $meine_karten): ?>
-            <li><?php echo $meine_karten; ?></li>
-            <?php endforeach; ?>
-        </ul>
+</ul>
 <?php echo $section_ende; ?>
 
 <?php
