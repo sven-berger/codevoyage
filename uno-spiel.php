@@ -26,9 +26,7 @@ $ablagestapel = verteile_karten(1, $spielkarten);
 
 <?php
     $gespielte_karte = array_pop($meine_hand);
-    array_push($ablagestapel, $gespielte_karte); 
-    $gegner_gespielte_karte = array_pop($gegnerische_karten);
-    array_push($ablagestapel, $gegner_gespielte_karte);
+    array_push($ablagestapel, $gespielte_karte);
 ?>
 
 <?php echo $section_beginn; ?>
