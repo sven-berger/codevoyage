@@ -41,13 +41,11 @@ $kartendeck = [
             <?php echo $section_ende; ?>
         <?php endforeach; ?>
     <?php else: ?>
-        <?php echo $section_beginn; ?>
         <ul class="auflistung-uno">
             <?php foreach ($wert as $spezialkarte): ?>
                 <li><?php echo $spezialkarte; ?></li>
             <?php endforeach; ?>
         </ul>
-        <?php echo $section_ende; ?>
     <?php endif; ?>
 <?php endforeach; ?>
 
