@@ -29,14 +29,11 @@ $spielkarten = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_k
 // Karten mischen
 shuffle($spielkarten);
 
-// Meine Hand initialisieren
-$meine_hand = [];
-
 // 7 Karten an "meine Hand" verteilen
 $meine_hand = verteileKarten(7, $spielkarten);
 ?>
 
-<div class="section-title">Meine Karten auf der Hand (Anzahl: <?php count($meine_hand); ?>)</div>
+<div class="section-title">Meine Karten auf der Hand (Anzahl: <?php echo count($meine_hand); ?>)</div>
 <?php echo $section_beginn; ?>
         <ul class="auflistung-uno">
             <?php foreach ($meine_hand as $meine_karten): ?>
@@ -45,7 +42,7 @@ $meine_hand = verteileKarten(7, $spielkarten);
         </ul>
 <?php echo $section_ende; ?>
 
-<div class="section-title">Ziehkarten (Anzahl der Ziehkarten: <?php count($spielkarten); ?>)</div>
+<div class="section-title">Ziehkarten (Anzahl der Ziehkarten: <?php echo count($spielkarten); ?>)</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung">
     <?php foreach ($spielkarten as $ziehkarten): ?>
