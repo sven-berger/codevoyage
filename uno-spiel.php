@@ -55,8 +55,6 @@ $kartendeck = [
     .auflistung-uno {
         list-style: none;
         padding-left: 20px;
-    }
-    .auflistung-uno ul {
         display: flex !important;
     }
     .auflistung-uno li::before {
