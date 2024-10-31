@@ -5,7 +5,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
 <?php
-function verteile_karten($anzahl, $spielkarten) {
+function verteile_karten($anzahl, &$spielkarten) {
     $handkarten = array_splice($spielkarten, 0, $anzahl);
     return $handkarten;
 }
