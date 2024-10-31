@@ -13,13 +13,13 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
 <h3 class="section-title">Rote Karten</h3>
-<?php foreach ($rote_karten AS $karte): ?>
 <?php echo $section_beginn; ?>
+<?php foreach ($rote_karten AS $karte): ?>
     <ul class="auflistung-uno">
         <li><?php echo $karte; ?></li>
     </ul>
-<?php echo $section_ende; ?>
 <?php endforeach; ?>
+<?php echo $section_ende; ?>
 
 
 <style>
