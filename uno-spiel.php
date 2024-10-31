@@ -30,21 +30,21 @@ $kartendeck = [
 <?php foreach ($kartendeck as $farbe => $wert): ?>
     <h3 class="section-title"><?php echo $farbe; ?></h3>
     <?php if (is_array($wert) && $farbe != 'Spezial'): ?>
-        <?php echo $section_beginn; ?>
         <?php foreach ($wert as $typ => $werte): ?>
+            <?php echo $section_beginn; ?>
             <div class="uno-typ"><?php echo $typ; ?></div>
+            <?php echo $section_ende; ?>
             <ul class="auflistung">
                 <?php foreach ($werte as $einzelwert): ?>
-                    <p><?php echo $einzelwert; ?></p>
+                    <li><?php echo $einzelwert; ?></li>
                 <?php endforeach; ?>
             </ul>
         <?php endforeach; ?>
-        <?php echo $section_ende; ?>
     <?php else: ?>
         <?php echo $section_beginn; ?>
         <ul class="auflistung">
             <?php foreach ($wert as $spezialkarte): ?>
-                <p><?php echo $spezialkarte; ?></p>
+                <li><?php echo $spezialkarte; ?></li>
             <?php endforeach; ?>
         <?php echo $section_ende; ?>
         </ul>
