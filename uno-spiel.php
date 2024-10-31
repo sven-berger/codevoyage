@@ -5,16 +5,8 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
 <?php
-// Funktion zum Verteilen von Karten
-function verteileKarten($anzahl, &$spielkarten) {
-    // Prüfen, ob genügend Karten im Deck vorhanden sind
-    if ($anzahl > count($spielkarten)) {
-        return []; // Rückgabe eines leeren Arrays, falls nicht genügend Karten vorhanden sind
-    }
-
-    // Karten ziehen
+function verteile_karten($anzahl, &$spielkarten) {
     $handkarten = array_splice($spielkarten, 0, $anzahl);
-
     return $handkarten;
 }
 
@@ -30,7 +22,7 @@ $spielkarten = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_k
 shuffle($spielkarten);
 
 // 7 Karten an "meine Hand" verteilen
-$meine_hand = verteileKarten(7, $spielkarten);
+$meine_hand = verteile_karten(7, $spielkarten);
 ?>
 
 <div class="section-title">Meine Karten auf der Hand (Anzahl: <?php echo count($meine_hand); ?>)</div>
