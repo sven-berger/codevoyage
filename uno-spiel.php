@@ -38,7 +38,7 @@ $ablagestapel = verteile_karten(1, $spielkarten);
 <div class="section-title">Ablagestapel (<?php echo count($ablagestapel); ?> Karten)</div>
 <?php echo $section_beginn; ?>
     <?php foreach ($ablagestapel as $gespielte_karte): ?>
-        <div style="text-align: center; font-weight: 600;"><?php echo $ablagestapel; ?></div>
+        <div style="text-align: center; font-weight: 600;"><?php echo end($gespielte_karte); ?></div>
     <?php endforeach; ?>
 <?php echo $section_ende; ?>
 
