@@ -18,10 +18,10 @@ function verteileKarten($anzahl, &$spielkarten) {
     return $handkarten;
 }
 
-$rote_karten = ["0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "Zieh 2", "Zieh 2", "Richtungswechsel", "Richtungswechsel", "Aussetzen", "Aussetzen"];
-$gelbe_karten = ["0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "Zieh 2", "Zieh 2", "Richtungswechsel", "Richtungswechsel", "Aussetzen", "Aussetzen"];
-$gruene_karten = ["0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "Zieh 2", "Zieh 2", "Richtungswechsel", "Richtungswechsel", "Aussetzen", "Aussetzen"];
-$blaue_karten = ["0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "Zieh 2", "Zieh 2", "Richtungswechsel", "Richtungswechsel", "Aussetzen", "Aussetzen"];
+$rote_karten = ["0 (Rot)", "1 (Rot)", "1 (Rot)", "2 (Rot)", "2 (Rot)", "3 (Rot)", "3 (Rot)", "4 (Rot)", "4 (Rot)", "5 (Rot)", "5 (Rot)", "6 (Rot)", "6 (Rot)", "7 (Rot)", "7 (Rot)", "8 (Rot)", "8 (Rot)", "9 (Rot)", "9 (Rot)", "Zieh 2 (Rot)", "Zieh 2 (Rot)", "Richtungswechsel (Rot)", "Richtungswechsel (Rot)", "Aussetzen (Rot)", "Aussetzen (Rot)"];
+$gelbe_karten = ["0 (Gelb)", "1 (Gelb)", "1 (Gelb)", "2 (Gelb)", "2 (Gelb)", "3 (Gelb)", "3 (Gelb)", "4 (Gelb)", "4 (Gelb)", "5 (Gelb)", "5 (Gelb)", "6 (Gelb)", "6 (Gelb)", "7 (Gelb)", "7 (Gelb)", "8 (Gelb)", "8 (Gelb)", "9 (Gelb)", "9 (Gelb)", "Zieh 2 (Gelb)", "Zieh 2 (Gelb)", "Richtungswechsel (Gelb)", "Richtungswechsel (Gelb)", "Aussetzen (Gelb)", "Aussetzen (Gelb)"];
+$gruene_karten = ["0 (Grün)", "1 (Grün)", "1 (Grün)", "2 (Grün)", "2 (Grün)", "3 (Grün)", "3 (Grün)", "4 (Grün)", "4 (Grün)", "5 (Grün)", "5 (Grün)", "6 (Grün)", "6 (Grün)", "7 (Grün)", "7 (Grün)", "8 (Grün)", "8 (Grün)", "9 (Grün)", "9 (Grün)", "Zieh 2 (Grün)", "Zieh 2 (Grün)", "Richtungswechsel (Grün)", "Richtungswechsel (Grün)", "Aussetzen (Grün)", "Aussetzen (Grün)"];
+$blaue_karten = ["0 (Blau)", "1 (Blau)", "1 (Blau)", "2 (Blau)", "2 (Blau)", "3 (Blau)", "3 (Blau)", "4 (Blau)", "4 (Blau)", "5 (Blau)", "5 (Blau)", "6 (Blau)", "6 (Blau)", "7 (Blau)", "7 (Blau)", "8 (Blau)", "8 (Blau)", "9 (Blau)", "9 (Blau)", "Zieh 2 (Blau)", "Zieh 2 (Blau)", "Richtungswechsel (Blau)", "Richtungswechsel (Blau)", "Aussetzen (Blau)", "Aussetzen (Blau)"];
 $spezialkarten = ["Farbwahl", "Farbwahl", "Farbwahl", "Farbwahl", "Farbwahl +4", "Farbwahl +4", "Farbwahl +4"];
 
 $spielkarten = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_karten, $spezialkarten);
@@ -36,7 +36,7 @@ $meine_hand = [];
 $meine_hand = verteileKarten(7, $spielkarten);
 
 // Ergebnis anzeigen
-echo "<pre";
+echo "<pre>";
 echo "\nRestliche Karten im Deck:\n";
 print_r($spielkarten);
 echo "</pre>";
@@ -75,15 +75,11 @@ echo "</pre>";
     </ul>
 <?php echo $section_ende; ?>
 
-<?php
-    $meine_karten = [];
-?>
-
 <div class="section-title">Meine Karten auf der Hand</div>
 <?php echo $section_beginn; ?>
         <ul class="auflistung">
-            <?php foreach ($meine_karten as $meine_hand): ?>
-            <li><?php echo $meine_hand; ?></li>
+            <?php foreach ($meine_hand as $meine_karten): ?>
+            <li><?php echo $meine_karten; ?></li>
             <?php endforeach; ?>
         </ul>
 <?php echo $section_ende; ?>
