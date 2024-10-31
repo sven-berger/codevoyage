@@ -36,9 +36,18 @@ $meine_hand = [];
 $meine_hand = verteileKarten(7, $spielkarten);
 ?>
 
+<div class="section-title">Meine Karten auf der Hand</div>
+<?php echo $section_beginn; ?>
+        <ul class="auflistung-uno">
+            <?php foreach ($meine_hand as $meine_karten): ?>
+            <li><?php echo $meine_karten; ?></li>
+            <?php endforeach; ?>
+        </ul>
+<?php echo $section_ende; ?>
+
 <div class="section-title">Ziehkarten</div>
 <?php echo $section_beginn; ?>
-<ul class="auflistung-uno">
+<ul class="auflistung">
     <?php foreach ($spielkarten as $ziehkarten): ?>
     <li><?php echo $ziehkarten; ?></li>
     <?php endforeach; ?>
