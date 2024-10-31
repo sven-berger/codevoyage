@@ -21,15 +21,6 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
     </ul>
 <?php echo $section_ende; ?>
 
-<h3 class="section-title">Rote Karten</h3>
-<?php echo $section_beginn; ?>
-    <ul class="auflistung-uno">
-    <?php foreach ($rote_karten AS $karte): ?>
-        <li><?php echo $karte; ?></li>
-    <?php endforeach; ?>
-    </ul>
-<?php echo $section_ende; ?>
-
 <h3 class="section-title">Gelbe Karten</h3>
 <?php echo $section_beginn; ?>
     <ul class="auflistung-uno">
@@ -67,19 +58,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 <?php echo $section_ende; ?>
 
 <style>
-    .auflistung-uno {
-        list-style: none;
-        padding-left: 20px;
-        display: flex !important;
-    }
 
-    .auflistung-uno li::before {
-        content: '\f0da '; /* Setzt das Icon als Aufzählungszeichen */
-        font-family: "Font Awesome 5 Free"; /* Font Awesome Familie angeben */
-        font-weight: 900; /* Für die richtige Gewichtung von Icons */
-        color: #3579BD;
-        margin: 0 5px;
-    }
 </style>
 
 <?php

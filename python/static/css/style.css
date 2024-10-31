@@ -110,6 +110,20 @@ a, a:hover {
     margin-right: 5px;
 }
 
+.auflistung-uno {
+    list-style: none;
+    padding-left: 20px;
+    display: flex !important;
+}
+
+.auflistung-uno li::before {
+    content: '\f0da '; /* Setzt das Icon als Aufzählungszeichen */
+    font-family: "Font Awesome 5 Free"; /* Font Awesome Familie angeben */
+    font-weight: 900; /* Für die richtige Gewichtung von Icons */
+    color: #3579BD;
+    margin: 0 5px;
+}
+
 .auflistung li {
     margin: 5px 0;
 }
