@@ -52,6 +52,9 @@ $kartendeck = [
 <?php endforeach; ?>
 
 <style>
+    .auflistung ul {
+        display: flex !important;
+    }
 .auflistung li::before {
     margin: 0 5px !important;
 }
