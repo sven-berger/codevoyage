@@ -51,6 +51,12 @@ $kartendeck = [
     <?php endif; ?>
 <?php endforeach; ?>
 
+<style>
+.auflistung li::before {
+    margin: 0 5px !important;
+}
+</style>
+
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
