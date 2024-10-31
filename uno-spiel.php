@@ -46,8 +46,8 @@ $kartendeck = [
             <?php foreach ($wert as $spezialkarte): ?>
                 <li><?php echo $spezialkarte; ?></li>
             <?php endforeach; ?>
-        <?php echo $section_ende; ?>
         </ul>
+        <?php echo $section_ende; ?>
     <?php endif; ?>
 <?php endforeach; ?>
 
