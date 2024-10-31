@@ -21,6 +21,17 @@ shuffle($spielkarten);
 $meine_hand = verteile_karten(7, $spielkarten);
 $gegnerische_karten = verteile_karten(7, $spielkarten);
 $ablagestapel = verteile_karten(1, $spielkarten);
+
+?>
+
+<?php
+// Beispiel: Spieler spielt eine Karte auf den Ablagestapel
+$gespielte_karte = array_pop($meine_hand); // Die letzte Karte von "meine_hand" wird gespielt
+array_push($ablagestapel, $gespielte_karte); // Die Karte wird auf den Ablagestapel gelegt
+
+// Beispiel: Gegner spielt eine Karte auf den Ablagestapel
+$gegner_gespielte_karte = array_pop($gegnerische_karten);
+array_push($ablagestapel, $gegner_gespielte_karte);
 ?>
 
 <?php echo $section_beginn; ?>
