@@ -11,7 +11,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
     $blaue_karten = ["0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8", "9", "9", "Zieh 2", "Zieh 2", "Richtungswechsel", "Richtungswechsel", "Aussetzen", "Aussetzen"];
     $spezialkarten = ["Farbwahl", "Farbwahl", "Farbwahl", "Farbwahl", "Farbwahl +4", "Farbwahl +4", "Farbwahl +4"];
 
-    $spielkarten = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_karten, $spielkarten);
+    $spielkarten = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_karten, $spezialkarten);
     shuffle($spielkarten);
 
     print_r($spielkarten);
