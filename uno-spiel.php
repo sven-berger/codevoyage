@@ -12,37 +12,16 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
     $spezialkarten = ["Farbwahl", "Farbwahl", "Farbwahl", "Farbwahl", "Farbwahl +4", "Farbwahl +4", "Farbwahl +4"]
 ?>
 
-<h3 class="section-title">Rote Karten</h3>
 <?php echo $section_beginn; ?>
+    <strong>Rote Karten</strong>
     <ul class="auflistung-uno">
     <?php foreach ($rote_karten AS $karte): ?>
         <li><?php echo $karte; ?></li>
     <?php endforeach; ?>
     </ul>
-<?php echo $section_ende; ?>
-
-<h3 class="section-title">Gelbe Karten</h3>
-<?php echo $section_beginn; ?>
+    <strong>Gelbe Karten</strong>
     <ul class="auflistung-uno">
     <?php foreach ($gelbe_karten AS $karte): ?>
-        <li><?php echo $karte; ?></li>
-    <?php endforeach; ?>
-    </ul>
-<?php echo $section_ende; ?>
-
-<h3 class="section-title">Grüne Karten</h3>
-<?php echo $section_beginn; ?>
-    <ul class="auflistung-uno">
-    <?php foreach ($gruene_karten AS $karte): ?>
-        <li><?php echo $karte; ?></li>
-    <?php endforeach; ?>
-    </ul>
-<?php echo $section_ende; ?>
-
-<h3 class="section-title">Blaue Karten</h3>
-<?php echo $section_beginn; ?>
-    <ul class="auflistung-uno">
-    <?php foreach ($blaue_karten AS $karte): ?>
         <li><?php echo $karte; ?></li>
     <?php endforeach; ?>
     </ul>
