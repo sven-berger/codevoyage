@@ -33,12 +33,12 @@ $kartendeck = [
         <?php foreach ($wert as $typ => $werte): ?>
             <?php echo $section_beginn; ?>
             <div class="uno-typ"><?php echo $typ; ?></div>
-            <?php echo $section_ende; ?>
             <ul class="auflistung">
                 <?php foreach ($werte as $einzelwert): ?>
                     <li><?php echo $einzelwert; ?></li>
                 <?php endforeach; ?>
             </ul>
+            <?php echo $section_ende; ?>
         <?php endforeach; ?>
     <?php else: ?>
         <?php echo $section_beginn; ?>
