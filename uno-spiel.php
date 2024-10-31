@@ -38,7 +38,7 @@ $meine_hand = verteileKarten(7, $spielkarten);
 // Ergebnis anzeigen
 echo "<pre>";
 echo "\nRestliche Karten im Deck:\n";
-print_r($spielkarten);
+print_r ($spielkarten);
 echo "</pre>";
 ?>
 
@@ -77,7 +77,7 @@ echo "</pre>";
 
 <div class="section-title">Meine Karten auf der Hand</div>
 <?php echo $section_beginn; ?>
-        <ul class="auflistung">
+        <ul class="auflistung-uno">
             <?php foreach ($meine_hand as $meine_karten): ?>
             <li><?php echo $meine_karten; ?></li>
             <?php endforeach; ?>
