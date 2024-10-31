@@ -54,9 +54,7 @@ $kartendeck = [
         list-style: none;
         padding-left: 20px;
         display: flex !important;
-    }
-    .auflistung-uno li::before {
-        margin: 0 5px !important;
+        flex-direction: column; /* Verhindert horizontale Anordnung der Elemente */
     }
     .auflistung-uno li::before {
         content: '\f0da '; /* Setzt das Icon als Aufzählungszeichen */
@@ -64,6 +62,10 @@ $kartendeck = [
         font-weight: 900; /* Für die richtige Gewichtung von Icons */
         color: #3579BD;
         margin-right: 5px;
+    }
+    .uno-typ {
+        font-weight: bold;
+        margin: 10px 0;
     }
 </style>
 
