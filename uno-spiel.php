@@ -17,13 +17,14 @@ $blaue_karten = ["0 (Blau)", "1 (Blau)", "1 (Blau)", "2 (Blau)", "2 (Blau)", "3 
 $spezialkarten = ["Farbwahl", "Farbwahl", "Farbwahl", "Farbwahl", "Farbwahl +4", "Farbwahl +4", "Farbwahl +4"];
 
 $spielkarten = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_karten, $spezialkarten);
-
-// Karten mischen
 shuffle($spielkarten);
-
-// 7 Karten an "meine Hand" verteilen
 $meine_hand = verteile_karten(7, $spielkarten);
+$gegnerische_karten = verteile_karten(7, $spielkarten);
 ?>
+
+<?php echo $section_beginn; ?>
+    <div class="section-title">Anzahl der Karten vom Gegner: <?php echo count($gegnerische_karten); ?></div>
+<?php echo $section_ende; ?>
 
 <div class="section-title">Meine Karten auf der Hand (Anzahl: <?php echo count($meine_hand); ?>)</div>
 <?php echo $section_beginn; ?>
