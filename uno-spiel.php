@@ -49,6 +49,7 @@ $ablagestapel = verteile_karten(1, $spielkarten);
         </ul>
 <?php echo $section_ende; ?>
 
+<?php echo $section_beginn; ?>
 <form action="" method="POST">
     <label for="spielzug">Welche Karte möchtest du spielen?</label>
     <select id="spielzug" name="spielzug">
@@ -60,6 +61,7 @@ $ablagestapel = verteile_karten(1, $spielkarten);
     </select>
     <button type="submit">Karte spielen</button>
 </form>
+<?php echo $section_ende; ?>
 
 <div class="section-title">Ziehkarten (Anzahl der Ziehkarten: <?php echo count($spielkarten); ?>)</div>
 <?php echo $section_beginn; ?>
