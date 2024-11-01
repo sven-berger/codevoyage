@@ -135,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['meine_hand'] = $meine_hand;
                     $_SESSION['ablagestapel'] = $ablagestapel;
 
-                    if ($gespielte_karte['farbe'] == "Spezial") {
+                    if ($gespielte_karte['farbe'] == "Spezial" || $gespielte_karte['wert'] == "Farbwahl" || $gespielte_karte['wert'] == "Farbwahl +4") {
                         // Logik zum Wählen einer neuen Farbe durch den Benutzer (Platzhalter)
                         echo "Spezialkarte gespielt: Bitte wähle die nächste Farbe!";
                     }
