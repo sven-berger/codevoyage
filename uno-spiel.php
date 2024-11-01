@@ -1,4 +1,10 @@
 <?php
+$bereich = 'Startseite';
+$pageTitle = 'UNO-Spiel';
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
+?>
+
+<?php
 session_start();
 
 function verteile_karten($anzahl, &$spielkarten) {
