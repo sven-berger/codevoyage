@@ -25,8 +25,7 @@ $ablagestapel = verteile_karten(1, $spielkarten);
 ?>
 
 <?php
-  //  $gespielte_karte = array_pop($meine_hand);
- //   array_push($ablagestapel, $gespielte_karte);
+
 ?>
 
 <?php echo $section_beginn; ?>
@@ -62,6 +61,33 @@ $ablagestapel = verteile_karten(1, $spielkarten);
     <button type="submit">Karte spielen</button>
 </form>
 <?php echo $section_ende; ?>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    try {
+        if (!empty($_POST['spielzug'])) {
+            $gespielte_karte = $_POST['spielzug'];
+
+            // Karte in der Hand finden
+            $index = array_search($gespielte_karte, $meine_hand);
+            if ($index !== false) {
+                // Karte aus der Hand entfernen
+                unset($meine_hand[$index]);
+
+                // Karte zum Ablagestapel hinzufügen
+                array_push($ablagestapel, $gespielte_karte);
+
+                // Hand neu indizieren, damit die Indizes korrekt bleiben
+                $meine_hand = array_values($meine_hand);
+            }
+        }
+    } catch (Exception $e) {
+        echo 'Es liegt ein Problem vor: ' . htmlspecialchars($e->getMessage());
+    }
+}
+?>
+
+
 
 <div class="section-title">Ziehkarten (Anzahl der Ziehkarten: <?php echo count($spielkarten); ?>)</div>
 <?php echo $section_beginn; ?>
