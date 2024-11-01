@@ -79,16 +79,16 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
     // Alle Karten zusammenführen und mischen
     $ziehstapel = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_karten, $spezialkarten);
     shuffle($ziehstapel);
-
-    do {
-        $erste_karte = array_shift($ziehstapel);
-    } while (in_array($erste_karte['wert'], ["Farbwahl", "Farbwahl +4", "Zieh 2", "Richtungswechsel", "Aussetzen"]));
  
     // Karten verteilen
     $_SESSION['meine_hand'] = verteile_karten(7, $ziehstapel);
     $_SESSION['gegnerische_karten'] = verteile_karten(7, $ziehstapel);
     $_SESSION['ablagestapel'] = verteile_karten(1, $ziehstapel);
     $_SESSION['ziehstapel'] = $ziehstapel;
+
+    do {
+        $erste_karte = array_shift($ziehstapel);
+    } while (in_array($erste_karte['wert'], ["Farbwahl", "Farbwahl +4", "Zieh 2", "Richtungswechsel", "Aussetzen"]));
 }
 
 // Daten aus der Session laden
