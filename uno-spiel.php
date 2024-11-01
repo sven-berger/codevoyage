@@ -1,10 +1,4 @@
 <?php
-$bereich = 'Startseite';
-$pageTitle = 'UNO-Spiel';
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
-?>
-
-<?php
 session_start();
 
 function verteile_karten($anzahl, &$spielkarten) {
@@ -14,12 +8,63 @@ function verteile_karten($anzahl, &$spielkarten) {
 
 // Initialisierung der Spielkarten nur, wenn noch keine Session-Daten vorhanden sind
 if (!isset($_SESSION['spielkarten'])) {
-    $rote_karten = ["0 (Rot)", "1 (Rot)", "1 (Rot)", "2 (Rot)", "2 (Rot)", "3 (Rot)", "3 (Rot)", "4 (Rot)", "4 (Rot)", "5 (Rot)", "5 (Rot)", "6 (Rot)", "6 (Rot)", "7 (Rot)", "7 (Rot)", "8 (Rot)", "8 (Rot)", "9 (Rot)", "9 (Rot)", "Zieh 2 (Rot)", "Zieh 2 (Rot)", "Richtungswechsel (Rot)", "Richtungswechsel (Rot)", "Aussetzen (Rot)", "Aussetzen (Rot)"];
-    $gelbe_karten = ["0 (Gelb)", "1 (Gelb)", "1 (Gelb)", "2 (Gelb)", "2 (Gelb)", "3 (Gelb)", "3 (Gelb)", "4 (Gelb)", "4 (Gelb)", "5 (Gelb)", "5 (Gelb)", "6 (Gelb)", "6 (Gelb)", "7 (Gelb)", "7 (Gelb)", "8 (Gelb)", "8 (Gelb)", "9 (Gelb)", "9 (Gelb)", "Zieh 2 (Gelb)", "Zieh 2 (Gelb)", "Richtungswechsel (Gelb)", "Richtungswechsel (Gelb)", "Aussetzen (Gelb)", "Aussetzen (Gelb)"];
-    $gruene_karten = ["0 (Grün)", "1 (Grün)", "1 (Grün)", "2 (Grün)", "2 (Grün)", "3 (Grün)", "3 (Grün)", "4 (Grün)", "4 (Grün)", "5 (Grün)", "5 (Grün)", "6 (Grün)", "6 (Grün)", "7 (Grün)", "7 (Grün)", "8 (Grün)", "8 (Grün)", "9 (Grün)", "9 (Grün)", "Zieh 2 (Grün)", "Zieh 2 (Grün)", "Richtungswechsel (Grün)", "Richtungswechsel (Grün)", "Aussetzen (Grün)", "Aussetzen (Grün)"];
-    $blaue_karten = ["0 (Blau)", "1 (Blau)", "1 (Blau)", "2 (Blau)", "2 (Blau)", "3 (Blau)", "3 (Blau)", "4 (Blau)", "4 (Blau)", "5 (Blau)", "5 (Blau)", "6 (Blau)", "6 (Blau)", "7 (Blau)", "7 (Blau)", "8 (Blau)", "8 (Blau)", "9 (Blau)", "9 (Blau)", "Zieh 2 (Blau)", "Zieh 2 (Blau)", "Richtungswechsel (Blau)", "Richtungswechsel (Blau)", "Aussetzen (Blau)", "Aussetzen (Blau)"];
-    $spezialkarten = ["Farbwahl", "Farbwahl", "Farbwahl", "Farbwahl", "Farbwahl +4", "Farbwahl +4", "Farbwahl +4"];
+    // Definition der Karten
+    $rote_karten = [
+        ["farbe" => "Rot", "wert" => "0"], ["farbe" => "Rot", "wert" => "1"], ["farbe" => "Rot", "wert" => "1"],
+        ["farbe" => "Rot", "wert" => "2"], ["farbe" => "Rot", "wert" => "2"], ["farbe" => "Rot", "wert" => "3"],
+        ["farbe" => "Rot", "wert" => "3"], ["farbe" => "Rot", "wert" => "4"], ["farbe" => "Rot", "wert" => "4"],
+        ["farbe" => "Rot", "wert" => "5"], ["farbe" => "Rot", "wert" => "5"], ["farbe" => "Rot", "wert" => "6"],
+        ["farbe" => "Rot", "wert" => "6"], ["farbe" => "Rot", "wert" => "7"], ["farbe" => "Rot", "wert" => "7"],
+        ["farbe" => "Rot", "wert" => "8"], ["farbe" => "Rot", "wert" => "8"], ["farbe" => "Rot", "wert" => "9"],
+        ["farbe" => "Rot", "wert" => "9"], ["farbe" => "Rot", "wert" => "Zieh 2"], ["farbe" => "Rot", "wert" => "Zieh 2"],
+        ["farbe" => "Rot", "wert" => "Richtungswechsel"], ["farbe" => "Rot", "wert" => "Richtungswechsel"],
+        ["farbe" => "Rot", "wert" => "Aussetzen"], ["farbe" => "Rot", "wert" => "Aussetzen"]
+    ];
+    
+    $gelbe_karten = [
+        ["farbe" => "Gelb", "wert" => "0"], ["farbe" => "Gelb", "wert" => "1"], ["farbe" => "Gelb", "wert" => "1"],
+        ["farbe" => "Gelb", "wert" => "2"], ["farbe" => "Gelb", "wert" => "2"], ["farbe" => "Gelb", "wert" => "3"],
+        ["farbe" => "Gelb", "wert" => "3"], ["farbe" => "Gelb", "wert" => "4"], ["farbe" => "Gelb", "wert" => "4"],
+        ["farbe" => "Gelb", "wert" => "5"], ["farbe" => "Gelb", "wert" => "5"], ["farbe" => "Gelb", "wert" => "6"],
+        ["farbe" => "Gelb", "wert" => "6"], ["farbe" => "Gelb", "wert" => "7"], ["farbe" => "Gelb", "wert" => "7"],
+        ["farbe" => "Gelb", "wert" => "8"], ["farbe" => "Gelb", "wert" => "8"], ["farbe" => "Gelb", "wert" => "9"],
+        ["farbe" => "Gelb", "wert" => "9"], ["farbe" => "Gelb", "wert" => "Zieh 2"], ["farbe" => "Gelb", "wert" => "Zieh 2"],
+        ["farbe" => "Gelb", "wert" => "Richtungswechsel"], ["farbe" => "Gelb", "wert" => "Richtungswechsel"],
+        ["farbe" => "Gelb", "wert" => "Aussetzen"], ["farbe" => "Gelb", "wert" => "Aussetzen"]
+    ];
 
+    $gruene_karten = [
+        ["farbe" => "Grün", "wert" => "0"], ["farbe" => "Grün", "wert" => "1"], ["farbe" => "Grün", "wert" => "1"],
+        ["farbe" => "Grün", "wert" => "2"], ["farbe" => "Grün", "wert" => "2"], ["farbe" => "Grün", "wert" => "3"],
+        ["farbe" => "Grün", "wert" => "3"], ["farbe" => "Grün", "wert" => "4"], ["farbe" => "Grün", "wert" => "4"],
+        ["farbe" => "Grün", "wert" => "5"], ["farbe" => "Grün", "wert" => "5"], ["farbe" => "Grün", "wert" => "6"],
+        ["farbe" => "Grün", "wert" => "6"], ["farbe" => "Grün", "wert" => "7"], ["farbe" => "Grün", "wert" => "7"],
+        ["farbe" => "Grün", "wert" => "8"], ["farbe" => "Grün", "wert" => "8"], ["farbe" => "Grün", "wert" => "9"],
+        ["farbe" => "Grün", "wert" => "9"], ["farbe" => "Grün", "wert" => "Zieh 2"], ["farbe" => "Grün", "wert" => "Zieh 2"],
+        ["farbe" => "Grün", "wert" => "Richtungswechsel"], ["farbe" => "Grün", "wert" => "Richtungswechsel"],
+        ["farbe" => "Grün", "wert" => "Aussetzen"], ["farbe" => "Grün", "wert" => "Aussetzen"]
+    ];
+
+    $blaue_karten = [
+        ["farbe" => "Blau", "wert" => "0"], ["farbe" => "Blau", "wert" => "1"], ["farbe" => "Blau", "wert" => "1"],
+        ["farbe" => "Blau", "wert" => "2"], ["farbe" => "Blau", "wert" => "2"], ["farbe" => "Blau", "wert" => "3"],
+        ["farbe" => "Blau", "wert" => "3"], ["farbe" => "Blau", "wert" => "4"], ["farbe" => "Blau", "wert" => "4"],
+        ["farbe" => "Blau", "wert" => "5"], ["farbe" => "Blau", "wert" => "5"], ["farbe" => "Blau", "wert" => "6"],
+        ["farbe" => "Blau", "wert" => "6"], ["farbe" => "Blau", "wert" => "7"], ["farbe" => "Blau", "wert" => "7"],
+        ["farbe" => "Blau", "wert" => "8"], ["farbe" => "Blau", "wert" => "8"], ["farbe" => "Blau", "wert" => "9"],
+        ["farbe" => "Blau", "wert" => "9"], ["farbe" => "Blau", "wert" => "Zieh 2"], ["farbe" => "Blau", "wert" => "Zieh 2"],
+        ["farbe" => "Blau", "wert" => "Richtungswechsel"], ["farbe" => "Blau", "wert" => "Richtungswechsel"],
+        ["farbe" => "Blau", "wert" => "Aussetzen"], ["farbe" => "Blau", "wert" => "Aussetzen"]
+    ];
+
+    $spezialkarten = [
+        ["farbe" => "Spezial", "wert" => "Farbwahl"], ["farbe" => "Spezial", "wert" => "Farbwahl"],
+        ["farbe" => "Spezial", "wert" => "Farbwahl"], ["farbe" => "Spezial", "wert" => "Farbwahl"],
+        ["farbe" => "Spezial", "wert" => "Farbwahl +4"], ["farbe" => "Spezial", "wert" => "Farbwahl +4"],
+        ["farbe" => "Spezial", "wert" => "Farbwahl +4"], ["farbe" => "Spezial", "wert" => "Farbwahl +4"]
+    ];
+
+    // Alle Karten zusammenführen und mischen
     $spielkarten = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_karten, $spezialkarten);
     shuffle($spielkarten);
 
@@ -38,15 +83,30 @@ $spielkarten = $_SESSION['spielkarten'];
 
 // Formularverarbeitung für das Spielen einer Karte
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['reset'])) {
+        session_unset();
+        session_destroy();
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    }
+    
     try {
         if (!empty($_POST['spielzug'])) {
-            $gespielte_karte = $_POST['spielzug'];
+            $gespielte_karte_index = $_POST['spielzug'];
 
-            // Karte in der Hand finden
-            $index = array_search($gespielte_karte, $meine_hand);
-            if ($index !== false) {
+            // Gespielte Karte holen
+            $gespielte_karte = $meine_hand[$gespielte_karte_index];
+
+            // Oberste Karte auf dem Ablagestapel
+            $oberste_karte = end($ablagestapel);
+
+            // Überprüfen, ob die gespielte Karte gültig ist
+            if ($gespielte_karte['farbe'] == $oberste_karte['farbe'] || 
+                $gespielte_karte['wert'] == $oberste_karte['wert'] || 
+                $gespielte_karte['farbe'] == "Spezial") {
+                
                 // Karte aus der Hand entfernen
-                unset($meine_hand[$index]);
+                unset($meine_hand[$gespielte_karte_index]);
 
                 // Karte zum Ablagestapel hinzufügen
                 array_push($ablagestapel, $gespielte_karte);
@@ -57,6 +117,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Session-Daten aktualisieren
                 $_SESSION['meine_hand'] = $meine_hand;
                 $_SESSION['ablagestapel'] = $ablagestapel;
+            } else {
+                echo "Ungültiger Spielzug. Die Karte passt nicht zur obersten Karte auf dem Ablagestapel.";
             }
         }
     } catch (Exception $e) {
@@ -66,36 +128,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <?php echo $section_beginn; ?>
-    <p>Anzahl der Karten vom Gegner: <strong><?php echo count($gegnerische_karten); ?></strong></p>
+<p>Anzahl der Karten vom Gegner: <strong><?php echo count($gegnerische_karten); ?></strong></p>
 <?php echo $section_ende; ?>
 
 <div class="section-title">Ablagestapel (<?php echo count($ablagestapel); ?> Karten)</div>
 <?php echo $section_beginn; ?>
-    <div style="text-align: center; font-weight: 600;">
-        <?php echo end($ablagestapel); // Die oberste (zuletzt abgelegte) Karte anzeigen ?>
-    </div>
+<div style="text-align: center; font-weight: 600;">
+    <?php
+    $oberste_karte = end($ablagestapel);
+    echo htmlspecialchars($oberste_karte['wert'] . " (" . $oberste_karte['farbe'] . ")");
+    ?>
+</div>
 <?php echo $section_ende; ?>
 
 <div class="section-title">Meine Karten auf der Hand (Anzahl: <?php echo count($meine_hand); ?>)</div>
 <?php echo $section_beginn; ?>
-    <ul class="auflistung-uno">
-        <?php foreach ($meine_hand as $meine_karte): ?>
-            <li><?php echo htmlspecialchars($meine_karte); ?></li>
-        <?php endforeach; ?>
-    </ul>
+<ul class="auflistung-uno">
+    <?php foreach ($meine_hand as $index => $meine_karte): ?>
+        <li><?php echo htmlspecialchars($meine_karte['wert'] . " (" . $meine_karte['farbe'] . ")"); ?></li>
+    <?php endforeach; ?>
+</ul>
 <?php echo $section_ende; ?>
 
 <?php echo $section_beginn; ?>
 <form action="" method="POST">
     <label for="spielzug">Welche Karte möchtest du spielen?</label>
     <select id="spielzug" name="spielzug">
-        <?php foreach ($meine_hand as $meine_karte): ?>
-            <option value="<?php echo htmlspecialchars($meine_karte); ?>">
-                <?php echo htmlspecialchars($meine_karte); ?>
+        <?php foreach ($meine_hand as $index => $meine_karte): ?>
+            <option value="<?php echo $index; ?>">
+                <?php echo htmlspecialchars($meine_karte['wert'] . " (" . $meine_karte['farbe'] . ")"); ?>
             </option>
         <?php endforeach; ?>
     </select>
     <button type="submit">Karte spielen</button>
+    <button type="submit" name="reset">Neustart</button>
 </form>
 <?php echo $section_ende; ?>
 
@@ -103,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php echo $section_beginn; ?>
 <ul class="auflistung">
     <?php foreach ($spielkarten as $ziehkarte): ?>
-        <li><?php echo htmlspecialchars($ziehkarte); ?></li>
+        <li><?php echo htmlspecialchars($ziehkarte['wert'] . " (" . $ziehkarte['farbe'] . ")"); ?></li>
     <?php endforeach; ?>
 </ul>
 <?php echo $section_ende; ?>
