@@ -135,3 +135,7 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
     <?php endforeach; ?>
 </ul>
 <?php echo $section_ende; ?>
+
+<?php
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
+?>
