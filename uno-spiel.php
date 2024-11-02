@@ -111,6 +111,77 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
 
 ?>
 
+<?php
+// Aktuelle Spielzustände aus der Session laden
+$ziehstapel = $_SESSION['ziehstapel'];
+$meine_hand = $_SESSION['meine_hand'];
+$gegnerische_hand = $_SESSION['gegnerische_hand'];
+$ablagestapel = $_SESSION['ablagestapel'];
+
+// Die oberste Karte des Ablagestapels
+$oberste_karte = end($ablagestapel);
+
+// Wenn das Formular gesendet wurde
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
+    // Die ausgewählte Karte
+    $index_der_karte = $_POST['spielzug'];
+    $ausgewaehlte_karte = $meine_hand[$index_der_karte];
+
+    // Prüfen, ob die Karte abgelegt werden kann
+    if ($ausgewaehlte_karte['farbe'] === $oberste_karte['farbe'] || 
+        $ausgewaehlte_karte['wert'] === $oberste_karte['wert'] || 
+        $ausgewaehlte_karte['farbe'] === 'Schwarz') {
+
+        // Erfolgreich abgelegte Karte
+        // Entferne die Karte aus der Hand des Spielers und lege sie auf den Ablagestapel
+        unset($meine_hand[$index_der_karte]);
+        $meine_hand = array_values($meine_hand); // Array neu indexieren
+        $ablagestapel[] = $ausgewaehlte_karte;
+
+        // Zusätzliche Logik für Aktionskarten (Beispiel für "Farbwahl +4")
+        if ($ausgewaehlte_karte['wert'] === 'Farbwahl +4') {
+            // Gegner muss vier Karten ziehen
+            for ($i = 0; $i < 4; $i++) {
+                $gegnerische_hand[] = array_shift($ziehstapel);
+            }
+        } elseif ($ausgewaehlte_karte['wert'] === 'Zieh 2') {
+            // Gegner muss zwei Karten ziehen
+            for ($i = 0; $i < 2; $i++) {
+                $gegnerische_hand[] = array_shift($ziehstapel);
+            }
+        }
+
+        $meldung = "Karte erfolgreich abgelegt!";
+    } else {
+        // Wenn die Karte nicht abgelegt werden kann, eine neue Karte ziehen
+        $gezogene_karte = array_shift($ziehstapel);
+        $meine_hand[] = $gezogene_karte;
+
+        // Prüfen, ob die gezogene Karte abgelegt werden kann
+        if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] || 
+            $gezogene_karte['wert'] === $oberste_karte['wert'] || 
+            $gezogene_karte['farbe'] === 'Schwarz') {
+
+            // Karte kann sofort abgelegt werden
+            unset($meine_hand[array_key_last($meine_hand)]);
+            $ablagestapel[] = $gezogene_karte;
+            $meldung = "Gezogene Karte konnte abgelegt werden!";
+        } else {
+            $meldung = "Gezogene Karte konnte nicht abgelegt werden.";
+        }
+    }
+
+    // Aktualisiere die Spielzustände in der Session
+    $_SESSION['ziehstapel'] = $ziehstapel;
+    $_SESSION['meine_hand'] = $meine_hand;
+    $_SESSION['gegnerische_hand'] = $gegnerische_hand;
+    $_SESSION['ablagestapel'] = $ablagestapel;
+}
+?>
+
+<div class="meldung"><?php if (isset($meldung)) echo htmlspecialchars($meldung); ?></div>
+
+
 <div class="section-title">Gegnerische Hand</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
