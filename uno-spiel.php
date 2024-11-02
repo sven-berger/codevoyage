@@ -171,7 +171,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 }
 ?>
 
-<div class="meldung"><?php if (isset($meldung)) echo htmlspecialchars($meldung); ?></div>
+<?php echo $section_beginn; ?>
+<?php if (isset($meldung)) echo htmlspecialchars($meldung); ?>
+<?php echo $section_ende; ?>
 
 <div class="section-title">Gegnerische Hand</div>
 <?php echo $section_beginn; ?>
