@@ -157,9 +157,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
             // Karte kann sofort abgelegt werden
             unset($meine_hand[array_key_last($meine_hand)]);
             $ablagestapel[] = $gezogene_karte;
-            $meldung = "Gezogene Karte konnte abgelegt werden!";
+            $meldung_success = "Gezogene Karte konnte abgelegt werden!";
         } else {
-            $meldung = "Gezogene Karte konnte nicht abgelegt werden.";
+            $meldung_fail = "Gezogene Karte konnte nicht abgelegt werden.";
         }
     }
 
@@ -172,13 +172,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 ?>
 
 
-<?php if (isset($meldung)): ?>
+<?php if (isset($meldung_success)): ?>
     <?php echo $section_beginn; ?>
-    <div class="uno-meldung">
-        <?php echo htmlspecialchars($meldung); ?>
+    <div class="uno-meldung sucess">
+        <?php echo htmlspecialchars($meldung_success); ?>
     </div>
     <?php echo $section_ende; ?>
 <?php endif; ?>
+
+<?php if (isset($meldung_fail)): ?>
+    <?php echo $section_beginn; ?>
+    <div class="uno-meldung fail">
+        <?php echo htmlspecialchars($meldung_fail); ?>
+    </div>
+    <?php echo $section_ende; ?>
+<?php endif; ?>
+
+<style>
+    .uno-meldung {
+        text-align: center;
+        font-weight: 600;
+    }
+</style>
 
 <div class="section-title">Gegnerische Hand</div>
 <?php echo $section_beginn; ?>
