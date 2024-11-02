@@ -130,8 +130,8 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
 <div class="section-title">Meine Karten auf der Hand (Anzahl: <?php echo count($meine_hand); ?>)</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
-    <?php foreach ($meine_hand as $i => $meine_karte): ?>
-        <li><?php echo htmlspecialchars($meine_karte['wert'] . " (" . $meine_karte['farbe'] . ")"); ?></li>
+    <?php foreach ($meine_hand as $i => $meine_karten): ?>
+        <li><?php echo htmlspecialchars($meine_karten['wert'] . " (" . $meine_karten['farbe'] . ")"); ?></li>
     <?php endforeach; ?>
 </ul>
 <?php echo $section_ende; ?>
@@ -140,9 +140,9 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
 <form method="POST" action="">
     <label for="spielzug">Welche Karte möchtest du ablegen?</label>
     <select name="spielzug" id="spielzug">
-        <?php foreach ($meine_hand as $i => $meine_karte): ?>
+        <?php foreach ($meine_hand as $i => $meine_karten): ?>
             <option value="<?php echo $i; ?>">
-                <?php echo htmlspecialchars($meine_karte['wert'] . " (" . $meine_karte['farbe'] . ")"); ?>
+                <?php echo htmlspecialchars($meine_karten['wert'] . " (" . $meine_karten['farbe'] . ")"); ?>
             </option>
         <?php endforeach; ?>
     </select>
