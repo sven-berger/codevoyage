@@ -192,12 +192,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 <div class="section-title">Ablagestapel (Anzahl: <?php echo count($ablagestapel); ?>)</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
-    <?php foreach ($ablagestapel as $i => $abgelegte_karten): ?>
-        <li><?php echo htmlspecialchars($abgelegte_karten['wert'] . " (" . $abgelegte_karten['farbe'] . ")"); ?></li>
-    <?php endforeach; ?>
+    <li><?php echo htmlspecialchars($oberste_karte['wert'] . " (" . $oberste_karte['farbe'] . ")"); ?></li>
 </ul>
 <?php echo $section_ende; ?>
-
 <div class="section-title">Meine Karten auf der Hand (Anzahl: <?php echo count($meine_hand); ?>)</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
