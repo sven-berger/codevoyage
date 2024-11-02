@@ -111,6 +111,13 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
 
 ?>
 
+<div class="section-title">Gegnerische Hand</div>
+<?php echo $section_beginn; ?>
+<ul class="auflistung-uno">
+    <li>Anzahl: <?php echo count($gegnerische_hand); ?></li>
+</ul>
+<?php echo $section_ende; ?>
+
 <div class="section-title">Ablagestapel (Anzahl: <?php echo count($ablagestapel); ?>)</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
