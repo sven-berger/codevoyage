@@ -136,6 +136,20 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
 </ul>
 <?php echo $section_ende; ?>
 
+<?php echo $section_beginn; ?>
+<form method="POST" action="">
+    <label for="spielzug">Welche Karte möchtest du ablegen?</label>
+    <select name="spielzug" id="spielzug">
+        <?php foreach ($meine_hand as $i => $meine_karte): ?>
+            <option value="<?php echo $i; ?>">
+                <?php echo htmlspecialchars($meine_karte['wert'] . " (" . $meine_karte['farbe'] . ")"); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+    <button type="submit">Karte ablegen</button>
+</form>
+<?php echo $section_ende; ?>
+
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
