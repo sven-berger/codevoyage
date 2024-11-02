@@ -3,8 +3,9 @@ session_start();
 
 $bereich = 'Startseite';
 $pageTitle = 'UNO-Spiel';
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
+// Initialisierung des Spiels
 if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
     $rote_karten = [
         ["farbe" => "Rot", "wert" => "0"], ["farbe" => "Rot", "wert" => "1"], ["farbe" => "Rot", "wert" => "1"],
@@ -69,7 +70,7 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
         ["farbe" => "Schwarz", "wert" => "Farbwahl +4"], ["farbe" => "Schwarz", "wert" => "Farbwahl +4"],
         ["farbe" => "Schwarz", "wert" => "Farbwahl +4"], ["farbe" => "Schwarz", "wert" => "Farbwahl +4"]
     ];
-
+    
     // Alle Karten zusammenführen und mischen
     $ziehstapel = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_karten, $aktionskarten);
     shuffle($ziehstapel);
@@ -109,15 +110,6 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
     $ablagestapel = $_SESSION['ablagestapel'];
 }
 
-?>
-
-<?php
-// Aktuelle Spielzustände aus der Session laden
-$ziehstapel = $_SESSION['ziehstapel'];
-$meine_hand = $_SESSION['meine_hand'];
-$gegnerische_hand = $_SESSION['gegnerische_hand'];
-$ablagestapel = $_SESSION['ablagestapel'];
-
 // Die oberste Karte des Ablagestapels
 $oberste_karte = end($ablagestapel);
 
@@ -128,8 +120,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
     $ausgewaehlte_karte = $meine_hand[$index_der_karte];
 
     // Prüfen, ob die Karte abgelegt werden kann
-    if ($ausgewaehlte_karte['farbe'] === $oberste_karte['farbe'] || 
-        $ausgewaehlte_karte['wert'] === $oberste_karte['wert'] || 
+    if ($ausgewaehlte_karte['farbe'] === $oberste_karte['farbe'] ||
+        $ausgewaehlte_karte['wert'] === $oberste_karte['wert'] ||
         $ausgewaehlte_karte['farbe'] === 'Schwarz') {
 
         // Erfolgreich abgelegte Karte
@@ -158,8 +150,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
         $meine_hand[] = $gezogene_karte;
 
         // Prüfen, ob die gezogene Karte abgelegt werden kann
-        if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] || 
-            $gezogene_karte['wert'] === $oberste_karte['wert'] || 
+        if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] ||
+            $gezogene_karte['wert'] === $oberste_karte['wert'] ||
             $gezogene_karte['farbe'] === 'Schwarz') {
 
             // Karte kann sofort abgelegt werden
@@ -181,7 +173,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 
 <div class="meldung"><?php if (isset($meldung)) echo htmlspecialchars($meldung); ?></div>
 
-
 <div class="section-title">Gegnerische Hand</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
@@ -189,12 +180,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 </ul>
 <?php echo $section_ende; ?>
 
-<div class="section-title">Ablagestapel (Anzahl: <?php echo count($ablagestapel); ?>)</div>
+<div class="section-title">Oberste Karte des Ablagestapels</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
     <li><?php echo htmlspecialchars($oberste_karte['wert'] . " (" . $oberste_karte['farbe'] . ")"); ?></li>
 </ul>
 <?php echo $section_ende; ?>
+
 <div class="section-title">Meine Karten auf der Hand (Anzahl: <?php echo count($meine_hand); ?>)</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
@@ -219,5 +211,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 <?php echo $section_ende; ?>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
