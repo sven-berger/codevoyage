@@ -174,7 +174,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 
 <?php if (isset($meldung)): ?>
     <?php echo $section_beginn; ?>
+    <div class="uno-meldung">
         <?php echo htmlspecialchars($meldung); ?>
+    </div>
     <?php echo $section_ende; ?>
 <?php endif; ?>
 
