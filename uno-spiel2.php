@@ -7,6 +7,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
 // Initialisierung des Spiels
 if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
+    // Definition aller Karten: rote, gelbe, grüne, blaue und spezielle Aktionskarten
     $rote_karten = [
         ["farbe" => "Rot", "wert" => "0"], ["farbe" => "Rot", "wert" => "1"], ["farbe" => "Rot", "wert" => "1"],
         ["farbe" => "Rot", "wert" => "2"], ["farbe" => "Rot", "wert" => "2"], ["farbe" => "Rot", "wert" => "3"],
@@ -75,6 +76,7 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
     $ziehstapel = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_karten, $aktionskarten);
     shuffle($ziehstapel);
 
+    // Initialisiere Spielerhände und Ablagestapel
     $meine_hand = [];
     $gegnerische_hand = [];
     $ablagestapel = [];
@@ -85,20 +87,19 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
         $gegnerische_hand[] = array_shift($ziehstapel);
     }
 
-    // Erste Karte für den Ablagestapel suchen (keine Aktionskarte)
+    // Erste Karte auf den Ablagestapel (keine Aktionskarte)
     while (true) {
         $erste_karte = array_shift($ziehstapel);
         if (!in_array($erste_karte['wert'], ['Zieh 2', 'Richtungswechsel', 'Aussetzen', 'Farbwahl', 'Farbwahl +4'])) {
             $ablagestapel[] = $erste_karte;
-            $oberste_karte = $erste_karte; // Setze die erste Karte als oberste Karte
+            $oberste_karte = $erste_karte;
             break;
         } else {
-            // Falls es eine Aktionskarte ist, wird sie zurück ans Ende des Ziehstapels gelegt
-            array_push($ziehstapel, $erste_karte);
+            array_push($ziehstapel, $erste_karte); // Lege Aktionskarte zurück
         }
     }
 
-    // Speichere die aktuellen Kartenzustände in der Session
+    // Speichere alle Zustände in der Session
     $_SESSION['ziehstapel'] = $ziehstapel;
     $_SESSION['meine_hand'] = $meine_hand;
     $_SESSION['gegnerische_hand'] = $gegnerische_hand;
@@ -119,22 +120,29 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
 // Wenn das Formular zur Farbauswahl gesendet wurde
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['farbwahl'])) {
     $ausgewaehlte_farbe = $_POST['farbwahl'];
-    // Setze die ausgewählte Farbe auf die oberste Karte
-    if ($farbwahl_karte !== null) {
+    
+    // Setze die ausgewählte Farbe auf die Farbwahlkarte
+    if ($_SESSION['farbwahl_karte'] !== null) {
+        $farbwahl_karte = $_SESSION['farbwahl_karte'];
         $farbwahl_karte['farbe'] = $ausgewaehlte_farbe;
+
+        // Lege die Farbwahlkarte auf den Ablagestapel und aktualisiere die oberste Karte
         $ablagestapel[] = $farbwahl_karte;
-        $oberste_karte = $farbwahl_karte; // Aktualisiere die oberste Karte
-        $_SESSION['farbwahl_karte'] = null; // Farbwahl abgeschlossen
-        $meldung = "Farbe erfolgreich ausgewählt!";
+        $oberste_karte = $farbwahl_karte;
+
+        // Farbwahl abgeschlossen, der Gegner ist dran
+        $_SESSION['farbwahl_karte'] = null;
+        $_SESSION['aktueller_spieler'] = 1; // Gegner ist dran
+
+        $meldung = "Farbe erfolgreich ausgewählt: " . htmlspecialchars($ausgewaehlte_farbe);
     }
 
-    // Aktualisiere die Spielzustände in der Session
+    // Aktualisiere den Spielstatus in der Session
     $_SESSION['ablagestapel'] = $ablagestapel;
     $_SESSION['oberste_karte'] = $oberste_karte;
     $_SESSION['meine_hand'] = $meine_hand;
     $_SESSION['gegnerische_hand'] = $gegnerische_hand;
     $_SESSION['ziehstapel'] = $ziehstapel;
-    $_SESSION['aktueller_spieler'] = 1; // Gegner ist dran
 }
 
 // Wenn das Formular für den Spielzug gesendet wurde
@@ -153,15 +161,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 
         // Wenn die Karte eine Farbwahl erfordert
         if ($ausgewaehlte_karte['wert'] === 'Farbwahl' || $ausgewaehlte_karte['wert'] === 'Farbwahl +4') {
-            // Speichere die Karte in der Session für die spätere Farbwahl
             $_SESSION['farbwahl_karte'] = $ausgewaehlte_karte;
             $meldung = "Bitte wähle eine Farbe!";
+            $_SESSION['aktueller_spieler'] = 0; // Spieler bleibt dran, bis eine Farbe gewählt wird
         } else {
-            // Wenn keine Farbwahl erforderlich ist, lege die Karte auf den Ablagestapel
+            // Karte ablegen und Stapel aktualisieren
             $ablagestapel[] = $ausgewaehlte_karte;
-            $oberste_karte = $ausgewaehlte_karte; // Aktualisiere die oberste Karte
+            $oberste_karte = $ausgewaehlte_karte;
 
-            // Logik für zusätzliche Karten
+            // Aktionen für spezielle Karten
             if ($ausgewaehlte_karte['wert'] === 'Zieh 2') {
                 for ($i = 0; $i < 2; $i++) {
                     $gegnerische_hand[] = array_shift($ziehstapel);
@@ -179,7 +187,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
             $meldung = "Karte erfolgreich abgelegt!";
         }
     } else {
-        // Wenn keine passende Karte abgelegt werden kann, eine neue Karte ziehen
+        // Karte kann nicht abgelegt werden, Spieler zieht eine neue Karte
         $gezogene_karte = array_shift($ziehstapel);
         $meine_hand[] = $gezogene_karte;
 
@@ -191,16 +199,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
             // Karte kann sofort abgelegt werden
             unset($meine_hand[array_key_last($meine_hand)]);
             $ablagestapel[] = $gezogene_karte;
-            $oberste_karte = $gezogene_karte; // Aktualisiere die oberste Karte
+            $oberste_karte = $gezogene_karte;
             $meldung = "Gezogene Karte konnte abgelegt werden!";
         } else {
             $meldung = "Gezogene Karte konnte nicht abgelegt werden.";
         }
 
-        $_SESSION['aktueller_spieler'] = 1; // Gegner ist dran, nachdem Spieler gezogen hat
+        // Spielerwechsel
+        $_SESSION['aktueller_spieler'] = 1;
     }
 
-    // Aktualisiere die Spielzustände in der Session
+    // Aktualisiere den Spielstatus in der Session
     $_SESSION['ziehstapel'] = $ziehstapel;
     $_SESSION['meine_hand'] = $meine_hand;
     $_SESSION['gegnerische_hand'] = $gegnerische_hand;
@@ -208,8 +217,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
     $_SESSION['oberste_karte'] = $oberste_karte;
 }
 
+// Spielzug des Gegners
 if ($_SESSION['aktueller_spieler'] == 1) {
-    // Der Gegner versucht, eine passende Karte aus der Hand abzulegen
     $gegner_legt_karte = false;
 
     foreach ($gegnerische_hand as $index => $karte) {
@@ -218,29 +227,36 @@ if ($_SESSION['aktueller_spieler'] == 1) {
             $karte['farbe'] === 'Schwarz') {
 
             // Gegner legt die Karte ab
-            $ablagestapel[] = $karte;
             unset($gegnerische_hand[$index]);
             $gegnerische_hand = array_values($gegnerische_hand); // Array neu indexieren
-            $oberste_karte = $karte; // Aktualisiere die oberste Karte
+            $ablagestapel[] = $karte;
+            $oberste_karte = $karte;
             $gegner_legt_karte = true;
 
-            // Logik für spezielle Karten
-            if ($karte['wert'] === 'Zieh 2') {
-                for ($i = 0; $i < 2; $i++) {
-                    $meine_hand[] = array_shift($ziehstapel);
-                }
-                $_SESSION['aktueller_spieler'] = 1; // Gegner bleibt dran
-            } elseif ($karte['wert'] === 'Farbwahl' || $karte['wert'] === 'Farbwahl +4') {
+            // Wenn die Karte eine Farbwahl ist, muss der Gegner eine Farbe wählen
+            if ($karte['wert'] === 'Farbwahl' || $karte['wert'] === 'Farbwahl +4') {
                 $farbe_auswahl = ['Rot', 'Gelb', 'Grün', 'Blau'];
                 $zufaellige_farbe = $farbe_auswahl[array_rand($farbe_auswahl)];
                 $karte['farbe'] = $zufaellige_farbe;
+
+                // Aktualisiere die oberste Karte mit der neuen Farbe
                 $oberste_karte = $karte;
-                $ablagestapel[] = $karte;
+                $ablagestapel[count($ablagestapel) - 1] = $karte; // Aktualisiere den Eintrag im Ablagestapel
+
                 $meldung = "Der Gegner hat eine Farbe ausgewählt: " . $zufaellige_farbe;
+
+                // Bei Farbwahl +4 muss der Spieler vier Karten ziehen
                 if ($karte['wert'] === 'Farbwahl +4') {
                     for ($i = 0; $i < 4; $i++) {
                         $meine_hand[] = array_shift($ziehstapel);
                     }
+                }
+            }
+
+            // Logik für Zieh 2 und Aussetzen
+            if ($karte['wert'] === 'Zieh 2') {
+                for ($i = 0; $i < 2; $i++) {
+                    $meine_hand[] = array_shift($ziehstapel);
                 }
                 $_SESSION['aktueller_spieler'] = 1; // Gegner bleibt dran
             } elseif ($karte['wert'] === 'Aussetzen' || $karte['wert'] === 'Richtungswechsel') {
@@ -255,7 +271,7 @@ if ($_SESSION['aktueller_spieler'] == 1) {
         }
     }
 
-    // Wenn der Gegner keine passende Karte hat, eine neue Karte ziehen
+    // Wenn der Gegner keine passende Karte hat, zieht er eine neue Karte
     if (!$gegner_legt_karte) {
         $gezogene_karte = array_shift($ziehstapel);
         $gegnerische_hand[] = $gezogene_karte;
@@ -268,16 +284,17 @@ if ($_SESSION['aktueller_spieler'] == 1) {
             // Gegner legt die gezogene Karte ab
             unset($gegnerische_hand[array_key_last($gegnerische_hand)]);
             $ablagestapel[] = $gezogene_karte;
-            $oberste_karte = $gezogene_karte; // Aktualisiere die oberste Karte
+            $oberste_karte = $gezogene_karte;
             $meldung = "Der Gegner hat die gezogene Karte abgelegt.";
-            $_SESSION['aktueller_spieler'] = 1; // Gegner bleibt dran, wenn er erfolgreich ablegt
         } else {
             $meldung = "Der Gegner konnte die gezogene Karte nicht ablegen.";
-            $_SESSION['aktueller_spieler'] = 0; // Spielerwechsel, wenn der Gegner nicht ablegen kann
         }
+
+        // Spielerwechsel
+        $_SESSION['aktueller_spieler'] = 0;
     }
 
-    // Aktualisiere die Spielzustände in der Session
+    // Aktualisiere den Spielstatus in der Session
     $_SESSION['ziehstapel'] = $ziehstapel;
     $_SESSION['gegnerische_hand'] = $gegnerische_hand;
     $_SESSION['ablagestapel'] = $ablagestapel;
