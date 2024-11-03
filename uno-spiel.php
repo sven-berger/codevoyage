@@ -16,6 +16,19 @@ function generiereDeck() {
             $deck[] = ["farbe" => $farbe, "wert" => (string)$i];
         }
     }
+    // Hinzufügen von Sonderkarten (z.B. "Aussetzen", "+2", "Richtungswechsel")
+    $sonderkarten = ["+2", "Richtungswechsel", "Aussetzen"];
+    foreach ($farben as $farbe) {
+        foreach ($sonderkarten as $sonderkarte) {
+            $deck[] = ["farbe" => $farbe, "wert" => $sonderkarte];
+            $deck[] = ["farbe" => $farbe, "wert" => $sonderkarte];
+        }
+    }
+    // Hinzufügen der schwarzen Karten (Farbwahl und +4)
+    for ($i = 0; $i < 4; $i++) {
+        $deck[] = ["farbe" => "Schwarz", "wert" => "Farbwahl"];
+        $deck[] = ["farbe" => "Schwarz", "wert" => "+4"];
+    }
     shuffle($deck);
     return $deck;
 }
@@ -34,8 +47,11 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
         $gegnerische_hand[] = array_shift($ziehstapel);
     }
 
-    // 1 Karte an den Ablagestapel
-    $ablagestapel[] = array_shift($ziehstapel);
+    // 1 Karte an den Ablagestapel, keine Sonderkarten
+    do {
+        $erste_karte = array_shift($ziehstapel);
+    } while (in_array($erste_karte['wert'], ["Farbwahl", "+4", "Aussetzen", "Richtungswechsel", "+2"]));
+    $ablagestapel[] = $erste_karte;
 
     // Speichere die aktuellen Kartenzustände in der Session
     $_SESSION['ziehstapel'] = $ziehstapel;
@@ -59,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $karte_ablegen = $meine_hand[$spielzug_index];
 
     // Überprüfen, ob Karte abgelegt werden kann
-    if ($karte_ablegen['farbe'] === $oberste_karte['farbe'] || $karte_ablegen['wert'] === $oberste_karte['wert']) {
+    if ($karte_ablegen['farbe'] === $oberste_karte['farbe'] || $karte_ablegen['wert'] === $oberste_karte['wert'] || $karte_ablegen['farbe'] === "Schwarz") {
         array_push($ablagestapel, $karte_ablegen);
         unset($meine_hand[$spielzug_index]);
         $meine_hand = array_values($meine_hand);
@@ -80,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 function gegnerZug(&$gegnerische_hand, &$ablagestapel) {
     foreach ($gegnerische_hand as $index => $karte) {
         $oberste_karte = end($ablagestapel);
-        if ($karte['farbe'] === $oberste_karte['farbe'] || $karte['wert'] === $oberste_karte['wert']) {
+        if ($karte['farbe'] === $oberste_karte['farbe'] || $karte['wert'] === $oberste_karte['wert'] || $karte['farbe'] === "Schwarz") {
             array_push($ablagestapel, $karte);
             unset($gegnerische_hand[$index]);
             $gegnerische_hand = array_values($gegnerische_hand);
