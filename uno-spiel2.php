@@ -170,10 +170,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
                 for ($i = 0; $i < 4; $i++) {
                     $gegnerische_hand[] = array_shift($ziehstapel);
                 }
+            } elseif ($ausgewaehlte_karte['wert'] === 'Aussetzen' || $ausgewaehlte_karte['wert'] === 'Richtungswechsel') {
+                $_SESSION['aktueller_spieler'] = 0; // Spieler bleibt dran
+            } else {
+                $_SESSION['aktueller_spieler'] = 1; // Gegner ist dran
             }
 
             $meldung = "Karte erfolgreich abgelegt!";
-            $_SESSION['aktueller_spieler'] = 1; // Gegner ist dran
         }
     } else {
         // Wenn keine passende Karte abgelegt werden kann, eine neue Karte ziehen
@@ -222,9 +225,26 @@ if ($_SESSION['aktueller_spieler'] == 1) {
             $gegner_legt_karte = true;
 
             // Logik für spezielle Karten
-            if ($karte['wert'] === 'Aussetzen' || $karte['wert'] === 'Richtungswechsel') {
-                // Gegner bleibt dran
-                $_SESSION['aktueller_spieler'] = 1;
+            if ($karte['wert'] === 'Zieh 2') {
+                for ($i = 0; $i < 2; $i++) {
+                    $meine_hand[] = array_shift($ziehstapel);
+                }
+                $_SESSION['aktueller_spieler'] = 1; // Gegner bleibt dran
+            } elseif ($karte['wert'] === 'Farbwahl' || $karte['wert'] === 'Farbwahl +4') {
+                $farbe_auswahl = ['Rot', 'Gelb', 'Grün', 'Blau'];
+                $zufaellige_farbe = $farbe_auswahl[array_rand($farbe_auswahl)];
+                $karte['farbe'] = $zufaellige_farbe;
+                $oberste_karte = $karte;
+                $ablagestapel[] = $karte;
+                $meldung = "Der Gegner hat eine Farbe ausgewählt: " . $zufaellige_farbe;
+                if ($karte['wert'] === 'Farbwahl +4') {
+                    for ($i = 0; $i < 4; $i++) {
+                        $meine_hand[] = array_shift($ziehstapel);
+                    }
+                }
+                $_SESSION['aktueller_spieler'] = 1; // Gegner bleibt dran
+            } elseif ($karte['wert'] === 'Aussetzen' || $karte['wert'] === 'Richtungswechsel') {
+                $_SESSION['aktueller_spieler'] = 1; // Gegner bleibt dran
             } else {
                 // Spielerwechsel
                 $_SESSION['aktueller_spieler'] = 0;
