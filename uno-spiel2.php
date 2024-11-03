@@ -202,6 +202,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
     <?php echo $section_ende; ?>
 <?php endif; ?>
 
+<div class="section-title">Oberste Karte des Ablagestapels</div>
+<?php echo $section_beginn; ?>
+<ul class="auflistung-uno">
+    <li><?php echo htmlspecialchars($oberste_karte['wert'] . " (" . $oberste_karte['farbe'] . ")"); ?></li>
+</ul>
+<?php echo $section_ende; ?>
+
 <!-- Formular zur Farbauswahl, falls notwendig -->
 <?php if ($_SESSION['farbwahl_karte'] !== null): ?>
     <form method="POST" action="">
