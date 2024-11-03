@@ -79,21 +79,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         array_push($ablagestapel, $karte_ablegen);
         unset($meine_hand[$spielzug_index]);
         $meine_hand = array_values($meine_hand);
-
-        // Gegnerzug
-        gegnerZug($gegnerische_hand, $ablagestapel);
-
-        // Session-Daten aktualisieren
-        $_SESSION['meine_hand'] = $meine_hand;
-        $_SESSION['gegnerische_hand'] = $gegnerische_hand;
-        $_SESSION['ablagestapel'] = $ablagestapel;
     } else {
-        echo "<div class='error'>Ungültiger Zug. Die Karte passt nicht.</div>";
+        // Wenn die Karte nicht abgelegt werden kann, eine Karte ziehen
+        $gezogene_karte = array_shift($ziehstapel);
+        if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] || $gezogene_karte['wert'] === $oberste_karte['wert'] || $gezogene_karte['farbe'] === "Schwarz") {
+            array_push($ablagestapel, $gezogene_karte);
+            echo "<div class='info'>Du hast eine Karte gezogen und sie abgelegt.</div>";
+        } else {
+            $meine_hand[] = $gezogene_karte;
+            echo "<div class='info'>Du hast eine Karte gezogen, aber sie konnte nicht abgelegt werden.</div>";
+        }
     }
+
+    // Gegnerzug
+    gegnerZug($gegnerische_hand, $ablagestapel, $ziehstapel);
+
+    // Session-Daten aktualisieren
+    $_SESSION['meine_hand'] = $meine_hand;
+    $_SESSION['gegnerische_hand'] = $gegnerische_hand;
+    $_SESSION['ablagestapel'] = $ablagestapel;
+    $_SESSION['ziehstapel'] = $ziehstapel;
 }
 
 // Funktion: Gegnerischer Zug
-function gegnerZug(&$gegnerische_hand, &$ablagestapel) {
+function gegnerZug(&$gegnerische_hand, &$ablagestapel, &$ziehstapel) {
     foreach ($gegnerische_hand as $index => $karte) {
         $oberste_karte = end($ablagestapel);
         if ($karte['farbe'] === $oberste_karte['farbe'] || $karte['wert'] === $oberste_karte['wert'] || $karte['farbe'] === "Schwarz") {
@@ -104,7 +113,16 @@ function gegnerZug(&$gegnerische_hand, &$ablagestapel) {
             return;
         }
     }
-    echo "<div class='info'>Der Gegner konnte keine passende Karte ablegen.</div>";
+    // Wenn der Gegner keine passende Karte hat, eine Karte ziehen
+    $gezogene_karte = array_shift($ziehstapel);
+    $oberste_karte = end($ablagestapel);
+    if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] || $gezogene_karte['wert'] === $oberste_karte['wert'] || $gezogene_karte['farbe'] === "Schwarz") {
+        array_push($ablagestapel, $gezogene_karte);
+        echo "<div class='info'>Der Gegner hat eine Karte gezogen und sie abgelegt.</div>";
+    } else {
+        $gegnerische_hand[] = $gezogene_karte;
+        echo "<div class='info'>Der Gegner hat eine Karte gezogen, aber sie konnte nicht abgelegt werden.</div>";
+    }
 }
 ?>
 
