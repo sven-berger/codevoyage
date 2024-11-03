@@ -282,7 +282,7 @@ if ($_SESSION['aktueller_spieler'] == 1) {
 </ul>
 <?php echo $section_ende; ?>
 
-<div class="section-title">Oberste Karte des Ablagestapels</div>
+<div class="section-title">Ablagestapel (Anzahl: <?php echo count($ablagestapel); ?>)</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
     <?php if ($oberste_karte): ?>
