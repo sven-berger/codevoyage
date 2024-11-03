@@ -251,6 +251,9 @@ if ($_SESSION['aktueller_spieler'] == 1) {
                         $meine_hand[] = array_shift($ziehstapel);
                     }
                 }
+            } else {
+                // Spielerwechsel nach Farbwahl
+                $_SESSION['aktueller_spieler'] = 0;
             }
 
             // Logik für Zieh 2 und Aussetzen
@@ -286,6 +289,23 @@ if ($_SESSION['aktueller_spieler'] == 1) {
             $ablagestapel[] = $gezogene_karte;
             $oberste_karte = $gezogene_karte;
             $meldung = "Der Gegner hat die gezogene Karte abgelegt.";
+            
+            // Wenn die gezogene Karte eine Farbwahl ist, muss der Gegner eine Farbe wählen
+            if ($gezogene_karte['wert'] === 'Farbwahl' || $gezogene_karte['wert'] === 'Farbwahl +4') {
+                $farbe_auswahl = ['Rot', 'Gelb', 'Grün', 'Blau'];
+                $zufaellige_farbe = $farbe_auswahl[array_rand($farbe_auswahl)];
+                $gezogene_karte['farbe'] = $zufaellige_farbe;
+                $ablagestapel[count($ablagestapel) - 1] = $gezogene_karte;
+                $oberste_karte = $gezogene_karte;
+                $meldung .= " Der Gegner hat eine Farbe ausgewählt: " . $zufaellige_farbe;
+
+                // Bei Farbwahl +4 muss der Spieler vier Karten ziehen
+                if ($gezogene_karte['wert'] === 'Farbwahl +4') {
+                    for ($i = 0; $i < 4; $i++) {
+                        $meine_hand[] = array_shift($ziehstapel);
+                    }
+                }
+            }
         } else {
             $meldung = "Der Gegner konnte die gezogene Karte nicht ablegen.";
         }
