@@ -172,10 +172,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
         $gezogene_karte = array_shift($ziehstapel);
         $meine_hand[] = $gezogene_karte;
 
+        // Prüfen, ob die gezogene Karte abgelegt werden kann
         if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] ||
             $gezogene_karte['wert'] === $oberste_karte['wert'] ||
             $gezogene_karte['farbe'] === 'Schwarz') {
 
+            // Karte kann sofort abgelegt werden
             unset($meine_hand[array_key_last($meine_hand)]);
             $ablagestapel[] = $gezogene_karte;
             $meldung = "Gezogene Karte konnte abgelegt werden!";
