@@ -24,15 +24,7 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
         ["farbe" => "Gelb", "wert" => "5"], ["farbe" => "Gelb", "wert" => "5"], ["farbe" => "Gelb", "wert" => "6"],
         ["farbe" => "Gelb", "wert" => "6"], ["farbe" => "Gelb", "wert" => "7"], ["farbe" => "Gelb", "wert" => "7"],
         ["farbe" => "Gelb", "wert" => "8"], ["farbe" => "Gelb", "wert" => "8"], ["farbe" => "Gelb", "wert" => "9"],
-        ["farbe" => "Gelb", "wert" => "9"], ["farbe" => "Gelb", "wert" => "Zieh 2"], ["farbe" => "Gelb", "wert" => "Zieh 2"],
-        ["farbe" => "Gelb", "wert" => "Richtungswechsel"], ["farbe" => "Gelb", "wert" => "Richtungswechsel"],
-        ["farbe" => "Gelb", "wert" => "Aussetzen"], ["farbe" => "Gelb", "wert" => "Aussetzen"],
-        ["farbe" => "Grün", "wert" => "Zieh 2"], ["farbe" => "Grün", "wert" => "Zieh 2"],
-        ["farbe" => "Grün", "wert" => "Richtungswechsel"], ["farbe" => "Grün", "wert" => "Richtungswechsel"],
-        ["farbe" => "Grün", "wert" => "Aussetzen"], ["farbe" => "Grün", "wert" => "Aussetzen"],
-        ["farbe" => "Blau", "wert" => "Zieh 2"], ["farbe" => "Blau", "wert" => "Zieh 2"],
-        ["farbe" => "Blau", "wert" => "Richtungswechsel"], ["farbe" => "Blau", "wert" => "Richtungswechsel"],
-        ["farbe" => "Blau", "wert" => "Aussetzen"], ["farbe" => "Blau", "wert" => "Aussetzen"]
+        ["farbe" => "Gelb", "wert" => "9"]
     ];
     $gruene_karten = [
         ["farbe" => "Grün", "wert" => "0"], ["farbe" => "Grün", "wert" => "1"], ["farbe" => "Grün", "wert" => "1"],
@@ -54,22 +46,42 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
     ];
  
     $aktionskarten = [
-        ["farbe" => "Rot", "wert" => "Zieh 2"], ["farbe" => "Rot", "wert" => "Zieh 2"],
-        ["farbe" => "Rot", "wert" => "Richtungswechsel"], ["farbe" => "Rot", "wert" => "Richtungswechsel"],
-        ["farbe" => "Rot", "wert" => "Aussetzen"], ["farbe" => "Rot", "wert" => "Aussetzen"],
-        ["farbe" => "Gelb", "wert" => "Zieh 2"], ["farbe" => "Gelb", "wert" => "Zieh 2"],
-        ["farbe" => "Gelb", "wert" => "Richtungswechsel"], ["farbe" => "Gelb", "wert" => "Richtungswechsel"],
-        ["farbe" => "Gelb", "wert" => "Aussetzen"], ["farbe" => "Gelb", "wert" => "Aussetzen"],
-        ["farbe" => "Grün", "wert" => "Zieh 2"], ["farbe" => "Grün", "wert" => "Zieh 2"],
-        ["farbe" => "Grün", "wert" => "Richtungswechsel"], ["farbe" => "Grün", "wert" => "Richtungswechsel"],
-        ["farbe" => "Grün", "wert" => "Aussetzen"], ["farbe" => "Grün", "wert" => "Aussetzen"],
-        ["farbe" => "Blau", "wert" => "Zieh 2"], ["farbe" => "Blau", "wert" => "Zieh 2"],
-        ["farbe" => "Blau", "wert" => "Richtungswechsel"], ["farbe" => "Blau", "wert" => "Richtungswechsel"],
-        ["farbe" => "Blau", "wert" => "Aussetzen"], ["farbe" => "Blau", "wert" => "Aussetzen"],
-        ["farbe" => "Schwarz", "wert" => "Farbwahl"], ["farbe" => "Schwarz", "wert" => "Farbwahl"],
-        ["farbe" => "Schwarz", "wert" => "Farbwahl"], ["farbe" => "Schwarz", "wert" => "Farbwahl"],
-        ["farbe" => "Schwarz", "wert" => "Farbwahl +4"], ["farbe" => "Schwarz", "wert" => "Farbwahl +4"],
-        ["farbe" => "Schwarz", "wert" => "Farbwahl +4"], ["farbe" => "Schwarz", "wert" => "Farbwahl +4"]
+        ["farbe" => "Rot", "wert" => "Zieh 2"],
+        ["farbe" => "Rot", "wert" => "Zieh 2"],
+        ["farbe" => "Rot", "wert" => "Richtungswechsel"],
+        ["farbe" => "Rot", "wert" => "Richtungswechsel"],
+        ["farbe" => "Rot", "wert" => "Aussetzen"],
+        ["farbe" => "Rot", "wert" => "Aussetzen"],
+
+        ["farbe" => "Gelb", "wert" => "Zieh 2"],
+        ["farbe" => "Gelb", "wert" => "Zieh 2"],
+        ["farbe" => "Gelb", "wert" => "Richtungswechsel"],
+        ["farbe" => "Gelb", "wert" => "Richtungswechsel"],
+        ["farbe" => "Gelb", "wert" => "Aussetzen"],
+        ["farbe" => "Gelb", "wert" => "Aussetzen"],
+
+        ["farbe" => "Grün", "wert" => "Zieh 2"],
+        ["farbe" => "Grün", "wert" => "Zieh 2"],
+        ["farbe" => "Grün", "wert" => "Richtungswechsel"],
+        ["farbe" => "Grün", "wert" => "Richtungswechsel"],
+        ["farbe" => "Grün", "wert" => "Aussetzen"],
+        ["farbe" => "Grün", "wert" => "Aussetzen"],
+
+        ["farbe" => "Blau", "wert" => "Zieh 2"],
+        ["farbe" => "Blau", "wert" => "Zieh 2"],
+        ["farbe" => "Blau", "wert" => "Richtungswechsel"],
+        ["farbe" => "Blau", "wert" => "Richtungswechsel"],
+        ["farbe" => "Blau", "wert" => "Aussetzen"],
+        ["farbe" => "Blau", "wert" => "Aussetzen"],
+
+        ["farbe" => "Schwarz", "wert" => "Farbwahl"],
+        ["farbe" => "Schwarz", "wert" => "Farbwahl"],
+        ["farbe" => "Schwarz", "wert" => "Farbwahl"],
+        ["farbe" => "Schwarz", "wert" => "Farbwahl"],
+        ["farbe" => "Schwarz", "wert" => "Farbwahl +4"],
+        ["farbe" => "Schwarz", "wert" => "Farbwahl +4"],
+        ["farbe" => "Schwarz", "wert" => "Farbwahl +4"],
+        ["farbe" => "Schwarz", "wert" => "Farbwahl +4"]
     ];
 
     // Alle Karten zusammenführen und mischen
