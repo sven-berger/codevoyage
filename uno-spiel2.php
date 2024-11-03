@@ -192,8 +192,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 
 ?>
 
-<!-- Meldung anzeigen -->
-<div class="meldung"><?php if (isset($meldung)) echo htmlspecialchars($meldung); ?></div>
+
+<?php if (isset($meldung_success)): ?>
+    <?php echo $section_beginn; ?>
+    <div class="uno-meldung sucess">
+        <?php echo htmlspecialchars($meldung_success); ?>
+    </div>
+    <?php echo $section_ende; ?>
+<?php endif; ?>
 
 <!-- Formular zur Farbauswahl, falls notwendig -->
 <?php if ($_SESSION['farbwahl_karte'] !== null): ?>
@@ -209,15 +215,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
     </form>
 <?php endif; ?>
 
-<!-- Spielerhand anzeigen -->
+<?php if (isset($meldung_fail)): ?>
+    <?php echo $section_beginn; ?>
+    <div class="uno-meldung fail">
+        <?php echo htmlspecialchars($meldung_fail); ?>
+    </div>
+    <?php echo $section_ende; ?>
+<?php endif; ?>
+
+<style>
+    .uno-meldung {
+        text-align: center;
+        font-weight: 600;
+    }
+</style>
+
+<div class="section-title">Gegnerische Hand</div>
+<?php echo $section_beginn; ?>
+<ul class="auflistung-uno">
+    <li>Anzahl: <?php echo count($gegnerische_hand); ?></li>
+</ul>
+<?php echo $section_ende; ?>
+
+<div class="section-title">Oberste Karte des Ablagestapels</div>
+<?php echo $section_beginn; ?>
+<ul class="auflistung-uno">
+    <li><?php echo htmlspecialchars($oberste_karte['wert'] . " (" . $oberste_karte['farbe'] . ")"); ?></li>
+</ul>
+<?php echo $section_ende; ?>
+
 <div class="section-title">Meine Karten auf der Hand (Anzahl: <?php echo count($meine_hand); ?>)</div>
+<?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
     <?php foreach ($meine_hand as $i => $meine_karten): ?>
         <li><?php echo htmlspecialchars($meine_karten['wert'] . " (" . $meine_karten['farbe'] . ")"); ?></li>
     <?php endforeach; ?>
 </ul>
+<?php echo $section_ende; ?>
 
-<!-- Formular zum Ablegen einer Karte -->
+<?php echo $section_beginn; ?>
 <form method="POST" action="">
     <label for="spielzug">Welche Karte möchtest du ablegen?</label>
     <select name="spielzug" id="spielzug">
@@ -229,6 +265,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
     </select>
     <button type="submit">Karte ablegen</button>
 </form>
+<?php echo $section_ende; ?>
 
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
