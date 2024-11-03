@@ -136,6 +136,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['farbwahl'])) {
 
 // Wenn das Formular für den Spielzug gesendet wurde
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
+    // Der Spieler zieht zu Beginn der Runde eine Karte
+    $gezogene_karte = array_shift($ziehstapel);
+    $meine_hand[] = $gezogene_karte;    
     $index_der_karte = $_POST['spielzug'];
     $ausgewaehlte_karte = $meine_hand[$index_der_karte];
 
@@ -197,9 +200,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 }
 
 if ($_SESSION['aktueller_spieler'] == 1) {
+    // Der Gegner zieht zu Beginn der Runde eine Karte
+    $gezogene_karte = array_shift($ziehstapel);
+    $gegnerische_hand[] = $gezogene_karte;
+
+    // Prüfen, ob die gezogene Karte abgelegt werden kann
+    if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] ||
+        $gezogene_karte['wert'] === $oberste_karte['wert'] ||
+        $gezogene_karte['farbe'] === 'Schwarz') {
+
+        // Gegner legt die gezogene Karte ab
+        unset($gegnerische_hand[array_key_last($gegnerische_hand)]);
+        $ablagestapel[] = $gezogene_karte;
+        $meldung = "Der Gegner hat die gezogene Karte abgelegt.";
+    } else {
+        $meldung = "Der Gegner konnte die gezogene Karte nicht ablegen.";
+    }
+
+    // Der Gegner versucht danach, eine passende Karte aus der Hand abzulegen
     $gegner_legt_karte = false;
 
-    // Der Gegner versucht, eine passende Karte abzulegen
     foreach ($gegnerische_hand as $index => $karte) {
         if ($karte['farbe'] === $oberste_karte['farbe'] ||
             $karte['wert'] === $oberste_karte['wert'] ||
@@ -220,33 +240,21 @@ if ($_SESSION['aktueller_spieler'] == 1) {
                 $_SESSION['aktueller_spieler'] = 0;
             }
 
+            $meldung = "Der Gegner hat eine passende Karte abgelegt.";
             break;
         }
     }
 
-    // Wenn der Gegner keine passende Karte hat, zieht er eine neue
+    // Wenn der Gegner keine passende Karte hat, wechselt der Zug zurück zum Spieler
     if (!$gegner_legt_karte) {
-        $gezogene_karte = array_shift($ziehstapel);
-        $gegnerische_hand[] = $gezogene_karte;
-
-        // Prüfen, ob die gezogene Karte abgelegt werden kann
-        if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] ||
-            $gezogene_karte['wert'] === $oberste_karte['wert'] ||
-            $gezogene_karte['farbe'] === 'Schwarz') {
-
-            // Gegner legt die gezogene Karte ab
-            unset($gegnerische_hand[array_key_last($gegnerische_hand)]);
-            $ablagestapel[] = $gezogene_karte;
-
-            // Spielerwechsel
-            $_SESSION['aktueller_spieler'] = 0;
-            $meldung = "Der Gegner hat eine gezogene Karte abgelegt.";
-        } else {
-            // Wenn die gezogene Karte nicht abgelegt werden kann, bleibt sie in der Hand
-            $_SESSION['aktueller_spieler'] = 0;
-            $meldung = "Der Gegner konnte die gezogene Karte nicht ablegen.";
-        }
+        $_SESSION['aktueller_spieler'] = 0;
+        $meldung = "Der Gegner konnte keine passende Karte ablegen.";
     }
+
+    // Aktualisiere die Spielzustände in der Session
+    $_SESSION['ziehstapel'] = $ziehstapel;
+    $_SESSION['gegnerische_hand'] = $gegnerische_hand;
+    $_SESSION['ablagestapel'] = $ablagestapel;
 }
 
 ?>
