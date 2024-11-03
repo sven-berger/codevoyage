@@ -79,6 +79,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         array_push($ablagestapel, $karte_ablegen);
         unset($meine_hand[$spielzug_index]);
         $meine_hand = array_values($meine_hand);
+
+        if ($karte_ablegen['wert'] === "Farbwahl" || $karte_ablegen['wert'] === "+4") {
+            // Farbwahl Formular anzeigen
+            echo "<form method='POST' action=''>";
+            echo "<label for='neue_farbe'>Wähle eine Farbe:</label>";
+            echo "<select name='neue_farbe' id='neue_farbe'>";
+            echo "<option value='Rot'>Rot</option>";
+            echo "<option value='Gelb'>Gelb</option>";
+            echo "<option value='Grün'>Grün</option>";
+            echo "<option value='Blau'>Blau</option>";
+            echo "</select>";
+            echo "<button type='submit'>Bestätigen</button>";
+            echo "</form>";
+
+            if (isset($_POST['neue_farbe'])) {
+                $oberste_karte['farbe'] = $_POST['neue_farbe'];
+                $ablagestapel[count($ablagestapel) - 1] = $oberste_karte;
+                echo "<div class='info'>Du hast die Farbe auf " . htmlspecialchars($oberste_karte['farbe']) . " gesetzt.</div>";
+            }
+        }
     } else {
         // Wenn die Karte nicht abgelegt werden kann, eine Karte ziehen
         $gezogene_karte = array_shift($ziehstapel);
@@ -103,13 +123,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Funktion: Gegnerischer Zug
 function gegnerZug(&$gegnerische_hand, &$ablagestapel, &$ziehstapel) {
+    $oberste_karte = end($ablagestapel);
     foreach ($gegnerische_hand as $index => $karte) {
-        $oberste_karte = end($ablagestapel);
         if ($karte['farbe'] === $oberste_karte['farbe'] || $karte['wert'] === $oberste_karte['wert'] || $karte['farbe'] === "Schwarz") {
             array_push($ablagestapel, $karte);
             unset($gegnerische_hand[$index]);
             $gegnerische_hand = array_values($gegnerische_hand);
             echo "<div class='info'>Der Gegner hat eine Karte abgelegt.</div>";
+
+            if ($karte['wert'] === "Farbwahl" || $karte['wert'] === "+4") {
+                // Gegner wählt zufällig eine Farbe
+                $farben = ["Rot", "Gelb", "Grün", "Blau"];
+                $zufaellige_farbe = $farben[array_rand($farben)];
+                $oberste_karte['farbe'] = $zufaellige_farbe;
+                $ablagestapel[count($ablagestapel) - 1] = $oberste_karte;
+                echo "<div class='info'>Der Gegner hat die Farbe auf " . htmlspecialchars($oberste_karte['farbe']) . " gesetzt.</div>";
+            }
             return;
         }
     }
