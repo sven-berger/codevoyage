@@ -138,9 +138,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['farbwahl'])) {
 
 // Wenn das Formular für den Spielzug gesendet wurde
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
-    // Der Spieler zieht zu Beginn der Runde eine Karte
-    $gezogene_karte = array_shift($ziehstapel);
-    $meine_hand[] = $gezogene_karte;    
     $index_der_karte = $_POST['spielzug'];
     $ausgewaehlte_karte = $meine_hand[$index_der_karte];
 
@@ -177,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
             $meldung = "Karte erfolgreich abgelegt!";
         }
     } else {
-        // Wenn die Karte nicht abgelegt werden kann, eine neue Karte ziehen
+        // Wenn keine passende Karte abgelegt werden kann, eine neue Karte ziehen
         $gezogene_karte = array_shift($ziehstapel);
         $meine_hand[] = $gezogene_karte;
 
@@ -205,25 +202,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 }
 
 if ($_SESSION['aktueller_spieler'] == 1) {
-    // Der Gegner zieht zu Beginn der Runde eine Karte
-    $gezogene_karte = array_shift($ziehstapel);
-    $gegnerische_hand[] = $gezogene_karte;
-
-    // Prüfen, ob die gezogene Karte abgelegt werden kann
-    if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] ||
-        $gezogene_karte['wert'] === $oberste_karte['wert'] ||
-        $gezogene_karte['farbe'] === 'Schwarz') {
-
-        // Gegner legt die gezogene Karte ab
-        unset($gegnerische_hand[array_key_last($gegnerische_hand)]);
-        $ablagestapel[] = $gezogene_karte;
-        $oberste_karte = $gezogene_karte; // Aktualisiere die oberste Karte
-        $meldung = "Der Gegner hat die gezogene Karte abgelegt.";
-    } else {
-        $meldung = "Der Gegner konnte die gezogene Karte nicht ablegen.";
-    }
-
-    // Der Gegner versucht danach, eine passende Karte aus der Hand abzulegen
+    // Der Gegner versucht, eine passende Karte aus der Hand abzulegen
     $gegner_legt_karte = false;
 
     foreach ($gegnerische_hand as $index => $karte) {
@@ -252,10 +231,29 @@ if ($_SESSION['aktueller_spieler'] == 1) {
         }
     }
 
-    // Wenn der Gegner keine passende Karte hat, wechselt der Zug zurück zum Spieler
+    // Wenn der Gegner keine passende Karte hat, eine neue Karte ziehen
     if (!$gegner_legt_karte) {
-        $_SESSION['aktueller_spieler'] = 0;
-        $meldung = "Der Gegner konnte keine passende Karte ablegen.";
+        $gezogene_karte = array_shift($ziehstapel);
+        $gegnerische_hand[] = $gezogene_karte;
+
+        // Prüfen, ob die gezogene Karte abgelegt werden kann
+        if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] ||
+            $gezogene_karte['wert'] === $oberste_karte['wert'] ||
+            $gezogene_karte['farbe'] === 'Schwarz') {
+
+            // Gegner legt die gezogene Karte ab
+            unset($gegnerische_hand[array_key_last($gegnerische_hand)]);
+            $ablagestapel[] = $gezogene_karte;
+            $oberste_karte = $gezogene_karte; // Aktualisiere die oberste Karte
+            $meldung = "Der Gegner hat die gezogene Karte abgelegt.";
+        } else {
+            $meldung = "Der Gegner konnte die gezogene Karte nicht ablegen.";
+        }
+
+        // Spielerwechsel, falls keine passende Karte abgelegt wurde
+        if (!$gegner_legt_karte) {
+            $_SESSION['aktueller_spieler'] = 0;
+        }
     }
 
     // Aktualisiere die Spielzustände in der Session
@@ -282,7 +280,7 @@ if ($_SESSION['aktueller_spieler'] == 1) {
 </ul>
 <?php echo $section_ende; ?>
 
-<div class="section-title">Ablagestapel (Anzahl: <?php echo count($ablagestapel); ?>)</div>
+<div class="section-title">Oberste Karte des Ablagestapels</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
     <?php if ($oberste_karte): ?>
