@@ -110,6 +110,7 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
     $gegnerische_hand = $_SESSION['gegnerische_hand'];
     $ablagestapel = $_SESSION['ablagestapel'];
     $farbwahl_karte = $_SESSION['farbwahl_karte'];
+    $oberste_karte = end($ablagestapel); // Hinzugefügt, um die oberste Karte korrekt zuzuweisen
 }
 
 // Wenn das Formular zur Farbauswahl gesendet wurde
@@ -192,11 +193,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 
 ?>
 
-
-<?php if (isset($meldung_success)): ?>
+<!-- Meldung anzeigen -->
+<?php if (isset($meldung)): ?>
     <?php echo $section_beginn; ?>
-    <div class="uno-meldung sucess">
-        <?php echo htmlspecialchars($meldung_success); ?>
+    <div class="uno-meldung">
+        <?php echo htmlspecialchars($meldung); ?>
     </div>
     <?php echo $section_ende; ?>
 <?php endif; ?>
@@ -215,35 +216,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
     </form>
 <?php endif; ?>
 
-<?php if (isset($meldung_fail)): ?>
-    <?php echo $section_beginn; ?>
-    <div class="uno-meldung fail">
-        <?php echo htmlspecialchars($meldung_fail); ?>
-    </div>
-    <?php echo $section_ende; ?>
-<?php endif; ?>
-
-<style>
-    .uno-meldung {
-        text-align: center;
-        font-weight: 600;
-    }
-</style>
-
-<div class="section-title">Gegnerische Hand</div>
-<?php echo $section_beginn; ?>
-<ul class="auflistung-uno">
-    <li>Anzahl: <?php echo count($gegnerische_hand); ?></li>
-</ul>
-<?php echo $section_ende; ?>
-
-<div class="section-title">Oberste Karte des Ablagestapels</div>
-<?php echo $section_beginn; ?>
-<ul class="auflistung-uno">
-    <li><?php echo htmlspecialchars($oberste_karte['wert'] . " (" . $oberste_karte['farbe'] . ")"); ?></li>
-</ul>
-<?php echo $section_ende; ?>
-
+<!-- Spielerhand anzeigen -->
 <div class="section-title">Meine Karten auf der Hand (Anzahl: <?php echo count($meine_hand); ?>)</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
@@ -253,6 +226,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
 </ul>
 <?php echo $section_ende; ?>
 
+<!-- Formular zum Ablegen einer Karte -->
 <?php echo $section_beginn; ?>
 <form method="POST" action="">
     <label for="spielzug">Welche Karte möchtest du ablegen?</label>
