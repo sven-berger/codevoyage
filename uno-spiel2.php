@@ -70,7 +70,7 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
         ["farbe" => "Schwarz", "wert" => "Farbwahl +4"], ["farbe" => "Schwarz", "wert" => "Farbwahl +4"],
         ["farbe" => "Schwarz", "wert" => "Farbwahl +4"], ["farbe" => "Schwarz", "wert" => "Farbwahl +4"]
     ];
-    
+
     // Alle Karten zusammenführen und mischen
     $ziehstapel = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_karten, $aktionskarten);
     shuffle($ziehstapel);
@@ -102,135 +102,122 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
     $_SESSION['meine_hand'] = $meine_hand;
     $_SESSION['gegnerische_hand'] = $gegnerische_hand;
     $_SESSION['ablagestapel'] = $ablagestapel;
+    $_SESSION['farbwahl_karte'] = null;
 } else {
     // Wenn die Session bereits initialisiert wurde, laden wir die Werte aus der Session
     $ziehstapel = $_SESSION['ziehstapel'];
     $meine_hand = $_SESSION['meine_hand'];
     $gegnerische_hand = $_SESSION['gegnerische_hand'];
     $ablagestapel = $_SESSION['ablagestapel'];
+    $farbwahl_karte = $_SESSION['farbwahl_karte'];
 }
 
-// Die oberste Karte des Ablagestapels
-$oberste_karte = end($ablagestapel);
+// Wenn das Formular zur Farbauswahl gesendet wurde
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['farbwahl'])) {
+    $ausgewaehlte_farbe = $_POST['farbwahl'];
+    // Setze die ausgewählte Farbe auf die oberste Karte
+    if ($farbwahl_karte !== null) {
+        $farbwahl_karte['farbe'] = $ausgewaehlte_farbe;
+        $ablagestapel[] = $farbwahl_karte;
+        $_SESSION['farbwahl_karte'] = null; // Farbwahl abgeschlossen
+        $meldung = "Farbe erfolgreich ausgewählt!";
+    }
 
-// Wenn das Formular gesendet wurde
+    // Aktualisiere die Spielzustände in der Session
+    $_SESSION['ablagestapel'] = $ablagestapel;
+    $_SESSION['meine_hand'] = $meine_hand;
+    $_SESSION['gegnerische_hand'] = $gegnerische_hand;
+    $_SESSION['ziehstapel'] = $ziehstapel;
+}
+
+// Wenn das Formular für den Spielzug gesendet wurde
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
-    // Die ausgewählte Karte
     $index_der_karte = $_POST['spielzug'];
     $ausgewaehlte_karte = $meine_hand[$index_der_karte];
 
     // Prüfen, ob die Karte abgelegt werden kann
     if ($ausgewaehlte_karte['farbe'] === $oberste_karte['farbe'] ||
         $ausgewaehlte_karte['wert'] === $oberste_karte['wert'] ||
-        $ausgewaehlte_karte['farbe'] === 'Schwarz'): ?>
+        $ausgewaehlte_karte['farbe'] === 'Schwarz') {
 
-        <?php
         // Erfolgreich abgelegte Karte
-        // Entferne die Karte aus der Hand des Spielers und lege sie auf den Ablagestapel
         unset($meine_hand[$index_der_karte]);
         $meine_hand = array_values($meine_hand); // Array neu indexieren
-        $ablagestapel[] = $ausgewaehlte_karte;
-        ?>
-    
-        <?php if ($ausgewaehlte_karte['wert'] === 'Farbwahl +4'): ?>
-            <?php for ($i = 0; $i < 4; $i++) {
-                $gegnerische_hand[] = array_shift($ziehstapel);
+
+        // Wenn die Karte eine Farbwahl erfordert
+        if ($ausgewaehlte_karte['wert'] === 'Farbwahl' || $ausgewaehlte_karte['wert'] === 'Farbwahl +4') {
+            // Speichere die Karte in der Session für die spätere Farbwahl
+            $_SESSION['farbwahl_karte'] = $ausgewaehlte_karte;
+            $meldung = "Bitte wähle eine Farbe!";
+        } else {
+            // Wenn keine Farbwahl erforderlich ist, lege die Karte auf den Ablagestapel
+            $ablagestapel[] = $ausgewaehlte_karte;
+
+            // Logik für zusätzliche Karten
+            if ($ausgewaehlte_karte['wert'] === 'Zieh 2') {
+                for ($i = 0; $i < 2; $i++) {
+                    $gegnerische_hand[] = array_shift($ziehstapel);
+                }
+            } elseif ($ausgewaehlte_karte['wert'] === 'Farbwahl +4') {
+                for ($i = 0; $i < 4; $i++) {
+                    $gegnerische_hand[] = array_shift($ziehstapel);
+                }
             }
-            ?>
-            <form method="POST" action="">
-                <label for="farbwahl">Bitte wähle eine Farbe aus:</label>
-                <select name="farbwahl" id="farbwahl">
-                    <option>Rot</option>
-                    <option>Gelb</option>
-                    <option>Grün</option>
-                    <option>Blau</option>
-                </select>
-        <?php elseif ($ausgewaehlte_karte['wert'] === 'Zieh 2'): ?>
-            // Gegner muss zwei Karten ziehen
-            <?php for ($i = 0; $i < 2; $i++) {
-                $gegnerische_hand[] = array_shift($ziehstapel);
-            } 
-            ?>
-        <?php endif; ?>
-        <?php $meldung = "Karte erfolgreich abgelegt!"; ?>
-    <?php else: ?>
-        <?php
+
+            $meldung = "Karte erfolgreich abgelegt!";
+        }
+    } else {
         // Wenn die Karte nicht abgelegt werden kann, eine neue Karte ziehen
         $gezogene_karte = array_shift($ziehstapel);
         $meine_hand[] = $gezogene_karte;
 
-        // Prüfen, ob die gezogene Karte abgelegt werden kann
         if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] ||
             $gezogene_karte['wert'] === $oberste_karte['wert'] ||
             $gezogene_karte['farbe'] === 'Schwarz') {
 
-            // Karte kann sofort abgelegt werden
             unset($meine_hand[array_key_last($meine_hand)]);
             $ablagestapel[] = $gezogene_karte;
-            $meldung_success = "Gezogene Karte konnte abgelegt werden!";
+            $meldung = "Gezogene Karte konnte abgelegt werden!";
         } else {
-            $meldung_fail = "Gezogene Karte konnte nicht abgelegt werden.";
+            $meldung = "Gezogene Karte konnte nicht abgelegt werden.";
         }
-        ?>
-    <?php endif; ?>
-    <?php
+    }
+
     // Aktualisiere die Spielzustände in der Session
     $_SESSION['ziehstapel'] = $ziehstapel;
     $_SESSION['meine_hand'] = $meine_hand;
     $_SESSION['gegnerische_hand'] = $gegnerische_hand;
     $_SESSION['ablagestapel'] = $ablagestapel;
-    ?>
-    }
+}
+
 ?>
 
+<!-- Meldung anzeigen -->
+<div class="meldung"><?php if (isset($meldung)) echo htmlspecialchars($meldung); ?></div>
 
-<?php if (isset($meldung_success)): ?>
-    <?php echo $section_beginn; ?>
-    <div class="uno-meldung sucess">
-        <?php echo htmlspecialchars($meldung_success); ?>
-    </div>
-    <?php echo $section_ende; ?>
+<!-- Formular zur Farbauswahl, falls notwendig -->
+<?php if ($_SESSION['farbwahl_karte'] !== null): ?>
+    <form method="POST" action="">
+        <label for="farbwahl">Bitte wähle eine Farbe aus:</label>
+        <select name="farbwahl" id="farbwahl">
+            <option value="Rot">Rot</option>
+            <option value="Gelb">Gelb</option>
+            <option value="Grün">Grün</option>
+            <option value="Blau">Blau</option>
+        </select>
+        <button type="submit">Farbe wählen</button>
+    </form>
 <?php endif; ?>
 
-<?php if (isset($meldung_fail)): ?>
-    <?php echo $section_beginn; ?>
-    <div class="uno-meldung fail">
-        <?php echo htmlspecialchars($meldung_fail); ?>
-    </div>
-    <?php echo $section_ende; ?>
-<?php endif; ?>
-
-<style>
-    .uno-meldung {
-        text-align: center;
-        font-weight: 600;
-    }
-</style>
-
-<div class="section-title">Gegnerische Hand</div>
-<?php echo $section_beginn; ?>
-<ul class="auflistung-uno">
-    <li>Anzahl: <?php echo count($gegnerische_hand); ?></li>
-</ul>
-<?php echo $section_ende; ?>
-
-<div class="section-title">Oberste Karte des Ablagestapels</div>
-<?php echo $section_beginn; ?>
-<ul class="auflistung-uno">
-    <li><?php echo htmlspecialchars($oberste_karte['wert'] . " (" . $oberste_karte['farbe'] . ")"); ?></li>
-</ul>
-<?php echo $section_ende; ?>
-
+<!-- Spielerhand anzeigen -->
 <div class="section-title">Meine Karten auf der Hand (Anzahl: <?php echo count($meine_hand); ?>)</div>
-<?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
     <?php foreach ($meine_hand as $i => $meine_karten): ?>
         <li><?php echo htmlspecialchars($meine_karten['wert'] . " (" . $meine_karten['farbe'] . ")"); ?></li>
     <?php endforeach; ?>
 </ul>
-<?php echo $section_ende; ?>
 
-<?php echo $section_beginn; ?>
+<!-- Formular zum Ablegen einer Karte -->
 <form method="POST" action="">
     <label for="spielzug">Welche Karte möchtest du ablegen?</label>
     <select name="spielzug" id="spielzug">
@@ -242,7 +229,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
     </select>
     <button type="submit">Karte ablegen</button>
 </form>
-<?php echo $section_ende; ?>
 
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
