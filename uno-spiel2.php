@@ -202,6 +202,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
     <?php echo $section_ende; ?>
 <?php endif; ?>
 
+<div class="section-title">Gegnerische Hand</div>
+<?php echo $section_beginn; ?>
+<ul class="auflistung-uno">
+    <li>Anzahl: <?php echo count($gegnerische_hand); ?></li>
+</ul>
+<?php echo $section_ende; ?>
+
 <div class="section-title">Oberste Karte des Ablagestapels</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
