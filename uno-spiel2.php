@@ -134,6 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['farbwahl'])) {
     $_SESSION['meine_hand'] = $meine_hand;
     $_SESSION['gegnerische_hand'] = $gegnerische_hand;
     $_SESSION['ziehstapel'] = $ziehstapel;
+    $_SESSION['aktueller_spieler'] = 1; // Gegner ist dran
 }
 
 // Wenn das Formular für den Spielzug gesendet wurde
@@ -172,6 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
             }
 
             $meldung = "Karte erfolgreich abgelegt!";
+            $_SESSION['aktueller_spieler'] = 1; // Gegner ist dran
         }
     } else {
         // Wenn keine passende Karte abgelegt werden kann, eine neue Karte ziehen
@@ -191,6 +193,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
         } else {
             $meldung = "Gezogene Karte konnte nicht abgelegt werden.";
         }
+
+        $_SESSION['aktueller_spieler'] = 1; // Gegner ist dran, nachdem Spieler gezogen hat
     }
 
     // Aktualisiere die Spielzustände in der Session
@@ -246,13 +250,10 @@ if ($_SESSION['aktueller_spieler'] == 1) {
             $ablagestapel[] = $gezogene_karte;
             $oberste_karte = $gezogene_karte; // Aktualisiere die oberste Karte
             $meldung = "Der Gegner hat die gezogene Karte abgelegt.";
+            $_SESSION['aktueller_spieler'] = 1; // Gegner bleibt dran, wenn er erfolgreich ablegt
         } else {
             $meldung = "Der Gegner konnte die gezogene Karte nicht ablegen.";
-        }
-
-        // Spielerwechsel, falls keine passende Karte abgelegt wurde
-        if (!$gegner_legt_karte) {
-            $_SESSION['aktueller_spieler'] = 0;
+            $_SESSION['aktueller_spieler'] = 0; // Spielerwechsel, wenn der Gegner nicht ablegen kann
         }
     }
 
