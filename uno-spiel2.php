@@ -103,6 +103,9 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
     $_SESSION['gegnerische_hand'] = $gegnerische_hand;
     $_SESSION['ablagestapel'] = $ablagestapel;
     $_SESSION['farbwahl_karte'] = null;
+    // Wenn der aktuelle Spieler fertig ist, wechseln wir den Spieler
+    $_SESSION['aktueller_spieler'] = ($_SESSION['aktueller_spieler'] + 1) % 2;
+
 } else {
     // Wenn die Session bereits initialisiert wurde, laden wir die Werte aus der Session
     $ziehstapel = $_SESSION['ziehstapel'];
@@ -193,7 +196,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['spielzug'])) {
     $_SESSION['ablagestapel'] = $ablagestapel;
 }
 
+if ($_SESSION['aktueller_spieler'] == 1) {
+    $gegner_legt_karte = false;
+
+    // Der Gegner versucht, eine passende Karte abzulegen
+    foreach ($gegnerische_hand as $index => $karte) {
+        if ($karte['farbe'] === $oberste_karte['farbe'] ||
+            $karte['wert'] === $oberste_karte['wert'] ||
+            $karte['farbe'] === 'Schwarz') {
+
+            // Gegner legt die Karte ab
+            $ablagestapel[] = $karte;
+            unset($gegnerische_hand[$index]);
+            $gegnerische_hand = array_values($gegnerische_hand); // Array neu indexieren
+            $gegner_legt_karte = true;
+
+            // Logik für spezielle Karten
+            if ($karte['wert'] === 'Aussetzen' || $karte['wert'] === 'Richtungswechsel') {
+                // Gegner bleibt dran
+                $_SESSION['aktueller_spieler'] = 1;
+            } else {
+                // Spielerwechsel
+                $_SESSION['aktueller_spieler'] = 0;
+            }
+
+            break;
+        }
+    }
+
+    // Wenn der Gegner keine passende Karte hat, zieht er eine neue
+    if (!$gegner_legt_karte) {
+        $gezogene_karte = array_shift($ziehstapel);
+        $gegnerische_hand[] = $gezogene_karte;
+
+        // Prüfen, ob die gezogene Karte abgelegt werden kann
+        if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] ||
+            $gezogene_karte['wert'] === $oberste_karte['wert'] ||
+            $gezogene_karte['farbe'] === 'Schwarz') {
+
+            // Gegner legt die gezogene Karte ab
+            unset($gegnerische_hand[array_key_last($gegnerische_hand)]);
+            $ablagestapel[] = $gezogene_karte;
+
+            // Spielerwechsel
+            $_SESSION['aktueller_spieler'] = 0;
+            $meldung = "Der Gegner hat eine gezogene Karte abgelegt.";
+        } else {
+            // Wenn die gezogene Karte nicht abgelegt werden kann, bleibt sie in der Hand
+            $_SESSION['aktueller_spieler'] = 0;
+            $meldung = "Der Gegner konnte die gezogene Karte nicht ablegen.";
+        }
+    }
+}
+
 ?>
+
+
 
 <!-- Meldung anzeigen -->
 <?php if (isset($meldung)): ?>
