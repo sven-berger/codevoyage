@@ -75,18 +75,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $spielzug_index = intval($_POST['spielzug']);
         $karte_ablegen = $meine_hand[$spielzug_index];
 
+        // Überprüfen, ob Karte abgelegt werden kann
         if ($karte_ablegen['farbe'] === $oberste_karte['farbe'] || $karte_ablegen['wert'] === $oberste_karte['wert'] || $karte_ablegen['farbe'] === "Schwarz") {
             array_push($ablagestapel, $karte_ablegen);
             unset($meine_hand[$spielzug_index]);
             $meine_hand = array_values($meine_hand);
 
-            // Wenn es eine Farbwahlkarte ist, zeige das Farbwahl-Formular an
+            // Farbwahlbehandlung für Spieler
             if ($karte_ablegen['wert'] === "Farbwahl" || $karte_ablegen['wert'] === "Farbwahl +4") {
-                if (isset($_POST['neue_farbe'])) {
-                    $oberste_karte['farbe'] = $_POST['neue_farbe'];
-                    $ablagestapel[count($ablagestapel) - 1] = $oberste_karte;
-                    echo "<div class='info'>Du hast die Farbe auf " . htmlspecialchars($oberste_karte['farbe']) . " gesetzt.</div>";
+                if (!empty($_POST['neue_farbe'])) {
+                    // Neue Farbe aus dem Formular setzen
+                    $neue_farbe = $_POST['neue_farbe'];
+                    $ablagestapel[count($ablagestapel) - 1]['farbe'] = $neue_farbe;
+                    echo "<div class='info'>Du hast die Farbe auf " . htmlspecialchars($neue_farbe) . " gesetzt.</div>";
                 } else {
+                    // Farbauswahl-Formular anzeigen
                     echo "<form method='POST' action=''>";
                     echo "<label for='neue_farbe'>Wähle eine Farbe:</label>";
                     echo "<select name='neue_farbe' id='neue_farbe'>";
@@ -97,18 +100,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "</select>";
                     echo "<button type='submit'>Bestätigen</button>";
                     echo "</form>";
-                    return;
+                    return; // Verhindert, dass der Gegnerzug direkt ausgeführt wird
                 }
             }
         } else {
-        // Wenn die Karte nicht abgelegt werden kann, eine Karte ziehen
-        $gezogene_karte = array_shift($ziehstapel);
-        if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] || $gezogene_karte['wert'] === $oberste_karte['wert'] || $gezogene_karte['farbe'] === "Schwarz") {
-            array_push($ablagestapel, $gezogene_karte);
-            echo "<div class='info'>Du hast eine Karte gezogen und sie abgelegt.</div>";
-        } else {
-            $meine_hand[] = $gezogene_karte;
-            echo "<div class='info'>Du hast eine Karte gezogen, aber sie konnte nicht abgelegt werden.</div>";
+            // Wenn die Karte nicht abgelegt werden kann, eine Karte ziehen
+            $gezogene_karte = array_shift($ziehstapel);
+            if ($gezogene_karte['farbe'] === $oberste_karte['farbe'] || $gezogene_karte['wert'] === $oberste_karte['wert'] || $gezogene_karte['farbe'] === "Schwarz") {
+                array_push($ablagestapel, $gezogene_karte);
+                echo "<div class='info'>Du hast eine Karte gezogen und sie abgelegt.</div>";
+            } else {
+                $meine_hand[] = $gezogene_karte;
+                echo "<div class='info'>Du hast eine Karte gezogen, aber sie konnte nicht abgelegt werden.</div>";
+            }
         }
     }
 
