@@ -1,4 +1,5 @@
 <?php
+require_once "/var/customers/webs/codevoyage/includes/functions.inc.php";
 ?>
 
 <nav>
