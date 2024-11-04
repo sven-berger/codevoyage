@@ -19,9 +19,9 @@ try {
     // Abfrage für Einheiten und Array für ID-Abkuerzung-Zuordnung erstellen
     $einkaufsprozess_einheiten = "SELECT * FROM `einkaufsprozess_einheiten`";
     $ee_result = $connection->query($einkaufsprozess_einheiten);
-    $einheiten_map = [];
+    $einheiten_liste = [];
     foreach ($ee_result->fetchAll(PDO::FETCH_ASSOC) as $einheit) {
-        $einheiten_map[$einheit['id']] = $einheit['einheit'];
+        $einheiten_liste = $einheit['einheit'];
     }
 
     if ($result->rowCount() > 0) {
@@ -33,7 +33,7 @@ try {
             echo "<tr>";
             echo "<td>" . htmlspecialchars($row['produktname']) . "</td>";
             echo "<td>" . htmlspecialchars($row['menge']) . "</td>";
-            echo "<td>" . htmlspecialchars($einheiten_map[$row['einheit']] ?? 'Unbekannt') . "</td>";
+            echo "<td>" . htmlspecialchars($einheiten_liste['einheit']) . "</td>";
             echo "<td>" . htmlspecialchars($row['preis']) . "€</td>";
             echo "<td>
                     <a href='edit.php?id=" . htmlspecialchars($row['ID']) . "'>Bearbeiten</a> |
