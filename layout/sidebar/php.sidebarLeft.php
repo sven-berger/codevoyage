@@ -1,5 +1,5 @@
 <?php
-    require_once "/var/customers/webs/codevoyage/includes/database.inc.php";
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/instance.functions.inc.php");
 ?>
 
 <nav>
