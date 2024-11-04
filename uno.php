@@ -6,8 +6,8 @@ $pageTitle = 'UNO-Spiel';
 require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 ?>
 
-
 <?php
+if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
 // Definition aller Karten: rote, gelbe, grüne, blaue und spezielle Aktionskarten
     $rote_karten = [
         ["farbe" => "Rot", "wert" => "0"], ["farbe" => "Rot", "wert" => "1"], ["farbe" => "Rot", "wert" => "1"],
@@ -57,10 +57,26 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
         ["farbe" => "Schwarz", "wert" => "Farbwahl +4"], ["farbe" => "Schwarz", "wert" => "Farbwahl +4"],
         ["farbe" => "Schwarz", "wert" => "Farbwahl +4"], ["farbe" => "Schwarz", "wert" => "Farbwahl +4"]
     ];
-?>
+    
+    // Speichere alle Zustände in der Session
+        $_SESSION['ziehstapel'] = $ziehstapel;
+        $_SESSION['meine_hand'] = $meine_hand;
+        $_SESSION['gegnerische_hand'] = $gegnerische_hand;
+        $_SESSION['ablagestapel'] = $ablagestapel;
+        $_SESSION['oberste_karte'] = $oberste_karte;
+        $_SESSION['farbwahl_karte'] = null;
+        $_SESSION['aktueller_spieler'] = 0; // Startet mit dem Spieler
+    } else {
+        // Wenn die Session bereits initialisiert wurde, laden wir die Werte aus der Session
+        $ziehstapel = $_SESSION['ziehstapel'];
+        $meine_hand = $_SESSION['meine_hand'];
+        $gegnerische_hand = $_SESSION['gegnerische_hand'];
+        $ablagestapel = $_SESSION['ablagestapel'];
+        $oberste_karte = $_SESSION['oberste_karte'];
+        $farbwahl_karte = $_SESSION['farbwahl_karte'];
+    }
 
-<?php
-// Alle Karten zusammenführen und mischen
+    // Alle Karten zusammenführen und mischen
     $ziehstapel = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_karten, $aktionskarten);
     shuffle($ziehstapel);
 
