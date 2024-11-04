@@ -1,12 +1,12 @@
 <?php
 $bereich = 'PHP-Bereich';
-$pageTitle = "Zahlen ausgeben";
+$paPOSTitle = "Zahlen ausgeben";
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.app.header.inc.php");
 ?>
 
 <section class="section">
 <div class="sectionContent">
-<form action="" method="get">
+<form action="" method="POST">
     <label for="start">Start:</label>
     <input type="number" id="start" name="start" required>
 
@@ -22,11 +22,11 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.app.header
 </section>
 
 <?php echo $section_beginn; ?>
-<?php if (isset($_GET['start']) && isset($_GET['ende']) && isset($_GET['schrittweise'])): ?>
+<?php if (isset($_POST['start']) && isset($_POST['ende']) && isset($_POST['schrittweise'])): ?>
     <?php
-    $start = floatval($_GET['start']);
-    $ende = floatval($_GET['ende']);
-    $schrittweise = floatval($_GET['schrittweise']);
+    $start = floatval($_POST['start']);
+    $ende = floatval($_POST['ende']);
+    $schrittweise = floatval($_POST['schrittweise']);
 
     if ($schrittweise > 0) {
         function zahlen_ausgeben($start, $ende, $schrittweise) {
