@@ -21,7 +21,7 @@ try {
     $ee_result = $connection->query($einkaufsprozess_einheiten);
     $einheiten_liste = [];
     foreach ($ee_result->fetchAll(PDO::FETCH_ASSOC) as $einheit) {
-        $einheiten_liste = $einheit['einheit'];
+        $einheiten_liste[$einheit['id']] = $einheit['einheit'];
     }
 
     if ($result->rowCount() > 0) {
@@ -34,6 +34,7 @@ try {
             echo "<td>" . htmlspecialchars($row['produktname']) . "</td>";
             echo "<td>" . htmlspecialchars($row['menge']) . "</td>";
             echo "<td>" . htmlspecialchars($einheiten_liste['einheit']) . "</td>";
+            echo "<td>" . htmlspecialchars($einheiten_liste[$row['einheit']] ?? 'Unbekannt') . "</td>";
             echo "<td>" . htmlspecialchars($row['preis']) . "€</td>";
             echo "<td>
                     <a href='edit.php?id=" . htmlspecialchars($row['ID']) . "'>Bearbeiten</a> |
