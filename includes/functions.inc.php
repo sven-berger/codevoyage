@@ -6,16 +6,21 @@ try {
     $spielereien = "SELECT * FROM `php_sidebar_left_spielereien`";
     $sonstiges = "SELECT * FROM `php_sidebar_left_sonstiges`";
     $community_spiele = "SELECT * FROM `sidebar_left_community_spiele`";
+    $einkaufsprozess = "SELECT * FROM `php_sidebar_left_einkaufsprozess`";
 
     $acp_sidebar_left_seitenleiste = "SELECT * FROM `acp_sidebar_left_seitenleiste`";
     $acp_sidebar_left_eigene_werke = "SELECT * FROM `acp_sidebar_left_eigene_werke`";
     $acp_sidebar_left_wissensportal = "SELECT * FROM `acp_sidebar_left_wissensportal`";
+    
     $acp_sidebar_left_blog = "SELECT * FROM `acp_sidebar_left_blog`";
 
     $ausgabe_eigene_werke = $connection->query($eigene_werke);
     $ausgabe_spielereien = $connection->query($spielereien);
     $ausgabe_sonstiges = $connection->query($sonstiges);
     $ausgabe_community_spiele = $connection->query($community_spiele);
+    $ausgabe_einkaufsprozess = $connection->query($einkaufsprozess);
+
+    
 
     $ausgabe_acp_sidebar_left_seitenleiste = $connection->query($acp_sidebar_left_seitenleiste);
     $ausgabe_acp_sidebar_left_eigene_werke = $connection->query($acp_sidebar_left_eigene_werke);
@@ -26,6 +31,7 @@ try {
     $spielereien_liste = $ausgabe_spielereien->fetchAll(PDO::FETCH_ASSOC);
     $sonstiges_liste = $ausgabe_sonstiges->fetchAll(PDO::FETCH_ASSOC);
     $community_spiele_liste = $ausgabe_community_spiele->fetchAll(PDO::FETCH_ASSOC);
+    $einkaufsprozess_liste = $ausgabe_einkaufsprozess->fetchAll(PDO::FETCH_ASSOC);
 
     $acp_sidebar_left_seitenleiste_liste = $ausgabe_acp_sidebar_left_seitenleiste->fetchAll(PDO::FETCH_ASSOC);
     $acp_sidebar_left_eigene_werke_liste = $ausgabe_acp_sidebar_left_eigene_werke->fetchAll(PDO::FETCH_ASSOC);
