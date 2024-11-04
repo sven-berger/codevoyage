@@ -53,8 +53,6 @@ if (!empty($_POST['einheit']) && !empty($_POST['abkuerzung'])) {
     $prepare->execute();
     header("Location: https://codevoyage.de/acp/einkaufsprozess/einheiten/index.php");
     exit;
-} else {
-    echo 'Fehler: Keine Einheit angegeben.';
 }
 
 ?>
