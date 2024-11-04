@@ -18,7 +18,7 @@ try {
 
     if ($result->rowCount() > 0) {
         echo "<table>";
-        echo "<tr><th>Produktname</th><th>Beschreibung</th><th>Preis</th><th>Aktion</th></tr>";
+        echo "<tr><th>Produktname</th><th>Menge</th>th>Einheit</th><th>Preis</th><th>Aktion</th></tr>";
 
         $rows = $result->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $row) {
