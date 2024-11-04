@@ -155,3 +155,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
     <button type="submit">Karte ablegen</button>
 </form>
 <?php echo $section_ende; ?>
+
+<?php
+require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
+?>
