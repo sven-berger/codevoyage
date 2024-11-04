@@ -5,10 +5,10 @@
 
 $sql = "
 CREATE TABLE IF NOT EXISTS `einkaufsprozess` (
-`ID` INT NOT NULL AUTO_INCREMENT ,
-`produktname` VARCHAR(255) NOT NULL ,
-`beschreibung` TEXT NOT NULL ,
-`preis` FLOAT NOT NULL ,
+`ID` INT NOT NULL AUTO_INCREMENT,
+`produktname` VARCHAR(255) NOT NULL,
+`beschreibung` TEXT NOT NULL,
+`preis` INT NOT NULL,
 PRIMARY KEY (`ID`)
 )
 ";
