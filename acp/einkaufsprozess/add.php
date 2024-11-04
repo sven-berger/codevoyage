@@ -30,14 +30,14 @@ try {
     <input type="number" step="1" id="menge" name="menge" required>
 
     <label for="Einheit">Kategorie:</label>
-    <select name="einheit" id="einheit" class="global-kategorien" required><br>
+    <select name="einheit" id="einheit" class="global-kategorien" required>
     <?php
     $einheit = $connection->query("SELECT * FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($einheit as $einheiten) {
         echo "<option value='{$einheiten['id']}'>" . htmlspecialchars($einheiten['einheit']) . " (" . htmlspecialchars($einheiten['abkuerzung']). ")"; "</option>";
     }    
     ?>
-    </select>
+    </select><br>
 
     <label for="preis">Preis:</label>
     <input type="number" step="0.01" id="preis" name="preis" required>
