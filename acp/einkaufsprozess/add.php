@@ -32,9 +32,9 @@ try {
     <label for="Einheit">Kategorie:</label>
     <select name="einheit" id="einheit" class="global-kategorien" required>
     <?php
-    $einheiten = $connection->query("SELECT einheit, name FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($einheiten as $einheit) {
-        echo "<option value='{$einheit['id']}'>" . htmlspecialchars($einheit['name']) . "</option>";
+    $einheit = $connection->query("SELECT einheit, name FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($einheit as $einheiten) {
+        echo "<option value='{$einheiten['id']}'>" . htmlspecialchars($einheiten['name']) . "</option>";
     }
     ?>
     </select>
@@ -52,6 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST['produktname']) && !empty($_POST['menge']) && !empty($_POST['einheit'])  && !empty($_POST['preis'])) {
             $produktname = filter_input(INPUT_POST, 'produktname', FILTER_SANITIZE_SPECIAL_CHARS);
             $menge = filter_input(INPUT_POST, 'menge', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+            $einheit = filter_input(INPUT_POST, 'einheit', FILTER_SANITIZE_SPECIAL_CHARS);
             $preis = filter_input(INPUT_POST, 'preis', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
             $prepare = $connection->prepare('INSERT INTO `einkaufsprozess` (`produktname`, `menge`, `einheit` `preis`) VALUES (:produktname, :menge, :einheit, :preis)');
