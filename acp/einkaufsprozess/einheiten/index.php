@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = 'Kategorien (Wissensportal)';
+    $pageTitle = 'Einheiten (Einkaufsprozess)';
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
     try {
         $sql = "SELECT * FROM einkaufsprozess_einheiten";
