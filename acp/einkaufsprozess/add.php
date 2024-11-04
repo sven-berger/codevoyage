@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `einkaufsprozess` (
 `ID` INT NOT NULL AUTO_INCREMENT,
 `produktname` VARCHAR(255) NOT NULL,
 `beschreibung` TEXT NOT NULL,
-`preis` INT NOT NULL,
+`preis` FLOAT NOT NULL,
 PRIMARY KEY (`ID`)
 )
 ";
@@ -29,7 +29,7 @@ try {
     <input type="text" name="beschreibung" required><br>
 
     <label for="preis">Preis:</label>
-    <input type="number" step="0.01" id="umsatz" name="preis" required>
+    <input type="number" step="0.01" id="preis" name="preis" required>
 
     <input type="submit" value="Einfügen">
     <button type="reset">Zurücksetzen</button>
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($_POST['produktname']) && !empty($_POST['beschreibung']) && !empty($_POST['preis'])) {
             $produktname = filter_input(INPUT_POST, 'produktname', FILTER_SANITIZE_SPECIAL_CHARS);
             $beschreibung = filter_input(INPUT_POST, 'beschreibung', FILTER_SANITIZE_SPECIAL_CHARS);
-            $preis = filter_input(INPUT_POST, 'umsatz', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+            $preis = filter_input(INPUT_POST, 'preis', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
             $prepare = $connection->prepare('INSERT INTO `einkaufsprozess` (`produktname`, `beschreibung`, `preis`) VALUES (:produktname, :beschreibung, :preis)');
             $prepare->bindParam(':produktname', $produktname, PDO::PARAM_STR);
