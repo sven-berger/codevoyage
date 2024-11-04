@@ -212,7 +212,3 @@ function gegnerZug(&$gegnerische_hand, &$ablagestapel, &$ziehstapel) {
     <button type="submit">Karte ablegen</button>
 </form>
 <?php echo $section_ende; ?>
-
-<?php
-require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
-?>
