@@ -5,9 +5,12 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 ?>
 
-<section class="section">
-    <div class="sectionContent">
-
+<div class="ActionArea">
+    <ul>
+        <li><button class="button-action"><a href="https://codevoyage.de/acp/wissensportal/add.php">Snippet hinzufügen</a></button></li>
+    </ul>
+</div>
+<?php echo $section_beginn; ?>
 <?php
 try {
     $sql = "SELECT * FROM `einkaufsprozess`";
@@ -39,10 +42,7 @@ try {
 }
 
 ?>
-</div>
-</section>
-
-?>
+<?php echo $section_ende; ?>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
