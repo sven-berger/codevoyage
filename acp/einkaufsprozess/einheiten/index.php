@@ -3,9 +3,9 @@
     $pageTitle = 'Kategorien (Wissensportal)';
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
     try {
-        $sql = "SELECT * FROM wissensportal_kategorien";
+        $sql = "SELECT * FROM einkaufsprozess_einheiten";
         $stmt = $connection->query($sql);
-        $wissensportal_kategorien = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $einkaufsprozess_einheiten= $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo "Fehler beim Laden der Kategorien: " . htmlspecialchars($e->getMessage());
         exit;
