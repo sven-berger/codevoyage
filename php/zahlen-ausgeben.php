@@ -23,7 +23,6 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.app.header
 
 <?php echo $section_beginn; ?>
 <?php if (isset($_GET['start']) && isset($_GET['ende']) && isset($_GET['schrittweise'])): ?>
-<section>
     <?php
     $start = floatval($_GET['start']);
     $ende = floatval($_GET['ende']);
@@ -42,7 +41,6 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.app.header
         echo "<p>Bitte geben Sie eine positive Zahl für die Schrittweite ein.</p>";
     }
     ?>
-</section>
 <?php endif; ?>
 <?php $section_ende; ?>
 
