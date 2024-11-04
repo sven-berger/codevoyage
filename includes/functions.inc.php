@@ -2,11 +2,15 @@
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
 
 try {
+    // Sortiere die Navigationseinträge nach `reihenfolge` aufsteigend
+    $navigation_header = "SELECT * FROM `navigation_header` ORDER BY `reihenfolge` ASC";
+    $ausgabe_navigation_header = $connection->query($navigation_header);
+
+    // Weitere Abfragen bleiben unverändert
     $eigene_werke = "SELECT * FROM `php_sidebar_left_eigene_werke`";
     $spielereien = "SELECT * FROM `php_sidebar_left_spielereien`";
     $sonstiges = "SELECT * FROM `php_sidebar_left_sonstiges`";
     $community_spiele = "SELECT * FROM `sidebar_left_community_spiele`";
-    $navigation_header = "SELECT * FROM `navigation_header`";
 
     $acp_sidebar_left_navigation_header = "SELECT * FROM `acp_sidebar_left_navigation_header`";
     $acp_sidebar_left_seitenleiste = "SELECT * FROM `acp_sidebar_left_seitenleiste`";
@@ -15,35 +19,18 @@ try {
     $acp_sidebar_left_einkaufsprozess = "SELECT * FROM `acp_sidebar_left_einkaufsprozess`";
     $acp_sidebar_left_blog = "SELECT * FROM `acp_sidebar_left_blog`";
 
-    
-    $ausgabe_navigation_header = $connection->query($navigation_header);
-    $ausgabe_eigene_werke = $connection->query($eigene_werke);
-    $ausgabe_spielereien = $connection->query($spielereien);
-    $ausgabe_sonstiges = $connection->query($sonstiges);
-    $ausgabe_community_spiele = $connection->query($community_spiele);
-    $ausgabe_acp_sidebar_left_navigation_header = $connection->query($acp_sidebar_left_navigation_header);
-
-    $ausgabe_acp_sidebar_left_seitenleiste = $connection->query($acp_sidebar_left_seitenleiste);
-    $ausgabe_acp_sidebar_left_eigene_werke = $connection->query($acp_sidebar_left_eigene_werke);
-    $ausgabe_acp_sidebar_left_wissensportal = $connection->query($acp_sidebar_left_wissensportal);
-    $ausgabe_acp_sidebar_left_blog = $connection->query($acp_sidebar_left_blog);
-    $ausgabe_acp_sidebar_left_einkaufsprozess = $connection->query($acp_sidebar_left_einkaufsprozess);
-
-
-    
+    // Ergebnisse abrufen
     $navigation_header_liste = $ausgabe_navigation_header->fetchAll(PDO::FETCH_ASSOC);
-    $eigene_werke_liste = $ausgabe_eigene_werke->fetchAll(PDO::FETCH_ASSOC);
-    $spielereien_liste = $ausgabe_spielereien->fetchAll(PDO::FETCH_ASSOC);
-    $sonstiges_liste = $ausgabe_sonstiges->fetchAll(PDO::FETCH_ASSOC);
-    $community_spiele_liste = $ausgabe_community_spiele->fetchAll(PDO::FETCH_ASSOC);
-    
-    $acp_sidebar_left_seitenleiste_liste = $ausgabe_acp_sidebar_left_seitenleiste->fetchAll(PDO::FETCH_ASSOC);
-    $acp_sidebar_left_eigene_werke_liste = $ausgabe_acp_sidebar_left_eigene_werke->fetchAll(PDO::FETCH_ASSOC);
-    $acp_sidebar_left_wissensportal_liste = $ausgabe_acp_sidebar_left_wissensportal->fetchAll(PDO::FETCH_ASSOC);
-    $acp_sidebar_left_blog_liste = $ausgabe_acp_sidebar_left_blog->fetchAll(PDO::FETCH_ASSOC);
-    $acp_sidebar_left_einkaufsprozess_liste = $ausgabe_acp_sidebar_left_einkaufsprozess->fetchAll(PDO::FETCH_ASSOC);
-    $acp_sidebar_left_navigation_header_liste = $ausgabe_acp_sidebar_left_navigation_header->fetchAll(PDO::FETCH_ASSOC);
+    $eigene_werke_liste = $connection->query($eigene_werke)->fetchAll(PDO::FETCH_ASSOC);
+    $spielereien_liste = $connection->query($spielereien)->fetchAll(PDO::FETCH_ASSOC);
+    $sonstiges_liste = $connection->query($sonstiges)->fetchAll(PDO::FETCH_ASSOC);
+    $community_spiele_liste = $connection->query($community_spiele)->fetchAll(PDO::FETCH_ASSOC);
 
+    $acp_sidebar_left_seitenleiste_liste = $connection->query($acp_sidebar_left_seitenleiste)->fetchAll(PDO::FETCH_ASSOC);
+    $acp_sidebar_left_eigene_werke_liste = $connection->query($acp_sidebar_left_eigene_werke)->fetchAll(PDO::FETCH_ASSOC);
+    $acp_sidebar_left_wissensportal_liste = $connection->query($acp_sidebar_left_wissensportal)->fetchAll(PDO::FETCH_ASSOC);
+    $acp_sidebar_left_blog_liste = $connection->query($acp_sidebar_left_blog)->fetchAll(PDO::FETCH_ASSOC);
+    $acp_sidebar_left_einkaufsprozess_liste = $connection->query($acp_sidebar_left_einkaufsprozess)->fetchAll(PDO::FETCH_ASSOC);
 
 } catch (PDOException $e) {
     echo "<p style='color:red;'>Fehler bei der Abfrage: " . htmlspecialchars($e->getMessage()) . "</p>";
