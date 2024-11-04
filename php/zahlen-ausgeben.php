@@ -17,7 +17,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.app.header
 
     <input type="submit" value="Speichern">
 </form>
-<?php $section_ende; ?>
+<?php echo $section_ende; ?>
 
 <?php if (isset($_POST['start']) && isset($_POST['ende']) && isset($_POST['schrittweise'])): ?>
 <?php echo $section_beginn; ?>
