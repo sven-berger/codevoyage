@@ -83,7 +83,7 @@
         <ul>
             <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/add.php">Menüpunkt hinzufügen</a></button></li>
         </ul>
-    /div>    
+    </div>    
         <?php try { ?>
             <?php if (!empty($acp_sidebar_left_wissensportal_liste)) : ?> 
                 <table>
