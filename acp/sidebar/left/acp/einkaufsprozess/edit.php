@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_SPECIAL_CHARS);
             $ziel = filter_input(INPUT_POST, 'ziel', FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $prepare = $connection->prepare('UPDATE `acp_sidebar_left_einkaufsprozess` (`url`, `ziel`) VALUES (:url, :ziel)');
+            $prepare = $connection->prepare('UPDATE acp_sidebar_left_einkaufsprozess SET url = :url, ziel = :ziel WHERE ID = :id');
             $prepare->bindParam(':url', $url, PDO::PARAM_STR);
             $prepare->bindParam(':ziel', $ziel, PDO::PARAM_STR);
             $prepare->execute();
