@@ -12,7 +12,7 @@
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
             echo 'Eintrittspreis erfolgreich gelöscht.';
-            header("Location: https://codevoyage.de/acp/navigation/header/index.php");
+            header("Location: https://codevoyage.de/acp/sidebar/left/acp/index.php");
             exit();
         } catch (PDOException $e) {
             echo 'Fehler beim Löschen: ' . $e->getMessage();

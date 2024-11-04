@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->execute();
 
             echo 'Menüpunkt erfolgreich aktualisiert.';
-            header("Location: https://codevoyage.de/acp/navigation/header/index.php");
+            header("Location: https://codevoyage.de/acp/sidebar/left/acp/index.php");
             exit();
         } else {
             echo 'Bitte füllen Sie alle Felder aus.';
