@@ -7,7 +7,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 <div class="ActionArea">
     <ul>
-        <li><button class="button-action"><a href="https://codevoyage.de/acp/wissensportal/add.php">Snippet hinzufügen</a></button></li>
+        <li><button class="button-action"><a href="https://codevoyage.de/acp/einkaufsprozess/add.php">Produkt hinzufügen</a></button></li>
     </ul>
 </div>
 <?php echo $section_beginn; ?>
