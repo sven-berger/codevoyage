@@ -47,10 +47,11 @@ try {
 if (!empty($_POST['einheit']) && !empty($_POST['abkuerzung'])) {
     $einheit = $_POST['einheit'];
     $einheit = $_POST['abkuerzung'];
-    $sql = "INSERT INTO `einkaufsprozess_einheiten (name, abkuerzung) VALUES (:name, :abkuerzung)";
-    $stmt = $connection->prepare($sql);
-    $stmt->execute([':name' => $name]);
-    header("Location: https://codevoyage.de/acp/wissensportal/kategorien/index.php");
+    $prepare = $connection->prepare('INSERT INTO `einkaufsprozess_einheiten` (`einheit`, `abkuerzung`) VALUES (:einheit, :abkuerzung)');
+    $prepare->bindParam(':einheit', $einheit, PDO::PARAM_STR);
+    $prepare->bindParam(':abkuerzung', $abkuerzung, PDO::PARAM_INT);
+    $prepare->execute();
+    header("Location: https://codevoyage.de/acp/einkaufsprozess/einheiten/index.php");
     exit;
 } else {
     echo 'Fehler: Keine Einheit angegeben.';
