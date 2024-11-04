@@ -1,11 +1,19 @@
-<?php if (!isset($page)) $page = ''; ?>
+<?php
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/functions.inc.php");
+
+// Stelle sicher, dass `$navigation_header_liste` die Navigationseinträge enthält
+if (!isset($page)) $page = '';
+?>
 
 <div class="navigation">
-    <a href="https://codevoyage.de/" <?php if ($bereich === 'Startseite'): ?> class="active"<?php endif; ?>>Startseite</a>
-    <a href="https://codevoyage.de/blog/" <?php if ($bereich === 'Blog'): ?> class="active"<?php endif; ?>>Blog</a>
-    <a href="https://php.codevoyage.de/" <?php if ($bereich === 'PHP-Bereich'): ?> class="active"<?php endif; ?>>PHP-Bereich</a>
-    <a href="https://python.codevoyage.de">Python-Bereich</a>
-    <a href="https://javascript.codevoyage.de/" <?php if ($bereich === 'JavaScript-Bereich'): ?> class="active"<?php endif; ?>>JavaScript-Bereich</a>
-    <a href="https://wissensportal.codevoyage.de/" <?php if ($bereich === 'Wissensportal'): ?> class="active"<?php endif; ?>>Wissensportal</a>
-    <a href="https://codevoyage.de/acp/" <?php if ($bereich === 'Administrationsbereich'): ?> class="active"<?php endif; ?>>Administrationsbereich</a>
+    <?php if (!empty($navigation_header_liste)): ?>
+        <?php foreach ($navigation_header_liste as $row): ?>
+            <a href="<?php echo htmlspecialchars($row['url']); ?>" 
+               <?php if ($bereich === $row['ziel']): ?> class="active"<?php endif; ?>>
+               <?php echo htmlspecialchars($row['ziel']); ?>
+            </a>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>Keine Einträge gefunden.</p>
+    <?php endif; ?>
 </div>
