@@ -53,7 +53,7 @@ if (!empty($_POST['einheit']) && !empty($_POST['abkuerzung'])) {
     header("Location: https://codevoyage.de/acp/wissensportal/kategorien/index.php");
     exit;
 } else {
-    echo 'Fehler: Kein Kategorienname angegeben.';
+    echo 'Fehler: Keine Einheit angegeben.';
 }
 
 ?>
