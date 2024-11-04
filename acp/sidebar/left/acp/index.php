@@ -7,13 +7,13 @@
 <h3 class="section-title">Linke Seitenleiste</h3>
 <section class="section">
     <div class="sectionContent">
+    <div class="ActionArea">
+        <ul>
+            <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/seitenleiste/add.php">Menüpunkt hinzufügen</a></button></li>
+        </ul>
+    </div>      
         <?php try { ?>
-            <?php if (!empty($acp_sidebar_left_seitenleiste_liste)) : ?>
-                <div class="ActionArea">
-                    <ul>
-                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/seitenleiste/add.php">Menüpunkt hinzufügen</a></button></li>
-                    </ul>
-                </div>     
+            <?php if (!empty($acp_sidebar_left_seitenleiste_liste)) : ?>   
                 <table>
                     <tr>
                         <th>URL</th>
@@ -43,13 +43,13 @@
 <h3 class="section-title">Eigene Werke</h3>
 <section class="section">
     <div class="sectionContent">
+    <div class="ActionArea">
+        <ul>
+            <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/eigene-werke/add.php">Menüpunkt hinzufügen</a></button></li>
+        </ul>
+    </div>       
         <?php try { ?>
-            <?php if (!empty($acp_sidebar_left_eigene_werke_liste)) : ?>
-                <div class="ActionArea">
-                    <ul>
-                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/eigene-werke/add.php">Menüpunkt hinzufügen</a></button></li>
-                    </ul>
-                </div>     
+            <?php if (!empty($acp_sidebar_left_eigene_werke_liste)) : ?>  
                 <table>
                     <tr>
                         <th>URL</th>
@@ -79,13 +79,13 @@
 <h3 class="section-title">Wissensportal</h3>
 <section class="section">
     <div class="sectionContent">
+    <div class="ActionArea">
+        <ul>
+            <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/add.php">Menüpunkt hinzufügen</a></button></li>
+        </ul>
+    /div>    
         <?php try { ?>
-            <?php if (!empty($acp_sidebar_left_wissensportal_liste)) : ?>
-                <div class="ActionArea">
-                    <ul>
-                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/add.php">Menüpunkt hinzufügen</a></button></li>
-                    </ul>
-                </div>     
+            <?php if (!empty($acp_sidebar_left_wissensportal_liste)) : ?> 
                 <table>
                     <tr>
                         <th>URL</th>
@@ -112,14 +112,15 @@
     </div>
 </section>
 
-<div class="ActionArea">
-    <ul>
-        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozesse/add.php">Menüpunkt hinzufügen</a></button></li>
-    </ul>
-</div>     
+
 <h3 class="section-title">Einkaufsprozesse</h3>
 <section class="section">
     <div class="sectionContent">
+    <div class="ActionArea">
+    <ul>
+        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozesse/add.php">Menüpunkt hinzufügen</a></button></li>
+    </ul>
+    </div>     
         <?php try { ?>
             <?php if (!empty($acp_sidebar_left_einkaufsprozesse_liste)) : ?>
                 <table>
@@ -151,13 +152,13 @@
 <h3 class="section-title">Blog</h3>
 <section class="section">
     <div class="sectionContent">
+    <div class="ActionArea">
+        <ul>
+            <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/blog/add.php">Menüpunkt hinzufügen</a></button></li>
+        </ul>
+    </div> 
         <?php try { ?>
-            <?php if (!empty($acp_sidebar_left_blog_liste)) : ?>
-                <div class="ActionArea">
-                    <ul>
-                        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/blog/add.php">Menüpunkt hinzufügen</a></button></li>
-                    </ul>
-                </div>     
+            <?php if (!empty($acp_sidebar_left_blog_liste)) : ?>    
                 <table>
                     <tr>
                         <th>URL</th>
