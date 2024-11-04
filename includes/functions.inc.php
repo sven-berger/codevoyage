@@ -1,6 +1,4 @@
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/database.inc.php");
-
 try {
      // Weitere Abfragen bleiben unverändert
     $eigene_werke = "SELECT * FROM `php_sidebar_left_eigene_werke`";
