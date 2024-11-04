@@ -4,7 +4,7 @@ $pageTitle = "Navigationspunkt hinzufügen";
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
 $sql = "
-CREATE TABLE IF NOT EXISTS `navigation`
+CREATE TABLE IF NOT EXISTS `navigation_header`
 (
 `ID` INT NOT NULL AUTO_INCREMENT,
 `url` TEXT NOT NULL,
@@ -39,13 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_SPECIAL_CHARS);
             $ziel = filter_input(INPUT_POST, 'ziel', FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $prepare = $connection->prepare('INSERT INTO `navigation` (`url`, `ziel`) VALUES (:url, :ziel)');
+            $prepare = $connection->prepare('INSERT INTO `navigation_header` (`url`, `ziel`) VALUES (:url, :ziel)');
             $prepare->bindParam(':url', $url, PDO::PARAM_STR);
             $prepare->bindParam(':ziel', $ziel, PDO::PARAM_STR);
             $prepare->execute();
 
             echo 'Menüpunkt erfolgreich eingetragen.';
-            header("Location: https://codevoyage.de/acp/navigation/index.php");
+            header("Location: https://codevoyage.de/acp/navigation/header/index.php");
             exit();
         } else {
             echo 'Bitte füllen Sie alle Felder aus.';
@@ -58,20 +58,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php echo $section_beginn; ?>   
         <?php try { ?>
-            <?php if (!empty($navigation_liste)) : ?>
+            <?php if (!empty($navigation_header_liste)) : ?>
                 <table>
                     <tr>
                         <th>URL</th>
                         <th>Ziel</th>
                         <th>Aktion</th>
                     </tr>
-                    <?php foreach ($navigation_liste as $row) : ?>
+                    <?php foreach ($navigation_header_liste as $row) : ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
-                                <a href="https://codevoyage.de/acp/sidebar/left/acp/navigation/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
-                                <a href="https://codevoyage.de/acp/sidebar/left/acp/navigation/delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
+                                <a href="https://codevoyage.de/acp/navigation/header/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
+                                <a href="https://codevoyage.de/acp/navigation/header/delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
