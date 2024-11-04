@@ -113,16 +113,16 @@
 </section>
 
 
-<h3 class="section-title">Einkaufsprozesse</h3>
+<h3 class="section-title">Einkaufsprozess</h3>
 <section class="section">
     <div class="sectionContent">
     <div class="ActionArea">
     <ul>
-        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozesse/add.php">Menüpunkt hinzufügen</a></button></li>
+        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozess/add.php">Menüpunkt hinzufügen</a></button></li>
     </ul>
     </div>     
         <?php try { ?>
-            <?php if (!empty($acp_sidebar_left_einkaufsprozesse_liste)) : ?>
+            <?php if (!empty($acp_sidebar_left_einkaufsprozess_liste)) : ?>
                 <table>
                     <tr>
                         <th>URL</th>
@@ -134,8 +134,8 @@
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
-                                <a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozesse/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
-                                <a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozesse/delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
+                                <a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozess/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
+                                <a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozess/delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
