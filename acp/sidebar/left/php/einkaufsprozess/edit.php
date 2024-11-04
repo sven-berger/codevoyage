@@ -6,7 +6,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 try {
     $id = $_GET['id'] ?? null;
     if ($id) {
-        $sql = "SELECT * FROM php_sidebar_left_einkaufsprozess WHERE ID = :id";
+        $sql = "SELECT * FROM acp_sidebar_left_einkaufsprozess WHERE ID = :id";
         $stmt = $connection->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_SPECIAL_CHARS);
             $ziel = filter_input(INPUT_POST, 'ziel', FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $prepare = $connection->prepare('INSERT INTO `php_sidebar_left_einkaufsprozess` (`url`, `ziel`) VALUES (:url, :ziel)');
+            $prepare = $connection->prepare('INSERT INTO `acp_sidebar_left_einkaufsprozess` (`url`, `ziel`) VALUES (:url, :ziel)');
             $prepare->bindParam(':url', $url, PDO::PARAM_STR);
             $prepare->bindParam(':ziel', $ziel, PDO::PARAM_STR);
             $prepare->execute();
