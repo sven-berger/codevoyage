@@ -58,14 +58,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php echo $section_beginn; ?>   
         <?php try { ?>
-            <?php if (!empty($navigation)) : ?>
+            <?php if (!empty($navigation_liste)) : ?>
                 <table>
                     <tr>
                         <th>URL</th>
                         <th>Ziel</th>
                         <th>Aktion</th>
                     </tr>
-                    <?php foreach ($navigation as $row) : ?>
+                    <?php foreach ($navigation_liste as $row) : ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
