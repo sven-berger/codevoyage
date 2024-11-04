@@ -1,6 +1,6 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = "Menüpunkt ändern (Sonstiges)";
+$pageTitle = "Menüpunkt ändern (Einkaufsprozess)";
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 try {
@@ -37,7 +37,6 @@ try {
 </form>
 
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         if (!empty($_POST['url']) && !empty($_POST['ziel'])) {
@@ -47,9 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare = $connection->prepare('UPDATE acp_sidebar_left_einkaufsprozess SET url = :url, ziel = :ziel WHERE ID = :id');
             $prepare->bindParam(':url', $url, PDO::PARAM_STR);
             $prepare->bindParam(':ziel', $ziel, PDO::PARAM_STR);
+            $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
 
-            echo 'Menüpunkt erfolgreich eingetragen.';
+            echo 'Menüpunkt erfolgreich aktualisiert.';
             header("Location: https://codevoyage.de/acp/sidebar/left/acp/index.php");
             exit();
         } else {
@@ -59,7 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo 'Es liegt ein Problem vor: ' . htmlspecialchars($e->getMessage());
     }
 }
-
 ?>
 
 <?php
