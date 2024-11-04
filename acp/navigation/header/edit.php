@@ -27,6 +27,9 @@ try {
 ?>
 
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
+    <label for="reihenfolge">Reihenfolge:</label>
+    <input type="text" name="reihenfolge" value="<?php echo htmlspecialchars($row['reihenfolge']); ?>" required><br>
+
     <label for="url">URL:</label>
     <input type="url" name="url" value="<?php echo htmlspecialchars($row['url']); ?>" required><br>
 
@@ -39,11 +42,13 @@ try {
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        if (!empty($_POST['url']) && !empty($_POST['ziel'])) {
+        if (!empty($_POST['url']) && !empty($_POST['ziel']) && !empty($_POST['reihenfolge'])) {
             $url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_SPECIAL_CHARS);
             $ziel = filter_input(INPUT_POST, 'ziel', FILTER_SANITIZE_SPECIAL_CHARS);
+            $reihenfolge = filter_input(INPUT_POST, 'reihenfolge', FILTER_SANITIZE_NUMBER_INT);
 
-            $prepare = $connection->prepare('UPDATE navigation_header SET url = :url, ziel = :ziel WHERE ID = :id');
+            $prepare = $connection->prepare('UPDATE navigation_header SET reihenfolge = :reihenfolge, url = :url, ziel = :ziel WHERE ID = :id');
+            $prepare->bindParam(':reihenfolge', $reihenfolge, PDO::PARAM_INT);
             $prepare->bindParam(':url', $url, PDO::PARAM_STR);
             $prepare->bindParam(':ziel', $ziel, PDO::PARAM_STR);
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
