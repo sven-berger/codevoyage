@@ -11,7 +11,7 @@ try {
 
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM acp_sidebar_left_eigene_werke WHERE id = :id";
+    $sql = "SELECT * FROM sidebar_left_community_spiele WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
     $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -24,7 +24,7 @@ try {
     $sql = "DELETE FROM acp_sidebar_left_eigene_werke WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
-    header("Location: https://codevoyage.de/acp/sidebar/left/acp/index.php");
+    header("Location: https://codevoyage.de/acp/sidebar/left/codevoyage/index.php");
     exit;
 
 } catch (PDOException $e) {
