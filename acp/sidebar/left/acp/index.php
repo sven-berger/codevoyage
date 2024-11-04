@@ -22,7 +22,7 @@
                     </tr>
                     <?php foreach ($acp_sidebar_left_navigation_header_liste as $row) : ?>
                         <tr>
-                            <td><a href='<?php echo htmlspecialchars($row['url']); ?>'><?php echo htmlspecialchars($row['url']); ?></a></td>
+                            <td><a href='<?php echo htmlspecialchars($row['url']); ?>' target='_blank'><?php echo htmlspecialchars($row['url']); ?></a></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
                                 <a href="https://codevoyage.de/acp/sidebar/left/acp/navigation/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
@@ -58,7 +58,8 @@
                     </tr>
                     <?php foreach ($acp_sidebar_left_seitenleiste_liste as $row) : ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($row['url']); ?></td>
+                            <td>a href='<?php echo htmlspecialchars($row['url']); ?>' target='_blank'><?php echo htmlspecialchars($row['url']); ?></a>
+</td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
                                 <a href="https://codevoyage.de/acp/sidebar/left/acp/seitenleiste/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
@@ -94,7 +95,8 @@
                     </tr>
                     <?php foreach ($acp_sidebar_left_eigene_werke_liste as $row) : ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($row['url']); ?></td>
+                            <td>a href='<?php echo htmlspecialchars($row['url']); ?>' target='_blank'><?php echo htmlspecialchars($row['url']); ?></a>
+</td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
                                 <a href="https://codevoyage.de/acp/sidebar/left/acp/eigene-werke/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
@@ -130,7 +132,8 @@
                     </tr>
                     <?php foreach ($acp_sidebar_left_wissensportal_liste as $row) : ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($row['url']); ?></td>
+                            <td>a href='<?php echo htmlspecialchars($row['url']); ?>' target='_blank'><?php echo htmlspecialchars($row['url']); ?></a>
+</td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
                                 <a href="https://codevoyage.de/acp/sidebar/left/acp/wissensportal/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
@@ -167,7 +170,8 @@
                     </tr>
                     <?php foreach ($acp_sidebar_left_einkaufsprozess_liste as $row) : ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($row['url']); ?></td>
+                            <td>a href='<?php echo htmlspecialchars($row['url']); ?>' target='_blank'><?php echo htmlspecialchars($row['url']); ?></a>
+</td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
                                 <a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozess/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
@@ -203,7 +207,8 @@
                     </tr>
                     <?php foreach ($acp_sidebar_left_blog_liste as $row) : ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($row['url']); ?></td>
+                            <td>a href='<?php echo htmlspecialchars($row['url']); ?>' target='_blank'><?php echo htmlspecialchars($row['url']); ?></a>
+</td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
                                 <a href="https://codevoyage.de/acp/sidebar/left/acp/blog/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
