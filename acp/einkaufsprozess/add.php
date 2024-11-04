@@ -37,10 +37,10 @@ try {
         echo "<option value='{$einheiten['id']}'>" . htmlspecialchars($einheiten['einheit']) . " (" . htmlspecialchars($einheiten['abkuerzung']). ")"; "</option>";
     }    
     ?>
-    </select><br>
+    </select>
 
     <label for="preis">Preis:</label>
-    <input type="number" step="0.01" id="preis" name="preis" required>
+    <br><input type="number" step="0.01" id="preis" name="preis" required>
 
     <button type="submit">Hinzufügen</button>
     <button type="reset">Zurücksetzen</button>
