@@ -32,7 +32,7 @@ try {
     <label for="Einheit">Kategorie:</label>
     <select name="einheit" id="einheit" class="global-kategorien" required>
     <?php
-    $einheiten = $connection->query("SELECT id, name FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
+    $einheiten = $connection->query("SELECT einheit, name FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($einheiten as $einheit) {
         echo "<option value='{$einheit['id']}'>" . htmlspecialchars($einheit['name']) . "</option>";
     }
