@@ -46,7 +46,7 @@
             <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
         <button type="submit">Eingabe abschicken</button>
     <?php else: ?>
-        <div class="sectionHeader success">Glückwunsch, du hast die richtige Zahl geraten!</div>
+        <div class="sectionHeader success">Glückwunsch, du hast die richtige Zahl geraten!</div><br>
         <?php unset($_SESSION['zufallszahl']); ?>
         <a href="zahlen-raten.php">Neues Spiel starten</a>
     <?php endif; ?>
