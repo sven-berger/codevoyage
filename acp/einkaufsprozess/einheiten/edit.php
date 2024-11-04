@@ -28,12 +28,12 @@ try {
 
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
     <label for="Einheit">Einheit:</label>
-    <input type="text" name="einheit" required><br>
+    <input type="text" name="einheit" value="<?php echo htmlspecialchars($row['einheit']); ?>" required><br>
 
     <label for="Abkürzung">Abkürzung:</label>
-    <input type="text" name="abkuerzung" required><br>
+    <input type="text" name="abkuerzung" value="<?php echo htmlspecialchars($row['abkuerzung']); ?>" required><br>
 
-    <button type="submit">Hinzufügen</button>
+    <button type="submit">Aktualisieren</button>
     <button type="reset">Zurücksetzen</button>
 </form>
 
@@ -41,20 +41,21 @@ try {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         if (!empty($_POST['einheit']) && !empty($_POST['abkuerzung'])) {
-            $produktname = filter_input(INPUT_POST, 'einheit', FILTER_SANITIZE_SPECIAL_CHARS);
-            $einheit = filter_input(INPUT_POST, 'abkuerzung', FILTER_SANITIZE_SPECIAL_CHARS);
+            $einheit = filter_input(INPUT_POST, 'einheit', FILTER_SANITIZE_SPECIAL_CHARS);
+            $abkuerzung = filter_input(INPUT_POST, 'abkuerzung', FILTER_SANITIZE_SPECIAL_CHARS);
 
-            // Die Kategorie in der Datenbank aktualisieren
-            $prepare = $connection->prepare('UPDATE einkaufsprozess_einheiten (`einheit`, `abkuerzung`) VALUES (:einheit, :abkuerzung)');
+            // Die Einheit in der Datenbank aktualisieren
+            $prepare = $connection->prepare('UPDATE einkaufsprozess_einheiten SET einheit = :einheit, abkuerzung = :abkuerzung WHERE id = :id');
             $prepare->bindParam(':einheit', $einheit, PDO::PARAM_STR);
             $prepare->bindParam(':abkuerzung', $abkuerzung, PDO::PARAM_STR);
+            $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
 
-            echo 'Kategorie erfolgreich aktualisiert.';
+            echo 'Einheit erfolgreich aktualisiert.';
             header("Location: https://codevoyage.de/acp/wissensportal/kategorien/index.php");
             exit();
         } else {
-            echo 'Bitte geben Sie einen Kategorienamen ein.';
+            echo 'Bitte geben Sie einen Einheiten-Namen und eine Abkürzung ein.';
         }
     } catch (PDOException $e) {
         echo 'Es liegt ein Problem vor: ' . htmlspecialchars($e->getMessage());
