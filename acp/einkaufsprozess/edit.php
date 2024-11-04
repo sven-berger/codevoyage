@@ -30,27 +30,38 @@ try {
     <label for="produktname">Produktname:</label>
     <input type="text" name="produktname" required><br>
 
-    <label for="beschreibung">Beschreibung:</label>
-    <input type="text" name="beschreibung" required><br>
+    <label for="menge">Menge:</label>
+    <input type="number" step="1" id="menge" name="menge" required>
+
+    <label for="Einheit">Kategorie:</label>
+    <select name="einheit" id="einheit" class="global-kategorien" required>
+    <?php
+    $einheiten = $connection->query("SELECT id, name FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($einheiten as $einheit) {
+        echo "<option value='{$einheit['id']}'>" . htmlspecialchars($einheit['name']) . "</option>";
+    }
+    ?>
+    </select>
 
     <label for="preis">Preis:</label>
-    <input type="number" step="0.01" id="umsatz" name="preis" required>
+    <input type="number" step="0.01" id="preis" name="preis" required>
 
-    <input type="submit" value="Einfügen">
+    <button type="submit">Hinzufügen</button>
     <button type="reset">Zurücksetzen</button>
 </form>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        if (!empty($_POST['produktname']) && !empty($_POST['beschreibung']) && !empty($_POST['preis'])) {
+        if (!empty($_POST['produktname']) && !empty($_POST['menge']) && !empty($_POST['einheit'])  && !empty($_POST['preis'])) {
             $produktname = filter_input(INPUT_POST, 'produktname', FILTER_SANITIZE_SPECIAL_CHARS);
-            $beschreibung = filter_input(INPUT_POST, 'beschreibung', FILTER_SANITIZE_SPECIAL_CHARS);
-            $preis = filter_input(INPUT_POST, 'umsatz', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+            $menge = filter_input(INPUT_POST, 'menge', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+            $preis = filter_input(INPUT_POST, 'preis', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
-            $prepare = $connection->prepare('INSERT INTO `einkaufsprozess` (`produktname`, `beschreibung`, `preis`) VALUES (:produktname, :beschreibung, :preis)');
+            $prepare = $connection->prepare('INSERT INTO `einkaufsprozess` (`produktname`, `menge`, `einheit` `preis`) VALUES (:produktname, :menge, :einheit, :preis)');
             $prepare->bindParam(':produktname', $produktname, PDO::PARAM_STR);
-            $prepare->bindParam(':beschreibung', $beschreibung, PDO::PARAM_STR);
+            $prepare->bindParam(':menge', $menge, PDO::PARAM_INT);
+            $prepare->bindParam(':einheit', $einheit, PDO::PARAM_STR);
             $prepare->bindParam(':preis', $preis, PDO::PARAM_INT);
             $prepare->execute();
 
