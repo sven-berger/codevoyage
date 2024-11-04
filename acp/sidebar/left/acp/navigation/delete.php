@@ -8,10 +8,9 @@
 
         // Datensatz löschen
         try {
-            $prepare = $connection->prepare('DELETE FROM `navigation_header` WHERE `ID` = :id');
+            $prepare = $connection->prepare('DELETE FROM `acp_sidebar_left_navigation_header` WHERE `ID` = :id');
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
-            echo 'Eintrittspreis erfolgreich gelöscht.';
             header("Location: https://codevoyage.de/acp/sidebar/left/acp/index.php");
             exit();
         } catch (PDOException $e) {
