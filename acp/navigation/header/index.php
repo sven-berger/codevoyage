@@ -60,13 +60,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php try { ?>
             <?php if (!empty($navigation_header_liste)) : ?>
                 <table>
-                    <tr>
+                    <tr>   
+                        <th>Reihenfolge</th>
                         <th>URL</th>
                         <th>Ziel</th>
                         <th>Aktion</th>
                     </tr>
                     <?php foreach ($navigation_header_liste as $row) : ?>
                         <tr>
+                            <td><?php echo htmlspecialchars($row['id']); ?></td>
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
