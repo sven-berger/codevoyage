@@ -10,8 +10,8 @@
 <section class="sidebarBox">
     <div class="boxContent">
         <ul>
-            <?php if (!empty($navigation_header_liste)): ?>
-                <?php foreach ($navigation_header_liste as $row): ?>
+            <?php if (!empty($acp_sidebar_left_navigation_header_liste)): ?>
+                <?php foreach ($acp_sidebar_left_navigation_header_liste as $row): ?>
                 <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
                 <?php endforeach; ?>
             <?php else: ?>
