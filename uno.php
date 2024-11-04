@@ -57,24 +57,6 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
         ["farbe" => "Schwarz", "wert" => "Farbwahl +4"], ["farbe" => "Schwarz", "wert" => "Farbwahl +4"],
         ["farbe" => "Schwarz", "wert" => "Farbwahl +4"], ["farbe" => "Schwarz", "wert" => "Farbwahl +4"]
     ];
-    
-    // Speichere alle Zustände in der Session
-        $_SESSION['ziehstapel'] = $ziehstapel;
-        $_SESSION['meine_hand'] = $meine_hand;
-        $_SESSION['gegnerische_hand'] = $gegnerische_hand;
-        $_SESSION['ablagestapel'] = $ablagestapel;
-        $_SESSION['oberste_karte'] = $oberste_karte;
-        $_SESSION['farbwahl_karte'] = null;
-        $_SESSION['aktueller_spieler'] = 0; // Startet mit dem Spieler
-    } else {
-        // Wenn die Session bereits initialisiert wurde, laden wir die Werte aus der Session
-        $ziehstapel = $_SESSION['ziehstapel'];
-        $meine_hand = $_SESSION['meine_hand'];
-        $gegnerische_hand = $_SESSION['gegnerische_hand'];
-        $ablagestapel = $_SESSION['ablagestapel'];
-        $oberste_karte = $_SESSION['oberste_karte'];
-        $farbwahl_karte = $_SESSION['farbwahl_karte'];
-    }
 
     // Alle Karten zusammenführen und mischen
     $ziehstapel = array_merge($rote_karten, $gelbe_karten, $gruene_karten, $blaue_karten, $aktionskarten);
@@ -102,19 +84,27 @@ if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
             array_push($ziehstapel, $erste_karte); // Lege Aktionskarte zurück
         }
     }
-
-    // Speichere alle Zustände in der Session
-    $_SESSION['ziehstapel'] = $ziehstapel;
-    $_SESSION['meine_hand'] = $meine_hand;
-    $_SESSION['gegnerische_hand'] = $gegnerische_hand;
-    $_SESSION['ablagestapel'] = $ablagestapel;
-    $_SESSION['oberste_karte'] = $oberste_karte;
-    $_SESSION['farbwahl_karte'] = null;
-    $_SESSION['aktueller_spieler'] = 0; // Startet mit dem Spieler
-
     // Die oberste Karte des Ablagestapels
     $oberste_karte = end($ablagestapel);
     $aktuelle_farbe = isset($_SESSION['aktuelle_farbe']) ? $_SESSION['aktuelle_farbe'] : $oberste_karte['farbe'];
+    
+    // Speichere alle Zustände in der Session
+        $_SESSION['ziehstapel'] = $ziehstapel;
+        $_SESSION['meine_hand'] = $meine_hand;
+        $_SESSION['gegnerische_hand'] = $gegnerische_hand;
+        $_SESSION['ablagestapel'] = $ablagestapel;
+        $_SESSION['oberste_karte'] = $oberste_karte;
+        $_SESSION['farbwahl_karte'] = null;
+        $_SESSION['aktueller_spieler'] = 0; // Startet mit dem Spieler
+    } else {
+        // Wenn die Session bereits initialisiert wurde, laden wir die Werte aus der Session
+        $ziehstapel = $_SESSION['ziehstapel'];
+        $meine_hand = $_SESSION['meine_hand'];
+        $gegnerische_hand = $_SESSION['gegnerische_hand'];
+        $ablagestapel = $_SESSION['ablagestapel'];
+        $oberste_karte = $_SESSION['oberste_karte'];
+        $farbwahl_karte = $_SESSION['farbwahl_karte'];
+    }
 ?>
 
 <div class="section-title">LETZTER SPIELZUG</div>
