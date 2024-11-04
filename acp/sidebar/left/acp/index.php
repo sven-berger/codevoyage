@@ -22,7 +22,7 @@
                     </tr>
                     <?php foreach ($acp_sidebar_left_navigation_header_liste as $row) : ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($row['url']); ?></td>
+                            <td><a href='<?php echo htmlspecialchars($row['url']); ?>'><?php echo htmlspecialchars($row['url']); ?></a></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
                                 <a href="https://codevoyage.de/acp/sidebar/left/acp/navigation/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
