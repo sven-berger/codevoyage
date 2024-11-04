@@ -14,8 +14,10 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 <?php
 try {
     $sql = "SELECT * FROM `einkaufsprozess`";
+    $einkaufsprozess_einheiten = "SELECT * FROM `einkaufsprozess_einheiten`";
     $result = $connection->query($sql);
-
+    $ee_result = $connection->query($einkaufsprozess_einheiten);
+    
     if ($result->rowCount() > 0) {
         echo "<table>";
         echo "<tr><th>Produktname</th><th>Menge</th><th>Einheit</th><th>Preis</th><th>Aktion</th></tr>";
@@ -25,7 +27,9 @@ try {
             echo "<tr>";
             echo "<td>" . htmlspecialchars($row['produktname']) . "</td>";
             echo "<td>" . htmlspecialchars($row['menge']) . "</td>";
+            if ($ee_result->rowCount() > 0) {
             echo "<td>" . htmlspecialchars($row['einheit']) . "</td>";
+            }
             echo "<td>" . htmlspecialchars($row['preis']) . "€</td>";
             echo "<td>
                     <a href='edit.php?id=" . htmlspecialchars($row['ID']) . "'>Bearbeiten</a> |
