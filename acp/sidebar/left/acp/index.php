@@ -129,7 +129,7 @@
                         <th>Ziel</th>
                         <th>Aktion</th>
                     </tr>
-                    <?php foreach ($acp_sidebar_left_wissensportal_liste as $row) : ?>
+                    <?php foreach ($acp_sidebar_left_einkaufsprozess_liste as $row) : ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
