@@ -25,7 +25,7 @@ try {
             echo "<tr>";
             echo "<td>" . htmlspecialchars($row['produktname']) . "</td>";
             echo "<td>" . htmlspecialchars($row['menge']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['einheit']) . "€</td>";
+            echo "<td>" . htmlspecialchars($row['einheit']) . "</td>";
             echo "<td>" . htmlspecialchars($row['preis']) . "€</td>";
             echo "<td>
                     <a href='edit.php?id=" . htmlspecialchars($row['ID']) . "'>Bearbeiten</a> |
