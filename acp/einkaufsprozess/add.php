@@ -34,8 +34,8 @@ try {
     <?php
     $einheit = $connection->query("SELECT *, name FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($einheit as $einheiten) {
-        echo "<option value='{$einheiten['einheiten']}'>" . htmlspecialchars($einheiten['abkuerzung']) . "</option>";
-    }
+        echo "<option value='{$einheiten['id']}'>" . htmlspecialchars($einheiten['einheit']) . "</option>";
+    }    
     ?>
     </select>
 
@@ -55,16 +55,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $einheit = filter_input(INPUT_POST, 'einheit', FILTER_SANITIZE_SPECIAL_CHARS);
             $preis = filter_input(INPUT_POST, 'preis', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
-            $prepare = $connection->prepare('INSERT INTO `einkaufsprozess` (`produktname`, `menge`, `einheit` `preis`) VALUES (:produktname, :menge, :einheit, :preis)');
+            $prepare = $connection->prepare('INSERT INTO `einkaufsprozess` (`produktname`, `menge`, `einheit`, `preis`) VALUES (:produktname, :menge, :einheit, :preis)');
             $prepare->bindParam(':produktname', $produktname, PDO::PARAM_STR);
-            $prepare->bindParam(':menge', $menge, PDO::PARAM_INT);
+            $prepare->bindParam(':menge', $menge, PDO::PARAM_STR);
             $prepare->bindParam(':einheit', $einheit, PDO::PARAM_STR);
-            $prepare->bindParam(':preis', $preis, PDO::PARAM_INT);
+            $prepare->bindParam(':preis', $preis, PDO::PARAM_STR);
             $prepare->execute();
 
-            echo 'Menüpunkt erfolgreich eingetragen.';
             header("Location: https://codevoyage.de/acp/einkaufsprozess/index.php");
-            exit();
+            exit();            
         } else {
             echo 'Bitte füllen Sie alle Felder aus.';
         }
