@@ -1,9 +1,5 @@
 <?php
 try {
-    $navigation_header = "SELECT * FROM `navigation_header` ORDER BY `reihenfolge` ASC";
-    $ausgabe_navigation_header = $connection->query($navigation_header);
-    $navigation_header_liste = $ausgabe_navigation_header->fetchAll(PDO::FETCH_ASSOC);
-
      // Weitere Abfragen bleiben unverändert
     $eigene_werke = "SELECT * FROM `php_sidebar_left_eigene_werke`";
     $spielereien = "SELECT * FROM `php_sidebar_left_spielereien`";
