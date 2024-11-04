@@ -2,7 +2,6 @@
 $bereich = 'Startseite';
 $pageTitle = 'Einkaufsprozess';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
-
 ?>
 
 <div class="ActionArea">
@@ -13,11 +12,18 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 <?php echo $section_beginn; ?>
 <?php
 try {
+    // Hauptabfrage für Produkte
     $sql = "SELECT * FROM `einkaufsprozess`";
-    $einkaufsprozess_einheiten = "SELECT * FROM `einkaufsprozess_einheiten`";
     $result = $connection->query($sql);
+
+    // Abfrage für Einheiten und Array für ID-Abkuerzung-Zuordnung erstellen
+    $einkaufsprozess_einheiten = "SELECT * FROM `einkaufsprozess_einheiten`";
     $ee_result = $connection->query($einkaufsprozess_einheiten);
-    
+    $einheiten_map = [];
+    foreach ($ee_result->fetchAll(PDO::FETCH_ASSOC) as $einheit) {
+        $einheiten_map[$einheit['id']] = $einheit['einheit'];
+    }
+
     if ($result->rowCount() > 0) {
         echo "<table>";
         echo "<tr><th>Produktname</th><th>Menge</th><th>Einheit</th><th>Preis</th><th>Aktion</th></tr>";
@@ -27,9 +33,7 @@ try {
             echo "<tr>";
             echo "<td>" . htmlspecialchars($row['produktname']) . "</td>";
             echo "<td>" . htmlspecialchars($row['menge']) . "</td>";
-            if ($ee_result->rowCount() > 0) {
-            echo "<td>" . htmlspecialchars($row['einheit']) . "</td>";
-            }
+            echo "<td>" . htmlspecialchars($einheiten_map[$row['einheit']] ?? 'Unbekannt') . "</td>";
             echo "<td>" . htmlspecialchars($row['preis']) . "€</td>";
             echo "<td>
                     <a href='edit.php?id=" . htmlspecialchars($row['ID']) . "'>Bearbeiten</a> |
