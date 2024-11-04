@@ -1,8 +1,12 @@
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/functions.inc.php");
-
-// Stelle sicher, dass `$navigation_header_liste` die Navigationseinträge enthält
-if (!isset($page)) $page = '';
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
+try {
+    $navigation_header = "SELECT * FROM `navigation_header` ORDER BY `reihenfolge` ASC";
+    $ausgabe_navigation_header = $connection->query($navigation_header);
+    if (!isset($page)) $page = '';
+} catch (PDOException $e) {
+    echo "<p style='color:red;'>Fehler bei der Abfrage: " . htmlspecialchars($e->getMessage()) . "</p>";
+}
 ?>
 
 <div class="navigation">
