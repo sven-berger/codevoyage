@@ -24,7 +24,7 @@ try {
     $sql = "DELETE FROM wissensportal_kategorien WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
-    header("Location: https://codevoyage.de/acp/sidebar/left/acp/index.php");
+    header("Location: https://codevoyage.de/acp/einkaufsprozess/einheiten/index.php");
     exit;
 
 } catch (PDOException $e) {

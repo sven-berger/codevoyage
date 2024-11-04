@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->execute();
 
             echo 'Einheit erfolgreich aktualisiert.';
-            header("Location: https://codevoyage.de/acp/wissensportal/kategorien/index.php");
+            header("Location: https://codevoyage.de/acp/einkaufsprozess/einheiten/index.php");
             exit();
         } else {
             echo 'Bitte geben Sie einen Einheiten-Namen und eine Abkürzung ein.';
