@@ -30,7 +30,7 @@ try {
     <input type="number" step="1" id="menge" name="menge" required>
 
     <label for="Einheit">Kategorie:</label>
-    <select name="einheit" id="einheit" class="global-kategorien" required>
+    <select name="einheit" id="einheit" class="global-kategorien" required><br>
     <?php
     $einheit = $connection->query("SELECT * FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($einheit as $einheiten) {
