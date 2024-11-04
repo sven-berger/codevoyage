@@ -24,7 +24,7 @@ try {
     $sql = "DELETE FROM acp_sidebar_left_einkaufsprozess WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
-    header("Location: https://codevoyage.de/acp/sidebar/left/php/index.php");
+    header("Location: https://codevoyage.de/acp/sidebar/left/acp/index.php");
     exit;
 
 } catch (PDOException $e) {
