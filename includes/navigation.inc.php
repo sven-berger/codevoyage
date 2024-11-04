@@ -1,5 +1,4 @@
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
 try {
     $navigation_header = "SELECT * FROM `navigation_header` ORDER BY `reihenfolge` ASC";
     $ausgabe_navigation_header = $connection->query($navigation_header);
