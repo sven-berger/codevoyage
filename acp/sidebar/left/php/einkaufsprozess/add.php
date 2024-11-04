@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = "Sonstiges hinzufügen (Sonstiges)";
+    $pageTitle = "Menüpunkt hinzufügen (Einkaufsprozess)";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
 
 $sql = "
