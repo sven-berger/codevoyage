@@ -1,6 +1,6 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = "Kategorie bearbeiten (Wissensportal)";
+$pageTitle = "Einheit bearbeiten";
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 
 try {
@@ -13,7 +13,7 @@ try {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if (!$row) {
-            echo "Kategorie nicht gefunden!";
+            echo "Inhalt nicht gefunden!";
             exit;
         }
     } else {
@@ -26,7 +26,8 @@ try {
 }
 ?>
 
-<form action="edit.php?id=<?php echo $id; ?>" method="post">    <label for="Einheit">Einheit:</label>
+<form action="edit.php?id=<?php echo $id; ?>" method="post">
+    <label for="Einheit">Einheit:</label>
     <input type="text" name="einheit" required><br>
 
     <label for="Abkürzung">Abkürzung:</label>
