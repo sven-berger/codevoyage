@@ -33,7 +33,6 @@ try {
             echo "<tr>";
             echo "<td>" . htmlspecialchars($row['produktname']) . "</td>";
             echo "<td>" . htmlspecialchars($row['menge']) . "</td>";
-            echo "<td>" . htmlspecialchars($einheiten_liste['einheit']) . "</td>";
             echo "<td>" . htmlspecialchars($einheiten_liste[$row['einheit']] ?? 'Unbekannt') . "</td>";
             echo "<td>" . htmlspecialchars($row['preis']) . "€</td>";
             echo "<td>
