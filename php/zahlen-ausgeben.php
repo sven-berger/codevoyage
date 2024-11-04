@@ -21,6 +21,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.app.header
 </div>
 </section>
 
+<?php echo $section_beginn; ?>
 <?php if (isset($_GET['start']) && isset($_GET['ende']) && isset($_GET['schrittweise'])): ?>
 <section>
     <?php
@@ -43,6 +44,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.app.header
     ?>
 </section>
 <?php endif; ?>
+<?php $section_ende; ?>
 
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
