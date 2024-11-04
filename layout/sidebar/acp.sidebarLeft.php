@@ -11,7 +11,7 @@
     <div class="boxContent">
         <ul>
             <?php if (!empty($navigation_liste)): ?>
-                <?php foreach ($anavigation_liste as $row): ?>
+                <?php foreach ($navigation_liste as $row): ?>
                 <li><a href="<?php echo htmlspecialchars($row['url']); ?>"><?php echo htmlspecialchars($row['ziel']); ?></a></li>
                 <?php endforeach; ?>
             <?php else: ?>
