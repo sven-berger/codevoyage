@@ -2,10 +2,6 @@
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
 
 try {
-    // Sortiere die Navigationseinträge nach `reihenfolge` aufsteigend
-    $navigation_header = "SELECT * FROM `navigation_header` ORDER BY `reihenfolge` ASC";
-    $ausgabe_navigation_header = $connection->query($navigation_header);
-
     // Weitere Abfragen bleiben unverändert
     $eigene_werke = "SELECT * FROM `php_sidebar_left_eigene_werke`";
     $spielereien = "SELECT * FROM `php_sidebar_left_spielereien`";
@@ -20,7 +16,6 @@ try {
     $acp_sidebar_left_blog = "SELECT * FROM `acp_sidebar_left_blog`";
 
     // Ergebnisse abrufen
-    $navigation_header_liste = $ausgabe_navigation_header->fetchAll(PDO::FETCH_ASSOC);
     $eigene_werke_liste = $connection->query($eigene_werke)->fetchAll(PDO::FETCH_ASSOC);
     $spielereien_liste = $connection->query($spielereien)->fetchAll(PDO::FETCH_ASSOC);
     $sonstiges_liste = $connection->query($sonstiges)->fetchAll(PDO::FETCH_ASSOC);
