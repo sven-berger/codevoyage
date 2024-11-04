@@ -49,7 +49,7 @@ if (!empty($_POST['einheit']) && !empty($_POST['abkuerzung'])) {
     $abkuerzung = $_POST['abkuerzung'];
     $prepare = $connection->prepare('INSERT INTO `einkaufsprozess_einheiten` (`einheit`, `abkuerzung`) VALUES (:einheit, :abkuerzung)');
     $prepare->bindParam(':einheit', $einheit, PDO::PARAM_STR);
-    $prepare->bindParam(':abkuerzung', $abkuerzung, PDO::PARAM_STR); // Ändere zu STR
+    $prepare->bindParam(':abkuerzung', $abkuerzung, PDO::PARAM_STR);
     $prepare->execute();
     header("Location: https://codevoyage.de/acp/einkaufsprozess/einheiten/index.php");
     exit;
