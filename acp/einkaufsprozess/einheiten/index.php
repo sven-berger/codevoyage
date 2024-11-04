@@ -46,10 +46,10 @@ try {
 
 if (!empty($_POST['einheit']) && !empty($_POST['abkuerzung'])) {
     $einheit = $_POST['einheit'];
-    $einheit = $_POST['abkuerzung'];
+    $abkuerzung = $_POST['abkuerzung'];
     $prepare = $connection->prepare('INSERT INTO `einkaufsprozess_einheiten` (`einheit`, `abkuerzung`) VALUES (:einheit, :abkuerzung)');
     $prepare->bindParam(':einheit', $einheit, PDO::PARAM_STR);
-    $prepare->bindParam(':abkuerzung', $abkuerzung, PDO::PARAM_INT);
+    $prepare->bindParam(':abkuerzung', $abkuerzung, PDO::PARAM_STR); // Ändere zu STR
     $prepare->execute();
     header("Location: https://codevoyage.de/acp/einkaufsprozess/einheiten/index.php");
     exit;
@@ -70,15 +70,15 @@ if (!empty($_POST['einheit']) && !empty($_POST['abkuerzung'])) {
     </thead>
     <tbody>
     <?php foreach ($einkaufsprozess_einheiten as $einheiten): ?>
-        <tr>
-            <td><?php echo htmlspecialchars($kategorie['einheit']); ?></td>
-            <td><?php echo htmlspecialchars($kategorie['abkuerzung']); ?></td>
-            <td>
-                <a href="https://codevoyage.de/acp/einkaufsprozess/einheiten/edit.php?id=<?php echo htmlspecialchars($kategorie['id']); ?>">Bearbeiten</a> |
-                <a href="https://codevoyage.de/acp/einkaufsprozess/einheiten/delete.php?id=<?php echo htmlspecialchars($kategorie['id']); ?>" onclick="return confirm('Sicher, dass du diese Kategorie löschen willst?');">Löschen</a>
-            </td>
-        </tr>
-    <?php endforeach; ?>
+    <tr>
+        <td><?php echo htmlspecialchars($einheiten['einheit']); ?></td>
+        <td><?php echo htmlspecialchars($einheiten['abkuerzung']); ?></td>
+        <td>
+            <a href="https://codevoyage.de/acp/einkaufsprozess/einheiten/edit.php?id=<?php echo htmlspecialchars($einheiten['id']); ?>">Bearbeiten</a> |
+            <a href="https://codevoyage.de/acp/einkaufsprozess/einheiten/delete.php?id=<?php echo htmlspecialchars($einheiten['id']); ?>" onclick="return confirm('Sicher, dass du diese Kategorie löschen willst?');">Löschen</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
 </tbody>
 </table>
 <?php echo $section_ende; ?>
