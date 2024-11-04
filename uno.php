@@ -130,7 +130,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
 </ul>
 <?php echo $section_ende; ?>
 
-<div class="section-title">Ablagestapel (<?php echo count($ablagestapel); ?>)</div>
+<div class="section-title">Ablagestapel (<?php echo count($ablagestapel); ?> / <?php echo count($ziehstapel) ;?>)</div>
 <?php echo $section_beginn; ?>
 <ul class="auflistung-uno">
     <li><?php echo htmlspecialchars($oberste_karte['wert'] . " (" . $aktuelle_farbe . ")"); ?></li>
