@@ -95,6 +95,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
     $_SESSION['oberste_karte'] = $oberste_karte;
     $_SESSION['farbwahl_karte'] = null;
     $_SESSION['aktueller_spieler'] = 0; // Startet mit dem Spieler
+
+    // Die oberste Karte des Ablagestapels
+    $oberste_karte = end($ablagestapel);
+    $aktuelle_farbe = isset($_SESSION['aktuelle_farbe']) ? $_SESSION['aktuelle_farbe'] : $oberste_karte['farbe'];
 ?>
 
 <div class="section-title">LETZTER SPIELZUG</div>
@@ -103,7 +107,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
         <p><span class="spieler-style">XX</span> hat folgende Karte gelegt: </p>
         <p><span class="spieler-style">XX</span> konnte keine Karte legen. <span class="spieler-style">XX</span> zieht eine Karte</p>
         <p><span class="spieler-style">XX</span> konnte keine Karte legen. Seine Runde ist beendet.</p>
-        <p><span class="spieler-style">XX</span>hat sich die Farbe <span class="meldung-farbe">XXX</span> gewünscht.</p>
+        <p><span class="spieler-style">XX</span> hat sich die Farbe <span class="meldung-farbe">XXX</span> gewünscht.</p>
     </div>
 
     <style>
