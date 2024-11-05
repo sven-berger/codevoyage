@@ -11,7 +11,7 @@ try {
 
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM wissensportal_kategorien WHERE id = :id";
+    $sql = "SELECT * FROM einkaufsprozess_einheiten WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
     $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -21,7 +21,7 @@ try {
         exit;
     }
 
-    $sql = "DELETE FROM wissensportal_kategorien WHERE id = :id";
+    $sql = "DELETE FROM einkaufsprozess_einheiten WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
     header("Location: https://codevoyage.de/acp/einkaufsprozess/einheiten/index.php");
