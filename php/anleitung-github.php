@@ -1,7 +1,7 @@
 <?php
     $bereich = 'PHP-Bereich';
     $pageTitle = 'Eine Kurzanleitung für GitHub';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.core.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.header.inc.php");
 ?>
 
 <h3 class="boxTitle">AUF GITHUB HOCHLADEN</h3>
@@ -23,5 +23,5 @@ cd <span style="font-weight: bold; color:darkred;">/verzeichnis-in-das-das-githu
 git pull</code></pre>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.full.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
 ?>

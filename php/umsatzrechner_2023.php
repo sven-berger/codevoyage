@@ -1,7 +1,7 @@
 <?php
     $bereich = 'PHP-Bereich';
     $pageTitle = "Umsatzrechner für das Jahr 2023";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.core.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.header.inc.php");
 ?>
 
 <p><a href="https://php.codevoyage.de/umsatzrechner_2023.php">2023</a> | <a href="https://php.codevoyage.de/umsatzrechner_2024.php">2024</a></p>
@@ -144,5 +144,5 @@ try {
 <?php endif; ?>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.full.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
 ?>

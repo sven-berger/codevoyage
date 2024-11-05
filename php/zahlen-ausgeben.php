@@ -1,7 +1,7 @@
 <?php
 $bereich = 'PHP-Bereich';
 $paPOSTitle = "Zahlen ausgeben";
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.app.header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.header.inc.php");
 ?>
 
 <?php echo $section_beginn; ?>

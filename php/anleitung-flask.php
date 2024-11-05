@@ -1,7 +1,7 @@
 <?php
     $bereich = 'PHP-Bereich';
     $pageTitle = 'Eine Kurzanleitung für Flask';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.core.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.header.inc.php");
 ?>
 
 <h3 class="boxTitle">Flask und alle nötigen Pakete herunterladen und starten</h3>
@@ -40,5 +40,5 @@ WSGIProcessGroup flaskapp
 WSGIScriptAlias / /verzeichnis-in-dem-flask-ausgeführt werden soll/flaskapp.wsgi</code></pre>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.full.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/footer/php.footer.inc.php");
 ?>
