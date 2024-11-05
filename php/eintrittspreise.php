@@ -31,12 +31,8 @@ try {
     <p>Keine Eintrittspreise gefunden.</p>
 <?php endif; ?>
 
-</div>
-</section>
 
 <?php if (!isset($_GET['alter'])): ?>
-    <section class="section">
-        <div class="sectionContent">
         <form action="eintrittspreise.php" method="get">
                 <label for="alter">Bitte gib dein Alter ein:</label>
                 <input type="number" id="alter" name="alter" required>
@@ -45,8 +41,6 @@ try {
 <?php endif; ?>
 
 <?php if (isset($_GET['alter'])): ?>
-    <section class="section">
-        <div class="sectionContent">
         <?php 
             $alter = intval($_GET['alter']);
             $zu_alt = false;
