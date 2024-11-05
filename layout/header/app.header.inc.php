@@ -18,6 +18,17 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/var.inc.php");
 ?>
 
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+if (!isset($connection)) {
+    echo "<p style='color:red;'>Datenbankverbindung ist nicht definiert.</p>";
+    exit;
+}
+?>
+
 <body>
 
     <div class="header">
