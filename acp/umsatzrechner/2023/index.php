@@ -42,25 +42,27 @@ try {
 <?php echo $section_ende; ?>
 
 <?php echo $section_beginn; ?>
-<?php if ($alle_monate_zugewiesen = false): ?>
-<form action="index.php" method="post">
-    <label for="Monat">Monat:</label>
-    <select id="monat" name="monat" required>
-        <option value="">Bitte wählen...</option>
-        <?php 
-        $alle_monate_zugewiesen = true;
-        foreach ($monate_zuweisung as $monats_zahl => $monats_name): 
-            if (!in_array($monats_zahl, $monat_vorhanden)): 
-                $alle_monate_zugewiesen = false; // Es gibt noch einen Monat ohne Umsatz
-        ?>
-                <option value="<?php echo $monats_zahl; ?>"><?php echo htmlspecialchars($monats_name); ?></option>
-        <?php 
-            endif;
-        endforeach;
-        ?>
-    </select>
-<?php endif; ?>
-    
+<?php 
+$alle_monate_zugewiesen = true; // Standardmäßig auf true setzen
+if ($alle_monate_zugewiesen == false): // Vergleich statt Zuweisung verwenden
+?>
+    <form action="index.php" method="post">
+        <label for="Monat">Monat:</label>
+        <select id="monat" name="monat" required>
+            <option value="">Bitte wählen...</option>
+            <?php 
+            foreach ($monate_zuweisung as $monats_zahl => $monats_name): 
+                if (!in_array($monats_zahl, $monat_vorhanden)): 
+                    $alle_monate_zugewiesen = false; // Es gibt noch einen Monat ohne Umsatz
+            ?>
+                    <option value="<?php echo $monats_zahl; ?>"><?php echo htmlspecialchars($monats_name); ?></option>
+            <?php 
+                endif;
+            endforeach;
+            ?>
+        </select>
+    <?php endif; ?>
+
     <?php if ($alle_monate_zugewiesen): ?>
         <p>Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.</p>
     <?php endif; ?>
