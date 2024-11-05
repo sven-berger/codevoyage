@@ -142,7 +142,7 @@ try {
         </table>
         <?php echo $section_ende; ?>
     <?php else: ?>
-        echo "<p style='text-align: center;'>Keine Umsatzzahlen gefunden.</p>";
+        <p style='text-align: center;'>Keine Umsatzzahlen gefunden.</p>
     <?php endif; ?>
 <?php } catch (PDOException $e) {
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
