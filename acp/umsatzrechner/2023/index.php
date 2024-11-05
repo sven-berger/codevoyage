@@ -42,7 +42,7 @@ try {
 <?php echo $section_ende; ?>
 
 <?php echo $section_beginn; ?>
-<?php if (!$alle_monate_zugewiesen): ?>
+<?php if ($alle_monate_zugewiesen = false): ?>
 <form action="index.php" method="post">
     <label for="Monat">Monat:</label>
     <select id="monat" name="monat" required>
