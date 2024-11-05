@@ -143,4 +143,3 @@ try {
 
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
-<?php echo $section_ende; ?>
