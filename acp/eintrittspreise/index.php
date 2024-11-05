@@ -70,13 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-</div>
-</section>
-
-
-<section class="section">
-    <div class="sectionContent">
-
 <?php
 try {
     $sql = "SELECT * FROM `eintrittspreise`";
@@ -108,8 +101,6 @@ try {
 }
 
 ?>
-</div>
-</section>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");

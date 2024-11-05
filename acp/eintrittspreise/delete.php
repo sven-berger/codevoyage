@@ -11,7 +11,6 @@
             $prepare = $connection->prepare('DELETE FROM `eintrittspreise` WHERE `ID` = :id');
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
-            echo 'Eintrittspreis erfolgreich gelöscht.';
             header("Location: https://codevoyage.de/acp/eintrittspreise/index.php");
             exit();
         } catch (PDOException $e) {
@@ -22,3 +21,4 @@
     }
 
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
+?>
