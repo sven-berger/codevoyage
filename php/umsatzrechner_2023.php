@@ -6,15 +6,6 @@
 
 <p><a href="https://php.codevoyage.de/umsatzrechner_2023.php">2023</a> | <a href="https://php.codevoyage.de/umsatzrechner_2024.php">2024</a></p>
 
-</div>
-</section>
-
-
-
-<section class="section">
-    <div class="sectionContent">
-
-
 <?php
 
 $monate_zuweisung = [
@@ -64,14 +55,10 @@ try {
 
 ?>
 
-</div>
-</section>
 
 
 
-<section class="section">
-    <div class="sectionContent">
-        <div style="text-align: center;">
+<div style="text-align: center;">
 <?php
 
 $benutzereingabe = 0;
@@ -129,11 +116,7 @@ try {
 </form>
 
 <?php if ($showResults): ?>
-    </div>
-</section>
-
-    <section class="section">
-    <div class="sectionContent" style="text-align: center;">
+    <div style="text-align: center;">
 
     <span>
         Gesamtumsatz: <strong><?php echo $gesamtumsatz; ?>€</strong> | 
