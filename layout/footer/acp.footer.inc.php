@@ -1,8 +1,8 @@
 </div>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/sidebar/acp.sidebarLeft.php");
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/sidebar/acp.sidebarRight.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/sidebar/acp.sidebarLeft.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/sidebar/acp.sidebarRight.php");
 ?>
 
 </div>
