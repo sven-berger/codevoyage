@@ -152,7 +152,7 @@
 </section>
 
 
-<h3 class="section-title">einkaufsliste</h3>
+<h3 class="section-title">Einkaufsliste</h3>
 <section class="section">
     <div class="sectionContent">
     <div class="ActionArea">
