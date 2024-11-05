@@ -37,36 +37,35 @@ try {
 
 ?>
 
-
-
+<?php echo $section_beginn; ?>
 <p><a href="https://codevoyage.de/acp/umsatzrechner/2023/">2023</a> | <a href="https://codevoyage.de/acp/umsatzrechner/2024/">2024</a></p>
+<?php echo $section_ende; ?>
 
+<?php echo $section_beginn; ?>
 <form action="index.php" method="post">
-    <div>
         <label for="Monat">Monat:</label>
         <select id="monat" name="monat" required>
             <option value="">Bitte wählen...</option>
-            <?php 
-            // Schleife über alle Monate
-            foreach ($monate_zuweisung as $monats_zahl => $monats_name) {
+            <?php foreach ($monate_zuweisung as $monats_zahl => $monats_name): ?>
                 // Prüfen, ob der Monat bereits vorhanden ist
-                if (!in_array($monats_zahl, $monat_vorhanden)) {
-                    echo "<option value=\"$monats_zahl\">$monats_name</option>";
-                } else {
-                    echo "Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.";
-                }
-            }
-            ?>
+                <?php if (!in_array($monats_zahl, $monat_vorhanden)): ?>
+                    <option value="$monats_zahl">$monats_name</option>
+                <?php else: ?>
+                    <p>"Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.</p>
+                <?php endif; ?>
+            <?php endforeach; ?>
+    <?php echo $section_beginn; ?>
     <div style="margin-top: 20px;">
         <label for="umsatz">Umsatz:</label>
         <input type="number" step="0.01" id="umsatz" name="umsatz" required>
     </div>
+    <?php echo $section_ende; ?>
     <div>
         <button type="submit">Hinzufügen</button>
         <button type="reset">Zurücksetzen</button>
     </div>
 </form>
-
+<?php echo $section_ende; ?>
 <?php
 
 // Tabelle erstellen, wenn sie nicht existiert
