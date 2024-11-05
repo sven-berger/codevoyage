@@ -6,7 +6,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 try {
     $id = $_GET['id'] ?? null;
     if ($id) {
-        $sql = "SELECT * FROM einkaufsprozess WHERE ID = :id";
+        $sql = "SELECT * FROM einkaufsliste WHERE ID = :id";
         $stmt = $connection->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -37,7 +37,7 @@ try {
     <label for="einheit">Einheit:</label>
     <select name="einheit" id="einheit" class="global-kategorien" required>
     <?php
-    $einheit = $connection->query("SELECT * FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
+    $einheit = $connection->query("SELECT * FROM einkaufsliste_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($einheit as $einheiten) {
         echo "<option value='{$einheiten['id']}'>" . htmlspecialchars($einheiten['einheit']) . " (" . htmlspecialchars($einheiten['abkuerzung']). ")"; "</option>";
     }    
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $einheit = filter_input(INPUT_POST, 'einheit', FILTER_SANITIZE_NUMBER_INT);
             $preis = filter_input(INPUT_POST, 'preis', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
-            $prepare = $connection->prepare('UPDATE einkaufsprozess SET produktname = :produktname, menge = :menge, einheit = :einheit, preis = :preis WHERE ID = :id');
+            $prepare = $connection->prepare('UPDATE einkaufsliste SET produktname = :produktname, menge = :menge, einheit = :einheit, preis = :preis WHERE ID = :id');
             $prepare->bindParam(':produktname', $produktname, PDO::PARAM_STR);
             $prepare->bindParam(':menge', $menge, PDO::PARAM_STR);
             $prepare->bindParam(':einheit', $einheit, PDO::PARAM_INT);
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
             
-            header("Location: https://codevoyage.de/acp/einkaufsprozess/index.php");
+            header("Location: https://codevoyage.de/acp/einkaufsliste/index.php");
             exit();
         } else {
             echo 'Bitte füllen Sie alle Felder aus.';
