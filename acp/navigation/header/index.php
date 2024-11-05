@@ -2,6 +2,7 @@
 $bereich = 'Administrationsbereich';
 $pageTitle = "Navigationspunkt hinzufügen";
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/sql/acp.sql.php");
 
 // Tabelle erstellen, falls sie nicht existiert
 $sql = "
