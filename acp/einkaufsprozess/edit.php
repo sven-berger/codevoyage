@@ -33,15 +33,7 @@ try {
     <label for="menge">Menge:</label>
     <input type="number" step="1" id="menge" name="menge" required>
 
-    <label for="Einheit">Kategorie:</label>
-    <select name="einheit" id="einheit" class="global-kategorien" required>
-    <?php
-    $einheiten = $connection->query("SELECT id, name FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($einheiten as $einheit) {
-        echo "<option value='{$einheit['id']}'>" . htmlspecialchars($einheit['name']) . "</option>";
-    }
-    ?>
-    </select>
+
 
     <label for="preis">Preis:</label>
     <input type="number" step="0.01" id="preis" name="preis" required>
