@@ -15,7 +15,6 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
     $mariadbVersion = getMariaDBVersion($connection);
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/var.inc.php");
-   // require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/functions.inc.php");
 ?>
 
 <?php
@@ -23,7 +22,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-if (!isset($connection)) {
+if (isset($connection)) {
     echo "<p style='color:red;'>Datenbankverbindung ist nicht definiert.</p>";
     exit;
 }
