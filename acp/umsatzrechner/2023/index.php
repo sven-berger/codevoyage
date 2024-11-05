@@ -109,37 +109,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <?php
-
-try {
-    $sql = "SELECT * FROM `umsatz_2023`";
-    $result = $connection->query($sql);
-
-    if ($result->rowCount() > 0) {
-        echo $section_beginn;
-        echo "<table>";
-        echo "<tr><th>Monat</th><th>Umsatz</th><th>Aktion</th></tr>";
-
-        $rows = $result->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $row) {
-            echo "<tr>";
-            $monats_name = $monate_zuweisung[$row['monat']];
-            echo "<td>" . htmlspecialchars($monats_name) . "</td>";
-            echo "<td>" . htmlspecialchars($row['umsatz']) . "€</td>";
-            echo "<td>
-                    <a href='edit.php?id=" . htmlspecialchars($row['ID']) . "'>Bearbeiten</a> |
-                    <a href='delete.php?id=" . htmlspecialchars($row['ID']) . "' onclick='return confirm(\"Bist du dir sicher, dass du diesen Eintrag löschen möchtest?\");'>Löschen</a>
-                  </td>";
-            echo "</tr>";
-        }
-
-        echo "</table>";
-        echo $section_ende;
-    } else {
-        echo "<p style='text-align: center;'>Keine Umsatzzahlen gefunden.</p>";
-    }
-} catch (PDOException $e) {
-    echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
-}
-
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
