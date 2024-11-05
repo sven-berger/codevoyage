@@ -3,7 +3,7 @@ session_start();
 
 $bereich = 'Startseite';
 $pageTitle = 'UNO-Spiel';
-require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 // Initialisierung des Spiels
 if (!isset($_SESSION['ziehstapel']) || empty($_SESSION['ziehstapel'])) {
@@ -371,5 +371,5 @@ if ($_SESSION['aktueller_spieler'] == 1) {
 <?php echo $section_ende; ?>
 
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/index.footer.inc.php");
 ?>
