@@ -1,7 +1,3 @@
-<?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/sql/wissensportal.sql.php");
-?>
-
 <nav>
 <div class="boxCapital" style="margin-top: 20px;">
     <p>Variablen</p>

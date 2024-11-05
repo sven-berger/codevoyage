@@ -1,7 +1,3 @@
-<?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/sql/wissensportal.sql.php");
-?>
-
 <aside>
 <div class="boxCapital">
     <p>Vorlagen</p>
