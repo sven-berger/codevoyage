@@ -33,14 +33,13 @@ try {
     <label for="menge">Menge:</label>
     <input type="number" step="1" id="menge" name="menge" value="<?php echo htmlspecialchars($row['menge']); ?>" required><br>
 
-    <label for="einheit">Kategorie:</label>
+    <label for="einheit">Einheit:</label>
     <select name="einheit" id="einheit" class="global-kategorien" required>
     <?php
-    $einheiten = $connection->query("SELECT id, name FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($einheiten as $einheit) {
-        $selected = $row['einheit'] == $einheit['id'] ? 'selected' : '';
-        echo "<option value='{$einheit['id']}' $selected>" . htmlspecialchars($einheit['name']) . "</option>";
-    }
+    $einheit = $connection->query("SELECT * FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($einheit as $einheiten) {
+        echo "<option value='{$einheiten['id']}'>" . htmlspecialchars($einheiten['einheit']) . " (" . htmlspecialchars($einheiten['abkuerzung']). ")"; "</option>";
+    }    
     ?>
     </select><br>
 
