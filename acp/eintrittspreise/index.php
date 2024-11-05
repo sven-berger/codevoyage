@@ -95,7 +95,7 @@ try {
                 <td>
                     <a href='edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>'>Bearbeiten</a> |
                     <a href='delete.php?id=<?php echo htmlspecialchars($row['ID']); ?> onclick='return confirm("Bist du dir sicher, dass du diesen Eintrag löschen möchtest?")>Löschen</a>
-                </td>";
+                </td>
             </tr>
         <?php endforeach; ?>
         </table>
