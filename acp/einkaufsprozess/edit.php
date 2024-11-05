@@ -26,6 +26,7 @@ try {
 }
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
     <label for="produktname">Produktname:</label>
     <input type="text" name="produktname" value="<?php echo htmlspecialchars($row['produktname']); ?>" required><br>
@@ -49,6 +50,7 @@ try {
     <button type="submit">Speichern</button>
     <button type="reset">Zurücksetzen</button>
 </form>
+<?php echo $section_ende; ?>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

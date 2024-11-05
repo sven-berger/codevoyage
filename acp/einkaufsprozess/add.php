@@ -22,6 +22,7 @@ try {
 }
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="" method="post">
     <label for="produktname">Produktname:</label>
     <input type="text" name="produktname" required><br>
@@ -45,6 +46,7 @@ try {
     <button type="submit">Hinzufügen</button>
     <button type="reset">Zurücksetzen</button>
 </form>
+<?php echo $section_ende; ?>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
