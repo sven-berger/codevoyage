@@ -1,7 +1,3 @@
-<?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/sql/php.sql.php");
-?>
-
 <nav>
     <!-- Eigene Werke -->
     <div class="boxCapital" style="margin-top: 20px;">
