@@ -10,8 +10,9 @@ $wissensportal_sidebarRight = file_get_contents("https://codevoyage.de/layout/si
 $acp_sidebarLeft = file_get_contents("https://codevoyage.de/layout/sidebar/acp.sidebarLeft.php");
 $acp_sidebarRight = file_get_contents("https://codevoyage.de/layout/sidebar/acp.sidebarRight.php");
 
-$php_sidebarLeft = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/layout/sidebar/php.sidebarLeft.php");
-// $php_sidebarLeft = file_get_contents("https://codevoyage.de/layout/sidebar/php.sidebarLeft.php");
+
+$php_sidebarLeft = require_once "/var/customers/webs/codevoyage/layout/sidebar/php.sidebarLeft.php";
+
 $js_sidebarLeft = file_get_contents("https://codevoyage.de/layout/sidebar/js.sidebarLeft.php");
 
 $section_beginn = "<section class='section'><div class='sectionContent'>";
