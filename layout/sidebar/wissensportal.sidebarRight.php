@@ -1,6 +1,5 @@
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/functions.inc.php");
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/sql/wissensportal.sql.php");
 ?>
 
 <aside>
