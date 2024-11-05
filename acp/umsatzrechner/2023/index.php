@@ -47,19 +47,16 @@ try {
         <select id="monat" name="monat" required>
             <option value="">Bitte wählen...</option>
             <?php foreach ($monate_zuweisung as $monats_zahl => $monats_name): ?>
-                // Prüfen, ob der Monat bereits vorhanden ist
                 <?php if (!in_array($monats_zahl, $monat_vorhanden)): ?>
                     <option value="$monats_zahl">$monats_name</option>
                 <?php else: ?>
-                    <p>"Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.</p>
+                    <p>Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.</p>
                 <?php endif; ?>
             <?php endforeach; ?>
-    <?php echo $section_beginn; ?>
     <div style="margin-top: 20px;">
         <label for="umsatz">Umsatz:</label>
         <input type="number" step="0.01" id="umsatz" name="umsatz" required>
     </div>
-    <?php echo $section_ende; ?>
     <div>
         <button type="submit">Hinzufügen</button>
         <button type="reset">Zurücksetzen</button>
