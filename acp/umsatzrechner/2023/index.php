@@ -43,8 +43,8 @@ try {
 
 <?php echo $section_beginn; ?>
 <?php 
-$alle_monate_zugewiesen = true; // Standardmäßig auf true setzen
-if ($alle_monate_zugewiesen == false): // Vergleich statt Zuweisung verwenden
+$alle_monate_zugewiesen = true;
+if ($alle_monate_zugewiesen == false):
 ?>
     <form action="index.php" method="post">
         <label for="Monat">Monat:</label>
@@ -64,7 +64,7 @@ if ($alle_monate_zugewiesen == false): // Vergleich statt Zuweisung verwenden
     <?php endif; ?>
 
     <?php if ($alle_monate_zugewiesen): ?>
-        <p>Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.</p>
+        <p class="center strong success">Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.</p>
     <?php endif; ?>
 
     <div style="margin-top: 20px;">

@@ -27,6 +27,14 @@ body {
     flex-direction: row; 
 }
 
+.center {
+    text-align: center;
+}
+
+.strong {
+    font-weight: 600;
+}
+
 .main > .content {
     flex: 1;
 }
