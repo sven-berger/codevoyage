@@ -63,8 +63,9 @@ try {
     </div>
 </form>
 <?php echo $section_ende; ?>
-<?php
 
+
+<?php
 // Tabelle erstellen, wenn sie nicht existiert
 $sql = "
 CREATE TABLE IF NOT EXISTS `umsatz_2023` (
@@ -92,7 +93,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->bindParam(':umsatz', $umsatz, PDO::PARAM_STR);
             $prepare->execute();
 
-            echo 'Eintrittspreis erfolgreich eingetragen.';
             header("Location: https://php.codevoyage.de/acp/umsatzrechner/2023/index.php");
             exit();
         } else {
@@ -108,6 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
+<?php echo $section_beginn; ?>
 <?php
 
 try {
@@ -141,3 +142,4 @@ try {
 
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
+<?php echo $section_ende; ?>
