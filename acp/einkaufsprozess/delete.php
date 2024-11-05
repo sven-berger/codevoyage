@@ -1,6 +1,6 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = 'Menüpunkt löschen (Sonstiges)';
+$pageTitle = 'Menüpunkt löschen (Einkaufsprozess)';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 try {
@@ -32,5 +32,8 @@ try {
     exit;
 }
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
+?>
+
+<?php
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
