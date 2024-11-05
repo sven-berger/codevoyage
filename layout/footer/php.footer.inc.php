@@ -1,7 +1,7 @@
 </div>
 
 <?php
-    echo $php_sidebarLeft;
+    require_once "/var/customers/webs/codevoyage/layout/sidebar/php.sidebarLeft.php";;
 ?>
 
 </div>
