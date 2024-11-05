@@ -14,7 +14,8 @@
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
     $mariadbVersion = getMariaDBVersion($connection);
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/var.inc.php");
+    $section_beginn = "<section class='section'><div class='sectionContent'>";
+    $section_ende = "</div></section>";
 ?>
 
 <body>
