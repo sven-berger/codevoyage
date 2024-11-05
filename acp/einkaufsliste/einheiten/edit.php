@@ -6,7 +6,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 try {
     $id = $_GET['id'] ?? null;
     if ($id) {
-        $sql = "SELECT * FROM einkaufsprozess_einheiten WHERE id = :id";
+        $sql = "SELECT * FROM einkaufsliste_einheiten WHERE id = :id";
         $stmt = $connection->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -47,13 +47,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $abkuerzung = filter_input(INPUT_POST, 'abkuerzung', FILTER_SANITIZE_SPECIAL_CHARS);
 
             // Die Einheit in der Datenbank aktualisieren
-            $prepare = $connection->prepare('UPDATE einkaufsprozess_einheiten SET einheit = :einheit, abkuerzung = :abkuerzung WHERE id = :id');
+            $prepare = $connection->prepare('UPDATE einkaufsliste_einheiten SET einheit = :einheit, abkuerzung = :abkuerzung WHERE id = :id');
             $prepare->bindParam(':einheit', $einheit, PDO::PARAM_STR);
             $prepare->bindParam(':abkuerzung', $abkuerzung, PDO::PARAM_STR);
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
 
-            header("Location: https://codevoyage.de/acp/einkaufsprozess/einheiten/index.php");
+            header("Location: https://codevoyage.de/acp/einkaufsliste/einheiten/index.php");
             exit();
         } else {
             echo 'Bitte geben Sie einen Einheiten-Namen und eine Abkürzung ein.';

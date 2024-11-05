@@ -1,6 +1,6 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = 'Produkt löschen';
+$pageTitle = 'Einkauf löschen';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 try {
@@ -11,7 +11,7 @@ try {
 
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM einkaufsprozess WHERE id = :id";
+    $sql = "SELECT * FROM einkaufsliste WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
     $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -21,10 +21,10 @@ try {
         exit;
     }
 
-    $sql = "DELETE FROM einkaufsprozess WHERE id = :id";
+    $sql = "DELETE FROM einkaufsliste WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
-    header("Location: https://codevoyage.de/acp/einkaufsprozess/index.php");
+    header("Location: https://codevoyage.de/acp/einkaufsliste/index.php");
     exit;
 
 } catch (PDOException $e) {

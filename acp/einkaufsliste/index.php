@@ -1,24 +1,24 @@
 <?php
 $bereich = 'Startseite';
-$pageTitle = 'Einkaufsprozess';
+$pageTitle = 'Einkaufsliste';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 ?>
 
 <div class="ActionArea">
     <ul>
-        <li><button class="button-action"><a href="https://codevoyage.de/acp/einkaufsprozess/add.php">Produkt hinzufügen</a></button></li>
+        <li><button class="button-action"><a href="https://codevoyage.de/acp/einkaufsliste/add.php">Einkauf hinzufügen</a></button></li>
     </ul>
 </div>
 <?php echo $section_beginn; ?>
 <?php
 try {
     // Hauptabfrage für Produkte
-    $sql = "SELECT * FROM `einkaufsprozess`";
+    $sql = "SELECT * FROM `einkaufsliste`";
     $result = $connection->query($sql);
 
     // Abfrage für Einheiten und Array für ID-Abkuerzung-Zuordnung erstellen
-    $einkaufsprozess_einheiten = "SELECT * FROM `einkaufsprozess_einheiten`";
-    $ee_result = $connection->query($einkaufsprozess_einheiten);
+    $einkaufsliste_einheiten = "SELECT * FROM `einkaufsliste_einheiten`";
+    $ee_result = $connection->query($einkaufsliste_einheiten);
     $einheiten_liste = [];
     foreach ($ee_result->fetchAll(PDO::FETCH_ASSOC) as $einheit) {
         $einheiten_liste[$einheit['id']] = $einheit['einheit'];
