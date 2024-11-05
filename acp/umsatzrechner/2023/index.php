@@ -44,9 +44,6 @@ try {
 </div>
 </section>
 
-<section class="section">
-    <div class="sectionContent">
-
 <form action="index.php" method="post">
     <div>
         <label for="Monat">Monat:</label>
@@ -63,8 +60,6 @@ try {
                 }
             }
             ?>
-        </select>
-    </div>
     <div style="margin-top: 20px;">
         <label for="umsatz">Umsatz:</label>
         <input type="number" step="0.01" id="umsatz" name="umsatz" required>
@@ -119,12 +114,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
-</div>
-</section>
-
-<section class="section">
-    <div class="sectionContent">
 
 <?php
 

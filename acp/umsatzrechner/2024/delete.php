@@ -11,7 +11,6 @@
             $prepare = $connection->prepare('DELETE FROM `umsatz_2024` WHERE `ID` = :id');
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
-            echo 'Umsatz erfolgreich gelöscht.';
             header("Location: https://codevoyage.de/acp/umsatzrechner/2024/index.php");
             exit();
         } catch (PDOException $e) {

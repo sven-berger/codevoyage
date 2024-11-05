@@ -11,7 +11,6 @@
             $prepare = $connection->prepare('DELETE FROM `umsatz_2023` WHERE `ID` = :id');
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
-            echo 'Eintrittspreis erfolgreich gelöscht.';
             header("Location: https://codevoyage.de/acp/umsatzrechner/2023/index.php");
             exit();
         } catch (PDOException $e) {

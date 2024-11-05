@@ -39,12 +39,6 @@ try {
 
 <p><a href="https://codevoyage.de/acp/umsatzrechner/2023/">2023</a> | <a href="https://codevoyage.de/acp/umsatzrechner/2024/">2024</a></p>
 
-</div>
-</section>
-
-<section class="section">
-    <div class="sectionContent">
-
 <form action="index.php" method="post">
     <div>
         <label for="Monat">Monat:</label>
@@ -117,12 +111,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
-</div>
-</section>
-
-<section class="section">
-    <div class="sectionContent">
 
 <?php
 
