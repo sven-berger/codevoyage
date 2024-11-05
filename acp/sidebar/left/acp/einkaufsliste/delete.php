@@ -1,6 +1,6 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = 'Menüpunkt löschen (Sonstiges)';
+$pageTitle = 'Menüpunkt löschen (Einkaufsliste)';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 try {
@@ -11,7 +11,7 @@ try {
 
     $id = $_GET['id'];
 
-    $sql = "SELECT * FROM acp_sidebar_left_einkaufsprozess WHERE id = :id";
+    $sql = "SELECT * FROM acp_sidebar_left_einkaufsliste WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
     $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -21,7 +21,7 @@ try {
         exit;
     }
 
-    $sql = "DELETE FROM acp_sidebar_left_einkaufsprozess WHERE id = :id";
+    $sql = "DELETE FROM acp_sidebar_left_einkaufsliste WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
     header("Location: https://codevoyage.de/acp/sidebar/left/acp/index.php");

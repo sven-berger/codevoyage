@@ -1,12 +1,12 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = "Menüpunkt ändern (Einkaufsprozess)";
+$pageTitle = "Menüpunkt ändern (Einkaufsliste)";
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 try {
     $id = $_GET['id'] ?? null;
     if ($id) {
-        $sql = "SELECT * FROM acp_sidebar_left_einkaufsprozess WHERE ID = :id";
+        $sql = "SELECT * FROM acp_sidebar_left_einkaufsliste WHERE ID = :id";
         $stmt = $connection->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -43,13 +43,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_SPECIAL_CHARS);
             $ziel = filter_input(INPUT_POST, 'ziel', FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $prepare = $connection->prepare('UPDATE acp_sidebar_left_einkaufsprozess SET url = :url, ziel = :ziel WHERE ID = :id');
+            $prepare = $connection->prepare('UPDATE acp_sidebar_left_einkaufsliste SET url = :url, ziel = :ziel WHERE ID = :id');
             $prepare->bindParam(':url', $url, PDO::PARAM_STR);
             $prepare->bindParam(':ziel', $ziel, PDO::PARAM_STR);
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
 
-            echo 'Menüpunkt erfolgreich aktualisiert.';
             header("Location: https://codevoyage.de/acp/sidebar/left/acp/index.php");
             exit();
         } else {

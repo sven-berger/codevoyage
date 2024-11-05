@@ -152,30 +152,30 @@
 </section>
 
 
-<h3 class="section-title">Einkaufsprozess</h3>
+<h3 class="section-title">einkaufsliste</h3>
 <section class="section">
     <div class="sectionContent">
     <div class="ActionArea">
     <ul>
-        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozess/add.php">Menüpunkt hinzufügen</a></button></li>
+        <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsliste/add.php">Menüpunkt hinzufügen</a></button></li>
     </ul>
     </div>     
         <?php try { ?>
-            <?php if (!empty($acp_sidebar_left_einkaufsprozess_liste)) : ?>
+            <?php if (!empty($acp_sidebar_left_einkaufsliste_liste)) : ?>
                 <table>
                     <tr>
                         <th>URL</th>
                         <th>Ziel</th>
                         <th>Aktion</th>
                     </tr>
-                    <?php foreach ($acp_sidebar_left_einkaufsprozess_liste as $row) : ?>
+                    <?php foreach ($acp_sidebar_left_einkaufsliste_liste as $row) : ?>
                         <tr>
                             <td><a href='<?php echo htmlspecialchars($row['url']); ?>' ><?php echo htmlspecialchars($row['url']); ?></a>
 </td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
-                                <a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozess/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
-                                <a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsprozess/delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
+                                <a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsliste/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
+                                <a href="https://codevoyage.de/acp/sidebar/left/acp/einkaufsliste/delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
