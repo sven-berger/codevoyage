@@ -1,5 +1,15 @@
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/database.inc.php");
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Überprüfe, ob die Datenbankverbindung vorhanden ist
+if (!isset($connection)) {
+    echo "<p style='color:red;'>Datenbankverbindung ist nicht definiert.</p>";
+    exit;
+}
 ?>
 
 <?php
