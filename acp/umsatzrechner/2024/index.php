@@ -1,7 +1,7 @@
 <?php
-    $bereich = 'Administrationsbereich';
-    $pageTitle = "Umsatzrechner für das Jahr 2024";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
+$bereich = 'Administrationsbereich';
+$pageTitle = "Umsatzrechner für das Jahr 2024";
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 $monate_zuweisung = [
     1 => 'Januar', 
@@ -35,6 +35,8 @@ try {
     echo 'Es liegt ein Problem vor: ' . $e->getMessage();
 }
 
+// Prüfen, ob alle Monate einen Umsatz haben
+$alle_monate_zugewiesen = count(array_diff(array_keys($monate_zuweisung), $monat_vorhanden)) === 0;
 ?>
 
 <?php echo $section_beginn; ?>
@@ -42,18 +44,14 @@ try {
 <?php echo $section_ende; ?>
 
 <?php echo $section_beginn; ?>
-<?php 
-$alle_monate_zugewiesen = true;
-if ($alle_monate_zugewiesen == false):
-?>
+<?php if (!$alle_monate_zugewiesen): // Nur anzeigen, wenn nicht alle Monate zugewiesen sind ?>
     <form action="index.php" method="post">
         <label for="Monat">Monat:</label>
         <select id="monat" name="monat" required>
             <option value="">Bitte wählen...</option>
             <?php 
             foreach ($monate_zuweisung as $monats_zahl => $monats_name): 
-                if (!in_array($monats_zahl, $monat_vorhanden)): 
-                    $alle_monate_zugewiesen = false; // Es gibt noch einen Monat ohne Umsatz
+                if (!in_array($monats_zahl, $monat_vorhanden)): // Zeige nur Monate ohne Umsatz an
             ?>
                     <option value="<?php echo $monats_zahl; ?>"><?php echo htmlspecialchars($monats_name); ?></option>
             <?php 
@@ -61,22 +59,20 @@ if ($alle_monate_zugewiesen == false):
             endforeach;
             ?>
         </select>
+
+        <div style="margin-top: 20px;">
+            <label for="umsatz">Umsatz:</label>
+            <input type="number" step="0.01" id="umsatz" name="umsatz" required>
+        </div>
+
         <div>
-        <button type="submit">Hinzufügen</button>
-        <button type="reset">Zurücksetzen</button>
-    </div>
+            <button type="submit">Hinzufügen</button>
+            <button type="reset">Zurücksetzen</button>
+        </div>
     </form>
-
-    <div style="margin-top: 20px;">
-        <label for="umsatz">Umsatz:</label>
-        <input type="number" step="0.01" id="umsatz" name="umsatz" required>
-    </div>
-
-    <?php endif; ?>
-
-    <?php if ($alle_monate_zugewiesen): ?>
-        <p class="center strong success">Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.</p>
-    <?php endif; ?>
+<?php else: ?>
+    <p class="center strong success">Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.</p>
+<?php endif; ?>
 <?php echo $section_ende; ?>
 
 <?php
@@ -114,12 +110,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } catch (PDOException $e) {
         echo 'Es liegt ein Problem vor: ' . $e->getMessage();
-        echo "<pre>";
-        var_dump($e->getMessage());
-        echo "</pre>";
     }
 }
-
 ?>
 
 <?php
@@ -156,5 +148,5 @@ try {
 ?>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
