@@ -1,7 +1,7 @@
 <?php
     $page = "Administrationsbereich";
     $pageTitle = "Navigationspunkt löschen";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
     if (isset($_GET['id'])) {
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);

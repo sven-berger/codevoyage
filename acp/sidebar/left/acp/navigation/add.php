@@ -1,7 +1,7 @@
 <?php
 $bereich = 'Administrationsbereich';
 $pageTitle = "Navigationspunkt hinzufügen";
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 $sql = "
 CREATE TABLE IF NOT EXISTS `acp_sidebar_left_navigation_header`
@@ -57,5 +57,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/footer.inc.php");
 ?>

@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = 'Wissensportal';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 ?>
 
 <div class="ActionArea">

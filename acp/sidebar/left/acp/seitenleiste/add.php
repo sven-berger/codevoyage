@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Menüpunkt hinzufügen (Seitenleiste)";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 $sql = "
 CREATE TABLE IF NOT EXISTS `acp_sidebar_left_seitenleiste`
@@ -31,5 +31,5 @@ try {
 </form>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/full.footer.inc.php");
 ?>

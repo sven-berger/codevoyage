@@ -1,7 +1,7 @@
 <?php
 $bereich = 'Administrationsbereich';
 $pageTitle = "Navigationspunkt ändern";
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 try {
     $id = $_GET['id'] ?? null;
@@ -62,5 +62,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>

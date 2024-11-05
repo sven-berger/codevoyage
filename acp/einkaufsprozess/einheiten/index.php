@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = 'Einheiten (Einkaufsprozess)';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
     try {
         $sql = "SELECT * FROM einkaufsprozess_einheiten";
         $stmt = $connection->query($sql);

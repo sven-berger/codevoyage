@@ -2,7 +2,7 @@
 
 $bereich = 'Administrationsbereich';
 $pageTitle = 'Kategorie abschicken (Wissensportal)';
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 $sql = "
 CREATE TABLE IF NOT EXISTS `wissensportal_kategorien`
@@ -30,5 +30,5 @@ if (!empty($_POST['name'])) {
     echo 'Fehler: Kein Kategorienname angegeben.';
 }
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.full.footer.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>

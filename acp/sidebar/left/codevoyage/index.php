@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Linke Seitenleiste";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 ?>
 
 <h3 class="section-title">Community-Spiele</h3>

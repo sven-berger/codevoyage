@@ -2,7 +2,7 @@
 
 $bereich = 'Administrationsbereich';
 $pageTitle = 'Snippet abschicken';
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $url = $_POST['url'];

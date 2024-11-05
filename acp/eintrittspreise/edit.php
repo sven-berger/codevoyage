@@ -1,7 +1,7 @@
 <?php
 $page = "Administrationsbereich";
 $pageTitle = "Eintrittspreis bearbeiten";
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/app.header.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 if (isset($_GET['id'])) {
     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
@@ -69,5 +69,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
 </section>
 
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/footer.inc.php");
 ?>

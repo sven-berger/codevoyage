@@ -1,7 +1,7 @@
 <?php
     $bereich = 'Administrationsbereich';
     $pageTitle = "Eintrittspreise";
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/core.header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 ?>
 
 <form action="index.php" method="post">
@@ -112,5 +112,5 @@ try {
 </section>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/footer.inc.php");
 ?>
