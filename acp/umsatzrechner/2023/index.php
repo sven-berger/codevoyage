@@ -42,6 +42,7 @@ try {
 <?php echo $section_ende; ?>
 
 <?php echo $section_beginn; ?>
+<?php if (!$alle_monate_zugewiesen): ?>
 <form action="index.php" method="post">
     <label for="Monat">Monat:</label>
     <select id="monat" name="monat" required>
@@ -58,6 +59,7 @@ try {
         endforeach;
         ?>
     </select>
+<?php endif; ?>
     
     <?php if ($alle_monate_zugewiesen): ?>
         <p>Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.</p>
