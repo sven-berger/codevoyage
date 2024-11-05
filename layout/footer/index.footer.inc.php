@@ -1,7 +1,7 @@
 </div>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/sidebar/index.sidebarLeft.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/sidebar/index.sidebarLeft.php");
 ?>
 
 </div>
