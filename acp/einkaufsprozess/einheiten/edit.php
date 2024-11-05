@@ -26,6 +26,7 @@ try {
 }
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
     <label for="Einheit">Einheit:</label>
     <input type="text" name="einheit" value="<?php echo htmlspecialchars($row['einheit']); ?>" required><br>
@@ -36,6 +37,7 @@ try {
     <button type="submit">Aktualisieren</button>
     <button type="reset">Zurücksetzen</button>
 </form>
+<?php echo $section_ende; ?>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -51,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
 
-            echo 'Einheit erfolgreich aktualisiert.';
             header("Location: https://codevoyage.de/acp/einkaufsprozess/einheiten/index.php");
             exit();
         } else {

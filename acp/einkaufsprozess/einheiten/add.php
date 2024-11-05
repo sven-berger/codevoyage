@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = 'Kategorie hinzufügen (Wissensportal)';
+    $pageTitle = 'Einheit hinzufügen';
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 ?>
 
@@ -23,6 +23,7 @@ try {
 
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="" method="post">
     <label for="title">Einheit:</label>
     <input type="text" name="einheit" required>
@@ -32,6 +33,7 @@ try {
     <input type="submit" value="Speichern">
     <input type="reset" value="Zurücksetzen">
 </form>
+<?php echo $section_ende; ?>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
