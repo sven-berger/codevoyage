@@ -29,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
             $prepare->bindParam(':alter_bis', $alter_bis, PDO::PARAM_INT);
             $prepare->bindParam(':preis', $preis, PDO::PARAM_STR);
             $prepare->execute();
-            echo 'Eintrittspreis erfolgreich aktualisiert.';
             header("Location: https://codevoyage.de/acp/eintrittspreise/index.php");
             exit();
         } catch (PDOException $e) {
@@ -40,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
 
 ?>
 
+<?php echo $section_beginn; ?>
 <?php if (isset($id) && $eintrittspreis): ?>
     <form action="edit.php" method="post">
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
@@ -63,6 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
 <?php else: ?>
     <p>Eintrittspreis nicht gefunden.</p>
 <?php endif; ?>
+<?php echo $section_ende; ?>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");

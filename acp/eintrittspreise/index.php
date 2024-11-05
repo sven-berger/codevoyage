@@ -4,6 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="index.php" method="post">
     <div>
         <label for="alter_von">Von:</label>
@@ -22,6 +23,7 @@
         <button type="reset">Zurücksetzen</button>
     </div>
 </form>
+<?php echo $section_ende; ?>
 
 <?php
 
@@ -54,9 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->bindParam(':preis', $preis, PDO::PARAM_STR);
             $prepare->execute();
 
-            echo 'Eintrittspreis erfolgreich eingetragen.';
             header("Location: https://codevoyage.de/acp/eintrittspreise/index.php");
-             exit();
+            exit();
         } else {
             echo 'Bitte füllen Sie alle Felder aus.';
         }
@@ -74,32 +75,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 try {
     $sql = "SELECT * FROM `eintrittspreise`";
     $result = $connection->query($sql);
+?>
+    <?php if ($result->rowCount() > 0): ?>
+        <?php echo $section_beginn; ?>
+        <table>
+        <tr>
+            <th>Von</th>
+            <th>Bis</th>
+            <th>Preis</th>
+            <th>Aktion</th>
+        </tr>";
 
-    if ($result->rowCount() > 0) {
-        echo "<table>";
-        echo "<tr><th>Von</th><th>Bis</th><th>Preis</th><th>Aktion</th></tr>";
-
-        $rows = $result->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $row) {
-            echo "<tr>";
-            echo "<td>" . htmlspecialchars($row['alter_von']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['alter_bis']) . "</td>";
-            echo "<td>" . htmlspecialchars($row['preis']) . "€</td>";
-            echo "<td>
-                    <a href='edit.php?id=" . htmlspecialchars($row['ID']) . "'>Bearbeiten</a> |
-                    <a href='delete.php?id=" . htmlspecialchars($row['ID']) . "' onclick='return confirm(\"Bist du dir sicher, dass du diesen Eintrag löschen möchtest?\");'>Löschen</a>
-                  </td>";
+        <?php $rows = $result->fetchAll(PDO::FETCH_ASSOC); ?>
+        <?php foreach ($rows as $row): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($row['alter_von']); ?></td>
+                <td><?php echo htmlspecialchars($row['alter_bis']); ?></td>
+                <td><?php echo htmlspecialchars($row['preis']); ?> €</td>
+                <td>
+                    <a href='edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>'>Bearbeiten</a> |
+                    <a href='delete.php?id=<?php echo htmlspecialchars($row['ID']); ?> onclick='return confirm("Bist du dir sicher, dass du diesen Eintrag löschen möchtest?");'>Löschen</a>
+                </td>";
             echo "</tr>";
-        }
-
-        echo "</table>";
-    } else {
-        echo "<p style='text-align: center;'>Keine Eintrittspreise gefunden.</p>";
-    }
-} catch (PDOException $e) {
+        <?php endforeach; ?>
+        <?php echo $section_ende; ?>
+        </table>
+    <?php else: ?>
+        <p style='text-align: center;'>Keine Eintrittspreise gefunden.</p>
+    <?php endif; ?>
+<?php } catch (PDOException $e) {
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
 }
-
 ?>
 
 <?php
