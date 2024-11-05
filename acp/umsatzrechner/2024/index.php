@@ -118,31 +118,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 try {
     $sql = "SELECT * FROM `umsatz_2024`";
     $result = $connection->query($sql);
-
-    if ($result->rowCount() > 0) {
-        echo $section_beginn;
-        echo "<table>";
-        echo "<tr><th>Monat</th><th>Umsatz</th><th>Aktion</th></tr>";
-
-        $rows = $result->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $row) {
-            echo "<tr>";
-            $monats_name = $monate_zuweisung[$row['monat']];
-            echo "<td>" . htmlspecialchars($monats_name) . "</td>";
-            echo "<td>" . htmlspecialchars($row['umsatz']) . "€</td>";
-            echo "<td>
-                    <a href='edit.php?id=" . htmlspecialchars($row['ID']) . "'>Bearbeiten</a> |
-                    <a href='delete.php?id=" . htmlspecialchars($row['ID']) . "' onclick='return confirm(\"Bist du dir sicher, dass du diesen Eintrag löschen möchtest?\");'>Löschen</a>
-                  </td>";
-            echo "</tr>";
-        }
-
-        echo "</table>";
-        echo $section_ende;
-    } else {
+    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+?>
+    <?php if ($result->rowCount() > 0): ?>
+        <?php echo $section_beginn; ?>
+        <table>
+            <tr>
+                <th>Monat</th>
+                <th>Umsatz</th>
+                <th>Aktion</th>
+            </tr>
+        <?php foreach ($rows as $row): ?>
+            <tr>
+            <?php $monats_name = $monate_zuweisung[$row['monat']]; ?>
+            <td><?php echo htmlspecialchars($monats_name); ?></td>
+            <td><?php echo htmlspecialchars($row['umsatz']); ?>€</td>
+            <td>
+                <a href='edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>'>Bearbeiten</a> |
+                <a href='delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>' onclick='return confirm("Bist du dir sicher, dass du diesen Eintrag löschen möchtest?");'>Löschen</a>
+            </td>
+            </tr>
+        <?php endforeach; ?>
+        </table>
+        <?php echo $section_ende; ?>
+    <?php else: ?>
         echo "<p style='text-align: center;'>Keine Umsatzzahlen gefunden.</p>";
-    }
-} catch (PDOException $e) {
+    <?php endif; ?>
+<?php } catch (PDOException $e) {
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
 }
 ?>
