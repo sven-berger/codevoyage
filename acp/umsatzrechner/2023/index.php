@@ -108,7 +108,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-<?php echo $section_beginn; ?>
 <?php
 
 try {
@@ -116,6 +115,7 @@ try {
     $result = $connection->query($sql);
 
     if ($result->rowCount() > 0) {
+        echo $section_beginn;
         echo "<table>";
         echo "<tr><th>Monat</th><th>Umsatz</th><th>Aktion</th></tr>";
 
@@ -133,6 +133,7 @@ try {
         }
 
         echo "</table>";
+        echo $section_ende;
     } else {
         echo "<p style='text-align: center;'>Keine Umsatzzahlen gefunden.</p>";
     }
