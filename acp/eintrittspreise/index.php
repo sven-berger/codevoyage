@@ -94,7 +94,7 @@ try {
                 <td><?php echo htmlspecialchars($row['preis']); ?> €</td>
                 <td>
                     <a href='edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>'>Bearbeiten</a> |
-                    <a href='delete.php?id=<?php echo htmlspecialchars($row['ID']); ?> onclick='return confirm("Bist du dir sicher, dass du diesen Eintrag löschen möchtest?");'>Löschen</a>
+                    <a href='delete.php?id=<?php echo htmlspecialchars($row['ID']); ?> onclick='return confirm("Bist du dir sicher, dass du diesen Eintrag löschen möchtest?")>Löschen</a>
                 </td>";
             </tr>
         <?php endforeach; ?>
