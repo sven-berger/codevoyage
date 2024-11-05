@@ -1,6 +1,6 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = "Menüpunkt ändern (Sonstiges)";
+$pageTitle = "Produkt ändern";
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 try {
@@ -28,36 +28,46 @@ try {
 
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
     <label for="produktname">Produktname:</label>
-    <input type="text" name="produktname" required><br>
+    <input type="text" name="produktname" value="<?php echo htmlspecialchars($row['produktname']); ?>" required><br>
 
     <label for="menge">Menge:</label>
-    <input type="number" step="1" id="menge" name="menge" required>
+    <input type="number" step="1" id="menge" name="menge" value="<?php echo htmlspecialchars($row['menge']); ?>" required><br>
 
-
+    <label for="einheit">Kategorie:</label>
+    <select name="einheit" id="einheit" class="global-kategorien" required>
+    <?php
+    $einheiten = $connection->query("SELECT id, name FROM einkaufsprozess_einheiten ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($einheiten as $einheit) {
+        $selected = $row['einheit'] == $einheit['id'] ? 'selected' : '';
+        echo "<option value='{$einheit['id']}' $selected>" . htmlspecialchars($einheit['name']) . "</option>";
+    }
+    ?>
+    </select><br>
 
     <label for="preis">Preis:</label>
-    <input type="number" step="0.01" id="preis" name="preis" required>
+    <input type="number" step="0.01" id="preis" name="preis" value="<?php echo htmlspecialchars($row['preis']); ?>" required><br>
 
-    <button type="submit">Hinzufügen</button>
+    <button type="submit">Speichern</button>
     <button type="reset">Zurücksetzen</button>
 </form>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        if (!empty($_POST['produktname']) && !empty($_POST['menge']) && !empty($_POST['einheit'])  && !empty($_POST['preis'])) {
+        if (!empty($_POST['produktname']) && !empty($_POST['menge']) && !empty($_POST['einheit']) && !empty($_POST['preis'])) {
             $produktname = filter_input(INPUT_POST, 'produktname', FILTER_SANITIZE_SPECIAL_CHARS);
             $menge = filter_input(INPUT_POST, 'menge', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+            $einheit = filter_input(INPUT_POST, 'einheit', FILTER_SANITIZE_NUMBER_INT);
             $preis = filter_input(INPUT_POST, 'preis', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
-            $prepare = $connection->prepare('INSERT INTO `einkaufsprozess` (`produktname`, `menge`, `einheit` `preis`) VALUES (:produktname, :menge, :einheit, :preis)');
+            $prepare = $connection->prepare('UPDATE einkaufsprozess SET produktname = :produktname, menge = :menge, einheit = :einheit, preis = :preis WHERE ID = :id');
             $prepare->bindParam(':produktname', $produktname, PDO::PARAM_STR);
-            $prepare->bindParam(':menge', $menge, PDO::PARAM_INT);
-            $prepare->bindParam(':einheit', $einheit, PDO::PARAM_STR);
-            $prepare->bindParam(':preis', $preis, PDO::PARAM_INT);
+            $prepare->bindParam(':menge', $menge, PDO::PARAM_STR);
+            $prepare->bindParam(':einheit', $einheit, PDO::PARAM_INT);
+            $prepare->bindParam(':preis', $preis, PDO::PARAM_STR);
+            $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
-
-            echo 'Menüpunkt erfolgreich eingetragen.';
+            
             header("Location: https://codevoyage.de/acp/einkaufsprozess/index.php");
             exit();
         } else {
@@ -70,5 +80,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
