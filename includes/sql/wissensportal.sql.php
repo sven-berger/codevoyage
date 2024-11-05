@@ -1,5 +1,5 @@
 <?php
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database.inc.php");
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/database.inc.php");
 $acp_sidebar_left_wissensportal_liste = $connection->query($acp_sidebar_left_wissensportal)->fetchAll(PDO::FETCH_ASSOC);
 $acp_sidebar_left_wissensportal = "SELECT * FROM `acp_sidebar_left_wissensportal`";
 
