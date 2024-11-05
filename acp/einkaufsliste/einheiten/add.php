@@ -6,7 +6,7 @@
 
 <?php
 $sql = "
-CREATE TABLE IF NOT EXISTS `einkaufsprozess_einheiten`
+CREATE TABLE IF NOT EXISTS `einkaufsliste_einheiten`
 (
     `id` INT NOT NULL AUTO_INCREMENT,
     `einheit` VARCHAR(255) NOT NULL,
@@ -42,12 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $produktname = filter_input(INPUT_POST, 'einheit', FILTER_SANITIZE_SPECIAL_CHARS);
             $einheit = filter_input(INPUT_POST, 'abkuerzung', FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $prepare = $connection->prepare('INSERT INTO `einkaufsprozess_einheiten` (`einheit`, `abkuerzung`) VALUES (:einheit, :abkuerzung)');
+            $prepare = $connection->prepare('INSERT INTO `einkaufsliste_einheiten` (`einheit`, `abkuerzung`) VALUES (:einheit, :abkuerzung)');
             $prepare->bindParam(':einheit', $einheit, PDO::PARAM_STR);
             $prepare->bindParam(':abkuerzung', $abkuerzung, PDO::PARAM_STR);
             $prepare->execute();
 
-            header("Location: https://codevoyage.de/acp/einkaufsprozess/einheiten/index.php");
+            header("Location: https://codevoyage.de/acp/einkaufsliste/einheiten/index.php");
             exit();            
         } else {
             echo 'Bitte füllen Sie alle Felder aus.';
