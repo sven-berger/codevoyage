@@ -1,7 +1,6 @@
 </div>
 
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/sql/wissensportal.sql.php");
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/sidebar/wissensportal.sidebarLeft.php");
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/sidebar/wissensportal.sidebarRight.php");
 
