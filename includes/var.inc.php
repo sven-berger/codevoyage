@@ -1,5 +1,6 @@
 <?php
 
+$footer = file_get_contents("https://codevoyage.de/python/templates/footer.html");
 
 $sidebarLeft = file_get_contents("https://codevoyage.de/layout/sidebar/index.sidebarLeft.php");
 
