@@ -61,22 +61,26 @@ if ($alle_monate_zugewiesen == false):
             endforeach;
             ?>
         </select>
+        <div>
+        <button type="submit">Hinzufügen</button>
+        <button type="reset">Zurücksetzen</button>
+    </div>
+    </form>
+    
+    <div style="margin-top: 20px;">
+        <label for="umsatz">Umsatz:</label>
+        <input type="number" step="0.01" id="umsatz" name="umsatz" required>
+    </div>
+
     <?php endif; ?>
 
     <?php if ($alle_monate_zugewiesen): ?>
         <p class="center strong success">Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.</p>
     <?php endif; ?>
 
-    <div style="margin-top: 20px;">
-        <label for="umsatz">Umsatz:</label>
-        <input type="number" step="0.01" id="umsatz" name="umsatz" required>
-    </div>
+
     
-    <div>
-        <button type="submit">Hinzufügen</button>
-        <button type="reset">Zurücksetzen</button>
-    </div>
-</form>
+
 <?php echo $section_ende; ?>
 
 <?php
