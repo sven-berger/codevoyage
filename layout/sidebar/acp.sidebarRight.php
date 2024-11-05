@@ -1,7 +1,3 @@
-<?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/sql/acp.sql.php");
-?>
-
 <aside>
     <section class="sidebarBox">
         <h3 class="boxTitle">Umsatzrechner</h3>
