@@ -122,8 +122,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-
-
 <?php
 try {
     $sql = "SELECT * FROM `umsatz_2023`";

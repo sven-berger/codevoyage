@@ -37,38 +37,49 @@ try {
 
 ?>
 
+<?php echo $section_beginn; ?>
 <p><a href="https://codevoyage.de/acp/umsatzrechner/2023/">2023</a> | <a href="https://codevoyage.de/acp/umsatzrechner/2024/">2024</a></p>
+<?php echo $section_ende; ?>
 
-<form action="index.php" method="post">
-    <div>
+<?php echo $section_beginn; ?>
+<?php 
+$alle_monate_zugewiesen = true;
+if ($alle_monate_zugewiesen == false):
+?>
+    <form action="index.php" method="post">
         <label for="Monat">Monat:</label>
         <select id="monat" name="monat" required>
             <option value="">Bitte wählen...</option>
             <?php 
-            // Schleife über alle Monate
-            foreach ($monate_zuweisung as $monats_zahl => $monats_name) {
-                // Prüfen, ob der Monat bereits vorhanden ist
-                if (!in_array($monats_zahl, $monat_vorhanden)) {
-                    echo "<option value=\"$monats_zahl\">$monats_name</option>";
-                } else {
-                    echo "Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.";
-                }
-            }
+            foreach ($monate_zuweisung as $monats_zahl => $monats_name): 
+                if (!in_array($monats_zahl, $monat_vorhanden)): 
+                    $alle_monate_zugewiesen = false; // Es gibt noch einen Monat ohne Umsatz
+            ?>
+                    <option value="<?php echo $monats_zahl; ?>"><?php echo htmlspecialchars($monats_name); ?></option>
+            <?php 
+                endif;
+            endforeach;
             ?>
         </select>
+        <div>
+        <button type="submit">Hinzufügen</button>
+        <button type="reset">Zurücksetzen</button>
     </div>
+    </form>
+
     <div style="margin-top: 20px;">
         <label for="umsatz">Umsatz:</label>
         <input type="number" step="0.01" id="umsatz" name="umsatz" required>
     </div>
-    <div>
-        <button type="submit">Hinzufügen</button>
-        <button type="reset">Zurücksetzen</button>
-    </div>
-</form>
+
+    <?php endif; ?>
+
+    <?php if ($alle_monate_zugewiesen): ?>
+        <p class="center strong success">Vielen Dank, es wurden sämtliche Umsätze des Jahres eingetragen.</p>
+    <?php endif; ?>
+<?php echo $section_ende; ?>
 
 <?php
-
 // Tabelle erstellen, wenn sie nicht existiert
 $sql = "
 CREATE TABLE IF NOT EXISTS `umsatz_2024` (
@@ -96,8 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->bindParam(':umsatz', $umsatz, PDO::PARAM_STR);
             $prepare->execute();
 
-            echo 'Eintrittspreis erfolgreich eingetragen.';
-            header("Location: https://codevoyage.de/acp/umsatzrechner/2024/index.php");
+            header("Location: https://php.codevoyage.de/acp/umsatzrechner/2024/index.php");
             exit();
         } else {
             echo 'Bitte füllen Sie alle Felder aus.';
@@ -113,12 +123,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <?php
-
 try {
     $sql = "SELECT * FROM `umsatz_2024`";
     $result = $connection->query($sql);
 
     if ($result->rowCount() > 0) {
+        echo $section_beginn;
         echo "<table>";
         echo "<tr><th>Monat</th><th>Umsatz</th><th>Aktion</th></tr>";
 
@@ -136,12 +146,15 @@ try {
         }
 
         echo "</table>";
+        echo $section_ende;
     } else {
         echo "<p style='text-align: center;'>Keine Umsatzzahlen gefunden.</p>";
     }
 } catch (PDOException $e) {
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
 }
+?>
 
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
+<?php
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
