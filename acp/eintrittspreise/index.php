@@ -98,8 +98,8 @@ try {
                 </td>";
             </tr>
         <?php endforeach; ?>
-        <?php echo $section_ende; ?>
         </table>
+        <?php echo $section_ende; ?>
     <?php else: ?>
         <p style='text-align: center;'>Keine Eintrittspreise gefunden.</p>
     <?php endif; ?>
