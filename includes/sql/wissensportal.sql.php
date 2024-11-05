@@ -1,6 +1,8 @@
 <?php
  require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/database.inc.php");
-
+ ini_set('display_errors', 1);
+ ini_set('display_startup_errors', 1);
+ error_reporting(E_ALL);
 
 function getCategories($connection) {
     $sql = "SELECT id, name FROM wissensportal_kategorien";
