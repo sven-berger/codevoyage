@@ -2,6 +2,7 @@
     $bereich = 'Administrationsbereich';
     $pageTitle = "Menüpunkte (Administrationsbereich)";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/sql/acp.sql.php");
 ?>
 
 <h3 class="section-title">Navigation</h3>
