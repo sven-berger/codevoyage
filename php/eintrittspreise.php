@@ -33,15 +33,15 @@ try {
 <?php endif; ?>
 <?php echo $section_ende; ?>
 
-<?php echo $section_beginn; ?>
 <?php if (!isset($_GET['alter'])): ?>
+    <?php echo $section_beginn; ?>
     <form action="eintrittspreise.php" method="get">
         <label for="alter">Bitte gib dein Alter ein:</label>
             <input type="number" id="alter" name="alter" required>
         <button type="submit">Eingabe abschicken</button>
     </form>
+    <?php echo $section_ende; ?>
 <?php endif; ?>
-<?php echo $section_ende; ?>
 
 <?php if (isset($_GET['alter'])): ?>
     <?php $alter = intval($_GET['alter']); $zu_alt = false; ?>
