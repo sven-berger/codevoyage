@@ -20,6 +20,7 @@ try {
 }
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="" method="post">
     <label for="url">URL:</label>
     <input type="url" name="url" required><br>
@@ -29,6 +30,7 @@ try {
 
     <input type="submit" value="Einfügen">
 </form>
+<?php echo $section_ende; ?>
 
 <?php
 
