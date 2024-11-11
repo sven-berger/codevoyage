@@ -45,7 +45,7 @@
     <div class="sectionContent">
     <div class="ActionArea">
         <ul>
-            <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/seitenleiste/add.php">Menüpunkt hinzufügen</a></button></li>
+            <li><button class="button-action"><a href="https://codevoyage.de/acp/sidebar/left/acp/linke-seitenleiste/add.php">Menüpunkt hinzufügen</a></button></li>
         </ul>
     </div>      
         <?php try { ?>
@@ -62,8 +62,8 @@
 </td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
                             <td>
-                                <a href="https://codevoyage.de/acp/sidebar/left/acp/seitenleiste/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
-                                <a href="https://codevoyage.de/acp/sidebar/left/acp/seitenleiste/delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
+                                <a href="https://codevoyage.de/acp/sidebar/left/acp/linke-seitenleiste/edit.php?id=<?php echo htmlspecialchars($row['ID']); ?>">Bearbeiten</a> |
+                                <a href="https://codevoyage.de/acp/sidebar/left/acp/linke-seitenleiste/delete.php?id=<?php echo htmlspecialchars($row['ID']); ?>" onclick="return confirm('Bist du dir sicher, dass du diesen Eintrag löschen möchtest?');">Löschen</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

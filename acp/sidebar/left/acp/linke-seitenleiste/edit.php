@@ -1,6 +1,6 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = "Menüpunkt ändern (Seitenleiste)";
+$pageTitle = "Menüpunkt ändern (Linke Seitenleiste)";
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 try {

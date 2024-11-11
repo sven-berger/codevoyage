@@ -1,6 +1,6 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = "Menüpunkt ändern (Eigene Werke)";
+$pageTitle = "Menüpunkt ändern (Wissensportal)";
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 try {

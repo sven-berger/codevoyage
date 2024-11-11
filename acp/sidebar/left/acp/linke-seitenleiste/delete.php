@@ -1,6 +1,6 @@
 <?php
 $bereich = 'Administrationsbereich';
-$pageTitle = 'Menüpunkt löschen (Eigene Werke)';
+$pageTitle = 'Menüpunkt löschen (Linke Seitenleistee)';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 try {
@@ -14,13 +14,7 @@ try {
     $sql = "SELECT * FROM acp_sidebar_left_seitenleiste WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
-    $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if (!$snippet) {
-        echo "Menüpunkt nicht gefunden!";
-        exit;
-    }
-
+    
     $sql = "DELETE FROM acp_sidebar_left_seitenleiste WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);

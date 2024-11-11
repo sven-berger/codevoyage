@@ -1,6 +1,6 @@
 <?php
     $bereich = 'Administrationsbereich';
-    $pageTitle = "Menüpunkt hinzufügen (Seitenleiste)";
+    $pageTitle = "Menüpunkt hinzufügen (Linke Seitenleiste)";
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 $sql = "
