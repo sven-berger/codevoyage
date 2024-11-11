@@ -14,6 +14,7 @@ try {
 }
 ?>
 
+<?php echo $section_beginn; ?>
 <?php if (count($ausgabe) > 0): ?>
     <table class="table-eintrittspreise">
             <tr>
@@ -30,16 +31,19 @@ try {
 <?php else: ?>
     <p>Keine Eintrittspreise gefunden.</p>
 <?php endif; ?>
+<?php echo $section_ende; ?>
 
-
+<?php echo $section_beginn; ?>
 <?php if (!isset($_GET['alter'])): ?>
-        <form action="eintrittspreise.php" method="get">
-                <label for="alter">Bitte gib dein Alter ein:</label>
-                <input type="number" id="alter" name="alter" required>
-                <button type="submit">Eingabe abschicken</button>
-        </form>
+    <form action="eintrittspreise.php" method="get">
+        <label for="alter">Bitte gib dein Alter ein:</label>
+            <input type="number" id="alter" name="alter" required>
+        <button type="submit">Eingabe abschicken</button>
+    </form>
 <?php endif; ?>
+<?php echo $section_ende; ?>
 
+<?php echo $section_beginn; ?>
 <?php if (isset($_GET['alter'])): ?>
         <?php 
             $alter = intval($_GET['alter']);
@@ -58,7 +62,7 @@ try {
     <p><br/></p>
     <a href="https://php.codevoyage.de/eintrittspreise.php">Neu berechnen</a>
 <?php endif; ?>
-
+<?php echo $section_ende; ?>
 
 
 <?php
