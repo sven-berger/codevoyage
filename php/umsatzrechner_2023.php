@@ -44,10 +44,11 @@ $monat_vorhanden = [];
                 <th>Monat</th>
                 <th>Umsatz</th>
             </tr>
-
         <?php foreach ($rows as $row): ?>
-            <td><?php $monats_name = $monate_zuweisung[$row['monat']]; ?> <?php echo htmlspecialchars($monats_name); ?></td>
-            <td><?php echo htmlspecialchars($row['umsatz']); ?>€</td>
+            <tr>
+                <td><?php $monats_name = $monate_zuweisung[$row['monat']]; ?> <?php echo htmlspecialchars($monats_name); ?></td>
+                <td><?php echo htmlspecialchars($row['umsatz']); ?>€</td>
+            </tr>
         <?php endforeach; ?>
         </table>
     <?php else: ?>
