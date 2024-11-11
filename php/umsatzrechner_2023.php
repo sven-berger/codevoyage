@@ -57,8 +57,6 @@ $monat_vorhanden = [];
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
 } ?>
 
-?>
-
 <div style="text-align: center;">
 <?php
 
