@@ -9,7 +9,6 @@
 <?php echo $section_ende; ?>
 
 <?php
-
 $monate_zuweisung = [
     1 => 'Januar', 
     2 => 'Februar', 
@@ -26,10 +25,7 @@ $monate_zuweisung = [
 ];
 
 $benutzereingabe = null;
-
-// Array für die bereits vorhandenen Monate in der Datenbank
 $monat_vorhanden = [];
-
 ?>
 
 <?php echo $section_beginn; ?>
