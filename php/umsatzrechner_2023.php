@@ -32,33 +32,40 @@ $monat_vorhanden = [];
 
 ?>
 
+<?php echo $section_beginn; ?>
 <?php try {
     $sql = "SELECT * FROM `umsatz_2023`";
     $result = $connection->query($sql);
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
-    <?php if ($result->rowCount() > 0): ?>
-        <?php echo $section_beginn; ?>
-        <table>
-            <tr>
-                <th>Monat</th>
-                <th>Umsatz</th>
-            </tr>
-        <?php foreach ($rows as $row): ?>
-            <tr>
-                <td><?php $monats_name = $monate_zuweisung[$row['monat']]; ?> <?php echo htmlspecialchars($monats_name); ?></td>
-                <td><?php echo htmlspecialchars($row['umsatz']); ?>€</td>
-            </tr>
-        <?php endforeach; ?>
-        </table>
-    <?php else: ?>
-        echo "<p style='text-align: center;'>Keine Umsatzzahlen gefunden.</p>";
-        <?php echo $section_ende; ?>
-    <?php endif; ?>
+<?php if ($result->rowCount() > 0): ?>
+    <table>
+        <tr>
+            <th>Monat</th>
+            <th>Umsatz</th>
+        </tr>
+    <?php foreach ($rows as $row): ?>
+        <tr>
+            <td><?php $monats_name = $monate_zuweisung[$row['monat']]; ?> <?php echo htmlspecialchars($monats_name); ?></td>
+            <td><?php echo htmlspecialchars($row['umsatz']); ?>€</td>
+        </tr>
+    <?php endforeach; ?>
+    </table>
+<?php else: ?>
+    <p style='text-align: center;'>Keine Umsatzzahlen gefunden.</p>
+<?php endif; ?>
 <?php } catch (PDOException $e) {
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
 } ?>
+<?php echo $section_ende; ?>
+
+<?php echo $section_beginn; ?>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <label for="benutzereingabe">Was ist für dich ein guter Monat? (Umsatz)</label>
+    <input type="number" id="benutzereingabe" name="benutzereingabe" value="<?php echo $benutzereingabe; ?>" required>
+    <button type="submit">Wunschwert eintragen</button>
+</form>
+<?php echo $section_ende; ?>
 
 <div style="text-align: center;">
 <?php
@@ -108,16 +115,7 @@ try {
 }
 
 ?>
-
 </div>
-
-<?php echo $section_beginn; ?>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-    <label for="benutzereingabe">Was ist für dich ein guter Monat? (Umsatz)</label>
-    <input type="number" id="benutzereingabe" name="benutzereingabe" value="<?php echo $benutzereingabe; ?>" required>
-    <button type="submit">Wunschwert eintragen</button>
-</form>
-<?php echo $section_ende; ?>
 
 <?php if ($showResults): ?>
     <?php echo $section_beginn; ?>
