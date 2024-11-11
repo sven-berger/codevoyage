@@ -15,7 +15,6 @@ try {
 ?>
 
 <?php if (count($ausgabe) > 0): ?>
-<?php echo $section_beginn; ?>
     <table class="table-eintrittspreise">
             <tr>
                 <th>Alter</th>
@@ -30,7 +29,6 @@ try {
     </table>
 <?php else: ?>
     <p>Keine Eintrittspreise gefunden.</p>
-<?php echo $section_ende; ?>
 <?php endif; ?>
 
 <?php if (!isset($_GET['alter'])): ?>
