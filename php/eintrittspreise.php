@@ -43,8 +43,8 @@ try {
 <?php endif; ?>
 <?php echo $section_ende; ?>
 
-<?php echo $section_beginn; ?>
 <?php if (isset($_GET['alter'])): ?>
+    <?php echo $section_beginn; ?>
         <?php 
             $alter = intval($_GET['alter']);
             $zu_alt = false;
@@ -61,8 +61,8 @@ try {
             ?>
     <p><br/></p>
     <a href="https://php.codevoyage.de/eintrittspreise.php">Neu berechnen</a>
+    <?php echo $section_ende; ?>
 <?php endif; ?>
-<?php echo $section_ende; ?>
 
 
 <?php
