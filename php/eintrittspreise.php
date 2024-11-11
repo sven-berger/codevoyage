@@ -46,7 +46,7 @@ try {
     <?php echo $section_beginn;?>
     <?php foreach ($ausgabe as $preise): ?>
         <?php if ($alter >= $preise["alter_von"] && $alter <= $preise["alter_bis"]): ?>
-            <p>Der Eintritt kostet für dich: <strong>" . <?php echo htmlspecialchars($preise["preis"]); ?>€</strong>.</p>
+            <p>Der Eintritt kostet für dich: <strong><?php echo htmlspecialchars($preise["preis"]); ?>€</strong>.</p>
             <?php $zu_alt = true; break; ?>
         <?php endif; ?>
         <?php endforeach; ?>
