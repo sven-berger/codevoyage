@@ -39,6 +39,7 @@ $monat_vorhanden = [];
 ?>
 
     <?php if ($result->rowCount() > 0): ?>
+        <?php echo $section_beginn; ?>
         <table>
             <tr>
                 <th>Monat</th>
@@ -53,6 +54,7 @@ $monat_vorhanden = [];
         </table>
     <?php else: ?>
         echo "<p style='text-align: center;'>Keine Umsatzzahlen gefunden.</p>";
+        <?php echo $section_ende; ?>
     <?php endif; ?>
 <?php } catch (PDOException $e) {
     echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
