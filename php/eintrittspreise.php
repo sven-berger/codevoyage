@@ -28,9 +28,9 @@ try {
             </tr>
             <?php endforeach; ?>
     </table>
+    <?php echo $section_ende; ?>
 <?php else: ?>
     <p>Keine Eintrittspreise gefunden.</p>
-<?php echo $section_ende; ?>
 <?php endif; ?>
 
 <?php if (!isset($_GET['alter'])): ?>
