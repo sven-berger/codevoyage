@@ -11,7 +11,6 @@
             $prepare = $connection->prepare('DELETE FROM `navigation_header` WHERE `ID` = :id');
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
-            echo 'Eintrittspreis erfolgreich gelöscht.';
             header("Location: https://codevoyage.de/acp/navigation/header/index.php");
             exit();
         } catch (PDOException $e) {

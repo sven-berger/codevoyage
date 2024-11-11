@@ -26,6 +26,7 @@ try {
 }
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
     <label for="reihenfolge">Reihenfolge:</label>
     <input type="text" name="reihenfolge" value="<?php echo htmlspecialchars($row['reihenfolge']); ?>" required><br>
@@ -38,6 +39,7 @@ try {
 
     <input type="submit" value="Speichern">
 </form>
+<?php echo $section_ende; ?>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -54,7 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
 
-            echo 'Menüpunkt erfolgreich aktualisiert.';
             header("Location: https://codevoyage.de/acp/navigation/header/index.php");
             exit();
         } else {
