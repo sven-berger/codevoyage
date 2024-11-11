@@ -6,7 +6,6 @@
     if (isset($_GET['id'])) {
         $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
-        // Datensatz löschen
         try {
             $prepare = $connection->prepare('DELETE FROM `acp_sidebar_left_navigation_header` WHERE `ID` = :id');
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);

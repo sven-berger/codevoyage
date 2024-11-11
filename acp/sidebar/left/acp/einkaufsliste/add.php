@@ -20,6 +20,7 @@ try {
 }
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="" method="post">
     <label for="url">URL:</label>
     <input type="url" name="url" required><br>
@@ -29,6 +30,7 @@ try {
 
     <input type="submit" value="Einfügen">
 </form>
+<?php echo $section_ende; ?>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -42,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->bindParam(':ziel', $ziel, PDO::PARAM_STR);
             $prepare->execute();
 
-            echo 'Menüpunkt erfolgreich eingetragen.';
             header("Location: https://codevoyage.de/acp/sidebar/left/acp/index.php");
             exit();
         } else {

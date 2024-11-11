@@ -49,7 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->bindParam(':id', $id, PDO::PARAM_INT);
             $prepare->execute();
 
-            echo 'Menüpunkt erfolgreich aktualisiert.';
             header("Location: https://codevoyage.de/acp/sidebar/left/acp/index.php");
             exit();
         } else {
