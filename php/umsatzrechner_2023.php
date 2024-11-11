@@ -4,7 +4,9 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.header.inc.php");
 ?>
 
+<?php echo $section_beginn; ?>
 <p><a href="https://php.codevoyage.de/umsatzrechner_2023.php">2023</a> | <a href="https://php.codevoyage.de/umsatzrechner_2024.php">2024</a></p>
+<?php echo $section_ende; ?>
 
 <?php
 
@@ -28,35 +30,34 @@ $benutzereingabe = null;
 // Array für die bereits vorhandenen Monate in der Datenbank
 $monat_vorhanden = [];
 
-try {
-    $sql = "SELECT * FROM `umsatz_2023`";
-    $result = $connection->query($sql);
-
-    if ($result->rowCount() > 0) {
-        echo "<table>";
-        echo "<tr><th>Monat</th><th>Umsatz</th></tr>";
-
-        $rows = $result->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($rows as $row) {
-            echo "<tr>";
-            $monats_name = $monate_zuweisung[$row['monat']];
-            echo "<td>" . htmlspecialchars($monats_name) . "</td>";
-            echo "<td>" . htmlspecialchars($row['umsatz']) . "€</td>";
-            echo "</tr>";
-        }
-
-        echo "</table>";
-    } else {
-        echo "<p style='text-align: center;'>Keine Umsatzzahlen gefunden.</p>";
-    }
-} catch (PDOException $e) {
-    echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
-}
-
 ?>
 
+<?php try {
+    $sql = "SELECT * FROM `umsatz_2023`";
+    $result = $connection->query($sql);
+    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+?>
 
+    <?php if ($result->rowCount() > 0): ?>
+        <table>
+            <tr>
+                <th>Monat</th>
+                <th>Umsatz</th>
+            </tr>
 
+        <?php foreach ($rows as $row): ?>
+            <td><?php $monats_name = $monate_zuweisung[$row['monat']]; ?> <?php echo htmlspecialchars($monats_name); ?></td>
+            <td><?php echo htmlspecialchars($row['umsatz']); ?>€</td>
+        <?php endforeach; ?>
+        </table>
+    <?php else: ?>
+        echo "<p style='text-align: center;'>Keine Umsatzzahlen gefunden.</p>";
+    <?php endif; ?>
+<?php } catch (PDOException $e) {
+    echo '<p style="text-align: center;">Es liegt ein Problem vor: ' . $e->getMessage() . '</p>';
+} ?>
+
+?>
 
 <div style="text-align: center;">
 <?php
@@ -109,13 +110,16 @@ try {
 
 </div>
 
+<?php echo $section_beginn; ?>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <label for="benutzereingabe">Was ist für dich ein guter Monat? (Umsatz)</label>
     <input type="number" id="benutzereingabe" name="benutzereingabe" value="<?php echo $benutzereingabe; ?>" required>
     <button type="submit">Wunschwert eintragen</button>
 </form>
+<?php echo $section_ende; ?>
 
 <?php if ($showResults): ?>
+    <?php echo $section_beginn; ?>
     <div style="text-align: center;">
 
     <span>
@@ -123,7 +127,7 @@ try {
         Gute Monate: <strong><?php echo $anzahl_gute_monate; ?></strong> (Wunsch: <?php echo $benutzereingabe; ?>€ Umsatz pro Monat) |
         Gesamtumsatz der guten Monate: <strong><?php echo $guter_monat; ?>€</strong>
     </span>
-
+    <?php echo $section_ende; ?>
 <?php endif; ?>
 
 <?php
