@@ -26,6 +26,7 @@ try {
 }
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
     <label for="url">URL:</label>
     <input type="url" name="url" value="<?php echo htmlspecialchars($row['url']); ?>" required><br>
@@ -35,6 +36,7 @@ try {
 
     <input type="submit" value="Speichern">
 </form>
+<?php echo $section_ende; ?>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -10,17 +10,6 @@ try {
     }
 
     $id = $_GET['id'];
-
-    $sql = "SELECT * FROM php_sidebar_left_sonstiges WHERE id = :id";
-    $stmt = $connection->prepare($sql);
-    $stmt->execute([':id' => $id]);
-    $snippet = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if (!$snippet) {
-        echo "Menüpunkt nicht gefunden!";
-        exit;
-    }
-
     $sql = "DELETE FROM php_sidebar_left_sonstiges WHERE id = :id";
     $stmt = $connection->prepare($sql);
     $stmt->execute([':id' => $id]);
