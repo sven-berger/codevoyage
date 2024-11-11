@@ -44,24 +44,20 @@ try {
 <?php echo $section_ende; ?>
 
 <?php if (isset($_GET['alter'])): ?>
-    <?php echo $section_beginn; ?>
-        <?php 
-            $alter = intval($_GET['alter']);
-            $zu_alt = false;
-            foreach ($ausgabe as $preise) {
-                if ($alter >= $preise["alter_von"] && $alter <= $preise["alter_bis"]) {
-                    echo "Der Eintritt kostet für dich: <strong>" . htmlspecialchars($preise["preis"]) . "€</strong>.";
-                    $zu_alt = true;
-                    break;
-                }
-            }
-            if (!$zu_alt) {
-                echo "Für dein Alter konnte kein Preis gefunden werden.";
-            }
-            ?>
+    <?php $alter = intval($_GET['alter']); $zu_alt = false; ?>
+    <?php foreach ($ausgabe as $preise): ?>
+        <?php echo $section_beginn;?>
+        <?php if ($alter >= $preise["alter_von"] && $alter <= $preise["alter_bis"]): ?>
+            <p>Der Eintritt kostet für dich: <strong>" . <?php echo htmlspecialchars($preise["preis"]); ?>€</strong>.</p>
+            <?php $zu_alt = true; break; ?>
+        <?php endif; ?>
+        <?php echo $section_ende; ?>
+        <?php endforeach; ?>
+        <?php if (!$zu_alt): ?>
+            <p>Für dein Alter konnte kein Preis gefunden werden.</p>
+        <?php endif; ?>
     <p><br/></p>
     <a href="https://php.codevoyage.de/eintrittspreise.php">Neu berechnen</a>
-    <?php echo $section_ende; ?>
 <?php endif; ?>
 
 
