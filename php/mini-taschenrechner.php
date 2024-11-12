@@ -4,6 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.header.inc.php");
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="mini-taschenrechner.php" method="get" class="form-taschenrechner">
     <label for="erste_zahl">Bitte gib die erste Zahl ein:</label>
     <input type="number" id="erste_zahl" name="erste_zahl" required>
@@ -20,14 +21,11 @@
     </select>
     <button type="submit">Eingabe abschicken</button>
 </form>
+<?php echo $section_ende; ?>
 
 <?php
 if (isset($_GET['erste_zahl']) && isset($_GET['zweite_zahl']) && isset($_GET['rechenoperation'])): ?>
-</div>
-</section> 
-
-<section class="section">
-<div class="sectionContent">
+<?php echo $section_beginn; ?>
     <?php 
         $erste_zahl = (float)$_GET['erste_zahl'];
         $zweite_zahl = (float)$_GET['zweite_zahl'];
@@ -60,6 +58,7 @@ if (isset($_GET['erste_zahl']) && isset($_GET['zweite_zahl']) && isset($_GET['re
         echo "Fehler: " . $e->getMessage();
     }
     ?>
+<?php echo $section_ende; ?>
 <?php endif; ?>
 
 
