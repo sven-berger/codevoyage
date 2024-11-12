@@ -4,7 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.header.inc.php");
 ?>
 
-<div id="black-hole"></div>
+<div id="black-hole"><black-hole /></div>
 
 <style>
 #black-hole {
