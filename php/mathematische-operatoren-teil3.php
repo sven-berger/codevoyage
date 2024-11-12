@@ -4,6 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.header.inc.php");
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="mathematische-operatoren-teil3.php" method="get">
     <label for="zahl3">Bitte gib eine dritte Zahl ein:</label>
     <input type="number" id="zahl3" name="zahl3" required>
@@ -13,25 +14,26 @@
    
     <button type="submit">Eingabe abschicken</button>
 </form>
+<?php echo $section_ende; ?>
 
 <?php if (isset($_GET['zahl3']) && isset($_GET['vergleich_zahl3'])): ?>
-    </div>
-    </section>
     <?php
         $dritte_zahl = (float)$_GET['zahl3'];
         $vergleich_zahl3 = (float)$_GET['vergleich_zahl3'];
     ?>
     
     <?php if ($dritte_zahl === $vergleich_zahl3): ?>
-        <section class="section">
-            <div class="sectionContent">
+        <?php echo $section_beginn; ?>
             <?php echo $dritte_zahl; ?> und <?php echo $vergleich_zahl3; ?> sind <strong>gleich</strong>.
+        <?php echo $section_ende; ?>
         <?php elseif ($zweite_zahl !== $vergleich_zahl3): ?>
-            <section class="section">
-            <div class="sectionContent">
+        <?php echo $section_beginn; ?>
             <?php echo $dritte_zahl; ?> und <?php echo $vergleich_zahl3; ?> sind <strong>ungleich</strong>.
+        <?php echo $section_ende; ?>
         <?php else: ?>
+        <?php echo $section_beginn; ?>
             <p>Du hast die gleiche Zahl eingegeben.</p>
+        <?php echo $section_ende; ?>
     <?php endif; ?>
 <?php endif; ?>
 
