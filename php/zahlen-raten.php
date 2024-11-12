@@ -29,6 +29,8 @@
     <?php if ($zahl < $zufallszahl): ?>
         <?php echo $section_beginn; ?>
         <div class="sectionHeader fail">Höher!</div>
+        <?php echo $section_ende; ?>
+        <?php echo $section_beginn; ?>
         <form action="zahlen-raten.php" method="get">
             <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
             <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
