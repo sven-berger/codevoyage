@@ -5,14 +5,15 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 ?>
 
 <?php echo $section_beginn; ?>
+
 <form action="" method="post">
     <label for="eingeloggt">Einloggen:</label>
     <input type="datetime-local" name="eingeloggt" 
-           value="<?php echo date('d.m.Y') . 'T00:00'; ?>" required><br>
+           value="<?php echo date('Y-m-d') . 'T00:00'; ?>" required><br>
 
     <label for="ausgeloggt">Ausgeloggen:</label>
     <input type="datetime-local" name="ausgeloggt" 
-           value="<?php echo date('d.m.Y') . 'T00:00'; ?>" required><br>
+           value="<?php echo date('Y-m-d') . 'T00:00'; ?>" required><br>
 
     <label for="ort">Ort:</label>
     <select name="ort" id="ort">
