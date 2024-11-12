@@ -21,6 +21,13 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 </form>
 <?php echo $section_ende; ?>
 
+
+<style>
+radio {
+    margin-bottom: 0 !important;
+}
+</style>
+
 <?php
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/footer/acp.footer.inc.php");
 ?>
