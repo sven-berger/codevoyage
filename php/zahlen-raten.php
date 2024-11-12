@@ -39,7 +39,6 @@
         <?php echo $section_ende; ?>
     <?php elseif ($zahl > $zufallszahl): ?>
         <?php echo $section_beginn; ?>
-        <?php echo $section_beginn; ?>
         <div class="sectionHeader fail">Niedriger!</div>
         <?php echo $section_ende; ?>
         <?php echo $section_beginn; ?>
