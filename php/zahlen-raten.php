@@ -5,11 +5,13 @@
 ?>
 
 <?php if (!isset($_GET['zahl'])): ?>
+    <?php echo $section_beginn; ?>
     <form action="zahlen-raten.php" method="get">
         <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
         <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
     <button type="submit">Eingabe abschicken</button>
     </form>
+    <?php echo $section_ende; ?>
 <?php endif; ?>
 
 <?php
@@ -25,30 +27,28 @@
         $zufallszahl = $_SESSION['zufallszahl'];
     ?>
     <?php if ($zahl < $zufallszahl): ?>
+        <?php echo $section_beginn; ?>
         <div class="sectionHeader fail">Höher!</div>
-        </div>
-        </section>
-        <section class="section">
-        <div class="sectionContent">
-            <form action="zahlen-raten.php" method="get">
-                <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
-                <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
-            <button type="submit">Eingabe abschicken</button>
-            </form>
-    <?php elseif ($zahl > $zufallszahl): ?>
-        <div class="sectionHeader fail">Niedriger!</div>
-        </div>
-        </section>
-        <section class="section">
-        <div class="sectionContent">
         <form action="zahlen-raten.php" method="get">
             <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
             <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
         <button type="submit">Eingabe abschicken</button>
+        </form>
+        <?php echo $section_ende; ?>
+    <?php elseif ($zahl > $zufallszahl): ?>
+        <?php echo $section_beginn; ?>
+        <div class="sectionHeader fail">Niedriger!</div>
+        <form action="zahlen-raten.php" method="get">
+            <label for="zahl">Bitte gib eine Zahl zwischen 1 - 100 ein:</label>
+            <input type="number" id="zahl" name="zahl" min="1" max="100" required>   
+        <button type="submit">Eingabe abschicken</button>
+        <?php echo $section_ende; ?>
     <?php else: ?>
+        <?php echo $section_beginn; ?>
         <div class="sectionHeader success">Glückwunsch, du hast die richtige Zahl geraten!</div><br>
         <?php unset($_SESSION['zufallszahl']); ?>
         <a href="zahlen-raten.php">Neues Spiel starten</a>
+        <?php echo $section_ende; ?>
     <?php endif; ?>
 <?php endif; ?>
 
