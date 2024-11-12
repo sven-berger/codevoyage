@@ -26,8 +26,8 @@
     <?php else: ?>
             <?php echo $section_beginn; ?>
             <strong><p class="fail">Leider nichts gewonnen, versuche es erneut.</p></strong>
-            <?php break; ?>
             <?php echo $section_ende; ?>
+            <?php break; ?>
     <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
