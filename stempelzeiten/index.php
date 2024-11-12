@@ -6,11 +6,11 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 <?php echo $section_beginn; ?>
 <form action="" method="post">
-    <label for="eingeloggt">Eingeloggt:</label>
+    <label for="eingeloggt">Einloggen:</label>
     <input type="datetime-local" name="eingeloggt" 
            value="<?php echo date('d.m.Y') . 'T00:00'; ?>" required><br>
 
-    <label for="ausgeloggt">Ausgeloggt:</label>
+    <label for="ausgeloggt">Ausgeloggen:</label>
     <input type="datetime-local" name="ausgeloggt" 
            value="<?php echo date('d.m.Y') . 'T00:00'; ?>" required><br>
 
