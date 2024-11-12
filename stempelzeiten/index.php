@@ -8,7 +8,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 <form action="" method="post">
     <label for="eingeloggt_datum">Einloggen Datum:</label>
-    <input type="date" name="eingeloggt_datum" value="<?php echo date('Y.m.d'); ?>" required><br>
+    <input type="date" name="eingeloggt_datum" value="<?php echo date('Y-m-d'); ?>" required><br>
 
     <label for="eingeloggt_zeit">Einloggen Uhrzeit:</label>
     <input type="time" name="eingeloggt_zeit" value="<?php echo date('H:i'); ?>" required><br>
