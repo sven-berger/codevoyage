@@ -7,13 +7,13 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 <?php echo $section_beginn; ?>
 
 <form action="" method="post">
-    <label for="eingeloggt">Einloggen:</label>
-    <input type="datetime-local" name="eingeloggt" 
-           value="<?php echo date('Y-m-d') . 'T00:00'; ?>" required><br>
+    <label for="eingeloggt_datum">Einloggen Datum:</label>
+    <input type="date" name="eingeloggt_datum" 
+           value="<?php echo date('d.m.Y'); ?>" required><br>
 
-    <label for="ausgeloggt">Ausgeloggen:</label>
-    <input type="datetime-local" name="ausgeloggt" 
-           value="<?php echo date('Y-m-d') . 'T00:00'; ?>" required><br>
+    <label for="eingeloggt_zeit">Einloggen Uhrzeit:</label>
+    <input type="time" name="eingeloggt_zeit" 
+           value="<?php echo date('H:i'); ?>" required><br>
 
     <label for="ort">Ort:</label>
     <select name="ort" id="ort">
@@ -24,6 +24,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
     <button type="submit">Hinzufügen</button>
     <button type="reset">Zurücksetzen</button>
 </form>
+
 
 <?php echo $section_ende; ?>
 
