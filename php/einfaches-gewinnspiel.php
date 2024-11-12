@@ -21,13 +21,15 @@
 <?php while ($eingabe !== $jackpot): ?>
     <?php $eingabe = (int)$_GET['eingabe']; ?>
     <?php if ($eingabe === $jackpot): ?>
-        <strong><p class="success">Herzlichen Glückwunsch, du hast gewonnen!</p></strong>
+        <?php echo $section_beginn; ?>
+        <div class="center success strong">Herzlichen Glückwunsch, du hast gewonnen!</div>
+        <?php echo $section_ende; ?>
         <?php break; ?>
     <?php else: ?>
-            <?php echo $section_beginn; ?>
-            <strong><p class="fail">Leider nichts gewonnen, versuche es erneut.</p></strong>
-            <?php echo $section_ende; ?>
-            <?php break; ?>
+        <?php echo $section_beginn; ?>
+            <div class="center fail strong">Leider nichts gewonnen, versuche es erneut.</div>
+        <?php echo $section_ende; ?>
+        <?php break; ?>
     <?php endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
