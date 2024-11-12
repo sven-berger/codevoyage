@@ -12,9 +12,10 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
     <label for="ausgeloggt">Ausgeloggt:</label>
     <input type="datetime-local" name="ausgeloggt" required><br>
 
-    <label for="standort">Ort:</label>
-    <input type="radio" name="ort" value="standort" required> Standort
-    <input type="radio" name="ort" value="homeoffice" required> Homeoffice
+    <select name="ort" id="ort">
+        <option value="Standort">Standort</option>
+        <option value="Homeoffice">Homeoffice</option>
+    </select>
 
     <button type="submit">Hinzufügen</button>
     <button type="reset">Zurücksetzen</button>
