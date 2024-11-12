@@ -16,9 +16,9 @@
 <?php if (isset($_GET['laenge'])): ?>
     <?php $laenge = intval($_GET['laenge']); ?>
     <?php if ($laenge < 1 || $laenge > 81): ?>
-        <?php echo $section_beginn; ?>
-        <?php die("Ungültige Länge. Bitte gib eine Zahl zwischen 1 und 81 ein."); ?>
-        <?php echo $section_ende; ?>
+        <?php
+            die("Ungültige Länge. Bitte gib eine Zahl zwischen 1 und 81 ein.");
+        ?>
     <?php else: ?>
         <?php
             $kleine_buchstaben = "abcdefghijklmnopqrstuvwxyz";
@@ -30,7 +30,7 @@
         ?>
         
         <?php echo $section_beginn; ?>
-        <div class="sectionHeader">Generiertes Passwort:</div>
+        <div class="sectionHeader" style="margin-bottom: 20px;">Generiertes Passwort:</div>
         <?php echo htmlspecialchars($passwort); ?>
         <?php echo $section_ende; ?>
     <?php endif; ?>
