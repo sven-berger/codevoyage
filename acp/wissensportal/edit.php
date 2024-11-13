@@ -54,8 +54,9 @@ try {
 ?>
 
 <form action="edit.php?id=<?php echo $id; ?>" method="post">
-    <label for="kategorie">Kategorie:</label>
-    <select name="kategorie_id" id="kategorie" class="wissensportal-kategorien">
+    <label for="kategorie"><h3 class="section-title">Kategorie</h3></label>
+    <?php echo $section_beginn; ?>
+    <select name="kategorie_id" id="kategorie" class="wissensportal-kategorien" required>
     <?php
     $kategorien = $connection->query("SELECT id, name FROM wissensportal_kategorien ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
     foreach ($kategorien as $kategorie) {
@@ -63,32 +64,49 @@ try {
     }
     ?>
     </select>
+    <?php echo $section_ende; ?>
+    <label for="title"><h3 class="section-title">Titel</h3></label>
+    <?php echo $section_beginn; ?>
+    <input type="text" name="title" required>
+    <?php echo $section_ende; ?>
 
-    <label for="title">Titel:</label>
-    <input type="text" name="title" value="<?php echo htmlspecialchars($snippet['title']); ?>" required><br>
+    <label for="url"><h3 class="section-title">URL</h3></label>
+    <?php echo $section_beginn; ?>
+    <input type="text" name="url" required>
+    <?php echo $section_ende; ?>
 
-    <label for="url">URL:</label>
-    <input type="text" name="url" value="<?php echo htmlspecialchars($snippet['url']); ?>" required><br>
+    <label for="description"><h3 class="section-title">Beschreibung</h3></label>
+    <?php echo $section_beginn; ?>
+    <textarea name="description"></textarea>
+    <?php echo $section_ende; ?>
 
-    <label for="description">Beschreibung:</label>
-    <textarea name="description"><?php echo htmlspecialchars($snippet['description']); ?></textarea><br>
+    <label for="php_snippet"><h3 class="section-title">PHP-Snippet</h3></label>
+    <?php echo $section_beginn; ?>
+    <textarea name="php_snippet"></textarea>
+    <?php echo $section_ende; ?>
 
-    <label for="php_snippet">PHP Snippet:</label>
-    <textarea name="php_snippet"><?php echo htmlspecialchars($snippet['php_snippet']); ?></textarea><br>
-    
-    <label for="php_snippet_alternativ">PHP Snippet (Alternative Syntax):</label>
-    <textarea name="php_snippet_alternativ"><?php echo htmlspecialchars($snippet['php_snippet_alternativ']); ?></textarea><br>
+    <label for="php_snippet"><h3 class="section-title">PHP-Snippet (Alternative Syntax)</h3></label>
+    <?php echo $section_beginn; ?>
+    <textarea name="php_snippet_alternativ"></textarea>
+    <?php echo $section_ende; ?>
 
-    <label for="python_snippet">Python Snippet:</label>
-    <textarea name="python_snippet"><?php echo htmlspecialchars($snippet['python_snippet']); ?></textarea><br>
+    <label for="python_snippet"><h3 class="section-title">Python Snippet</h3></label>
+    <?php echo $section_beginn; ?>
+    <textarea name="python_snippet"></textarea>
+    <?php echo $section_ende; ?>
 
-    <label for="javascript_snippet">JavaScript Snippet:</label>
-    <textarea name="javascript_snippet"><?php echo htmlspecialchars($snippet['javascript_snippet']); ?></textarea>
+    <label for="javascript_snippet"><h3 class="section-title">JavaScript Snippet Snippet</h3></label>
+    <?php echo $section_beginn; ?>
+    <textarea name="javascript_snippet"></textarea>
+    <?php echo $section_ende; ?>
 
-    <label for="mitteilung_snippet">Mitteilung:</label>
-    <textarea name="mitteilung_snippet"><?php echo htmlspecialchars($snippet['mitteilung_snippet']); ?></textarea>
-    
+    <label for="mitteilung_snippet"><h3 class="section-title">Mitteilung</h3></label>
+    <?php echo $section_beginn; ?>
+    <textarea name="mitteilung_snippet"></textarea>
+    <?php echo $section_ende; ?>
+
     <input type="submit" value="Speichern">
+    <input type="reset" value="Zurücksetzen">
 </form>
 
 <?php
