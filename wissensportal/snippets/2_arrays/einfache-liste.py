@@ -9,7 +9,10 @@ print(tiere[-1])
 #Das Vorletzte etc. ...
 print(tiere[-2])
 
-### Per Doppelpunkt entscheiden was VON - BIS rausgegriffen werden soll - Ohne Wert nach : bedeutet: Bis zum Ende. ###
+### 
+# Per Doppelpunkt entscheiden was VON - BIS rausgegriffen werden soll
+# Ohne Wert nach dem Doppelpunkt bedeutet: Bis zum Ende
+###
 
 ## Nashorn, Zebra, Esel
 print(tiere[-3:])
