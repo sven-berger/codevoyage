@@ -21,27 +21,42 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
     <input type="text" name="title" required><br>
 
     <label for="url"><h3 class="section-title">URL</h3></label>
-    <input type="text" name="url" required><br>
+    <?php echo $section_beginn; ?>
+    <input type="text" name="url" required>
+    <?php echo $section_ende; ?>
 
     <label for="description"><h3 class="section-title">Beschreibung</h3></label>
-    <textarea name="description"></textarea><br>
+    <?php echo $section_beginn; ?>
+    <textarea name="description"></textarea>
+    <?php echo $section_ende; ?>
 
     <label for="php_snippet"><h3 class="section-title">PHP-Snippet</h3></label>
-    <textarea name="php_snippet"></textarea><br>
+    <?php echo $section_beginn; ?>
+    <textarea name="php_snippet"></textarea>
+    <?php echo $section_ende; ?>
 
     <label for="php_snippet"><h3 class="section-title">PHP-Snippet (Alternative Syntax)</h3></label>
-    <textarea name="php_snippet_alternativ"></textarea><br>
+    <?php echo $section_beginn; ?>
+    <textarea name="php_snippet_alternativ"></textarea>
+    <?php echo $section_ende; ?>
 
     <label for="python_snippet"><h3 class="section-title">Python Snippet</h3></label>
-    <textarea name="python_snippet"></textarea><br>
+    <?php echo $section_beginn; ?>
+    <textarea name="python_snippet"></textarea>
+    <?php echo $section_ende; ?>
 
     <label for="javascript_snippet"><h3 class="section-title">JavaScript Snippet Snippet</h3></label>
-    <textarea name="javascript_snippet"></textarea><br>
+    <?php echo $section_beginn; ?>
+    <textarea name="javascript_snippet"></textarea>
+    <?php echo $section_ende; ?>
 
     <label for="mitteilung_snippet"><h3 class="section-title">Mitteilung</h3></label>
+    <?php echo $section_beginn; ?>
     <textarea name="mitteilung_snippet"></textarea>
+    <?php echo $section_ende; ?>
 
     <input type="submit" value="Speichern">
+    <input type="reset" value="Zurücksetzen">
 </form>
 
 <?php 
