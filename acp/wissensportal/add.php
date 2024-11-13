@@ -18,7 +18,9 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
     </select>
     <?php echo $section_ende; ?>
     <label for="title"><h3 class="section-title">Titel</h3></label>
-    <input type="text" name="title" required><br>
+    <?php echo $section_beginn; ?>
+    <input type="text" name="title" required>
+    <?php echo $section_ende; ?>
 
     <label for="url"><h3 class="section-title">URL</h3></label>
     <?php echo $section_beginn; ?>
