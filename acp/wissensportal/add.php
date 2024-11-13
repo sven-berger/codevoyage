@@ -6,7 +6,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 
 
 <form action="" method="post">
-    <label for="kategorie">Kategorie:</label>
+    <label for="kategorie"><h3 class="section-title">Kategorie</h3></label>
     <select name="kategorie_id" id="kategorie" class="wissensportal-kategorien" required>
     <?php
     $kategorien = $connection->query("SELECT id, name FROM wissensportal_kategorien ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
