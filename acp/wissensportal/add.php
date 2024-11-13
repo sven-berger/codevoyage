@@ -4,6 +4,7 @@ $pageTitle = 'Snippet hinzufügen';
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 ?>
 
+
 <form action="" method="post">
     <label for="kategorie">Kategorie:</label>
     <select name="kategorie_id" id="kategorie" class="wissensportal-kategorien" required>
@@ -24,7 +25,7 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
     <label for="description">Beschreibung:</label>
     <textarea name="description"></textarea><br>
 
-    <label for="php_snippet">PHP Snippet:</label>
+    <label for="php_snippet"><h3 class="section-title">PHP-Snippet</h3></label>
     <textarea name="php_snippet"></textarea><br>
 
     <label for="php_snippet">PHP Snippet (Alternative Syntax):</label>
@@ -68,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':python_snippet' => $python_snippet,
             ':javascript_snippet' => $javascript_snippet,
             ':mitteilung_snippet' => $mitteilung_snippet,
-            ':kategorie_id' => $kategorie_id // Hier den richtigen Parameter verwenden
+            ':kategorie_id' => $kategorie_id
         ]);
 
         header("Location: https://codevoyage.de/acp/wissensportal/index.php");
