@@ -16,28 +16,28 @@ require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
     ?>
     </select>
 
-    <label for="title">Titel:</label>
+    <label for="title"><h3 class="section-title">Titel</h3></label>
     <input type="text" name="title" required><br>
 
-    <label for="url">URL:</label>
+    <label for="url"><h3 class="section-title">URL</h3></label>
     <input type="text" name="url" required><br>
 
-    <label for="description">Beschreibung:</label>
+    <label for="description"><h3 class="section-title">Beschreibung</h3></label>
     <textarea name="description"></textarea><br>
 
     <label for="php_snippet"><h3 class="section-title">PHP-Snippet</h3></label>
     <textarea name="php_snippet"></textarea><br>
 
-    <label for="php_snippet">PHP Snippet (Alternative Syntax):</label>
+    <label for="php_snippet"><h3 class="section-title">PHP-Snippet (Alternative Syntax)</h3></label>
     <textarea name="php_snippet_alternativ"></textarea><br>
 
-    <label for="python_snippet">Python Snippet:</label>
+    <label for="python_snippet"><h3 class="section-title">Python Snippet</h3></label>
     <textarea name="python_snippet"></textarea><br>
 
-    <label for="javascript_snippet">JavaScript Snippet:</label>
+    <label for="javascript_snippet"><h3 class="section-title">JavaScript Snippet Snippet</h3></label>
     <textarea name="javascript_snippet"></textarea><br>
 
-    <label for="mitteilung_snippet">Mitteilung:</label>
+    <label for="mitteilung_snippet"><h3 class="section-title">Mitteilung</h3></label>
     <textarea name="mitteilung_snippet"></textarea>
 
     <input type="submit" value="Speichern">
