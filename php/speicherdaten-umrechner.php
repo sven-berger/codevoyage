@@ -4,6 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../layout/header/instance.header.inc.php");
 ?>
 
+<?php echo $section_beginn; ?>
 <form action="speicherdaten-umrechner.php" method="get" class="form-speicher">
     <label for="vorhandene_einheit">Bitte gib deine vorhandene Einheit an:</label>
     <input type="number" id="vorhandene_einheit" name="vorhandene_einheit" required>
@@ -33,10 +34,9 @@
     </select>
     <button type="submit">Eingabe abschicken</button>
 </form>
+<?php echo $section_ende; ?>
 
 <?php if (isset($_GET['vorhandene_einheit']) && isset($_GET['vorhandener_praefix']) && isset($_GET['gesuchter_praefix'])): ?>
-    </div>
-</section>
     <?php
         $umrechnung = [
             "B (Byte)" => 1,
@@ -56,11 +56,11 @@
         $zahl_in_bytes = $vorhandene_einheit * $umrechnung[$vorhandener_praefix];
         $ergebnis = $zahl_in_bytes / $umrechnung[$gesuchter_praefix];
     ?>
-
-    <section class="section">
-        <div class="sectionContent">
-            <div class="sectionHeader">Das Ergebnis der Umrechnung ist:</div>
-                <strong><?php echo $vorhandene_einheit . " " . $vorhandener_praefix ?></strong> entsprechen <strong><?php echo $ergebnis . " " . $gesuchter_praefix; ?></strong>
+    
+    <?php echo $section_beginn; ?>
+    <div class="sectionHeader">Das Ergebnis der Umrechnung ist:</div>
+        <strong><?php echo $vorhandene_einheit . " " . $vorhandener_praefix ?></strong> entsprechen <strong><?php echo $ergebnis . " " . $gesuchter_praefix; ?></strong>
+    <?php echo $section_ende; ?>
 <?php endif; ?>
 
 <?php
