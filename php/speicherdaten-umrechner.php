@@ -58,7 +58,7 @@
     ?>
     
     <?php echo $section_beginn; ?>
-    <div class="sectionHeader">Das Ergebnis der Umrechnung ist:</div>
+    <div class="sectionHeader">Das Ergebnis der Umrechnung ist:</div><br>
         <strong><?php echo $vorhandene_einheit . " " . $vorhandener_praefix ?></strong> entsprechen <strong><?php echo $ergebnis . " " . $gesuchter_praefix; ?></strong>
     <?php echo $section_ende; ?>
 <?php endif; ?>
