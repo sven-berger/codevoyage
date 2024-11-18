@@ -5,7 +5,7 @@
 ?>
 
 <?php echo $section_beginn; ?>
-<form action="speicherdaten-umrechner.php" method="get" class="form-speicher">
+<form action="speicherdaten-umrechner.php" method="POST" class="form-speicher">
     <label for="vorhandene_einheit">Bitte gib deine vorhandene Einheit an:</label>
     <input type="number" id="vorhandene_einheit" name="vorhandene_einheit" required>
     
@@ -36,7 +36,7 @@
 </form>
 <?php echo $section_ende; ?>
 
-<?php if (isset($_GET['vorhandene_einheit']) && isset($_GET['vorhandener_praefix']) && isset($_GET['gesuchter_praefix'])): ?>
+<?php if (isset($_POST['vorhandene_einheit']) && isset($_POST['vorhandener_praefix']) && isset($_POST['gesuchter_praefix'])): ?>
     <?php
         $umrechnung = [
             "B (Byte)" => 1,
@@ -49,9 +49,9 @@
             "GiB (Gibibyte)" => 1024 ** 3
         ];
 
-        $vorhandene_einheit = (int)$_GET['vorhandene_einheit'];
-        $vorhandener_praefix = $_GET['vorhandener_praefix'];
-        $gesuchter_praefix = $_GET['gesuchter_praefix'];
+        $vorhandene_einheit = (int)$_POST['vorhandene_einheit'];
+        $vorhandener_praefix = $_POST['vorhandener_praefix'];
+        $gesuchter_praefix = $_POST['gesuchter_praefix'];
 
         $zahl_in_bytes = $vorhandene_einheit * $umrechnung[$vorhandener_praefix];
         $ergebnis = $zahl_in_bytes / $umrechnung[$gesuchter_praefix];
