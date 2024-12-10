@@ -4,7 +4,7 @@
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 ?>
 
-<section class="section">
+<?php echo $section_beginn; ?>
     <form>
         <label for="pluginname">Pluginname</label>
             <input type="text" id="pluginname" name="pluginname">
@@ -17,7 +17,7 @@
                 <button type="reset">Zurücksetzen</button>
         </div>
     </form>
-</section>
+<?php echo $section_ende; ?>
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
