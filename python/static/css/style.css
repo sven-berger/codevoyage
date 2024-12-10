@@ -23,7 +23,7 @@ body {
 }
 
 body, a, a:hover, p {
-    font-family: Lato !important;
+    font-family: Arial, Helvetica, sans-serif !important;
     font-size: 14px !important;
 }
 
