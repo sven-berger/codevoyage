@@ -56,7 +56,7 @@
                         <th>Ziel</th>
                         <th>Aktion</th>
                     </tr>
-                    <?php foreach ($community_spiele_liste as $row) : ?>
+                    <?php foreach ($drittanbieter_woltab_liste as $row) : ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
