@@ -1,7 +1,6 @@
 <?php
     $bereich = 'Startseite';
     $pageTitle = 'Startseite von CodeVoyage.de';
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/layout/header/header.inc.php");
 ?>
 
 <?php echo $section_beginn; ?>
