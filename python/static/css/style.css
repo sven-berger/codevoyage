@@ -16,15 +16,14 @@ h3 {
 }
 
 body {
-    display: flex;
+    font-family: Arial, sans-serif;
     flex-direction: column;
     min-height: 100vh;
-
-}
-
-body, a, a:hover, p {
-    font-family: Arial, Helvetica, sans-serif !important;
-    font-size: 14px !important;
+    height: 100%;
+    margin: 0;
+    background: #ecf0f1 !important;
+    color: #333;
+    display: flex;
 }
 
 .main {
@@ -375,6 +374,69 @@ input, textarea {
 
 select#kategorie {
     margin: 20px 0;
+}
+
+.kleingedrucktes {
+    font-style: italic;
+    font-size: 11px;
+}
+
+.kleingedrucktes sup {
+    color: #d98600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background: #f5f5f5 !important;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+}
+
+table thead {
+    background-color: #f1f1f1;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+table th {
+    background-color: #96a5a7;
+    color: #fff;
+}
+
+table th:first-child {
+    border-top-left-radius: 12px;
+}
+
+table th:last-child {
+    border-top-right-radius: 12px;
+}
+
+table td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+table td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+.table_gesamtkosten {
+    text-align: center;
+}
+
+td.table_gesamtkosten {
+    color: #2980b9 !important;
+    font-weight: 500;
 }
 
 table {
