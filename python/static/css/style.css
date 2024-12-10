@@ -7,18 +7,24 @@ html, body {
     margin: 0;
 }
 
-.Rot { color: red; }
-.Gelb { color: #ffc048; }
-.Grün { color: green; }
-.Blau { color: blue; }
-.Spezial { color: black; }
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+}
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
-    font-size: 14px;
+
+}
+
+body, a, a:hover, p {
+    font-family: Lato !important;
+    font-size: 14px !important;
 }
 
 .main {
@@ -75,14 +81,14 @@ body {
 }
 
 p {
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 a, a:hover {
-    color: #2980b9;
-    font-weight: 500;
-    text-decoration: none;
+    color: #2980b9 !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
 }
 
 .ContentTitle {
@@ -639,4 +645,41 @@ dt {
 
 .button-action a {
     color: #fff !important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-1 {
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+}
+
+.col-md-2 {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}
+
+.col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+.col-md-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
 }
