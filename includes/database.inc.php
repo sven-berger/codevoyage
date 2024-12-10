@@ -32,6 +32,9 @@ $acp_sidebar_left_blog_liste = $connection->query($acp_sidebar_left_blog)->fetch
 $community_spiele = "SELECT * FROM `sidebar_left_community_spiele`";
 $community_spiele_liste = $connection->query($community_spiele)->fetchAll(PDO::FETCH_ASSOC);
 
+$drittanbieter_woltab = "SELECT * FROM `sidebar_left_drittanbieter_woltab`";
+$drittanbieter_woltab_liste = $connection->query($drittanbieter_woltab)->fetchAll(PDO::FETCH_ASSOC);
+
 // PHP //
 $eigene_werke = "SELECT * FROM `php_sidebar_left_eigene_werke`";
 $spielereien = "SELECT * FROM `php_sidebar_left_spielereien`";
@@ -70,7 +73,7 @@ try {
         $sql = "SELECT * FROM wissensportal WHERE kategorie_id = :kategorie_id";
         $stmt = $connection->prepare($sql);
         $stmt->execute([':kategorie_id' => $kategorie_id]);
-        $$variable_name = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $variable_name = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     $sql = "SELECT * FROM wissensportal";
