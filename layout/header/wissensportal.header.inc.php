@@ -8,12 +8,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <title><?php echo $pageTitle; ?></title>
 </head>
 
 <?php
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/database.inc.php");
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/functions.inc.php");
     $mariadbVersion = getMariaDBVersion($connection);
     require_once ($_SERVER['DOCUMENT_ROOT'] . "/../includes/var.inc.php");
 ?>
