@@ -45,12 +45,12 @@ $statement = $connection->query($alles_ausgeben);
 $ausgabe = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 // Statistik ausgeben
-$gezielt_ausgeben = "SELECT COUNT(*) AS produkt, SUM(preis) AS gesamtwert FROM `wbb-elite-rechnung`";
+$gezielt_ausgeben = "SELECT COUNT(*) AS produkt, SUM(preis) AS gesamtwert FROM `drittanbieter_wbb-elite-rechnung`";
 $statement = $connection->query($gezielt_ausgeben);
 $gezielte_ausgaben = $statement->fetch(PDO::FETCH_ASSOC);
 
 // Wertvollste Produkte ausgeben
-$wertvollste_produkte = "SELECT pluginname, preis FROM `wbb-elite-rechnung` ORDER BY preis DESC LIMIT 5";
+$wertvollste_produkte = "SELECT pluginname, preis FROM `drittanbieter_wbb-elite-rechnung` ORDER BY preis DESC LIMIT 5";
 $statement = $connection->query($wertvollste_produkte);
 $wertvollste_ausgaben = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
