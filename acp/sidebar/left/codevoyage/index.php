@@ -49,14 +49,14 @@
         </ul>
     </div>     
         <?php try { ?>
-            <?php if (!empty($drittanbieter_woltab_liste)) : ?>
+            <?php if (!empty($drittanbieter_woltlab_liste)) : ?>
                 <table>
                     <tr>
                         <th>URL</th>
                         <th>Ziel</th>
                         <th>Aktion</th>
                     </tr>
-                    <?php foreach ($drittanbieter_woltab_liste as $row) : ?>
+                    <?php foreach ($drittanbieter_woltlab_liste as $row) : ?>
                         <tr>
                             <td><?php echo htmlspecialchars($row['url']); ?></td>
                             <td><?php echo htmlspecialchars($row['ziel']); ?></td>
