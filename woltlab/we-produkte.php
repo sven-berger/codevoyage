@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $preis = $_POST['preis'];
 
     try {
-        $sql = "INSERT INTO `wbb-elite-rechnung` (pluginname, url, preis) VALUES (:pluginname`, :url, :preis)";
+        $sql = "INSERT INTO `drittanbieter_wbb-elite-rechnung` (pluginname, url, preis) VALUES (:pluginname`, :url, :preis)";
         $statement = $connection->prepare($sql);
         $statement->bindParam(':pluginname', $erweiterung, PDO::PARAM_STR);
         $statement->bindParam(':url', $beinhaltet, PDO::PARAM_STR);
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <?php
 // Alle Produkte abrufen
-$alles_ausgeben = "SELECT * FROM `wbb-elite-rechnung`";
+$alles_ausgeben = "SELECT * FROM `drittanbieter_wbb-elite-rechnung`";
 $statement = $connection->query($alles_ausgeben);
 $ausgabe = $statement->fetchAll(PDO::FETCH_ASSOC);
 
