@@ -16,7 +16,7 @@ h3 {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Arial, Helvetica, sans-serif;
     flex-direction: column;
     min-height: 100vh;
     height: 100%;
@@ -24,6 +24,7 @@ body {
     background: #ecf0f1 !important;
     color: #333;
     display: flex;
+    font-size: 14px !important;
 }
 
 .main {
