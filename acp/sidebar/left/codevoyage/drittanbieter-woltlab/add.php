@@ -43,7 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $prepare->bindParam(':ziel', $ziel, PDO::PARAM_STR);
             $prepare->execute();
 
-            echo 'Menüpunkt erfolgreich eingetragen.';
             header("Location: https://codevoyage.de/acp/sidebar/left/codevoyage/index.php");
             exit();
         } else {
