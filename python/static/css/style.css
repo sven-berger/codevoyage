@@ -439,24 +439,6 @@ td.table_gesamtkosten {
     font-weight: 500;
 }
 
-table {
-    width: 100% !important;
-    
-    th {
-        text-align: left !important;
-        border-bottom: 1px solid black;
-        padding-bottom: 5px;
-    }
-    
-    td {
-        padding: 5px;
-    }
-
-    .table-desc {
-        padding-bottom: 100px;
-    }
-}
-
 @media (max-width: 768px) {
     .main {
         flex-direction: column;
