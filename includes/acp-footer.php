@@ -50,8 +50,3 @@ if (isset($_GET['page'])) {
 </body>
 </html>
 <?php ob_end_flush(); ?>
-<style>
-    .gelistetAufGitHub {
-        padding-top: 100px;
-    }
-</style>
