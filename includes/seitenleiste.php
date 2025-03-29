@@ -12,20 +12,18 @@
     </ul>
 
     <div class="sidebar-end">  
-    <?php
-        if (!isset($_SESSION['benutzername'])) {
+    <?php if (!isset($_SESSION['benutzername'])): ?>
+        <?php
             include("lib/forms/Login.form.php");
             if (isset ($_POST['submit'])) {
                 require("lib/login.lib.php");
             }
-        }
         ?>
-
-        <?php if (isset($_SESSION['benutzername'])): ?>
+    <?php else: ?>
         <ul>
             <li><a href="index.php?page=logout">Ausloggen</a></li>
             <li><a href="../acp/index.php">Administrationsbereich</a></li>
         </ul>
-        <?php endif; ?>
+    <?php endif; ?>
     </div>
 </div>
