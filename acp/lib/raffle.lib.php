@@ -4,7 +4,7 @@
 
     if (isset($_POST['gewinnerzahl']) && isset($_POST['zeitraumVon']) && isset($_POST['zeitraumBis'])) {
         $gewinnerzahl = (int)$_POST['gewinnerzahl'];
-        $zeitraumVon = $_POST['zeitraumVon']; // Kein htmlspecialchars nötig für Datum
+        $zeitraumVon = $_POST['zeitraumVon'];
         $zeitraumBis = $_POST['zeitraumBis'];
 
         $gewinnspiel = new Gewinnspiel($gewinnerzahl, $zeitraumVon, $zeitraumBis);
