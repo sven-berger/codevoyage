@@ -1,6 +1,5 @@
 <?php if (isset($_GET['url'])): ?>
     <?php
-        ob_start(); // Ausgabe puffern
         $url = $_GET['url'];
         
         // SQL-Abfrage
@@ -52,4 +51,3 @@
         ?>
     <?php endif; ?>
 <?php endif; ?>
-<?php ob_end_flush(); ?>
