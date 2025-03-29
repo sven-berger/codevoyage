@@ -594,13 +594,15 @@ ul.gitHub {
     margin-right: 5px;
 }
 
+/*
 .gitHub li::after {
-  /*  content: ' | '; */
+
+}
+.gitHub li:last-child::after {
+    display: none;
 }
 
-.gitHub li:last-child::after {
-/* display: none; */
-}
+*/
 
 .gitHub-Key {
     font-weight: 600;
