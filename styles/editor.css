@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, monospace;
+    font-size: 14px !important;
+    padding: 10px;
+}
+
+p, a, a:hover {
+    font-size: 14px !important;
+    color: #666;
+    padding: 0 !important;
+    text-decoration: none;
+}
+
+blockquote {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    padding: 20px;
+    margin: 0;
+    font-style: italic;
+    font-weight: bolder !important;
+}
+
+img {
+    margin: 0 20px 10px 0;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+blockquote p:before {
+    content: '\27A5';
+    margin-right: 5px;
+}
+
+.mce-content-body .mce-item-anchor:empty {
+    margin-right: 5px;
+}
+
+/* Details */
+details {
+    border-top: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f7f1e3;
+}
+
+details p {
+    padding: 12px !important;
+}
+
+summary {
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    background-color: #2980b9 !important;
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+}
+
+ul, ol {
+    padding: 0 0 0 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.tox-collection__item-label p,
+.tox-collection__item-label h1,
+.tox-collection__item-label h2,
+.tox-collection__item-label h3,
+.tox-collection__item-label h4, 
+.tox-collection__item-label h5, 
+.tox-collection__item-label h6 {
+    font-size: 14px !important;
+}
+
+.tox-collection__item-label p:hover {
+    color: #000;
+}
+
+.tox-tinymce {
+    margin: 10px 0;
+}
+
+/** Aktueller Pfad **/
+.tox .tox-statusbar__path {
+    display: none !important;
+}
+
+/** Copyright **/
+.tox-statusbar__branding {
+    display: none !important;
+}
+
+/** Größe anpassen **/
+.tox-statusbar__resize-handle {
+    display: none !important;
+}
+
+h1 {
+    margin-top: 0;
+    margin-right: 20px;
+    padding-bottom: 1px;
+    font-size: 20px;
+    border-bottom: 1px solid #d98600;
+    display: flex;
+}
+
+
+h6 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d98600;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 30px 0;
+}
+
+.section h6::before,
+.section h6::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #D8DAE1;
+    margin: 0 10px;
+}
