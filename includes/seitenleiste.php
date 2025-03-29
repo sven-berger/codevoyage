@@ -14,8 +14,8 @@
     <div class="sidebar-end">  
     <?php if (!isset($_SESSION['benutzername'])): ?>
         <?php
-            include("lib/forms/Login.form.php");
-            if (isset ($_POST['submit'])) {
+            include("lib/forms/login.form.php");
+            if (isset($_POST['benutzername']) && isset($_POST['passwort'])) {
                 require("lib/login.lib.php");
             }
         ?>
