@@ -14,7 +14,7 @@
         $benutzergruppen = $statement->fetchAll(PDO::FETCH_ASSOC);
     
     
-        require_once 'lib/class/User/UserEdit.class.php';
-        require_once 'lib/forms/User/UserEdit.form.php';
+        require_once 'lib/class/user/useredit.class.php';
+        require_once 'lib/forms/user/useredit.form.php';
     ?>
 <?php endif; ?>

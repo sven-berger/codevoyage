@@ -2,7 +2,7 @@
     $sql = "SELECT * FROM bankkonten";
     $statement = $connection->query($sql);
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/lib/forms/Sepa.form.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/lib/forms/sepa.form.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $absendekonto = $_POST['absendekonto'];

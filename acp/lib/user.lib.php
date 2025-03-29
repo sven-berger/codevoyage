@@ -1,5 +1,5 @@
 <?php
-    require_once "$_SERVER[DOCUMENT_ROOT]" . "/acp/lib/class/User/UserList.class.php";
+    require_once "$_SERVER[DOCUMENT_ROOT]" . "/acp/lib/class/user/userlist.class.php";
     $userList = new UserList($connection);
     $benutzer = $userList->getData();
 ?>
