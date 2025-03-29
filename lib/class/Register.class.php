@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['submit'])) {
+if (!empty($_POST['benutzername']) && !empty($_POST['passwort']) && !empty($_POST['passwort-wdh'])) {
     class Registrieren {
         private $benutzername;
         private $passwort;
@@ -17,7 +17,6 @@ if (isset($_POST['submit'])) {
 
             if ($result) {
                 echo "Benutzername bereits vergeben.";
-                header("refresh:3; url=index.php?page=registrieren");
                 exit;
             }
         }
@@ -25,7 +24,6 @@ if (isset($_POST['submit'])) {
         public function gleichesPasswort($passwort_wdh) {
             if ($this->passwort !== $passwort_wdh) {
                 echo "Die Passwörter sind nicht identisch.";
-                header("refresh:3; url=index.php?page=registrieren");
                 exit;
             }
         }
@@ -41,7 +39,8 @@ if (isset($_POST['submit'])) {
             $statement->bindParam(":passwort", $passwort_hash);
 
             if ($statement->execute()) {
-                echo "Registrierung erfolgreich!";
+                header("Location: index.php?page=register");
+                exit();
             } else {
                 echo "Fehler bei der Registrierung!";
             }
