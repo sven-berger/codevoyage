@@ -13,6 +13,7 @@
     <ul>
         <li><a href="../acp/index.php?page=sepa">Überweisung tätigen</a></li>
         <li><a href="../acp/index.php?page=admissions">Eintrittspreise verwalten</a></li>
+        <li><a href="../acp/index.php?page=raffle">Gewinnspiele verwalten</a></li>
     </ul>
     <div class="sidebar-end">  
         <?php if (isset($_SESSION['benutzername'])): ?>
