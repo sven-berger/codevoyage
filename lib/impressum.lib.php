@@ -1,6 +1,6 @@
 <?php
-$sql = "SELECT * FROM pages WHERE url = 'impressum'";
-$result = $connection->query($sql);
+    $sql = "SELECT * FROM pages WHERE url = 'impressum'";
+    $result = $connection->query($sql);
 ?>
 
 <?php foreach ($result as $row): ?>

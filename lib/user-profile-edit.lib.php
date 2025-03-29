@@ -1,7 +1,5 @@
 <?php if (isset($_SESSION['benutzername']) && isset($_GET['id'])): ?>
     <?php 
-        // OP für Header-Injection
-        ob_start();
         $id = $_GET['id'];
 
         $sql = "SELECT * FROM benutzer WHERE id = :id";
@@ -28,7 +26,5 @@
                 exit;
             }
         }
-
-        ob_end_flush(); 
     ?>
 <?php endif; ?>
