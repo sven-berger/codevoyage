@@ -5,7 +5,7 @@
     <label for="endzahl">Endzahl</label>
     <input type="number" id="endzahl" name="endzahl" required>
 
-    <label for="schrittweise">Schrtittweise (Optional)</label>
+    <label for="schrittweise">Schrittweise (Optional)</label>
     <input type="number" id="schrittweise" name="schrittweise">
 
     <button type="submit">Abschicken</button>
