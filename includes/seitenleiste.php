@@ -3,6 +3,7 @@
     <ul>
         <li><a href="index.php?page=zahlen-raten">Zahlen raten</a></li>
         <li><a href="index.php?page=mini-taschenrechner">Mini-Taschenrechner</a></li>
+        <li><a href="index.php?page=raffle">Mini-Gewinnspiel</a></li>
         <li><a href="index.php?page=bankaccounts">Bankkonten</a></li>
         <li><a href="index.php?page=stadtliste">Stadtliste</a></li>
     </ul>
