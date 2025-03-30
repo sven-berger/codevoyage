@@ -5,7 +5,7 @@
     <label for="endzahl">Endzahl</label>
     <input type="number" id="endzahl" name="endzahl" required>
 
-    <label for="schrittweise">Schrtittweise</label>
+    <label for="schrittweise">Schrtittweise (Optional)</label>
     <input type="number" id="schrittweise" name="schrittweise">
 
     <button type="submit">Abschicken</button>
@@ -16,9 +16,9 @@
         $beginnerzahl = (int)$_POST['beginnerzahl'];
         $schrittweise = isset($_POST['schrittweise']) && $_POST['schrittweise'] > 0 ? (int)$_POST['schrittweise'] : 1;
         $endzahl = (int)$_POST['endzahl'];
-
-        for ($i = $beginnerzahl; $i <= $endzahl; $i += $schrittweise) {
-            echo $i . "<br>";
-        }
     ?>
+    
+    <?php for ($i = $beginnerzahl; $i <= $endzahl; $i += $schrittweise): ?>
+        <pre><code class="language-markdown"><?= $i; ?></code></pre>
+    <?php endfor; ?>
 <?php endif; ?>
