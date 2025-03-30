@@ -11,17 +11,14 @@
         <button type="submit">Abschicken</button>
     </form>
 
-    <?php if (isset($_POST['beginnerzahl']) && isset($_POST['endzahl']) && isset($_POST['schrittweise'])): ?>
-        <?php
-            $beginnerzahl = (int)$_POST['beginnerzahl'];
-            $endzahl = (int)$_POST['endzahl'];
-            $schrittweise = (int)$_POST['schrittweise'];
-            $schrittweise = isset($_POST['schrittweise']) && $_POST['schrittweise'] > 0 ? (int)$_POST['schrittweise'] : 1;
-            
-            $zahlen = range($beginnerzahl, $endzahl, $schrittweise);
-            foreach ($zahlen as $zahl) {
-                echo $zahl . "<br>";
-            }
-            
-        ?>
-    <?php endif; ?>
+    <?php if (isset($_POST['beginnerzahl']) && isset($_POST['endzahl'])): ?>
+    <?php
+        $beginnerzahl = (int)$_POST['beginnerzahl'];
+        $schrittweise = isset($_POST['schrittweise']) && $_POST['schrittweise'] > 0 ? (int)$_POST['schrittweise'] : 1;
+        $endzahl = (int)$_POST['endzahl'];
+
+        for ($i = $beginnerzahl; $i <= $endzahl; $i += $schrittweise) {
+            echo $i . "<br>";
+        }
+    ?>
+<?php endif; ?>
