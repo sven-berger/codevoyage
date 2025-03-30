@@ -3,6 +3,7 @@
 ?>
 
 <pre class="language-html"><code>&lt;!-- TinyMCE-Editor einbinden --&gt;
+&lt;script src="../assets/tinymce/tinymce.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 tinymce.init({
     selector: 'textarea',
@@ -20,7 +21,4 @@ tinymce.init({
     fontsize_formats: "10pt 12pt 14pt 16pt 18pt 24pt 36pt"
 });
 &lt;/script&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-&lt;?php ob_end_flush(); ?&gt;</code></pre>
+</code></pre>

@@ -67,6 +67,7 @@ tinymce.init({
     fontsize_formats: "10pt 12pt 14pt 16pt 18pt 24pt 36pt"
 });
 </script>
+
 </body>
 </html>
 <?php ob_end_flush(); ?>
