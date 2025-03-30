@@ -7,6 +7,11 @@
         <li><a href="index.php?page=bankaccounts">Bankkonten</a></li>
         <li><a href="index.php?page=stadtliste">Stadtliste</a></li>
     </ul>
+    <h3>Spielerein</h3>
+    <ul>
+        <li><a href="index.php?page=text-ausgeben">Text ausgeben (In einer Schleife)</a></li>
+        <li><a href="index.php?page=zahlen-ausgeben">Zahlen ausgeben (In einer Schleife)</a></li>
+    </ul>
     <h3>Sonstiges</h3>
     <ul>
         <li><a href="index.php?page=einbindung-tinymce">Einbindung: TinyMCE Editor</a></li>
