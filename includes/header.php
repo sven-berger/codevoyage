@@ -28,35 +28,8 @@
     <link rel="stylesheet" href="../styles/mobile.css">
 </head>
 
-<!-- TinyMCE-Editor einbinden -->
-<script src="../assets/tinymce/tinymce.min.js"></script>
-<script>
-tinymce.init({
-    selector: 'textarea',
-    license_key: 'gpl',
-    content_css:
-    [
-        '../assets/highlightjs/styles/default.min.css',
-        '../styles/editor.css'
-    ],
-    menubar: false,
-    language: 'de',
-    language_url: '../assets/tinymce/langs/de.js',
-    plugins: 'code table lists fullscreen wordcount link image autosave advlist codesample preview',
-    toolbar: 'code undo redo | bold italic | blocks | link image codesample table blockquote | bullist numlist | alignleft aligncenter alignright removeformat preview',
-    fontsize_formats: "10pt 12pt 14pt 16pt 18pt 24pt 36pt"
-});
-</script>
-
-<?php 
-    $section_beginn = "<div class='section'>";
-    $section_ende = "</div>";
-?>
-
 <body>
-<div class="container">
-<?php require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/seitenleiste.php"); ?>
-
-
-<div class="main-content">
-<?php require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/navigation.php"); ?>
+    <div class="container">
+        <?php require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/seitenleiste.php"); ?>
+        <div class="main-content">
+        <?php require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/navigation.php"); ?>
