@@ -24,6 +24,8 @@
     <script src="https://cdn.tiny.cloud/1/17ln2z2xo77y880zmvruipp07u32wabjpbchzslj2f6jve12/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
+<main class="content">
+    <h1 class="header">3 Sprachen in 1 Datei - Ein Beispiel für HTML, CSS, PHP, JavaScript und MySQL</h1>
 
     <h3 class="html">
         Hallo HTML
@@ -158,8 +160,32 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        margin: 20px;
+        background-color: darkolivegreen;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 167vh;
+        font-size: 14px;
     }
+
+    .content {
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ccc;
+    }
+
+    .header {
+        color: #2c3e50;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #2c3e50;
+        margin-bottom: 40px;
+    }
+
     h3.html {
         margin-bottom: 20px;
         color: #e44d26;
@@ -282,5 +308,6 @@
     }
 </style>
 
+</main>
 </body>
 </html>
