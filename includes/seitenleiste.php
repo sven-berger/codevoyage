@@ -5,7 +5,7 @@
         <li><a href="index.php?page=mini-taschenrechner">Mini-Taschenrechner</a></li>
         <li><a href="index.php?page=raffle">Mini-Gewinnspiel</a></li>
         <li><a href="index.php?page=bankaccounts">Bankkonten</a></li>
-        <li><a href="index.php?page=stadtliste">Stadtliste</a></li>
+        <li><a href="index.php?page=ortsliste">Ortsliste</a></li>
     </ul>
     <h3>Spielerein</h3>
     <ul>
