@@ -1,0 +1,45 @@
+body {
+  background-color: #fff !important;
+  font-family: Roboto !important;
+  font-size: 14px !important;
+  padding: 20px;
+  background-image: url('../media/body.png');
+}
+
+p, a, a:hover {
+  font-size: 15px !important;
+  padding: 0 !important;
+  text-decoration: none;
+}
+
+blockquote {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fcfcfc;
+  padding: 20px;
+  margin: 0;
+  font-style: italic;
+}
+
+blockquote p:before {
+  content: '\27A5';
+  margin-right: 5px;
+}
+
+img {
+  margin: 0 20px 10px 0;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+.mce-content-body .mce-item-anchor:empty {
+  margin-right: 5px;
+}
+
+ul, ol {
+  padding: 0 0 0 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}

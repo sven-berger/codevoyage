@@ -1,10 +1,11 @@
 /media/
 /assets/
-.idea/workspace.xml
-.idea/php.xml
-.idea/inspectionProfiles/Project_Default.xml
-.idea/vcs.xml
+
+web-archive/media/
+web-archive/assets/
+
+/.idea/
+/.vscode/
 
 /includes/database-connect.php
-
-
+/web-archive/includes/database-connect.php

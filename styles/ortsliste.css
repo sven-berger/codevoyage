@@ -1,0 +1,22 @@
+/* 
+.buchstaben-auflistung {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 10vh;
+}
+
+ul.buchstaben-auflistung {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+
+
+.buchstaben-auflistung li a {
+    color: white;
+    text-decoration: none;
+}
+    */

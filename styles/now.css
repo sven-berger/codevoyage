@@ -1,0 +1,32 @@
+li.now-tag:before {
+    content: '\f783';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 600;
+    color: #ccc;
+}
+
+.now-tag {
+    margin-left: 0 !important;
+}
+
+li.now-datum:before {
+    content: '\f073';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 600;
+    color: #ccc;
+}
+
+li.now-uhrzeit:before {
+    content: '\f017';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 600;
+    color: #ccc;
+} 
+
+li.now-benutzer:before {
+    content: '\f007';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 600;
+    color: #ccc;
+
+}

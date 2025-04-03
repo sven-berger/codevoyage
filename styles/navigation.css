@@ -1,0 +1,27 @@
+.nav {
+    background: #2c3e50;
+    padding: 10px 0 0 0 !important;
+    border-radius: 0.5rem;
+}
+
+.nav .nav-link {
+    display: inline-block !important;
+}
+
+.menu, .now-box {
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.nav-item span, .nav-item a {
+    color: white !important;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    color: #3498db !important;
+}
+
+.nav1 h6 {
+    color: khaki !important;
+}

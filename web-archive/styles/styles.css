@@ -1,0 +1,615 @@
+body {  
+    margin: 0;  
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    background: #ecf0f1 !important;
+    color: #333;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 90vh;
+    font-size: 14px !important;
+    margin-top: 60px;
+}
+
+.legend {
+    background-color: #f7f1e3;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 14px !important;
+}
+
+/* Impressum */
+.impressum {
+    margin: 20px 0;
+}
+
+.impressum p {
+    margin: 0;
+}
+
+.impressum-kategorie {
+    font-weight: bold;
+    margin: 10px 0 !important;
+}
+
+/* Inhalt */
+.content {
+    margin-top: 20px;
+}
+        
+h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+h4 {
+    font-size: 14px !important;
+}
+        
+.content h2 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc !important;
+}
+
+.stadtanzahl {
+    margin: 20px 0;
+    border-radius: 8px;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+p, a, a:hover {
+    font-size: 14px !important;
+    color: #666;
+    padding: 0 !important;
+    text-decoration: none;
+}
+
+/* Button */
+span.button, a.button, .button, button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button a, button a:hover {
+    color: #ecf0f1;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.button-1, .button-2 {
+    margin-right: 8px;
+}
+
+.button-2, button[type="reset"] {
+    padding: 10px 20px;
+    border: none;
+    margin-top: 10px;
+    background-color: darkorange;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="button"].button-2:hover, button[type="reset"]:hover {
+    background-color: #e67e22;
+}
+
+.button-3 {
+    padding: 10px 20px;
+    border: none;
+    margin-top: 10px;
+    background-color: #c0392b;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="button"].button-3:hover {
+    background-color: brown;
+}
+
+/* Container */       
+.container {  
+    display: flex;
+    width: 100%;  
+    max-width: 2000px;  
+    min-height: 60vh;  
+    background-color: #ffffff;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    border-radius: 16px;  
+    overflow: hidden;
+    max-height: -webkit-fill-available;
+} 
+        
+/* Sidebar */  
+.sidebar {  
+    width: 20%;  
+    background-color: #2c3e50;  
+    color: #ecf0f1;  
+    padding: 20px;
+    position: relative;
+    padding-bottom: 20px 20px 50px 20px; /* Platz für .sidebar-end */  
+    position: relative;
+}
+
+.sidebar h2 {  
+    font-size: 1.5rem;  
+    margin-bottom: 1rem;  
+}  
+
+.sidebar h3 {  
+    font-size: 14px !important;  
+    margin-bottom: 1rem;
+    color: khaki !important;
+}  
+
+.sidebar ul {  
+    list-style: none;  
+    padding: 0;  
+}  
+
+.sidebar ul li {  
+    margin-bottom: 0.5rem;  
+}  
+
+.sidebar ul li a {  
+    color: #ecf0f1;  
+    text-decoration: none;  
+    transition: color 0.3s ease;  
+}  
+
+.sidebar ul li a:hover {  
+    color: #3498db;  
+} 
+
+.sidebar-end {
+    bottom: 0;
+    position: absolute;
+}
+
+.form-login {
+    display: block !important;
+}
+
+.form-login input:first-child {
+    margin-right: 5px;
+}
+
+.now-box {
+    margin-left: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.now-box ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.now-box li {
+    margin-right: 50px;
+}
+
+li.now-tag:before {
+    content: '\f783';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 600;
+    margin-right: 7px;
+    color: #ccc;
+}
+
+li.now-datum:before {
+    content: '\f073';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 600;
+    margin-right: 7px;
+    color: #ccc;
+}
+
+li.now-uhrzeit:before {
+    content: '\f017';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 600;
+    margin-right: 7px;
+    color: #ccc;
+}    
+
+/* Blockzitat */
+blockquote {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    padding: 20px;
+    margin: 0;
+    font-style: italic;
+    font-weight: bolder !important;
+}
+
+blockquote p:before {
+    content: '➥';
+    margin-right: 5px;
+}
+       
+/* Hauptinhalt */
+.main-content {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+/* Seitenfunktionen */
+.page-function {
+    margin-top: auto;
+    display: flex;
+    justify-content: end;
+}
+
+.page-function ul {
+    list-style-type: none;
+    padding: 0;
+}
+        
+/* Menüleiste */
+.navbar {
+    background-color: #2c3e50;
+    color: #fff;
+    padding-right: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+        
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+        
+.navbar a:hover {
+    color: #a4d6d6;
+}
+        
+/* Tabelle */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #f7f1e3 !important;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px 10px 10px 20px;
+    text-align: left;
+}
+
+table th {
+    background-color: aliceblue;
+    color: dimgrey !important;
+    text-align: left;
+    padding-bottom: 1em;
+}
+
+table th:first-child {
+    border-top-left-radius: 12px;
+}
+
+table th:last-child {
+    border-top-right-radius: 12px;
+}
+
+table, tr {
+    border: 0 !important;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+table td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+table td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+/* Formular */
+form {
+    margin: 20px 0;
+    border-collapse: collapse;
+    display: grid;
+}
+
+.form-userprofile {
+    margin-bottom: 0 !important;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+select, input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #eee;
+    margin: 10px 0;
+}
+
+/* Sektion */
+.section h1 {
+    margin-top: 0;
+    margin-right: 20px;
+    padding-bottom: 1px;
+    font-size: 20px;
+    border-bottom: 1px solid #d98600;
+    display: flex;
+}
+
+.section h3 {
+    font-size: 16px;
+}
+
+.sectionHeader {
+    margin: 20px 0;
+    color: #d98600;
+    border-bottom: 1px solid #D8DAE1;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.section-title {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d98600;
+    font-weight: lighter;
+    font-size: 18px;
+    margin: 30px 0;
+}
+
+.section-title::before,
+.section-title::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #D8DAE1;
+    margin: 0 10px;
+}
+
+.section-second-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.section img {
+    margin: 0 20px 10px 0;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+/* Bootstrap Grid */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.col-md-1 {
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+}
+
+.col-md-2 {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}
+
+.col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-md-4 {
+    flex: auto;
+    max-width: 33.333333%;
+    height: auto;
+
+}
+
+.col-md-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+}
+
+.col-md-6 {
+    flex: 1;
+    flex-direction: column;
+    height: auto;
+}
+
+.row-title {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d98600;
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+.row-title::before,
+.row-title::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #D8DAE1;
+    margin: 0 10px;
+}
+
+/* Details */
+details {
+    border-top: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f7f1e3;
+}
+
+details p {
+    padding: 12px !important;
+}
+
+summary {
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    background-color: #2980b9 !important;
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+}
+
+ul, ol {
+    padding: 0 0 0 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.success {
+    color: green !important;
+}
+
+.fail {
+    color: darkred !important;
+}
+
+.useroptions ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: end;
+}
+
+.useroptions li:first-child {
+    margin-right: 20px;
+}
+
+.user-details {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.user-details:nth-child(2) {
+    margin-left: 10px;
+}
+
+.user-details-personal {
+    margin-left: 0 !important;
+}
+
+.user-desc {
+    margin-bottom: 20px;
+}
+
+.buchstaben-auflistung {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Inhalt mittig platziert */
+    height: 10vh;
+}
+
+ul.buchstaben-auflistung {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.buchstaben-auflistung li {
+    margin: 0 10px;
+}
+
+a.button {
+    padding: 5px !important;
+    font-weight: bold;
+}
+
+.gelistetAufGitHub .sectionHeader {
+    margin: 0 !important;
+}
+
+.gelistetAufGitHub {
+    margin-top: auto;
+    padding-top: 100px;
+} 
+
+ul.gitHub {
+    list-style: none;
+    padding: 0;
+}
+
+.gitHub li {
+    margin-right: 5px;
+}
+
+/*
+.gitHub li::after {
+
+}
+.gitHub li:last-child::after {
+    display: none;
+}
+
+*/
+
+.gitHub-Key {
+    font-weight: 600;
+    color: #c0392b;
+}
+
+.gitHub-Value a {
+    color: #155724;
+    font-weight: 600;
+}

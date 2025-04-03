@@ -11,9 +11,9 @@
             $buchstaben[] = chr($x);
         }
 
-        echo "<ul class='list-unstyled d-flex justify-content-center my-2 ab'>";
+        echo "<ul class='buchstaben-auflistung'>";
         foreach ($buchstaben as $zeichen) {
-            echo "<li class='nav-item p-2 round rounded-3'><a href='index.php?page=ortsliste&buchstabe=" . $zeichen . "' class='button'>" . $zeichen . "</a></li>"; 
+            echo "<li><a href='index.php?page=ortsliste&buchstabe=" . $zeichen . "' class='button'>" . $zeichen . "</a></li>"; 
         }
         echo "</ul>";
     }
@@ -26,26 +26,26 @@
         $orte = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         if ($orte) {
-            echo "<div class='table-responsive'>";
-            echo "<table class='table'>";
+            echo "<table>";
             echo "<thead>";
             echo "<tr>";
-            echo "<th class='p-3'>Stadt</th>";
-            echo "<th class='p-3'Kreis</th>";
-            echo "<th class='p-3'>Bundesland</th>";
+            echo "<th>Stadt</th>";
+            echo "<th>Kreis</th>";
+            echo "<th>Bundesland</th>";
             echo "</tr>";
             echo "</thead>";
-            echo " <tbody>";
+            echo "<tbody>";
+
             foreach ($orte as $ort) {
                 echo "<tr>";
-                echo "<td class='p-3'><strong>" . htmlspecialchars($ort['stadt']) . "</strong></td>";
-                echo "<td class='p-3'>" . htmlspecialchars($ort['kreis']) . "</td>";
-                echo "<td class='p-3'>" . htmlspecialchars($ort['bundesland']) . "</td>";
+                echo "<td><strong>" . htmlspecialchars($ort['stadt']) . "</strong></td>";
+                echo "<td>" . htmlspecialchars($ort['kreis']) . "</td>";
+                echo "<td>" . htmlspecialchars($ort['bundesland']) . "</td>";
                 echo "</tr>";
             }
+
             echo "</tbody>";
             echo "</table>";
-            echo "</div>";
         } else {
             echo "Keine Städte mit '$buchstabe' gefunden.";
         }
@@ -55,6 +55,6 @@
         $statement = $connection->prepare('SELECT COUNT(*) FROM `ortsliste`');
         $statement->execute();
         $anzahl = $statement->fetchColumn();
-        echo "<div class='aa round rounded-3 text-center p-3 text-white'>Eingetragene Orte aus Deutschland: <strong>{$anzahl}</strong> (Stand: 02.04.2025)</div>";
+        echo "<div class='stadtanzahl'>Eingetragene Orte aus Deutschland: <strong>{$anzahl}</strong> (Stand: 02.04.2025)</div>";
     }
 }
