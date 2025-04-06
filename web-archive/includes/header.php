@@ -11,7 +11,7 @@
     <title>CodeVoyage.de</title>  
 
     <!-- Font Awesome 6 Free einbinden -->
-    <link rel="stylesheet" href="../web-archive//assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../web-archive/assets/fontawesome/css/all.min.css">
 
     <!-- Bootstrap einbinden
     <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">

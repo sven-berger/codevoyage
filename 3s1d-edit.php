@@ -1,8 +1,8 @@
 <!-- Datenbankverbindung herstellen -->
 <?php
     $servername = "localhost";
-    $username = "sven";
-    $passwort = "diesims2";
+    $username = "root";
+    $passwort = "";
     $dbname = "3-sprachen-1-datei";
 
     // Verbindung zur Datenbank herstellen mit PDO
@@ -15,18 +15,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>3 Sprachen in 1 Datei (PHP, MySQL, JavaScript(</title>
 
-    <!-- Font Awesome 6 Free -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- TinyMCE -->
-    <script src="https://cdn.tiny.cloud/1/17ln2z2xo77y880zmvruipp07u32wabjpbchzslj2f6jve12/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <!-- Font Awesome 6 Free einbinden -->
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
 </head>
 <body>
 <main class="content">
     <h1 class="header">3 Sprachen in 1 Datei - Ein Beispiel für HTML, CSS, PHP, JavaScript und MySQL</h1>
+    <div class="links-to-github">
+        <ul>
+            <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/3-sprachen-1-datei.php" target="_blank">3-sprachen-1-datei.php auf GitHub</a></li>
+            <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/3s1d-edit.php" target="_blank">3s1d-edit.php auf GitHub</a></li>
 
+        </ul>
+    </div>
+        
     <h3 class="html">
         Hallo HTML
     </h3>
@@ -43,7 +47,7 @@
         document.write("Hallo JavaScript!");
     </script></h3>
 
-    <h3 class="mysql">
+<h3 class="mysql">
         <?php
             $statement = $connection->prepare("SELECT * FROM hello_mysql");
             $statement->execute();
@@ -63,10 +67,8 @@
         $benutzer = $statement->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
-
     <!-- Daten aus der Datenbank bearbeiten -->
     <?php
-        $row = null; // Initialize $row to avoid undefined variable error
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $sql = "SELECT * FROM benutzer WHERE id = :id";
@@ -153,7 +155,40 @@
             color: #2c3e50;
             padding-bottom: 5px;
             border-bottom: 2px solid #2c3e50;
-            margin-bottom: 40px;
+        }
+
+        .links-to-github {
+            margin-bottom: 20px;
+        }
+
+        .links-to-github ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
+        
+        .links-to-github li:last-child {
+            margin-top: 10px;
+        }
+
+        .links-to-github li a {
+            color: #00758f;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .links-to-github li:before {
+            font-family: FontAwesome;
+            content: "\f09b";
+            margin-right: 10px;
+        }
+
+        .links-to-github li a:hover {
+            text-decoration: underline;
         }
 
         h3.html {
@@ -216,7 +251,6 @@
 
         form {
             display: grid;
-            margin-top: 40px;
         }
 
         label {
@@ -257,22 +291,38 @@
             margin-top: 20px;
         }
 
-        .button {
-            background-color: #00758f;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            margin-top: 20px;
-            text-align: center;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
         }
 
-        .button:hover {
-            background-color: #005f73;
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr a {
+            color: #00758f;
+            text-decoration: none;
+        }
+        
+        tr a:hover {
+            text-decoration: underline;
         }
     </style>
 </main>
+
+<!-- TinyMCE -->
+<script src="../assets/tinymce/tinymce.min.js"></script>
 </body>
 </html>

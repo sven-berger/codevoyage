@@ -49,7 +49,7 @@ if (isset($_GET['page'])) {
 </div>
 
 <!-- TinyMCE-Editor einbinden -->
-<script src="..../web-archive//assets/tinymce/tinymce.min.js"></script>
+<script src="../web-archive/assets/tinymce/tinymce.min.js"></script>
 <script>
 tinymce.init({
     selector: 'textarea',
