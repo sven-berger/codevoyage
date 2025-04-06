@@ -79,7 +79,7 @@
 
     <!-- Formular zum Bearbeiten der Daten -->
     <?php if ($row): ?>
-        <form method="POST" action="" style="margin-top: 100px;">
+        <form method="POST" action="">
             <label for="vorname">Vorname:</label>
             <input type="text" id="vorname" name="vorname" value="<?php echo htmlspecialchars($row['vorname']); ?>" required>
 
@@ -91,6 +91,8 @@
 
             <button type="submit">Ändern</button>
             <button type="reset">Zurücksetzen</button>
+            <a href="3-sprachen-1-datei.php" class="button">Zurück zur Übersicht</a>
+
         </form>
     <?php endif; ?>
 
@@ -214,6 +216,7 @@
 
         form {
             display: grid;
+            margin-top: 40px;
         }
 
         label {
@@ -252,6 +255,22 @@
             border-radius: 5px;
             cursor: pointer;
             margin-top: 20px;
+        }
+
+        .button {
+            background-color: #00758f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #005f73;
         }
     </style>
 </main>
