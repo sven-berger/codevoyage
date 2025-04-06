@@ -1,8 +1,8 @@
 
 
 <?php
-    require_once("lib/forms/mini-taschenrechner.form.php");
-    require_once("lib/class/mini-taschenrechner.class.php");
+    require_once("../web-archive/lib/forms/mini-taschenrechner.form.php");
+    require_once("../web-archive/lib/class/mini-taschenrechner.class.php");
 
     if (isset ($_POST['erste_zahl']) && isset($_POST['zweite_zahl']) && isset($_POST['rechenoperation'])) {
         $zahl1 = (float)$_POST['erste_zahl'];

@@ -1,6 +1,13 @@
 <?php
 session_start();
-require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/database-connect.php");
+
+// Alle Fehlermeldungen anzeigen
+error_reporting(E_ALL);
+
+// Fehlerausgabe aktivieren
+ini_set('display_errors', 1);
+
+require_once ($_SERVER['DOCUMENT_ROOT'] . "/web-archive/includes/database-connect.php");
 
 // Falls der Benutzer bereits eingeloggt ist, nichts tun
 if (isset($_SESSION['benutzername'])) {

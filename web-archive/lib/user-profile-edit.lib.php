@@ -13,16 +13,16 @@
         $statement->execute();
         $benutzergruppen = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        require_once "$_SERVER[DOCUMENT_ROOT]" . "/lib/class/user/userprofileedit.class.php";
+        require_once "$_SERVER[DOCUMENT_ROOT]" . "../web-archive/lib/class/user/userprofileedit.class.php";
 
         $userProfileEdit = new UserProfileEdit($connection, $id);
         $userProfileEdit->getData($id);
 
-        require_once "$_SERVER[DOCUMENT_ROOT]" . "/lib/forms/user/userprofileedit.form.php";
+        require_once "$_SERVER[DOCUMENT_ROOT]" . "../web-archive/lib/forms/user/userprofileedit.form.php";
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if ($userProfileEdit->dataEditSql($_POST)) {  // ✅ Erfolg prüfen
-                header("Location: index.php?page=user-profile&id=" . $userProfileEdit->getId());
+                header("Location: ../web-archive/index.php?page=user-profile&id=" . $userProfileEdit->getId());
                 exit;
             }
         }

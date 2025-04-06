@@ -32,6 +32,7 @@
             <button type="submit" class="mb-2 btn btn-primary">Einloggen</button>
             <button type="reset" class="mb-2 btn btn-secondary">Passwort vergessen</button>
             <a href="register.html" class="mb-2 btn btn-danger">Registrieren</a>
+            <a href="../web-archive/" class="mb-2 btn btn-warning" style="margin-top: 20px;">Alte Webseite</a>
         </form> 
     </nav>
 </div>

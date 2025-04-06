@@ -1,5 +1,5 @@
 <?php
-    require_once("lib/class/bankaccounts.class.php");
+    require_once("../web-archive/lib/class/bankaccounts.class.php");
     $kontoDaten = Konto::datenAbrufenSql($connection);
     $konten = Konto::datenVerarbeiten($kontoDaten);
 ?>

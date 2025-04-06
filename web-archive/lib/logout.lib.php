@@ -15,6 +15,6 @@ if (isset($_COOKIE['login_token'])) {
 }
 
 // Aktuelle Seite aktualisieren
-header("Location: index.php");
+header("Location: ../web-archive/index.php");
 
 exit;

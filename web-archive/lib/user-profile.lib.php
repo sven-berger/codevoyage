@@ -1,7 +1,7 @@
 <?php if (isset($_GET['id'])): ?>
     <?php 
         $id = $_GET['id']; 
-        require_once "$_SERVER[DOCUMENT_ROOT]" . "/lib/class/user/userprofile.class.php";
+        require_once "$_SERVER[DOCUMENT_ROOT]" . "../web-archive/lib/class/user/userprofile.class.php";
         $userProfile = new UserProfile($connection, $id);
         $userProfile->getData($id);
     ?>
@@ -63,7 +63,7 @@
 
     <div class="useroptions">
         <ul>
-            <li><button><a href="../index.php?page=user-profile-edit&id=<?= $userProfile->getId(); ?>">Profil bearbeiten</a></button></li>
+            <li><button><a href="../web-archive/index.php?page=user-profile-edit&id=<?= $userProfile->getId(); ?>">Profil bearbeiten</a></button></li>
         </ul>
     </div>
 <?php endif; ?>

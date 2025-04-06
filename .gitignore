@@ -8,6 +8,6 @@ web-archive/assets/
 /.vscode/
 
 /includes/database-connect.php
-/web-archive/includes/database-connect.php
+../web-archive/includes/database-connect.php
 .DS_Store
 .DS_Store

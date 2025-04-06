@@ -49,19 +49,19 @@ if (isset($_GET['page'])) {
 </div>
 
 <!-- TinyMCE-Editor einbinden -->
-<script src="../assets/tinymce/tinymce.min.js"></script>
+<script src="..../web-archive//assets/tinymce/tinymce.min.js"></script>
 <script>
 tinymce.init({
     selector: 'textarea',
     license_key: 'gpl',
     content_css:
     [
-        '../assets/highlightjs/styles/default.min.css',
-        '../styles/editor.css'
+        '../web-archive/assets/highlightjs/styles/default.min.css',
+        '../web-archive/styles/editor.css'
     ],
     menubar: false,
     language: 'de',
-    language_url: '../assets/tinymce/langs/de.js',
+    language_url: '../web-archive/assets/tinymce/langs/de.js',
     plugins: 'code table lists fullscreen wordcount link image autosave advlist codesample preview',
     toolbar: 'code undo redo | bold italic | blocks | link image codesample table blockquote | bullist numlist | alignleft aligncenter alignright removeformat preview',
     fontsize_formats: "10pt 12pt 14pt 16pt 18pt 24pt 36pt"
