@@ -126,7 +126,8 @@
         }
     ?>
 
-    <!-- TinyMCE Initialisierung -->
+    <!-- TinyMCE -->
+    <script src="../assets/tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
         selector: 'textarea',
@@ -134,7 +135,7 @@
         toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
     });
     </script>
-
+    
     <!-- CSS für die Darstellung -->
     <style>
         body {
@@ -327,7 +328,5 @@
         }
     </style>
 </main>
-<!-- TinyMCE -->
-<script src="../assets/tinymce/tinymce.min.js"></script>
 </body>
 </html>

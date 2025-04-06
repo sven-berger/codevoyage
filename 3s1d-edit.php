@@ -94,7 +94,6 @@
             <button type="submit">Ändern</button>
             <button type="reset">Zurücksetzen</button>
             <a href="3-sprachen-1-datei.php" class="button">Zurück zur Übersicht</a>
-
         </form>
     <?php endif; ?>
 
@@ -121,6 +120,7 @@
     ?>
 
     <!-- TinyMCE Initialisierung -->
+    <script src="../assets/tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
         selector: 'textarea',
@@ -291,38 +291,18 @@
             margin-top: 20px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        tr a {
-            color: #00758f;
+        .button {
+            background-color: #00758f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-align: center;
             text-decoration: none;
-        }
-        
-        tr a:hover {
-            text-decoration: underline;
         }
     </style>
 </main>
-
-<!-- TinyMCE -->
-<script src="../assets/tinymce/tinymce.min.js"></script>
 </body>
 </html>
