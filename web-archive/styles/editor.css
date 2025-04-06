@@ -21,16 +21,17 @@ blockquote {
     font-weight: bolder !important;
 }
 
+blockquote p:before {
+    content: '\27A5';
+    margin-right: 5px;
+}
+
 img {
     margin: 0 20px 10px 0;
     border-radius: 8px;
     border: 2px solid #ddd;
 }
 
-blockquote p:before {
-    content: '\27A5';
-    margin-right: 5px;
-}
 
 .mce-content-body .mce-item-anchor:empty {
     margin-right: 5px;
@@ -90,10 +91,9 @@ li {
 }
 
 /** Copyright **/
-.tox-statusbar__branding {
-    display: none !important;
+.tox .tox-statusbar{
+	display: none !important;
 }
-
 /** Größe anpassen **/
 .tox-statusbar__resize-handle {
     display: none !important;

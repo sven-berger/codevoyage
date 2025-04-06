@@ -1,0 +1,8 @@
+/media/
+/assets/
+
+/includes/database-connect.php
+
+# Sind noch nicht fertig gestellt!
+/lib/zahlenausgeben-schrittweise.lib.php
+/lib/dashboard.lib.php
