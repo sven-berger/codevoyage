@@ -7,7 +7,7 @@ class Now {
     }
 
     public static function datum() {
-        return date("d.m.Y"); // Datum zurückgeben
+        return date("d.m.Y"); // Tag Monat Jahr zurückgeben
     }
 
     public static function uhrzeit() {

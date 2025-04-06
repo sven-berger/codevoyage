@@ -1,5 +1,12 @@
+<?php require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
+
+if (headers_sent($file, $line)) {
+    echo "Headers already sent in $file on line $line";
+    exit;
+}
+?>
+
 <?php
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/header.php");
 
     // Standardseite setzen
     $page = $_GET['page'] ?? '';
@@ -19,5 +26,6 @@
     } else {
         require_once ($_SERVER['DOCUMENT_ROOT'] . "/lib/errors/404.php");
     }
+?>
 
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php");
+<?php require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php"); ?>

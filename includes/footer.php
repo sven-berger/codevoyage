@@ -70,4 +70,3 @@ tinymce.init({
 
 </body>
 </html>
-<?php ob_end_flush(); ?>

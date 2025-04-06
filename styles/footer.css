@@ -1,0 +1,11 @@
+.page-functions ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.page-functions li {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}

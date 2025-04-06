@@ -1,6 +1,6 @@
+<?php require_once("$_SERVER[DOCUMENT_ROOT]" . "/web-archive/lib/class/now.class.php"); ?>
 <div class="navbar">
     <div class="now-box">
-        <?php require_once("$_SERVER[DOCUMENT_ROOT]" . "/web-archive/lib/class/now.class.php"); ?>
         <ul>
             <li class="now-tag"><?= Now::tag(); ?></li>
             <li class="now-datum"><?= Now::datum(); ?></li>
