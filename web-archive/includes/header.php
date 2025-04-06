@@ -11,14 +11,10 @@
     <title>CodeVoyage.de</title>  
 
     <!-- Font Awesome 6 Free einbinden -->
-    <link rel="stylesheet" href="../web-archive/assets/fontawesome/css/all.min.css">
-
-    <!-- Bootstrap einbinden
-    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    -->
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
 
     <!-- HightLight.js einbinden -->
-    <link rel="stylesheet" href="../web-archive/assets/highlightjs/styles/default.min.css">
+    <link rel="stylesheet" href="../assets/highlightjs/styles/default.min.css">
     <script src="../assets/highlightjs/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 

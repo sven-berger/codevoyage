@@ -3,7 +3,7 @@
 ?>
 
 <pre class="language-html"><code>&lt;!-- TinyMCE-Editor einbinden --&gt;
-&lt;script src="../web-archive/assets/tinymce/tinymce.min.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/tinymce/tinymce.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 tinymce.init({
     selector: 'textarea',
