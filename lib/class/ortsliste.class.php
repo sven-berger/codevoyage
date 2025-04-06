@@ -31,7 +31,7 @@
             echo "<thead>";
             echo "<tr>";
             echo "<th class='p-3'>Stadt</th>";
-            echo "<th class='p-3'Kreis</th>";
+            echo "<th class='p-3'>Kreis</th>";
             echo "<th class='p-3'>Bundesland</th>";
             echo "</tr>";
             echo "</thead>";
