@@ -6,7 +6,8 @@
             <li class="nav-item"><a href="index.php?page=mini-taschenrechner" class="nav-link">Mini-Taschenrechner</a></li>
             <li class="nav-item"><a href="index.php?page=raffle" class="nav-link">Mini-Gewinnspiel</a></li>
             <li class="nav-item"><a href="index.php?page=bankaccounts" class="nav-link">Bankkonten</a></li> -->
-            <li class="nav-item"><a href="index.php?page=ortsliste" class="nav-link">Ortsliste</a></li>
+            <li class="nav-item"><a href="index.php?page=ortsliste" class="nav-link">Ortsliste (Deutschland)</a></li>
+            <li class="nav-item"><a href="index.php?page=zeitzonen" class="nav-link">Zeitzonen <strong>(1.0 Alpha 1)</strong></a></li>
         </ul>
         <!-- <h6 class="mb-3">Spielerein</h5>
         <ul class="list-unstyled">

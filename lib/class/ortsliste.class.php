@@ -13,7 +13,7 @@
 
         echo "<ul class='list-unstyled d-flex justify-content-center my-2 ab'>";
         foreach ($buchstaben as $zeichen) {
-            echo "<li class='nav-item p-2 round rounded-3'><a href='index.php?page=ortsliste&buchstabe=" . $zeichen . "' class='button'>" . $zeichen . "</a></li>"; 
+            echo "<li class='bg-danger nav-item p-2 round rounded-3 my-3'><a href='index.php?page=ortsliste&buchstabe=" . $zeichen . "' class='button'>" . $zeichen . "</a></li>"; 
         }
         echo "</ul>";
     }

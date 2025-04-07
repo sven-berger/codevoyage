@@ -31,21 +31,22 @@ if (isset($_GET['page'])) {
     <?php 
         $gitHubMain = "https://github.com/sven-berger/codevoyage.de/blob/main/lib";
         $gitHubLinks = [
-            "Bibliothek" => "<a href='{$gitHubMain}/{$page}.lib.php' target='_blank'>{$page}.lib.php</a>",
-            "Klasse" => "<a href='{$gitHubMain}/class/{$page}.class.php' target='_blank'>{$page}.class.php</a>",
-            "Formular" => "<a href='{$gitHubMain}/forms/{$page}.form.php' target='_blank'>{$page}.form.php</a>",
+            "Bibliothek" => "<a href='{$gitHubMain}/{$page}.lib.php' target='_blank' class='link-success fw-bolder'>{$page}.lib.php</a>",
+            "Klasse" => "<a href='{$gitHubMain}/class/{$page}.class.php' target='_blank' class='link-success fw-bolder'>{$page}.class.php</a>",
+            "Formular" => "<a href='{$gitHubMain}/forms/{$page}.form.php' target='_blank' class='link-success fw-bolder'>{$page}.form.php</a>",
         ];
     ?>
-    <div class="gelistetAufGitHub">
-        <h4 class="sectionHeader">Dateien auf GitHub</h4>
-        <ul class="gitHub">
+    <div class="gelistetAufGitHub bg-white border p-3 rounded-3">
+        <h6>Dateien auf GitHub</h4>
+        <ul class="list-unstyled github p-0 mb-0">
             <?php foreach ($gitHubLinks as $key => $value): ?>
-            <li><span class='gitHub-Key'><?= $key; ?></span>: <span class='gitHub-Value'><?= $value; ?></span></li>
+            <li><span class='gitHub-Key text-danger fw-bolder'><?= $key; ?></span>: <span class='link-warning'><?= $value; ?></span></li>
             <?php endforeach; ?>  
         </ul>
     </div>
 <?php endif; ?>
 </div>
+
 </div>
 
 <!-- TinyMCE-Editor einbinden -->
@@ -70,3 +71,13 @@ tinymce.init({
 
 </body>
 </html>
+
+<style>
+    .gelistetAufGitHub {
+        margin-top: auto;
+    }
+
+    .gelistetAufGitHub li a {
+        text-decoration: none;
+    }
+</style>
