@@ -6,8 +6,9 @@ web-archive/assets/
 
 /.idea/
 /.vscode/
+.DS_Store
 
 /includes/database-connect.php
 ../web-archive/includes/database-connect.php
-.DS_Store
-.DS_Store
+
+
