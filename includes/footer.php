@@ -31,7 +31,7 @@ if (isset($_GET['page'])) {
     <?php 
         $gitHubMain = "https://github.com/sven-berger/codevoyage.de/blob/main/lib";
         $gitHubLinks = [
-            "Bibliothek" => "<a href='{$gitHubMain}/{$page}.lib.php' target='_blank' class='link-success fw-bolder'>{$page}.lib.php</a>",
+            "Bibliothek" => "<a href='{$gitHubMain}/pages/{$page}.page.php' target='_blank' class='link-success fw-bolder'>{$page}.lib.php</a>",
             "Klasse" => "<a href='{$gitHubMain}/class/{$page}.class.php' target='_blank' class='link-success fw-bolder'>{$page}.class.php</a>",
             "Formular" => "<a href='{$gitHubMain}/forms/{$page}.form.php' target='_blank' class='link-success fw-bolder'>{$page}.form.php</a>",
         ];
@@ -40,7 +40,7 @@ if (isset($_GET['page'])) {
         <h6>Dateien auf GitHub</h4>
         <ul class="list-unstyled github p-0 mb-0">
             <?php foreach ($gitHubLinks as $key => $value): ?>
-            <li><span class='gitHub-Key text-danger fw-bolder'><?= $key; ?></span>: <span class='link-warning'><?= $value; ?></span></li>
+            <li><span class='gitHub-Key text-danger fw-bolder'><?= $key; ?></span>: <span><?= $value; ?></span></li>
             <?php endforeach; ?>  
         </ul>
     </div>

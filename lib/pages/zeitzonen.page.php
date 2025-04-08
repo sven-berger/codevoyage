@@ -33,7 +33,7 @@
                 date_default_timezone_set($zone['zeitzone']);
                 $currentTime = date('H:i');
             ?>
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <div class="card mb-4">
                     <img src="../media/zeitzonen/<?= htmlspecialchars($zone['cover']); ?>" class="card-img-top" alt="<?= htmlspecialchars($zone['stadt']); ?>">
                     <div class="card-body shadow-sm">
