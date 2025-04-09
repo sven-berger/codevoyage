@@ -1,14 +1,4 @@
-<!-- Datenbankverbindung herstellen -->
-<?php
-    $servername = "localhost";
-    $username = "root";
-    $passwort = "";
-    $dbname = "3-sprachen-1-datei";
-
-    // Verbindung zur Datenbank herstellen mit PDO
-    $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $passwort);
-    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-?>
+<?php require_once 'db.php'; ?>
 
 <!DOCTYPE html>
 <html lang="de">
@@ -21,7 +11,7 @@
     <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
 </head>
 <body>
-<main class="content">
+<main class="content">‚
     <h1 class="header">3 Sprachen in 1 Datei - Ein Beispiel für HTML, CSS, PHP, JavaScript und MySQL</h1>
     <div class="links-to-github">
         <ul>
@@ -47,7 +37,7 @@
         document.write("Hallo JavaScript!");
     </script></h3>
 
-<h3 class="mysql">
+    <h3 class="mysql">
         <?php
             $statement = $connection->prepare("SELECT * FROM hello_mysql");
             $statement->execute();
@@ -67,59 +57,66 @@
         $benutzer = $statement->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
-    <!-- Daten aus der Datenbank bearbeiten -->
+    <!-- Daten aus der Datenbank ausgeben -->
+    <table>
+        <tr>
+            <th>Vorname</th>
+            <th>Nachname</th>
+            <th>Inhalt</th>
+            <th>Aktion</th>
+        </tr>
+        <?php foreach ($benutzer as $row): ?>
+        <tr>
+            <td><?php echo htmlspecialchars($row['vorname']); ?></td>
+            <td><?php echo htmlspecialchars($row['nachname']); ?></td>
+            <td><?php echo $row['inhalt']; ?></td>
+            <td><a href="3s1d-edit.php?id=<?php echo $row['id']; ?>">Bearbeiten</a></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <form method="POST">
+        <label for="vorname">Vorname:</label>
+        <input type="text" id="vorname" name="vorname" required>
+
+        <label for="nachname">Nachname:</label>
+        <input type="text" id="nachname" name="nachname" required>
+
+        <label for="Inhalt">Inhalt:</label>
+        <textarea id="Inhalt" name="inhalt"></textarea>
+
+        <button type="submit">Einfügen</button>
+        <button type="reset">Zurücksetzen</button>
+    </form>
+
     <?php
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            $sql = "SELECT * FROM benutzer WHERE id = :id";
-            $statement = $connection->prepare($sql);
-            $statement->bindParam(':id', $id, PDO::PARAM_INT);
-            $statement->execute();
-            $row = $statement->fetch(PDO::FETCH_ASSOC);
-        }
-    ?>
-
-    <!-- Formular zum Bearbeiten der Daten -->
-    <?php if ($row): ?>
-        <form method="POST" action="">
-            <label for="vorname">Vorname:</label>
-            <input type="text" id="vorname" name="vorname" value="<?php echo htmlspecialchars($row['vorname']); ?>" required>
-
-            <label for="nachname">Nachname:</label>
-            <input type="text" id="nachname" name="nachname" value="<?php echo htmlspecialchars($row['nachname']); ?>" required>
-
-            <label for="Inhalt">Inhalt:</label>
-            <textarea id="Inhalt" name="inhalt"><?php echo htmlspecialchars($row['inhalt']); ?></textarea>
-
-            <button type="submit">Ändern</button>
-            <button type="reset">Zurücksetzen</button>
-            <a href="3-sprachen-1-datei.php" class="button">Zurück zur Übersicht</a>
-        </form>
-    <?php endif; ?>
-
-    <!-- Wenn das Formular erfolgreich gesendet wurde -->
-    <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['id'])) {
+        // Überprüfen, ob das Formular gesendet wurde
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Eingabewerte aus dem Formular abrufen
             $vorname = htmlspecialchars($_POST['vorname']);
             $nachname = htmlspecialchars($_POST['nachname']);
             $inhalt = $_POST['inhalt'];
 
-            // SQL-Abfrage zum Aktualisieren der Daten in der Tabelle
-            $statement = $connection->prepare("UPDATE benutzer SET vorname = :vorname, nachname = :nachname, inhalt = :inhalt WHERE id = :id");
+            // Erstellen der Tabelle, falls sie nicht existiert
+            $sql = "CREATE TABLE IF NOT EXISTS benutzer (
+                id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                vorname VARCHAR(30) NOT NULL,
+                nachname VARCHAR(30) NOT NULL,
+                inhalt TEXT NOT NULL
+            )";
+            $connection->exec($sql);
+
+            // SQL-Abfrage zum Einfügen der Daten in die Tabelle
+            $statement = $connection->prepare("INSERT INTO benutzer (vorname, nachname, inhalt) VALUES (:vorname, :nachname, :inhalt)");
             $statement->bindParam(':vorname', $vorname);
             $statement->bindParam(':nachname', $nachname);
             $statement->bindParam(':inhalt', $inhalt);
-            $statement->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
             $statement->execute();
-
-            // Weiterleitung nach erfolgreichem Update
-            header("Location: 3-sprachen-1-datei.php");
-            exit();
+            echo "<h3>Formular erfolgreich gesendet!</h3>";
         }
     ?>
 
-    <!-- TinyMCE Initialisierung -->
+    <!-- TinyMCE -->
     <script src="../assets/tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
@@ -128,7 +125,7 @@
         toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
     });
     </script>
-
+    
     <!-- CSS für die Darstellung -->
     <style>
         body {
@@ -291,16 +288,33 @@
             margin-top: 20px;
         }
 
-        .button {
-            background-color: #00758f;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-            text-align: center;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr a {
+            color: #00758f;
             text-decoration: none;
+        }
+        
+        tr a:hover {
+            text-decoration: underline;
         }
     </style>
 </main>
