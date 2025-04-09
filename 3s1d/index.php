@@ -15,9 +15,8 @@
     <h1 class="header">3 Sprachen in 1 Datei - Ein Beispiel für HTML, CSS, PHP, JavaScript und MySQL</h1>
     <div class="links-to-github">
         <ul>
-            <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/3-sprachen-1-datei.php" target="_blank">3-sprachen-1-datei.php auf GitHub</a></li>
-            <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/3s1d-edit.php" target="_blank">3s1d-edit.php auf GitHub</a></li>
-
+            <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/3s1d/index.php" target="_blank">3-sprachen-1-datei.php auf GitHub</a></li>
+            <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/3s1d/edit.php" target="_blank">3s1d-edit.php auf GitHub</a></li>
         </ul>
     </div>
         
