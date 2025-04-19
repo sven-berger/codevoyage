@@ -1,6 +1,6 @@
 <?php
-    require_once "$_SERVER[DOCUMENT_ROOT]" . "/acp/lib/class/raffle/raffle.class.php"; 
-    require_once "$_SERVER[DOCUMENT_ROOT]" . "/acp/lib/forms/raffle.form.php";
+    require_once "$_SERVER[DOCUMENT_ROOT]" . "/web-archive/acp/lib/class/raffle/raffle.class.php"; 
+    require_once "$_SERVER[DOCUMENT_ROOT]" . "/web-archive/acp/lib/forms/raffle.form.php";
 
     if (isset($_POST['gewinnerzahl']) && isset($_POST['zeitraumVon']) && isset($_POST['zeitraumBis'])) {
         $gewinnerzahl = (int)$_POST['gewinnerzahl'];
@@ -11,7 +11,7 @@
         $gewinnspiel->setDataSql($connection);
     }
 
-    require_once "$_SERVER[DOCUMENT_ROOT]" . "/acp/lib/class/raffle/raffleTable.class.php"; 
+    require_once "$_SERVER[DOCUMENT_ROOT]" . "/web-archive/acp/lib/class/raffle/raffleTable.class.php"; 
     $auswertung = new GewinnspielTabelle();
     $auswertung->getDataSql($connection);
     $daten = $auswertung->getDaten();

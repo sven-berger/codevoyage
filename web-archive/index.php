@@ -1,10 +1,3 @@
-<?php
-error_reporting(E_ALL);
-
-// Fehlerausgabe aktivieren
-ini_set('display_errors', 1);
-?>
-
 <?php require_once("../web-archive/includes/header.php"); ?>
 <?php
     // Standardseite setzen

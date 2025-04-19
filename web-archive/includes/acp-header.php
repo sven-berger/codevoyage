@@ -1,8 +1,4 @@
-<?php 
-    if (ob_get_level() == 0) ob_start();
-    require_once("../web-archive/includes/session.php");
-?>
-
+<?php if (ob_get_level() == 0) ob_start(); require_once ($_SERVER['DOCUMENT_ROOT'] . "/web-archive/includes/session.php"); ?>
 <!DOCTYPE html>  
 <html lang="de">  
 <head>  
@@ -11,17 +7,16 @@
     <title>CodeVoyage.de</title>  
 
     <!-- Font Awesome 6 Free einbinden -->
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../../assets/fontawesome/css/all.min.css">
 
     <!-- HightLight.js einbinden -->
-    <link rel="stylesheet" href="../assets/highlightjs/styles/default.min.css">
-    <script src="../assets/highlightjs/highlight.min.js"></script>
+    <link rel="stylesheet" href="../../../assets/highlightjs/styles/default.min.css">
+    <script src="../../../assets/highlightjs/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 
     <!-- Angelegte Stylesheets einbinden -->
-    <link rel="stylesheet "href="../web-archive/styles/editor.css">
-    <link rel="stylesheet" href="../web-archive/styles/styles.css">
-    <link rel="stylesheet" href="../web-archive/styles/mobile.css">
+    <link rel="stylesheet "href="../../../styles/tm-editor.css">
+    <link rel="stylesheet" href="../../../styles/styles.css">
 </head>
 
 <body>

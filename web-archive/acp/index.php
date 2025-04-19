@@ -1,4 +1,4 @@
-<?php require_once("../includes/acp-header.php"); ?>
+<?php require_once "$_SERVER[DOCUMENT_ROOT]" . "/web-archive/includes/acp-header.php";  ?>
 <?php
     $page = isset($_GET['page']) ? $_GET['page'] : 'index';
     if (file_exists("lib/" . $page . ".lib.php")) {
@@ -9,4 +9,4 @@
         include("../lib/errors/404.php");
     }
 ?>
-<?php require_once("../includes/acp-footer.php"); ?>
+<?php require_once "$_SERVER[DOCUMENT_ROOT]" . "/web-archive/includes/acp-footer.php";  ?>

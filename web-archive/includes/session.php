@@ -1,12 +1,6 @@
 <?php
+ob_start();
 session_start();
-
-// Alle Fehlermeldungen anzeigen
-error_reporting(E_ALL);
-
-// Fehlerausgabe aktivieren
-ini_set('display_errors', 1);
-
 require_once ($_SERVER['DOCUMENT_ROOT'] . "/web-archive/includes/database-connect.php");
 
 // Falls der Benutzer bereits eingeloggt ist, nichts tun

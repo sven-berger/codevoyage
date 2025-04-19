@@ -57,7 +57,7 @@ tinymce.init({
     content_css:
     [
         '../assets/highlightjs/styles/default.min.css',
-        '../styles/editor.css'
+        '../styles/tm-editor.css'
     ],
     menubar: false,
     language: 'de',

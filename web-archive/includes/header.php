@@ -1,8 +1,4 @@
-<?php 
-    if (ob_get_level() == 0) ob_start();
-    require_once("../web-archive/includes/session.php");
-?>
-
+<?php if (ob_get_level() == 0) ob_start(); require_once ($_SERVER['DOCUMENT_ROOT'] . "/web-archive/includes/session.php"); ?>
 <!DOCTYPE html>  
 <html lang="de">  
 <head>  

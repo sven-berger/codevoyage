@@ -2,7 +2,7 @@
     $sql = "SELECT * FROM bankkonten";
     $statement = $connection->query($sql);
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    require_once ($_SERVER['DOCUMENT_ROOT'] . "/acp/lib/forms/sepa.form.php");
+    require_once ($_SERVER['DOCUMENT_ROOT'] . "/web-archive/acp/lib/forms/sepa.form.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $absendekonto = $_POST['absendekonto'];
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([':betrag' => $betrag, ':iban' => $zielkonto]);
 
     if ($stmt->execute()) {
-        header("Location: index.php?page=ueberweisung");
+        header("Location: /webarchive/index.php?page=sepa");
         exit;
     }
 }
