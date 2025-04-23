@@ -9,11 +9,11 @@
             <li class="nav-item"><a href="index.php?page=ortsliste" class="nav-link">Ortsliste (Deutschland)</a></li>
             <li class="nav-item"><a href="index.php?page=zeitzonen" class="nav-link">Zeitzonen <strong>(1.0 Alpha 1)</strong></a></li>
         </ul>
-        <!-- <h6 class="mb-3">Spielerein</h5>
+        <h6 class="mb-3">Spielerein</h5>
         <ul class="list-unstyled">
-            <li class="nav-item"><a href="index.php?page=text-ausgeben" class="nav-link">Text ausgeben (In einer Schleife)</a></li>
-            <li class="nav-item"><a href="index.php?page=zahlen-ausgeben" class="nav-link">Zahlen ausgeben (In einer Schleife)</a></li>
+            <li class="nav-item"><a href="/3s1d/" class="nav-link">3 Sprachen 1 Datei</a></li>
         </ul>
+        <!---
         <h6 class="mb-3">Sonstiges</h5>
         <ul class="list-unstyled">
             <li class="nav-item"><a href="index.php?page=einbindung-tinymce" class="nav-link">Einbindung: TinyMCE Editor</a></li>
