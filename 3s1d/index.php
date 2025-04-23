@@ -69,7 +69,7 @@
             <td><?php echo htmlspecialchars($row['vorname']); ?></td>
             <td><?php echo htmlspecialchars($row['nachname']); ?></td>
             <td><?php echo $row['inhalt']; ?></td>
-            <td><a href="3s1d-edit.php?id=<?php echo $row['id']; ?>">Bearbeiten</a></td>
+            <td><a href="edit.php?id=<?php echo $row['id']; ?>">Bearbeiten</a></td>
         </tr>
         <?php endforeach; ?>
     </table>

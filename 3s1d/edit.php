@@ -1,4 +1,4 @@
-<?php require_once 'db.php'; ?>
+<?php ob_start(); require_once 'db.php'; ?>
 
 <!DOCTYPE html>
 <html lang="de">
@@ -16,7 +16,7 @@
     <div class="links-to-github">
         <ul>
             <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/3-sprachen-1-datei.php" target="_blank">3-sprachen-1-datei.php auf GitHub</a></li>
-            <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/3s1d-edit.php" target="_blank">3s1d-edit.php auf GitHub</a></li>
+            <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/edit.php" target="_blank">3s1d-edit.php auf GitHub</a></li>
 
         </ul>
     </div>
@@ -104,7 +104,7 @@
             $statement->execute();
 
             // Weiterleitung nach erfolgreichem Update
-            header("Location: 3-sprachen-1-datei.php");
+            header("Location: index.php");
             exit();
         }
     ?>
