@@ -5,13 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3 Sprachen in 1 Datei (PHP, MySQL, JavaScript(</title>
+    <title>3 Sprachen in 1 Datei (PHP, MySQL, JavaScript)</title>
 
     <!-- Font Awesome 6 Free einbinden -->
     <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
 </head>
 <body>
-<main class="content">‚
+<main class="content">
     <h1 class="header">3 Sprachen in 1 Datei - Ein Beispiel für HTML, CSS, PHP, JavaScript und MySQL</h1>
     <div class="links-to-github">
         <ul>
@@ -119,6 +119,8 @@
     <script src="../assets/tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
+
+        license_key: 'gpl',
         selector: 'textarea',
         plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
         toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
