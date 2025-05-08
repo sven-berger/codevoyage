@@ -46,7 +46,7 @@ if (isset($_GET['page'])) {
     </div>
 <?php endif; ?>
 </div>
-
+            </div>
 </div>
 
 <!-- TinyMCE-Editor einbinden -->
@@ -68,6 +68,9 @@ tinymce.init({
     fontsize_formats: "10pt 12pt 14pt 16pt 18pt 24pt 36pt"
 });
 </script>
+
+<!-- Bootstrap Bundle mit Popper einbinden -->
+<script src="https://codevoyage.de/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

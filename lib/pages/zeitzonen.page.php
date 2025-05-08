@@ -4,20 +4,7 @@
     $zeitzonen = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<form class="round rounded-3 border p-3 bg-white " method="POST" action="">
-    <div class="mb-3">
-        <label for="stadt" class="form-label fw-bold">Stadt</label><br>
-        <select name="stadt" id="stadt" class="form-control">
-            <option value="" disabled selected>Bitte wählen Sie eine Stadt</option>
-            <?php foreach ($zeitzonen as $zone): ?>
-                <option value="<?= htmlspecialchars($zone['stadt']) ?>"><?= htmlspecialchars($zone['stadt']) ?></option>
-            <?php endforeach; ?>
-        </select>
-    </div>
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Abrufen</button>
-    </div>
-</form>
+
 
 <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['stadt'])): ?>
     <?php 

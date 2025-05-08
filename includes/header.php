@@ -30,3 +30,4 @@
     <?php require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/seitenleiste.php"); ?>
     <main class="content bg-white p-3 flex-grow-1">
     <?php require_once ($_SERVER['DOCUMENT_ROOT'] . "/includes/navigation.php"); ?>
+    <div class="bg-white round rounded-3 border p-3">

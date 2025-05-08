@@ -1,4 +1,2 @@
-<div class="bg-white round rounded-3 border p-3">
-    <p>Hallo</p>
+    <h3>Hallo</h3>
     <p>Dies ist die Startseite der Webseite.</p>
-</div>
