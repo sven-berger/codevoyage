@@ -32,9 +32,12 @@
         <?php echo "Hallo PHP!"; ?>
     </h3>
 
-    <h3 class='js'><script>
-        document.write("Hallo JavaScript!");
-    </script></h3>
+    <h3 id='js' class='js'></h3>
+    <script>
+       // document.write("Hallo JavaScript!");
+       const js = document.getElementById("js");
+       js.innerHTML = "Hallo JavaScript!";
+    </script>
 
     <h3 class="mysql">
         <?php
