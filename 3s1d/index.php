@@ -34,9 +34,9 @@
 
     <h3 id='js' class='js'></h3>
     <script>
-       // document.write("Hallo JavaScript!");
-       const js = document.getElementById("js");
-       js.innerHTML = "Hallo JavaScript!";
+        // document.write("<h3 class='js'>Hallo JavaScript!</h3>");
+        const js = document.getElementById("js");
+        js.innerHTML = "Hallo JavaScript!";
     </script>
 
     <h3 class="mysql">
