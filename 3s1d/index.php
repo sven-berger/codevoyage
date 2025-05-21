@@ -24,15 +24,15 @@
         Hallo HTML
     </h3>
 
-    <h3 class='css'>
+    <h3 class="css">
         Hallo CSS
     </h3>
 
-    <h3 class='php'>
+    <h3 class="php">
         <?php echo "Hallo PHP!"; ?>
     </h3>
 
-    <h3 id='js' class='js'></h3>
+    <h3 id="js" class="js"></h3>
     <script>
         // document.write("<h3 class='js'>Hallo JavaScript!</h3>");
         const js = document.getElementById("js");
