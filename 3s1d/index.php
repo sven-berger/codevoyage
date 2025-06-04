@@ -122,7 +122,6 @@
     <script src="../assets/tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
-
         license_key: 'gpl',
         selector: 'textarea',
         plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
