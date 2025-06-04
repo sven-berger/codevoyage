@@ -86,7 +86,7 @@
 
             <button type="submit">Ändern</button>
             <button type="reset">Zurücksetzen</button>
-            <a href="3-sprachen-1-datei.php" class="button">Zurück zur Übersicht</a>
+            <a href="./index.php" class="button">Zurück zur Übersicht</a>
         </form>
     <?php endif; ?>
 
