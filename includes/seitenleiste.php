@@ -11,7 +11,7 @@
         </ul>
         <h6 class="mb-3">Spielerein</h5>
         <ul class="list-unstyled">
-            <li class="nav-item"><a href="/3s1d/" class="nav-link">3 Sprachen 1 Datei</a></li>
+            <li class="nav-item"><a href="/webentwicklung-kompakt/" class="nav-link">Webentwicklung kompakt</a></li>
         </ul>
         <!---
         <h6 class="mb-3">Sonstiges</h5>
