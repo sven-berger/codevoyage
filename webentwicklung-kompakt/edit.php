@@ -12,7 +12,7 @@
 </head>
 <body>
 <main class="content">
-    <h1 class="header">3 Sprachen in 1 Datei - Ein Beispiel für HTML, CSS, PHP, JavaScript und MySQL</h1>
+    <h1 class="header">Webentwicklung kompakt - Eine Datei – Alles drin!</h1>
     <div class="links-to-github">
         <ul>
             <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/webentwicklung-kompakt/index.php" target="_blank">webentwicklung-kompakt.php auf GitHub</a></li>
