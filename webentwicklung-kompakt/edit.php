@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3 Sprachen in 1 Datei (PHP, MySQL, JavaScript)S</title>
+    <title>Webentwicklung kompakt - Eine Datei – Alles drin!</title>
 
     <!-- Font Awesome 6 Free einbinden -->
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://codevoyage.de/assets/fontawesome/css/all.min.css">
 </head>
 <body>
 <main class="content">
@@ -113,7 +113,7 @@
     ?>
 
     <!-- TinyMCE Initialisierung -->
-    <script src="../assets/tinymce/tinymce.min.js"></script>
+    <script src="https://codevoyage.de/assets/tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
         license_key: 'gpl',

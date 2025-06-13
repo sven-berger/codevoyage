@@ -5,14 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3 Sprachen in 1 Datei (PHP, MySQL, JavaScript)</title>
+    <title>Webentwicklung kompakt - Eine Datei – Alles drin!</title>
 
     <!-- Font Awesome 6 Free einbinden -->
     <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
 </head>
 <body>
 <main class="content">
-    <h1 class="header">3 Sprachen in 1 Datei - Ein Beispiel für HTML, CSS, PHP, JavaScript und MySQL</h1>
+    <h1 class="header">Webentwicklung kompakt - Eine Datei – Alles drin!</h1>
     <div class="links-to-github">
         <ul>
             <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/3s1d/index.php" target="_blank">3-sprachen-1-datei.php auf GitHub</a></li>
@@ -119,7 +119,7 @@
     ?>
 
     <!-- TinyMCE -->
-    <script src="../assets/tinymce/tinymce.min.js"></script>
+    <script src="https://codevoyage.de/assets/tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
         license_key: 'gpl',
