@@ -8,17 +8,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeVoyage.de</title>
+    <title>samwilliam.de</title>
 
     <!-- Font Awesome 6 Free einbinden -->
     <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
 
     <!-- Bootstrap einbinden -->
-    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://samwilliam.de/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HightLight.js einbinden -->
-    <link rel="stylesheet" href="../assets/highlightjs/styles/default.min.css">
-    <script src="../assets/highlightjs/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://samwilliam.de/assets/highlightjs/styles/default.min.css">
+    <script src="https://samwilliam.de/assets/highlightjs/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 
     <!-- Angelegte Stylesheets einbinden -->

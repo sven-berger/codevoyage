@@ -29,7 +29,7 @@ if (isset($_GET['page'])) {
 
 <?php if ($gelistetAufGitHub): ?>
     <?php 
-        $gitHubMain = "https://github.com/sven-berger/codevoyage.de/blob/main/lib";
+        $gitHubMain = "https://github.com/sven-berger/codevoyage/blob/main/lib";
         $gitHubLinks = [
             "Bibliothek" => "<a href='{$gitHubMain}/pages/{$page}.page.php' target='_blank' class='link-success fw-bolder'>{$page}.lib.php</a>",
             "Klasse" => "<a href='{$gitHubMain}/class/{$page}.class.php' target='_blank' class='link-success fw-bolder'>{$page}.class.php</a>",
@@ -70,7 +70,7 @@ tinymce.init({
 </script>
 
 <!-- Bootstrap Bundle mit Popper einbinden -->
-<script src="https://codevoyage.de/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://samwilliam.de/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

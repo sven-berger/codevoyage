@@ -8,15 +8,15 @@
     <title>Webentwicklung kompakt - Eine Datei – Alles drin!</title>
 
     <!-- Font Awesome 6 Free einbinden -->
-    <link rel="stylesheet" href="https://codevoyage.de/assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://samwilliam.de/assets/fontawesome/css/all.min.css">
 </head>
 <body>
 <main class="content">
     <h1 class="header">Webentwicklung kompakt - Eine Datei – Alles drin!</h1>
     <div class="links-to-github">
         <ul>
-            <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/webentwicklung-kompakt/index.php" target="_blank">webentwicklung-kompakt.php auf GitHub</a></li>
-            <li><a href="https://github.com/sven-berger/codevoyage.de/blob/main/webentwicklung-kompakt/edit.php" target="_blank">wk-edit.php auf GitHub</a></li>
+            <li><a href="https://github.com/sven-berger/codevoyage/blob/main/webentwicklung-kompakt/index.php" target="_blank">webentwicklung-kompakt.php auf GitHub</a></li>
+            <li><a href="https://github.com/sven-berger/codevoyage/blob/main/webentwicklung-kompakt/edit.php" target="_blank">wk-edit.php auf GitHub</a></li>
         </ul>
     </div>
         
@@ -112,7 +112,7 @@
     ?>
 
     <!-- TinyMCE Initialisierung -->
-    <script src="https://codevoyage.de/assets/tinymce/tinymce.min.js"></script>
+    <script src="https://samwilliam.de/assets/tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
         license_key: 'gpl',

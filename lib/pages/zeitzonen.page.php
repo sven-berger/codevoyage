@@ -4,8 +4,6 @@
     $zeitzonen = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-
-
 <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['stadt'])): ?>
     <?php 
         $stadt = $_POST['stadt'];

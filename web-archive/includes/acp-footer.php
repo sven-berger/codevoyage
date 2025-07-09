@@ -18,7 +18,7 @@ if (isset($_GET['page'])) {
     <div class="page-function">
         <ul>
             <li>
-                <button><a href="../../../web-archive/acp/index.php?page=page-edit&url=<?php echo htmlspecialchars($row['url']); ?>">Seite bearbeiten</a></button>
+                <button><a href="https://samwilliam.de/web-archive/acp/index.php?page=page-edit&url=<?php echo htmlspecialchars($row['url']); ?>">Seite bearbeiten</a></button>
             </li>
         </ul>
     </div>
@@ -29,7 +29,7 @@ if (isset($_GET['page'])) {
 
 <?php if ($gelistetAufGitHub): ?>
     <?php 
-        $gitHubMain = "https://github.com/sven-berger/codevoyage.de/tree/main/acp/lib";
+        $gitHubMain = "https://github.com/sven-berger/samwilliam.de/tree/main/acp/lib";
         $gitHubLinks = [
             "Bibliothek" => "<a href='{$gitHubMain}/{$page}.lib.php' target='_blank'>{$page}.lib.php</a>",
             "Klasse" => "<a href='{$gitHubMain}/class/{$page}.class.php' target='_blank'>{$page}.class.php</a>",
@@ -55,8 +55,8 @@ tinymce.init({
     license_key: 'gpl',
     content_css:
     [
-        'http://localhost/assets/highlightjs/styles/default.min.css',
-        '../../../styles/tm-editor.css'
+        'https://samwilliam.de/assets/highlightjs/styles/default.min.css',
+        'https://samwilliam.de/styles/tm-editor.css'
     ],
     menubar: false,
     language: 'de',
