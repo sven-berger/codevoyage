@@ -29,7 +29,7 @@ if (isset($_GET['page'])) {
 
 <?php if ($gelistetAufGitHub): ?>
     <?php 
-        $gitHubMain = "https://github.com/sven-berger/samwilliam.de/blob/main/web-archive/lib";
+        $gitHubMain = "https://github.com/sven-berger/codevoyage/blob/main/web-archive/lib";
         $gitHubLinks = [
             "Bibliothek" => "<a href='{$gitHubMain}/{$page}.lib.php' target='_blank'>{$page}.lib.php</a>",
             "Klasse" => "<a href='{$gitHubMain}/class/{$page}.class.php' target='_blank'>{$page}.class.php</a>",
@@ -49,19 +49,19 @@ if (isset($_GET['page'])) {
 </div>
 
 <!-- TinyMCE-Editor einbinden -->
-<script src="../assets/tinymce/tinymce.min.js"></script>
+<script src="https://samwilliam.de/assets/tinymce/tinymce.min.js"></script>
 <script>
 tinymce.init({
     selector: 'textarea',
     license_key: 'gpl',
     content_css:
     [
-        '../assets/highlightjs/styles/default.min.css',
-        '../styles/tm-editor.css'
+        'https://samwilliam.de/assets/highlightjs/styles/default.min.css',
+        'https://samwilliam.de/styles/tm-editor.css'
     ],
     menubar: false,
     language: 'de',
-    language_url: '../assets/tinymce/langs/de.js',
+    language_url: 'https://samwilliam.de/assets/tinymce/langs/de.js',
     plugins: 'code table lists fullscreen wordcount link image autosave advlist codesample preview',
     toolbar: 'code undo redo | bold italic | blocks | link image codesample table blockquote | bullist numlist | alignleft aligncenter alignright removeformat preview',
     fontsize_formats: "10pt 12pt 14pt 16pt 18pt 24pt 36pt"

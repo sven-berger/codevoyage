@@ -16,7 +16,7 @@
     <div class="links-to-github">
         <ul>
             <li><a href="https://github.com/sven-berger/codevoyage/blob/main/webentwicklung-kompakt/index.php" target="_blank">webentwicklung-kompakt.php auf GitHub</a></li>
-            <li><a href="https://github.com/sven-berger/codevoyage/blob/main/webentwicklung-kompakt/edit.php" target="_blank">wk-edit.php auf GitHub</a></li>
+            <li><a href="https://github.com/sven-berger/codevoyage/blob/main/webentwicklung-kompakt/wk-edit.php" target="_blank">wk-edit.php auf GitHub</a></li>
         </ul>
     </div>
         
